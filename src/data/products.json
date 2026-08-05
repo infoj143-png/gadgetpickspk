@@ -1,0 +1,422 @@
+[
+  {
+    "id": "eb-01",
+    "category": "Earbuds",
+    "name": "Anker Soundcore R50i True Wireless Earbuds",
+    "image": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?q=80&w=600&auto=format&fit=crop",
+    "currentPrice": 4650,
+    "oldPrice": 6500,
+    "discount": 28,
+    "rating": 4.8,
+    "reviewsCount": 312,
+    "shortDescription": "TWS Earbuds with 10mm drivers, 30-hour battery life, IPX5 water resistance, and customize sound via Soundcore app.",
+    "longDescription": "The Anker Soundcore R50i features big, punchy bass via its extra-large 10mm drivers, giving you an immersive listening experience. It's incredibly light and features an ergonomic shape, ensuring all-day comfort. With 10 hours of playtime on a single charge and up to 30 hours with the case, you'll never run out of music. It also offers fast charging—a quick 10-minute charge gives you 2 hours of playback.",
+    "specifications": {
+      "Brand": "Anker Soundcore",
+      "Model": "R50i",
+      "Bluetooth Version": "5.3",
+      "Driver Size": "10mm",
+      "Playtime": "Up to 30 Hours (with Case)",
+      "Water Resistance": "IPX5 Waterproof"
+    },
+    "pros": [
+      "Outstanding deep bass and crisp vocals",
+      "Highly customizable EQ via Soundcore app",
+      "Excellent battery life with rapid charging",
+      "IPX5 rating offers reliable sweat & rain protection"
+    ],
+    "cons": [
+      "No Active Noise Cancellation (ANC)",
+      "Touch controls can occasionally be hypersensitive"
+    ],
+    "darazUrl": "https://www.daraz.pk/products/anker-soundcore-r50i-i422638421.html",
+    "isFeatured": true,
+    "isTrending": true,
+    "isTopDeal": true
+  },
+  {
+    "id": "eb-02",
+    "category": "Earbuds",
+    "name": "Redmi Buds 5 Wireless Earbuds",
+    "image": "https://images.unsplash.com/photo-1608156639585-b3a032ef9689?q=80&w=600&auto=format&fit=crop",
+    "currentPrice": 5899,
+    "oldPrice": 8500,
+    "discount": 31,
+    "rating": 4.7,
+    "reviewsCount": 184,
+    "shortDescription": "46dB Active Noise Cancelling earbuds with dual-mic AI noise reduction and up to 40 hours playtime.",
+    "longDescription": "The Redmi Buds 5 delivers an incredible acoustic experience with 46dB Active Noise Cancellation (ANC). Block out background chatter and commute noise easily. It features an independent acoustic cavity, a 12.4mm dynamic driver with titanium-plated diaphragm, and 3 noise cancellation levels. With up to 40 hours of battery life with the charging case and quick charging, you're always ready.",
+    "specifications": {
+      "Brand": "Redmi (Xiaomi)",
+      "Model": "Buds 5",
+      "Active Noise Cancellation": "Up to 46dB",
+      "Driver Size": "12.4mm Titanium",
+      "Playtime": "Up to 40 Hours (with Case)",
+      "Charging Port": "Type-C"
+    },
+    "pros": [
+      "Amazing 46dB Active Noise Cancellation at this price point",
+      "Massive 12.4mm titanium-plated drivers for exceptional soundstage",
+      "Dual-microphone AI noise reduction for extremely clear calls",
+      "Google Fast Pair support"
+    ],
+    "cons": [
+      "The charging case has a slightly bulky square footprint",
+      "In-ear detection can feel slightly delayed"
+    ],
+    "darazUrl": "https://www.daraz.pk/products/xiaomi-redmi-buds-5-i451873109.html",
+    "isFeatured": false,
+    "isTrending": true,
+    "isTopDeal": true
+  },
+  {
+    "id": "eb-03",
+    "category": "Earbuds",
+    "name": "QCY T13 TWS Smart Earbuds",
+    "image": "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?q=80&w=600&auto=format&fit=crop",
+    "currentPrice": 3850,
+    "oldPrice": 5500,
+    "discount": 30,
+    "rating": 4.6,
+    "reviewsCount": 420,
+    "shortDescription": "Budget-friendly king with 4 micro phones, ENC noise reduction, and ultra-fast charging.",
+    "longDescription": "The QCY T13 has earned its reputation as the ultimate budget-friendly TWS earbuds in Pakistan. Packed with 4 high-definition ENC microphones, it filters out ambient noise to keep your voice clear and crisp during calls. Equipped with a 7.2mm dynamic driver and Bluetooth 5.1, it delivers premium, rich acoustics. Fully customizable through the QCY app.",
+    "specifications": {
+      "Brand": "QCY",
+      "Model": "T13",
+      "Bluetooth Version": "5.1",
+      "Microphones": "4 x ENC Mics",
+      "Driver Size": "7.2mm Dynamic",
+      "Playtime": "Up to 40 Hours"
+    },
+    "pros": [
+      "Extremely affordable with incredible cost-performance ratio",
+      "4-mic ENC system performs outstandingly in loud environments",
+      "Fully featured companion app support on iOS and Android",
+      "Snug, comfortable, and lightweight fit"
+    ],
+    "cons": [
+      "Plastic gloss case easily collects micro-scratches",
+      "The default bass profile might feel slightly flat without app EQ"
+    ],
+    "darazUrl": "https://www.daraz.pk/products/qcy-t13-i264624467.html",
+    "isFeatured": true,
+    "isTrending": false,
+    "isTopDeal": false
+  },
+  {
+    "id": "hp-01",
+    "category": "Headphones",
+    "name": "Sony WH-CH520 Wireless Headset",
+    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=600&auto=format&fit=crop",
+    "currentPrice": 12499,
+    "oldPrice": 18500,
+    "discount": 32,
+    "rating": 4.9,
+    "reviewsCount": 98,
+    "shortDescription": "Premium Sony on-ear headphones with up to 50 hours battery life, DSEE sound upscaling, and multipoint connection.",
+    "longDescription": "Enjoy high sound quality all day long with the Sony WH-CH520. Featuring up to 50 hours of battery life, stable connectivity, and enhanced call performance, they meet all your daily listening requirements. The Digital Sound Enhancement Engine (DSEE) restores harmonics lost during compression, giving you rich, premium audio that is close to the original recording.",
+    "specifications": {
+      "Brand": "Sony",
+      "Model": "WH-CH520",
+      "Battery Life": "Up to 50 Hours",
+      "Charging Time": "3 Hours (Fast charge: 3 min for 1.5 hr)",
+      "Multipoint Connection": "Yes (Pair with 2 devices simultaneously)",
+      "Sound Enhancement": "DSEE (Digital Sound Enhancement Engine)"
+    },
+    "pros": [
+      "Unbelievable 50-hour battery life keeps you going for days",
+      "Super comfortable lightweight design with plush earpads",
+      "DSEE upscales compressed audio files beautifuly",
+      "Crystal-clear hands-free calling with noise suppression"
+    ],
+    "cons": [
+      "On-ear design may feel warm after hours of continuous use",
+      "No physical 3.5mm headphone jack for wired listening"
+    ],
+    "darazUrl": "https://www.daraz.pk/products/sony-wh-ch520-i422616231.html",
+    "isFeatured": true,
+    "isTrending": true,
+    "isTopDeal": true
+  },
+  {
+    "id": "hp-02",
+    "category": "Headphones",
+    "name": "Baseus Bowie H1i Active Noise Cancelling Headphones",
+    "image": "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?q=80&w=600&auto=format&fit=crop",
+    "currentPrice": 8850,
+    "oldPrice": 13000,
+    "discount": 32,
+    "rating": 4.7,
+    "reviewsCount": 154,
+    "shortDescription": "Over-ear ANC headphones featuring -38dB active noise cancellation, Hi-Res Audio certification, and 100h playback.",
+    "longDescription": "The Baseus Bowie H1i features dual-channel active noise cancellation that effectively suppresses background noise up to -38dB. Enjoy high-resolution audio certified quality with LHDC support. What makes the H1i legendary is its astounding 100-hour battery life (with ANC off), meaning you only need to charge it once or twice a month!",
+    "specifications": {
+      "Brand": "Baseus",
+      "Model": "Bowie H1i",
+      "Noise Cancellation": "Up to -38dB Active ANC",
+      "Battery Life": "Up to 100 Hours (ANC off) / 70 Hours (ANC on)",
+      "Audio Standards": "Hi-Res Wireless & LHDC Certified",
+      "Latency": "0.038s Low Latency Mode"
+    },
+    "pros": [
+      "Mind-blowing 100-hour maximum battery life",
+      "Officially Hi-Res certified with gorgeous clarity and response",
+      "Support for hybrid active noise cancellation",
+      "Includes a 3.5mm aux input port for analog wired playback"
+    ],
+    "cons": [
+      "The companion app requires creating an account for some features",
+      "Earcup hinges are fully plastic and require gentle handling"
+    ],
+    "darazUrl": "https://www.daraz.pk/products/baseus-bowie-h1i-i434234567.html",
+    "isFeatured": true,
+    "isTrending": true,
+    "isTopDeal": false
+  },
+  {
+    "id": "hp-03",
+    "category": "Headphones",
+    "name": "Sennheiser HD 206 Stereo Headphones",
+    "image": "https://images.unsplash.com/photo-1546435770-a3e426bf472b?q=80&w=600&auto=format&fit=crop",
+    "currentPrice": 6999,
+    "oldPrice": 9999,
+    "discount": 30,
+    "rating": 4.5,
+    "reviewsCount": 73,
+    "shortDescription": "Classic over-ear audiophile headphones with dynamic stereo sound, powerful bass, and comfortable fit.",
+    "longDescription": "The Sennheiser HD 206 is a pair of closed-back, dynamic stereo headphones for budget-conscious music lovers. Offering powerful sound reproduction, solid ambient noise attenuation, and outstanding comfort, they're perfect for listening to music, practicing instruments, or simple studio work in home environments.",
+    "specifications": {
+      "Brand": "Sennheiser",
+      "Model": "HD 206",
+      "Form Factor": "Closed-Back, Over-Ear",
+      "Frequency Response": "21 - 18,000 Hz",
+      "Impedance": "24 Ohms",
+      "Cable Length": "3.0 meters (9.8 ft)"
+    },
+    "pros": [
+      "Sennheiser signature sound reproduction quality at a stellar price",
+      "Superb ambient isolation due to tight closed-back seal",
+      "Very lightweight design makes it suitable for extended wearing",
+      "Strong gold-plated 1/4\" (6.3 mm) stereo jack adapter included"
+    ],
+    "cons": [
+      "Extra-long 3-meter cable can get easily tangled in travel setups",
+      "No built-in microphone or inline control buttons"
+    ],
+    "darazUrl": "https://www.daraz.pk/products/sennheiser-hd-206-i10034267.html",
+    "isFeatured": false,
+    "isTrending": false,
+    "isTopDeal": false
+  },
+  {
+    "id": "ma-01",
+    "category": "Mobile Accessories",
+    "name": "Anker PowerPort III 20W Cube Charger",
+    "image": "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?q=80&w=600&auto=format&fit=crop",
+    "currentPrice": 2999,
+    "oldPrice": 4500,
+    "discount": 33,
+    "rating": 4.8,
+    "reviewsCount": 512,
+    "shortDescription": "Ultra-compact 20W Power Delivery wall charger with foldable plug, ideal for high-speed charging of iPhone and Galaxy.",
+    "longDescription": "PowerPort III 20W Cube is designed with a foldable plug to offer ultimate portability and convenience. Equipped with our legendary PowerIQ 3.0 technology, it delivers high-speed charging for your smartphone. Charge an iPhone 13/14 up to 50% in just 30 minutes—that's up to 3x faster than with an original 5W charger.",
+    "specifications": {
+      "Brand": "Anker",
+      "Model": "PowerPort III Cube",
+      "Wattage": "20W PD Fast Charging",
+      "Output Port": "USB-C",
+      "Technologies": "PowerIQ 3.0, Multiprotect Safety Suite",
+      "Dimensions": "1.27 x 1.27 x 1.3 inches"
+    },
+    "pros": [
+      "Super compact cube body with collapsible premium prongs",
+      "Full compatibility with iPhones, iPads, and Samsung Super Fast Charge",
+      "MultiProtect safety system prevents overcharging and thermal spikes",
+      "Extremely robust built that withstands drop after drop"
+    ],
+    "cons": [
+      "Charging cable is not included in the retail box",
+      "Only has a single USB-C port, cannot charge multiple devices simultaneously"
+    ],
+    "darazUrl": "https://www.daraz.pk/products/anker-20w-charger-i392842103.html",
+    "isFeatured": true,
+    "isTrending": true,
+    "isTopDeal": true
+  },
+  {
+    "id": "ma-02",
+    "category": "Mobile Accessories",
+    "name": "Ugreen Premium Braided USB-C to USB-C Cable (100W)",
+    "image": "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=600&auto=format&fit=crop",
+    "currentPrice": 1450,
+    "oldPrice": 2200,
+    "discount": 34,
+    "rating": 4.9,
+    "reviewsCount": 650,
+    "shortDescription": "Heavy-duty double nylon braided fast-charging cable supporting Power Delivery 3.0 and QC 4.0 up to 100W.",
+    "longDescription": "Ugreen's USB C to USB C cable supports Power Delivery up to 100W (20V/5A), allowing you to charge your MacBooks, laptops, tablets, and phones at lightning speeds. Double-braided premium nylon ensures a lifetime of heavy bends and pulls without cracking, while aluminum-alloy premium housing keeps connector joints highly stable.",
+    "specifications": {
+      "Brand": "Ugreen",
+      "Model": "US316",
+      "Max Wattage": "100W Power Delivery",
+      "Data Transfer Rate": "Up to 480 Mbps",
+      "Length": "2 Meters (6.6 ft)",
+      "Material": "Double Nylon Braided, Aluminum Shell"
+    },
+    "pros": [
+      "Heavy-duty 100W power delivery is great for laptops and flagship smartphones",
+      "Double nylon braid tested for over 10,000 full flex bends",
+      "High-grade built-in E-Marker intelligent safety chip",
+      "Exceptional tactile feel and robust connections"
+    ],
+    "cons": [
+      "Limits data sync to USB 2.0 (480Mbps) speed, not designed for high-resolution video transfer",
+      "Slightly stiff cord feel due to protective double braiding layers"
+    ],
+    "darazUrl": "https://www.daraz.pk/products/ugreen-100w-c-to-c-i352163554.html",
+    "isFeatured": true,
+    "isTrending": false,
+    "isTopDeal": false
+  },
+  {
+    "id": "ma-03",
+    "category": "Mobile Accessories",
+    "name": "Joyroom JR-T014 20000mAh Power Bank (15W)",
+    "image": "https://images.unsplash.com/photo-1620283085439-39620a1e21c4?q=80&w=600&auto=format&fit=crop",
+    "currentPrice": 4499,
+    "oldPrice": 6999,
+    "discount": 35,
+    "rating": 4.7,
+    "reviewsCount": 240,
+    "shortDescription": "20000mAh external battery packs with LED status display, dual USB outputs, and Type-C input/output.",
+    "longDescription": "The Joyroom JR-T014 is a massive 20000mAh capacity power bank designed to keep your devices charged during travel or power outages. With 15W high-speed charging capability and a clear digital smart screen, it monitors remaining energy accurately. Simultaneously charge up to three devices to share the power.",
+    "specifications": {
+      "Brand": "Joyroom",
+      "Model": "JR-T014",
+      "Capacity": "20000mAh 3.7V (74Wh)",
+      "Max Output Power": "15W Fast Charge",
+      "Outputs": "2 x USB-A ports",
+      "Input / Output": "1 x Type-C port"
+    },
+    "pros": [
+      "Gigantic 20000mAh reserves can charge an average iPhone up to 4.5 times",
+      "Highly readable, precise digital percentage LED indicator",
+      "Allows charging 3 devices at the same time safely",
+      "Meets standard air travel safe power requirements"
+    ],
+    "cons": [
+      "Relatively heavy at 420 grams, adding weight to small daily bags",
+      "Takes around 6-7 hours to fully charge the power bank from empty"
+    ],
+    "darazUrl": "https://www.daraz.pk/products/joyroom-20000mah-i41221356.html",
+    "isFeatured": false,
+    "isTrending": true,
+    "isTopDeal": true
+  },
+  {
+    "id": "ca-01",
+    "category": "Computer Accessories",
+    "name": "Logitech MX Master 2S Wireless Mouse",
+    "image": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?q=80&w=600&auto=format&fit=crop",
+    "currentPrice": 14850,
+    "oldPrice": 22000,
+    "discount": 33,
+    "rating": 4.9,
+    "reviewsCount": 84,
+    "shortDescription": "Premium productivity mouse with 4000-DPI Darkfield tracking, dual connectivity, and flow control.",
+    "longDescription": "The Logitech MX Master 2S is the ultimate ergonomic productivity mouse. Features a precision speed-adaptive scroll wheel that auto-shifts from click-to-click to hyper-fast scrolling. Tracks seamlessly anywhere—even on glass! Utilize Logitech Flow to seamlessly navigate across three computers, copying and pasting files, text, and images between them.",
+    "specifications": {
+      "Brand": "Logitech",
+      "Model": "MX Master 2S",
+      "Sensor Resolution": "200 to 4000 DPI (set in increments of 50 DPI)",
+      "Battery Life": "Up to 70 days on a single full charge",
+      "Wireless Technology": "Unifying USB Receiver or Bluetooth Smart",
+      "Weight": "145 grams"
+    },
+    "pros": [
+      "Incredibly ergonomic contour shape relieves forearm strain",
+      "Advanced speed-adaptive dual-mode scroll wheel is highly satisfying",
+      "Logitech Flow allows absolute multi-computer control",
+      "Top-tier tracking sensor works flawlessly on glass tables"
+    ],
+    "cons": [
+      "Right-handed physical design ONLY, completely unsuited for left-handed professionals",
+      "Slightly heavy layout might not suit fast-twitch casual shooters"
+    ],
+    "darazUrl": "https://www.daraz.pk/products/logitech-mx-master-2s-i1248432.html",
+    "isFeatured": true,
+    "isTrending": true,
+    "isTopDeal": false
+  },
+  {
+    "id": "ca-02",
+    "category": "Computer Accessories",
+    "name": "Redragon K552 KUMARA Mechanical Keyboard",
+    "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?q=80&w=600&auto=format&fit=crop",
+    "currentPrice": 7999,
+    "oldPrice": 12000,
+    "discount": 33,
+    "rating": 4.7,
+    "reviewsCount": 142,
+    "shortDescription": "Premium metal-built mechanical keyboard with dust-proof red/blue switches and gorgeous RGB lighting.",
+    "longDescription": "The Redragon K552 Kumara is a tenkeyless compact mechanical keyboard featuring an industrial aircraft-grade aluminum and ABS casing. Outfitted with heavy-duty mechanical switches, it provides incredible tactile click and durability. Ideal for writers, programmers, and office workers seeking heavy tactile input feedback.",
+    "specifications": {
+      "Brand": "Redragon",
+      "Model": "K552 KUMARA",
+      "Keyboard Layout": "TKL (Tenkeyless) 87 Keys",
+      "Switches Type": "Mechanical Cherry MX Blue/Red Equivalent",
+      "Lighting": "Full RGB LED backlit",
+      "Chassis Material": "Aircraft-grade Aluminum & ABS"
+    },
+    "pros": [
+      "Super solid metal frame body provides zero flex or wobble during heavy typist sessions",
+      "Double-shot injection molded keycaps never fade or chip",
+      "Brilliant, highly adjustable RGB patterns and speeds",
+      "N-key rollover anti-ghosting design ensures zero missed keystrokes"
+    ],
+    "cons": [
+      "Blue switch option makes loud clicks, might not be suitable for quiet open office zones",
+      "Has a thick, non-detachable USB cable"
+    ],
+    "darazUrl": "https://www.daraz.pk/products/redragon-k552-kumara-i1289123.html",
+    "isFeatured": true,
+    "isTrending": false,
+    "isTopDeal": true
+  },
+  {
+    "id": "ca-03",
+    "category": "Computer Accessories",
+    "name": "Ugreen Multi-Port 7-in-1 USB-C Hub Adapter",
+    "image": "https://images.unsplash.com/photo-1547082299-de196ea013d6?q=80&w=600&auto=format&fit=crop",
+    "currentPrice": 5499,
+    "oldPrice": 8500,
+    "discount": 35,
+    "rating": 4.8,
+    "reviewsCount": 118,
+    "shortDescription": "Stunning aluminum 7-in-1 hub with 4K HDMI, 100W Power Delivery, SD/TF Reader, and 2 USB 3.0 ports.",
+    "longDescription": "Expand the functionality of your thin modern laptop using the Ugreen 7-in-1 Type-C hub. Finished in standard space gray aluminum, it incorporates a stunning 4K HDMI output for screens, a USB-C Power Delivery port supporting up to 100W, twin USB 3.0 SuperSpeed hubs, and a card reader, making it the perfect desktop companion.",
+    "specifications": {
+      "Brand": "Ugreen",
+      "Model": "CM511",
+      "Video Output": "HDMI up to 4K @ 30Hz",
+      "Power Delivery Port": "Up to 100W pass-through charging",
+      "Card Slots": "SD + Micro SD (TF) Readers",
+      "USB Ports": "2 x USB-A 3.0 (up to 5 Gbps)"
+    },
+    "pros": [
+      "Sleek aluminum chassis dissipates heat efficiently",
+      "100W power delivery is high enough to charge top-tier laptops while hubbing",
+      "Both card reader slots can be read and written simultaneously",
+      "Zero driver installations required; pure plug-and-play"
+    ],
+    "cons": [
+      "HDMI is limited to 30Hz at 4K resolution (requires 1080p for full 60Hz)",
+      "Builds up mild heat during long, high-load transfers"
+    ],
+    "darazUrl": "https://www.daraz.pk/products/ugreen-hub-7-in-1-i4283921.html",
+    "isFeatured": false,
+    "isTrending": true,
+    "isTopDeal": false
+  }
+]
