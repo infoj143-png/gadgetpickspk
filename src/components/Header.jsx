@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { Search, Menu, X, ArrowUpRight, HelpCircle, ShieldCheck, Mail, Percent, Flame, Layers } from 'lucide-react';
+import { Search, Menu, X, ArrowUpRight, HelpCircle, ShieldCheck, Mail, Percent, Flame, Layers, Scale } from 'lucide-react';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -61,6 +61,26 @@ export default function Header() {
     'Mobile Accessories',
     'Computer Accessories'
   ];
+
+  const comparisons = [
+    { label: 'Lenovo vs JBL Earbuds', path: '/compare/lenovo-vs-jbl-earbuds' },
+    { label: 'JBL vs Soundcore', path: '/compare/jbl-vs-soundcore' },
+    { label: 'Best Earbuds Under 5k', path: '/compare/best-earbuds-under-5000' },
+    { label: 'Best Headphones Under 10k', path: '/compare/best-headphones-under-10000' }
+  ];
+
+  const [isCompareDropdownOpen, setIsCompareDropdownOpen] = useState(false);
+  const compareDropdownRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutsideCompare(event) {
+      if (compareDropdownRef.current && !compareDropdownRef.current.contains(event.target)) {
+        setIsCompareDropdownOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutsideCompare);
+    return () => document.removeEventListener('mousedown', handleClickOutsideCompare);
+  }, []);
 
   return (
     <header className={`sticky top-0 z-50 w-full transition-all duration-300 border-b ${
@@ -166,6 +186,32 @@ export default function Header() {
             >
               All Products
             </Link>
+
+            {/* Comparisons Dropdown */}
+            <div className="relative" ref={compareDropdownRef}>
+              <button
+                onClick={() => setIsCompareDropdownOpen(!isCompareDropdownOpen)}
+                className="text-slate-600 hover:text-orange-500 font-semibold text-sm flex items-center gap-1 transition-colors outline-none cursor-pointer"
+              >
+                <Scale size={15} className="text-orange-500" />
+                Comparisons
+              </button>
+              {isCompareDropdownOpen && (
+                <div className="absolute right-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-slate-100 py-2 z-50">
+                  {comparisons.map((comp) => (
+                    <Link
+                      key={comp.path}
+                      to={comp.path}
+                      onClick={() => setIsCompareDropdownOpen(false)}
+                      className="block px-4 py-2.5 hover:bg-orange-50 text-slate-700 hover:text-orange-600 font-medium text-xs transition-colors"
+                    >
+                      {comp.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
             <Link
               to="/products?tag=featured"
               className="text-slate-600 hover:text-orange-500 font-semibold text-sm flex items-center gap-1"
@@ -219,6 +265,23 @@ export default function Header() {
       {/* Mobile Drawer Navigation Menu */}
       {isMobileMenuOpen && (
         <div className="lg:hidden border-t border-slate-100 bg-white shadow-inner py-4 px-6 space-y-4 animate-fadeIn">
+              <div>
+                <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Comparisons</h4>
+                <div className="grid grid-cols-2 gap-2">
+                  {comparisons.map((comp) => (
+                    <Link
+                      key={comp.path}
+                      to={comp.path}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="text-left px-3 py-2 bg-slate-50 hover:bg-orange-50 text-slate-700 hover:text-orange-600 font-semibold text-xs rounded-lg transition-colors block"
+                    >
+                      {comp.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              <div className="h-px bg-slate-100"></div>
           <div>
             <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Categories</h4>
             <div className="grid grid-cols-2 gap-2">
