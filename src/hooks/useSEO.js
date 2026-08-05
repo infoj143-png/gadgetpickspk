@@ -46,6 +46,7 @@ export function useSEO({ title, description, canonical, ogImage, ogType = 'websi
 
     // 5. Set Open Graph Type
     updateMetaTag('property', 'og:type', ogType);
+    updateMetaTag('property', 'twitter:card', 'summary_large_image');
 
     // 6. Set Canonical Link Tag
     const absoluteCanonicalUrl = canonical

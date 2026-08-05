@@ -18,6 +18,7 @@ function PageLoader() {
 const Home = lazy(() => import('./pages/Home'));
 const CategoryListing = lazy(() => import('./pages/CategoryListing'));
 const ProductDetail = lazy(() => import('./pages/ProductDetail'));
+const Compare = lazy(() => import('./pages/Compare'));
 const Contact = lazy(() => import('./pages/Contact'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const AffiliateDisclosure = lazy(() => import('./pages/AffiliateDisclosure'));
@@ -52,6 +53,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<CategoryListing />} />
             <Route path="/products/:id" element={<ProductDetail />} />
+            <Route path="/compare/:type" element={<Compare />} />
 
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />

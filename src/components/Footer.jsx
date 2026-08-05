@@ -7,10 +7,10 @@ export default function Footer() {
 
   const quickLinks = [
     { label: 'All Recommendations', href: '/products' },
-    { label: 'Featured Picks', href: '/products?tag=featured' },
-    { label: 'Best Value Deals', href: '/products?tag=deals' },
-    { label: 'Earbuds', href: '/products?category=Earbuds' },
-    { label: 'Headphones', href: '/products?category=Headphones' }
+    { label: 'Lenovo vs JBL Earbuds', href: '/compare/lenovo-vs-jbl-earbuds' },
+    { label: 'JBL vs Soundcore', href: '/compare/jbl-vs-soundcore' },
+    { label: 'Earbuds Under 5k', href: '/compare/best-earbuds-under-5000' },
+    { label: 'Headphones Under 10k', href: '/compare/best-headphones-under-10000' }
   ];
 
   const supportLinks = [
