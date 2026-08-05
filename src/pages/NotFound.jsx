@@ -1,0 +1,89 @@
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AlertCircle, ArrowLeft, ArrowUpRight, Search, Sparkles } from 'lucide-react';
+import useSEO from '../hooks/useSEO';
+
+export default function NotFound() {
+  const navigate = useNavigate();
+
+  useSEO({
+    title: '404 - Page Not Found | GadgetPicksPK',
+    description: 'The requested page could not be found. Navigate back to active earbuds, headphones and computer accessories recommendations.',
+    canonical: '/404'
+  });
+
+  return (
+    <div className="max-w-xl mx-auto px-4 py-20 text-center space-y-6">
+
+      {/* Visual Indicator */}
+      <div className="relative inline-block">
+        <div className="w-24 h-24 bg-orange-50 text-orange-500 rounded-full flex items-center justify-center mx-auto border border-orange-100/60 shadow-inner">
+          <AlertCircle size={44} />
+        </div>
+        <span className="absolute -bottom-1 -right-1 bg-slate-900 text-white text-[10px] font-black px-2 py-0.5 rounded-md shadow">
+          CODE 404
+        </span>
+      </div>
+
+      {/* Info Area */}
+      <div className="space-y-2">
+        <h1 className="text-3xl font-black text-slate-900 tracking-tight">
+          Page Not Found
+        </h1>
+        <p className="text-slate-500 text-sm leading-relaxed max-w-sm mx-auto">
+          The link you followed might be broken, or the product recommendation review has been archived by our editorial team.
+        </p>
+      </div>
+
+      {/* Structured Category redirects */}
+      <div className="bg-white p-5 rounded-2xl border border-slate-200/60 shadow-sm space-y-3 max-w-md mx-auto">
+        <h4 className="text-xs font-extrabold uppercase tracking-widest text-slate-400">Explore Active Categories</h4>
+        <div className="grid grid-cols-2 gap-2 text-xs font-bold">
+          <Link
+            to="/products?category=Earbuds"
+            className="p-2.5 bg-slate-50 hover:bg-orange-50 text-slate-700 hover:text-orange-600 rounded-xl transition-all border border-slate-100"
+          >
+            Earbuds Picks
+          </Link>
+          <Link
+            to="/products?category=Headphones"
+            className="p-2.5 bg-slate-50 hover:bg-orange-50 text-slate-700 hover:text-orange-600 rounded-xl transition-all border border-slate-100"
+          >
+            Headphones
+          </Link>
+          <Link
+            to="/products?category=Mobile%20Accessories"
+            className="p-2.5 bg-slate-50 hover:bg-orange-50 text-slate-700 hover:text-orange-600 rounded-xl transition-all border border-slate-100"
+          >
+            Mobile Accs
+          </Link>
+          <Link
+            to="/products?category=Computer%20Accessories"
+            className="p-2.5 bg-slate-50 hover:bg-orange-50 text-slate-700 hover:text-orange-600 rounded-xl transition-all border border-slate-100"
+          >
+            Computer Accs
+          </Link>
+        </div>
+      </div>
+
+      {/* Action buttons */}
+      <div className="flex justify-center gap-3">
+        <button
+          onClick={() => navigate(-1)}
+          className="px-5 py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 font-extrabold text-xs rounded-xl transition-colors inline-flex items-center gap-1.5"
+        >
+          <ArrowLeft size={16} /> Go Back
+        </button>
+
+        <Link
+          to="/"
+          className="px-5 py-3 bg-orange-500 hover:bg-orange-600 text-white font-extrabold text-xs rounded-xl shadow-md transition-colors inline-flex items-center gap-1.5"
+        >
+          Go to Homepage
+          <ArrowUpRight size={16} />
+        </Link>
+      </div>
+
+    </div>
+  );
+}
