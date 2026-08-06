@@ -61,18 +61,18 @@ export default function Contact() {
     setSubmitError('');
 
     try {
-      const response = await fetch('https://formsubmit.co/ajax/infome.daraz@gmail.com', {
+      const form = new FormData();
+      form.append('name', formData.name);
+      form.append('email', formData.email);
+      form.append('subject', formData.subject);
+      form.append('message', formData.message);
+
+      const response = await fetch('https://formsubmit.co/infome.daraz@gmail.com', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message
-        })
+        body: form
       });
 
       if (response.ok) {
