@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ChevronRight, Sparkles, AlertTriangle, ArrowLeft, ArrowUpRight, HelpCircle, Star, ThumbsUp, Layers, Flame, Percent } from 'lucide-react';
+import { ChevronRight, Sparkles, AlertTriangle, ArrowLeft, ArrowUpRight, HelpCircle, Layers, ThumbsUp } from 'lucide-react';
 import useSEO from '../hooks/useSEO';
 import productsData from '../data/products.json';
 import ProductCard from '../components/ProductCard';
@@ -88,12 +88,12 @@ export default function BuyingGuide() {
 
   if (!guide) {
     return (
-      <div className="max-w-md mx-auto px-4 py-16 text-center space-y-4">
-        <div className="w-16 h-16 bg-red-50 text-red-500 rounded-full flex items-center justify-center mx-auto">
+      <div className="max-w-md mx-auto px-4 py-16 text-center space-y-4 dark:text-white">
+        <div className="w-16 h-16 bg-red-50 dark:bg-red-950/20 text-red-500 rounded-full flex items-center justify-center mx-auto">
           <AlertTriangle size={32} />
         </div>
-        <h2 className="text-xl font-extrabold text-slate-800">Buying Guide Not Found</h2>
-        <p className="text-slate-500 text-xs sm:text-sm">
+        <h2 className="text-xl font-extrabold text-slate-800 dark:text-white">Buying Guide Not Found</h2>
+        <p className="text-slate-500 dark:text-slate-400 text-xs sm:text-sm">
           The requested buying guide slug does not exist in our system. Let's redirect you back home.
         </p>
         <Link
@@ -107,48 +107,48 @@ export default function BuyingGuide() {
   }
 
   return (
-    <div className="bg-slate-50 py-12">
+    <div className="bg-slate-50 dark:bg-slate-950 py-12 transition-colors">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
 
         {/* Breadcrumbs */}
-        <nav className="flex items-center gap-2 text-xs font-bold text-slate-500">
+        <nav className="flex items-center gap-2 text-xs font-bold text-slate-500 dark:text-slate-400">
           <Link to="/" className="hover:text-orange-500">Home</Link>
           <ChevronRight size={12} />
           <span className="text-orange-500">Buying Guides</span>
           <ChevronRight size={12} />
-          <span className="text-slate-700 font-extrabold truncate">{guide.title}</span>
+          <span className="text-slate-700 dark:text-slate-300 font-extrabold truncate">{guide.title}</span>
         </nav>
 
         {/* Hero Section */}
-        <div className="bg-white rounded-3xl border border-slate-200/60 shadow-md p-6 sm:p-10 space-y-4">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-orange-500/10 text-orange-600 border border-orange-200/40">
+        <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800 shadow-md p-6 sm:p-10 space-y-4 transition-colors">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-orange-500/10 dark:bg-orange-950/20 text-orange-600 dark:text-orange-400 border border-orange-200/40 dark:border-orange-950/50">
             <Sparkles size={12} />
             Editorial Guide
           </span>
-          <h1 className="text-2xl sm:text-4xl font-black text-slate-900 leading-tight">
+          <h1 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white leading-tight">
             {guide.title}
           </h1>
-          <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-semibold">
+          <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed font-semibold">
             {guide.intro}
           </p>
         </div>
 
         {/* Key Decision Factors */}
-        <div className="bg-white rounded-3xl border border-slate-200/60 shadow-sm p-6 sm:p-8 space-y-6">
-          <h2 className="text-xl font-black text-slate-900 flex items-center gap-2 border-b border-slate-100 pb-3">
-            <ThumbsUp className="text-orange-500" size={20} />
+        <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800 shadow-sm p-6 sm:p-8 space-y-6 transition-colors">
+          <h2 className="text-xl font-black text-slate-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-3">
+            <ThumbsUp className="text-orange-500 dark:text-orange-400" size={20} />
             Key Factors to Consider Before Buying
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {guide.keyFactors.map((factor, idx) => (
-              <div key={idx} className="bg-slate-50 p-4 rounded-2xl border border-slate-100 space-y-2">
-                <h3 className="font-extrabold text-slate-800 text-sm sm:text-base flex items-center gap-2">
-                  <span className="w-6 h-6 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center text-xs font-bold">
+              <div key={idx} className="bg-slate-50 dark:bg-slate-950 p-4 rounded-2xl border border-slate-100 dark:border-slate-800 space-y-2">
+                <h3 className="font-extrabold text-slate-800 dark:text-white text-sm sm:text-base flex items-center gap-2">
+                  <span className="w-6 h-6 rounded-lg bg-orange-100 dark:bg-orange-950 text-orange-600 dark:text-orange-400 flex items-center justify-center text-xs font-bold">
                     {idx + 1}
                   </span>
                   {factor.name}
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-500 font-semibold leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-semibold leading-relaxed">
                   {factor.desc}
                 </p>
               </div>
@@ -159,8 +159,8 @@ export default function BuyingGuide() {
         {/* Recommended Products Showcase */}
         {relatedProducts.length > 0 && (
           <section className="space-y-6">
-            <div className="flex items-center justify-between border-b border-slate-200 pb-3">
-              <h2 className="text-xl sm:text-2xl font-black text-slate-900 flex items-center gap-2">
+            <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3">
+              <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white flex items-center gap-2">
                 <Layers size={22} className="text-orange-500" />
                 Expert Recommended {guide.category} Picks
               </h2>
@@ -180,16 +180,16 @@ export default function BuyingGuide() {
         )}
 
         {/* Frequently Asked Questions */}
-        <div className="bg-white rounded-3xl border border-slate-200/60 shadow-sm p-6 sm:p-8 space-y-6">
-          <h2 className="text-xl font-black text-slate-900 flex items-center gap-2 border-b border-slate-100 pb-3">
-            <HelpCircle className="text-orange-500" size={20} />
+        <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800 shadow-sm p-6 sm:p-8 space-y-6 transition-colors">
+          <h2 className="text-xl font-black text-slate-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-3">
+            <HelpCircle className="text-orange-500 dark:text-orange-400" size={20} />
             Buying Guide FAQs
           </h2>
           <div className="space-y-4">
             {guide.faqs.map((faq, idx) => (
-              <div key={idx} className="bg-slate-50/50 p-4 rounded-xl border border-slate-100 space-y-1">
-                <h4 className="font-extrabold text-slate-800 text-sm">Q: {faq.q}</h4>
-                <p className="text-xs sm:text-sm text-slate-500 font-semibold leading-relaxed">
+              <div key={idx} className="bg-slate-50/50 dark:bg-slate-950/20 p-4 rounded-xl border border-slate-100 dark:border-slate-800 space-y-1">
+                <h4 className="font-extrabold text-slate-800 dark:text-white text-sm">Q: {faq.q}</h4>
+                <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-semibold leading-relaxed">
                   A: {faq.a}
                 </p>
               </div>

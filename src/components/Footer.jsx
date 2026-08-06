@@ -24,7 +24,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-slate-900 text-slate-300 border-t-4 border-orange-500 pt-16 pb-8">
+    <footer className="bg-slate-900 dark:bg-slate-950 text-slate-300 border-t-4 border-orange-500 pt-16 pb-8 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Upper Footer Grid */}
@@ -43,7 +43,7 @@ export default function Footer() {
             <p className="text-slate-400 text-sm leading-relaxed font-medium">
               Pakistan's premier premium lifestyle, kitchen, & home accessories curating catalog. We source, inspect, and link only highly rated, genuine products from Daraz for household enthusiasts.
             </p>
-            <div className="flex items-center gap-2 text-xs bg-slate-800 p-3 rounded-lg text-slate-400 border border-slate-700 font-semibold">
+            <div className="flex items-center gap-2 text-xs bg-slate-800 dark:bg-slate-900 p-3 rounded-lg text-slate-400 border border-slate-700 dark:border-slate-800 font-semibold">
               <ShieldAlert size={20} className="text-orange-500 flex-shrink-0" />
               <span>We may earn an affiliate commission when you buy through our links. No extra charge to you.</span>
             </div>
@@ -51,7 +51,7 @@ export default function Footer() {
 
           {/* Column 2: Quick Links */}
           <div>
-            <h4 className="text-white font-extrabold text-sm uppercase tracking-wider mb-5 pb-1 border-b border-slate-800 inline-block">
+            <h4 className="text-white font-extrabold text-sm uppercase tracking-wider mb-5 pb-1 border-b border-slate-800 dark:border-slate-800 inline-block">
               Quick Navigation
             </h4>
             <ul className="space-y-3 text-sm font-semibold">
@@ -59,9 +59,9 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     to={link.href}
-                    className="hover:text-orange-500 transition-colors flex items-center gap-1 group"
+                    className="hover:text-orange-500 dark:hover:text-orange-400 transition-colors flex items-center gap-1 group"
                   >
-                    <ArrowUpRight size={14} className="text-slate-600 group-hover:text-orange-500 transition-colors" />
+                    <ArrowUpRight size={14} className="text-slate-600 dark:text-slate-500 group-hover:text-orange-500 dark:group-hover:text-orange-400 transition-colors" />
                     {link.label}
                   </Link>
                 </li>
@@ -71,7 +71,7 @@ export default function Footer() {
 
           {/* Column 3: Policy / Support */}
           <div>
-            <h4 className="text-white font-extrabold text-sm uppercase tracking-wider mb-5 pb-1 border-b border-slate-800 inline-block">
+            <h4 className="text-white font-extrabold text-sm uppercase tracking-wider mb-5 pb-1 border-b border-slate-800 dark:border-slate-800 inline-block">
               Trust & Support
             </h4>
             <ul className="space-y-3 text-sm font-semibold">
@@ -79,9 +79,9 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     to={link.href}
-                    className="hover:text-orange-500 transition-colors flex items-center gap-1 group"
+                    className="hover:text-orange-500 dark:hover:text-orange-400 transition-colors flex items-center gap-1 group"
                   >
-                    <FileText size={14} className="text-slate-600 group-hover:text-orange-500 transition-colors" />
+                    <FileText size={14} className="text-slate-600 dark:text-slate-500 group-hover:text-orange-500 dark:group-hover:text-orange-400 transition-colors" />
                     {link.label}
                   </Link>
                 </li>
@@ -91,7 +91,7 @@ export default function Footer() {
 
           {/* Column 4: Contact/Location Info */}
           <div>
-            <h4 className="text-white font-extrabold text-sm uppercase tracking-wider mb-5 pb-1 border-b border-slate-800 inline-block">
+            <h4 className="text-white font-extrabold text-sm uppercase tracking-wider mb-5 pb-1 border-b border-slate-800 dark:border-slate-800 inline-block">
               Reach Out
             </h4>
             <ul className="space-y-4 text-sm text-slate-400 font-semibold">
@@ -101,11 +101,11 @@ export default function Footer() {
               </li>
               <li className="flex gap-2">
                 <Mail size={18} className="text-orange-500 flex-shrink-0" />
-                <a href="mailto:support@gadgetpickspk.com" className="hover:text-orange-500 transition-colors">
+                <a href="mailto:support@gadgetpickspk.com" className="hover:text-orange-500 dark:hover:text-orange-400 transition-colors">
                   support@gadgetpickspk.com
                 </a>
               </li>
-              <li className="flex items-center gap-2 text-xs bg-slate-800/50 p-2.5 rounded border border-slate-800">
+              <li className="flex items-center gap-2 text-xs bg-slate-800/50 dark:bg-slate-900/50 p-2.5 rounded border border-slate-800 dark:border-slate-800">
                 <CheckCircle size={14} className="text-emerald-500" />
                 <span>Responsive within 24 hours</span>
               </li>
@@ -114,14 +114,14 @@ export default function Footer() {
         </div>
 
         {/* Separator */}
-        <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500 font-semibold">
+        <div className="border-t border-slate-800 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500 font-semibold">
           <div>
             &copy; {currentYear} <span className="text-slate-400">GadgetPicksPK</span>. All Rights Reserved. Made for Pakistan with ❤️.
           </div>
           <div className="flex gap-4">
-            <Link to="/privacy-policy" className="hover:text-orange-500 transition-colors">Privacy Policy</Link>
+            <Link to="/privacy-policy" className="hover:text-orange-500 dark:hover:text-orange-400 transition-colors">Privacy Policy</Link>
             <span>&bull;</span>
-            <Link to="/disclosure" className="hover:text-orange-500 transition-colors">Affiliate Disclosure</Link>
+            <Link to="/disclosure" className="hover:text-orange-500 dark:hover:text-orange-400 transition-colors">Affiliate Disclosure</Link>
           </div>
         </div>
 

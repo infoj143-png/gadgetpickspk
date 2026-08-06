@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, MessageSquare, ShieldCheck, MapPin, CheckCircle2, Send, Clock, AlertCircle } from 'lucide-react';
+import { Mail, MessageSquare, MapPin, CheckCircle2, Send, Clock, AlertCircle } from 'lucide-react';
 import useSEO from '../hooks/useSEO';
 
 export default function Contact() {
@@ -102,22 +102,22 @@ export default function Contact() {
         <div className="lg:col-span-2 space-y-6">
           <div className="space-y-2">
             <span className="text-xs font-extrabold uppercase tracking-widest text-orange-500">Reach Out</span>
-            <h1 className="text-2xl sm:text-3xl font-black text-slate-900 leading-tight">Get in Touch</h1>
-            <p className="text-slate-500 text-sm leading-relaxed">
+            <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white leading-tight">Get in Touch</h1>
+            <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
               Have questions regarding verified seller recommendations, technical specs, or partnership inquiries? Drop us a line.
             </p>
           </div>
 
-          <div className="bg-white p-5 rounded-2xl border border-slate-200/60 shadow-sm space-y-5">
+          <div className="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200/60 dark:border-slate-800 shadow-sm space-y-5 transition-colors">
 
             {/* Box 1: Email channel */}
             <div className="flex gap-4 items-start">
-              <div className="w-10 h-10 bg-orange-50 text-orange-500 rounded-xl flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-orange-50 dark:bg-orange-950/20 text-orange-500 rounded-xl flex items-center justify-center flex-shrink-0">
                 <Mail size={18} />
               </div>
               <div className="space-y-0.5">
-                <h4 className="text-xs font-extrabold uppercase tracking-widest text-slate-400">Email Address</h4>
-                <a href="mailto:support@gadgetpickspk.com" className="text-sm font-bold text-slate-800 hover:text-orange-500 transition-colors">
+                <h4 className="text-xs font-extrabold uppercase tracking-widest text-slate-400 dark:text-slate-500">Email Address</h4>
+                <a href="mailto:support@gadgetpickspk.com" className="text-sm font-bold text-slate-800 dark:text-white hover:text-orange-500 dark:hover:text-orange-400 transition-colors">
                   support@gadgetpickspk.com
                 </a>
               </div>
@@ -125,12 +125,12 @@ export default function Contact() {
 
             {/* Box 2: Location info */}
             <div className="flex gap-4 items-start">
-              <div className="w-10 h-10 bg-orange-50 text-orange-500 rounded-xl flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-orange-50 dark:bg-orange-950/20 text-orange-500 rounded-xl flex items-center justify-center flex-shrink-0">
                 <MapPin size={18} />
               </div>
               <div className="space-y-0.5">
-                <h4 className="text-xs font-extrabold uppercase tracking-widest text-slate-400">Headquarters</h4>
-                <p className="text-sm font-bold text-slate-800">
+                <h4 className="text-xs font-extrabold uppercase tracking-widest text-slate-400 dark:text-slate-500">Headquarters</h4>
+                <p className="text-sm font-bold text-slate-800 dark:text-white">
                   Karachi, Sindh, Pakistan
                 </p>
               </div>
@@ -138,12 +138,12 @@ export default function Contact() {
 
             {/* Box 3: Reply SLA */}
             <div className="flex gap-4 items-start">
-              <div className="w-10 h-10 bg-orange-50 text-orange-500 rounded-xl flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-orange-50 dark:bg-orange-950/20 text-orange-500 rounded-xl flex items-center justify-center flex-shrink-0">
                 <Clock size={18} />
               </div>
               <div className="space-y-0.5">
-                <h4 className="text-xs font-extrabold uppercase tracking-widest text-slate-400">Standard Response SLA</h4>
-                <p className="text-sm font-bold text-slate-800">
+                <h4 className="text-xs font-extrabold uppercase tracking-widest text-slate-400 dark:text-slate-500">Standard Response SLA</h4>
+                <p className="text-sm font-bold text-slate-800 dark:text-white">
                   Within 24 business hours
                 </p>
               </div>
@@ -152,7 +152,7 @@ export default function Contact() {
           </div>
 
           {/* Sincere Trust Banner */}
-          <div className="bg-gradient-to-br from-slate-900 to-slate-850 p-5 rounded-2xl text-white space-y-2.5">
+          <div className="bg-gradient-to-br from-slate-900 to-slate-800 dark:from-slate-950 dark:to-slate-900 p-5 rounded-2xl text-white space-y-2.5 transition-colors border border-transparent dark:border-slate-800">
             <h4 className="font-extrabold text-sm flex items-center gap-1.5 text-orange-400">
               <MessageSquare size={16} /> Technical Consultations
             </h4>
@@ -163,7 +163,7 @@ export default function Contact() {
         </div>
 
         {/* Right Side: High-UX Validation Contact Form */}
-        <div className="lg:col-span-3 bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/60 shadow-md">
+        <div className="lg:col-span-3 bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-3xl border border-slate-200/60 dark:border-slate-800 shadow-md transition-colors text-slate-900 dark:text-white">
 
           <AnimatePresence mode="wait">
             {!submitSuccess ? (
@@ -179,12 +179,12 @@ export default function Contact() {
               >
                 {/* Subject Selector drop */}
                 <div className="space-y-1.5">
-                  <label className="text-xs font-extrabold text-slate-500 uppercase tracking-wider">Inquiry Subject</label>
+                  <label className="text-xs font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Inquiry Subject</label>
                   <select
                     name="subject"
                     value={formData.subject}
                     onChange={handleInputChange}
-                    className="w-full bg-slate-50 border border-slate-200 focus:border-orange-500 rounded-xl text-xs font-semibold p-3 outline-none transition-colors"
+                    className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-750 rounded-xl text-xs font-semibold p-3 outline-none transition-colors dark:text-white"
                   >
                     <option value="General Inquiry">General Inquiry / Question</option>
                     <option value="Technical Question">Technical Accessory Query</option>
@@ -195,15 +195,15 @@ export default function Contact() {
 
                 {/* Name Row */}
                 <div className="space-y-1.5">
-                  <label className="text-xs font-extrabold text-slate-500 uppercase tracking-wider">Full Name</label>
+                  <label className="text-xs font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Full Name</label>
                   <input
                     type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
                     placeholder="Enter your name (e.g. Asim Khan)"
-                    className={`w-full px-4 py-2.5 bg-slate-50 border rounded-xl text-xs font-semibold outline-none transition-all placeholder:text-slate-400 ${
-                      errors.name ? 'border-red-400 focus:ring-1 focus:ring-red-200' : 'border-slate-200 focus:border-orange-500'
+                    className={`w-full px-4 py-2.5 bg-slate-50 dark:bg-slate-800 border rounded-xl text-xs font-semibold outline-none transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500 dark:text-white ${
+                      errors.name ? 'border-red-400 focus:ring-1 focus:ring-red-200' : 'border-slate-200 dark:border-slate-750 focus:border-orange-500 dark:focus:border-orange-500'
                     }`}
                   />
                   {errors.name && (
@@ -213,15 +213,15 @@ export default function Contact() {
 
                 {/* Email Row */}
                 <div className="space-y-1.5">
-                  <label className="text-xs font-extrabold text-slate-500 uppercase tracking-wider">Email Address</label>
+                  <label className="text-xs font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Email Address</label>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
                     placeholder="Enter email (e.g. asim@gmail.com)"
-                    className={`w-full px-4 py-2.5 bg-slate-50 border rounded-xl text-xs font-semibold outline-none transition-all placeholder:text-slate-400 ${
-                      errors.email ? 'border-red-400 focus:ring-1 focus:ring-red-200' : 'border-slate-200 focus:border-orange-500'
+                    className={`w-full px-4 py-2.5 bg-slate-50 dark:bg-slate-800 border rounded-xl text-xs font-semibold outline-none transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500 dark:text-white ${
+                      errors.email ? 'border-red-400 focus:ring-1 focus:ring-red-200' : 'border-slate-200 dark:border-slate-750 focus:border-orange-500 dark:focus:border-orange-500'
                     }`}
                   />
                   {errors.email && (
@@ -231,15 +231,15 @@ export default function Contact() {
 
                 {/* Message block */}
                 <div className="space-y-1.5">
-                  <label className="text-xs font-extrabold text-slate-500 uppercase tracking-wider">Your Message</label>
+                  <label className="text-xs font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Your Message</label>
                   <textarea
                     name="message"
                     rows={5}
                     value={formData.message}
                     onChange={handleInputChange}
                     placeholder="Describe how we can help you..."
-                    className={`w-full px-4 py-2.5 bg-slate-50 border rounded-xl text-xs font-semibold outline-none transition-all placeholder:text-slate-400 ${
-                      errors.message ? 'border-red-400 focus:ring-1 focus:ring-red-200' : 'border-slate-200 focus:border-orange-500'
+                    className={`w-full px-4 py-2.5 bg-slate-50 dark:bg-slate-800 border rounded-xl text-xs font-semibold outline-none transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500 dark:text-white ${
+                      errors.message ? 'border-red-400 focus:ring-1 focus:ring-red-200' : 'border-slate-200 dark:border-slate-750 focus:border-orange-500 dark:focus:border-orange-500'
                     }`}
                   />
                   {errors.message && (
@@ -248,7 +248,7 @@ export default function Contact() {
                 </div>
 
                 {submitError && (
-                  <div className="p-3.5 bg-red-50 border border-red-200/60 rounded-xl text-red-600 flex items-start gap-2.5 text-xs font-semibold leading-relaxed">
+                  <div className="p-3.5 bg-red-50 dark:bg-red-950/20 border border-red-200/60 dark:border-red-900/40 rounded-xl text-red-600 dark:text-red-400 flex items-start gap-2.5 text-xs font-semibold leading-relaxed">
                     <AlertCircle className="flex-shrink-0 text-red-500 mt-0.5" size={16} />
                     <span>{submitError}</span>
                   </div>
@@ -278,16 +278,16 @@ export default function Contact() {
                 animate={{ opacity: 1, scale: 1 }}
                 className="text-center py-10 space-y-4"
               >
-                <div className="w-16 h-16 bg-emerald-50 text-emerald-500 rounded-full flex items-center justify-center mx-auto border border-emerald-100">
+                <div className="w-16 h-16 bg-emerald-50 dark:bg-emerald-950/20 text-emerald-500 rounded-full flex items-center justify-center mx-auto border border-emerald-100 dark:border-emerald-900/50">
                   <CheckCircle2 size={36} />
                 </div>
-                <h3 className="text-xl font-extrabold text-slate-800">Message Sent Successfully!</h3>
-                <p className="text-slate-500 text-sm max-w-sm mx-auto leading-relaxed">
+                <h3 className="text-xl font-extrabold text-slate-800 dark:text-white">Message Sent Successfully!</h3>
+                <p className="text-slate-500 dark:text-slate-400 text-sm max-w-sm mx-auto leading-relaxed">
                   Thank you for reaching out. A tech specialist has received your inquiry and will revert within 24 hours.
                 </p>
                 <button
                   onClick={() => setSubmitSuccess(false)}
-                  className="px-5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-extrabold text-xs rounded-xl transition-colors"
+                  className="px-5 py-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-750 text-slate-700 dark:text-slate-300 font-extrabold text-xs rounded-xl transition-colors"
                 >
                   Send another message
                 </button>

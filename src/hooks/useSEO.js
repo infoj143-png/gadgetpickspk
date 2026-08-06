@@ -32,21 +32,21 @@ export function useSEO({ title, description, canonical, ogImage, ogType = 'websi
     // 2. Set Meta Description
     updateMetaTag('name', 'description', description);
     updateMetaTag('property', 'og:description', description);
-    updateMetaTag('property', 'twitter:description', description);
+    updateMetaTag('name', 'twitter:description', description);
 
     // 3. Set Open Graph Title
     updateMetaTag('property', 'og:title', formattedTitle);
-    updateMetaTag('property', 'twitter:title', formattedTitle);
+    updateMetaTag('name', 'twitter:title', formattedTitle);
 
     // 4. Set Open Graph Image
     if (ogImage) {
       updateMetaTag('property', 'og:image', ogImage);
-      updateMetaTag('property', 'twitter:image', ogImage);
+      updateMetaTag('name', 'twitter:image', ogImage);
     }
 
     // 5. Set Open Graph Type
     updateMetaTag('property', 'og:type', ogType);
-    updateMetaTag('property', 'twitter:card', 'summary_large_image');
+    updateMetaTag('name', 'twitter:card', 'summary_large_image');
 
     // 6. Set Canonical Link Tag
     const absoluteCanonicalUrl = canonical

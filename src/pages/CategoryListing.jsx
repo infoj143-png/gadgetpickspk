@@ -2,16 +2,12 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import {
   SlidersHorizontal,
-  Search,
   X,
   Star,
   ArrowUpDown,
   ChevronRight,
-  Sparkles,
   RefreshCw,
   FolderOpen,
-  Tag,
-  Percent,
   Check
 } from 'lucide-react';
 import useSEO from '../hooks/useSEO';
@@ -180,7 +176,7 @@ export default function CategoryListing() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
       {/* Breadcrumb Navigation */}
-      <nav className="flex items-center gap-2 text-xs font-bold text-slate-500 mb-6">
+      <nav className="flex items-center gap-2 text-xs font-bold text-slate-500 dark:text-slate-400 mb-6">
         <Link to="/" className="hover:text-orange-500">Home</Link>
         <ChevronRight size={12} />
         <span className="text-orange-500">Products Catalog</span>
@@ -188,10 +184,10 @@ export default function CategoryListing() {
 
       {/* Header Info */}
       <div className="mb-8">
-        <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+        <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
           Recommendations Smart Search
         </h1>
-        <p className="text-xs sm:text-sm text-slate-500 mt-1 leading-relaxed">
+        <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
           Filter through {filteredProducts.length} premium, verified gear items in Pakistan.
         </p>
       </div>
@@ -200,15 +196,15 @@ export default function CategoryListing() {
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
 
         {/* Left Side Filters Bar */}
-        <aside className="lg:col-span-1 space-y-6 bg-white p-6 rounded-3xl border border-slate-200/60 shadow-sm self-start">
-          <div className="flex items-center justify-between pb-4 border-b border-slate-100">
-            <h3 className="font-extrabold text-slate-900 flex items-center gap-2 text-base">
+        <aside className="lg:col-span-1 space-y-6 bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200/60 dark:border-slate-800 shadow-sm self-start transition-colors">
+          <div className="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800">
+            <h3 className="font-extrabold text-slate-900 dark:text-white flex items-center gap-2 text-base">
               <SlidersHorizontal size={18} className="text-orange-500" />
               Filter Tools
             </h3>
             <button
               onClick={handleResetFilters}
-              className="text-xs font-bold text-orange-500 hover:text-orange-600 flex items-center gap-1 hover:underline cursor-pointer"
+              className="text-xs font-bold text-orange-500 dark:text-orange-400 hover:text-orange-600 dark:hover:text-orange-300 flex items-center gap-1 hover:underline cursor-pointer"
             >
               <RefreshCw size={12} /> Reset
             </button>
@@ -226,12 +222,12 @@ export default function CategoryListing() {
                   setSearchQuery(e.target.value);
                   updateFilters('search', e.target.value);
                 }}
-                className="w-full pl-3 pr-8 py-2.5 bg-slate-50 border border-slate-200 focus:border-orange-500 rounded-xl text-xs outline-none transition-all placeholder:text-slate-400 font-semibold"
+                className="w-full pl-3 pr-8 py-2.5 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:border-orange-500 focus:ring-1 dark:focus:ring-orange-500 rounded-xl text-xs outline-none transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500 dark:text-white font-semibold"
               />
               {searchQuery && (
                 <button
                   onClick={() => { setSearchQuery(''); updateFilters('search', ''); }}
-                  className="absolute right-2.5 text-slate-400 hover:text-slate-600 cursor-pointer"
+                  className="absolute right-2.5 text-slate-400 hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300 cursor-pointer"
                 >
                   <X size={14} />
                 </button>
@@ -250,7 +246,7 @@ export default function CategoryListing() {
                   className={`w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-extrabold transition-colors flex justify-between items-center cursor-pointer ${
                     selectedCategory.toLowerCase() === cat.toLowerCase()
                       ? 'bg-orange-500 text-white shadow-md'
-                      : 'bg-slate-50 hover:bg-slate-100 text-slate-700'
+                      : 'bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200'
                   }`}
                 >
                   <span>{cat}</span>
@@ -262,7 +258,7 @@ export default function CategoryListing() {
 
           {/* Dynamic Brand Checklist Sub-Filter */}
           <div className="space-y-2">
-            <label className="text-xs font-extrabold uppercase tracking-widest text-slate-400 block pb-1 border-b border-slate-100">
+            <label className="text-xs font-extrabold uppercase tracking-widest text-slate-400 block pb-1 border-b border-slate-100 dark:border-slate-800">
               Filter By Brand
             </label>
             <div className="max-h-48 overflow-y-auto space-y-2 pr-1 pt-1">
@@ -270,12 +266,12 @@ export default function CategoryListing() {
                 <button
                   key={brand}
                   onClick={() => toggleBrand(brand)}
-                  className="flex items-center gap-2 w-full text-left cursor-pointer group text-xs font-bold text-slate-700 hover:text-orange-500 transition-colors"
+                  className="flex items-center gap-2 w-full text-left cursor-pointer group text-xs font-bold text-slate-700 dark:text-slate-300 hover:text-orange-500 transition-colors"
                 >
                   <div className={`w-4.5 h-4.5 rounded border flex items-center justify-center transition-all ${
                     selectedBrands.includes(brand)
                       ? 'bg-orange-500 border-orange-500 text-white'
-                      : 'border-slate-300 bg-slate-50 group-hover:border-orange-300'
+                      : 'border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 group-hover:border-orange-300'
                   }`}>
                     {selectedBrands.includes(brand) && <Check size={11} strokeWidth={3} />}
                   </div>
@@ -295,8 +291,8 @@ export default function CategoryListing() {
                   onClick={() => updateFilters('tag', tg)}
                   className={`px-3 py-1.5 rounded-xl text-xs font-extrabold transition-all border cursor-pointer ${
                     selectedTag.toLowerCase() === tg.toLowerCase()
-                      ? 'bg-slate-950 border-slate-950 text-white shadow-md'
-                      : 'bg-white border-slate-200 hover:bg-slate-50 text-slate-600'
+                      ? 'bg-slate-950 dark:bg-slate-800 border-slate-950 dark:border-slate-700 text-white shadow-md'
+                      : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300'
                   }`}
                 >
                   {tg}
@@ -309,7 +305,7 @@ export default function CategoryListing() {
           <div className="space-y-2">
             <div className="flex justify-between items-center">
               <label className="text-xs font-extrabold uppercase tracking-widest text-slate-400">Max Budget</label>
-              <span className="text-xs font-bold text-orange-500">{formatCurrency(priceRange)}</span>
+              <span className="text-xs font-bold text-orange-500 dark:text-orange-400">{formatCurrency(priceRange)}</span>
             </div>
             <input
               type="range"
@@ -320,7 +316,7 @@ export default function CategoryListing() {
               onChange={(e) => setPriceRange(Number(e.target.value))}
               className="w-full accent-orange-500 cursor-pointer"
             />
-            <div className="flex justify-between text-[10px] text-slate-400 font-semibold">
+            <div className="flex justify-between text-[10px] text-slate-400 dark:text-slate-500 font-semibold">
               <span>{formatCurrency(1000)}</span>
               <span>{formatCurrency(20000)}</span>
             </div>
@@ -337,7 +333,7 @@ export default function CategoryListing() {
                   className={`flex-1 py-1.5 rounded-xl text-xs font-extrabold border flex items-center justify-center gap-1 transition-colors cursor-pointer ${
                     minRating === rating
                       ? 'bg-amber-500 border-amber-500 text-white shadow-sm'
-                      : 'bg-white border-slate-200 hover:bg-amber-50 hover:text-amber-600 text-slate-600'
+                      : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 hover:bg-amber-50 hover:text-amber-600 dark:hover:bg-amber-950/30 text-slate-600 dark:text-slate-300'
                   }`}
                 >
                   <Star size={10} fill={rating > 0 ? "currentColor" : "none"} />
@@ -353,7 +349,7 @@ export default function CategoryListing() {
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="w-full bg-slate-50 border border-slate-200 focus:border-orange-500 rounded-xl text-xs font-extrabold p-2.5 outline-none transition-colors"
+              className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:border-orange-500 dark:focus:border-orange-500 rounded-xl text-xs font-extrabold p-2.5 outline-none transition-colors dark:text-white"
             >
               <option value="rating-desc">Highest Rating First</option>
               <option value="popularity">Popularity (Most Reviewed)</option>
@@ -369,22 +365,22 @@ export default function CategoryListing() {
         <section className="lg:col-span-3 space-y-6">
 
           {/* Active filters status bar */}
-          <div className="flex flex-wrap items-center justify-between gap-3 bg-white p-4 rounded-xl border border-slate-200/60 text-xs text-slate-500 font-semibold">
+          <div className="flex flex-wrap items-center justify-between gap-3 bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200/60 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 font-semibold transition-colors">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="text-slate-400">Active Tags:</span>
-              <span className="bg-orange-50 text-orange-600 px-2 py-0.5 rounded-md font-bold uppercase text-[10px]">
+              <span className="text-slate-400 dark:text-slate-500">Active Tags:</span>
+              <span className="bg-orange-50 dark:bg-orange-950/30 text-orange-600 dark:text-orange-400 px-2 py-0.5 rounded-md font-bold uppercase text-[10px]">
                 Category: {selectedCategory}
               </span>
-              <span className="bg-slate-100 text-slate-700 px-2 py-0.5 rounded-md font-bold uppercase text-[10px]">
+              <span className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 px-2 py-0.5 rounded-md font-bold uppercase text-[10px]">
                 Tag: {selectedTag}
               </span>
               {selectedBrands.length > 0 && (
-                <span className="bg-blue-50 text-blue-700 px-2 py-0.5 rounded-md font-bold uppercase text-[10px]">
+                <span className="bg-blue-50 dark:bg-blue-950/30 text-blue-700 dark:text-blue-400 px-2 py-0.5 rounded-md font-bold uppercase text-[10px]">
                   Brands ({selectedBrands.length})
                 </span>
               )}
               {minRating > 0 && (
-                <span className="bg-amber-50 text-amber-700 px-2 py-0.5 rounded-md font-bold uppercase text-[10px] flex items-center gap-0.5">
+                <span className="bg-amber-50 dark:bg-amber-950/20 text-amber-700 dark:text-amber-400 px-2 py-0.5 rounded-md font-bold uppercase text-[10px] flex items-center gap-0.5">
                   <Star size={10} fill="currentColor" /> {minRating}+ Stars
                 </span>
               )}
@@ -407,12 +403,12 @@ export default function CategoryListing() {
             </div>
           ) : (
             /* Empty Fallback State */
-            <div className="bg-white rounded-2xl border border-slate-200/60 p-12 text-center max-w-md mx-auto space-y-4">
-              <div className="w-16 h-16 bg-orange-50 text-orange-500 rounded-full flex items-center justify-center mx-auto">
+            <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/60 dark:border-slate-800 p-12 text-center max-w-md mx-auto space-y-4 transition-colors">
+              <div className="w-16 h-16 bg-orange-50 dark:bg-orange-950/40 text-orange-500 rounded-full flex items-center justify-center mx-auto">
                 <FolderOpen size={30} />
               </div>
-              <h3 className="font-extrabold text-slate-800 text-lg">No Recommendations Found</h3>
-              <p className="text-slate-500 text-xs leading-relaxed">
+              <h3 className="font-extrabold text-slate-800 dark:text-white text-lg">No Recommendations Found</h3>
+              <p className="text-slate-500 dark:text-slate-400 text-xs leading-relaxed">
                 We couldn't find any products matching your specific filters. Try loosening your budget slider or picking a wider category.
               </p>
               <button

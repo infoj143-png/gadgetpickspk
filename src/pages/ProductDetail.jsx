@@ -16,10 +16,6 @@ import {
   Clock,
   Sparkles,
   HelpCircle,
-  Copy,
-  Check,
-  Heart,
-  Eye,
   FileText
 } from 'lucide-react';
 import useSEO from '../hooks/useSEO';
@@ -149,7 +145,7 @@ export default function ProductDetail() {
 
   if (loading) {
     return (
-      <div className="py-12 bg-slate-50">
+      <div className="py-12 bg-slate-50 dark:bg-slate-950">
         <DetailPageSkeleton />
       </div>
     );
@@ -157,12 +153,12 @@ export default function ProductDetail() {
 
   if (!product) {
     return (
-      <div className="max-w-md mx-auto px-4 py-16 text-center space-y-4">
-        <div className="w-16 h-16 bg-red-50 text-red-500 rounded-full flex items-center justify-center mx-auto">
+      <div className="max-w-md mx-auto px-4 py-16 text-center space-y-4 dark:text-white">
+        <div className="w-16 h-16 bg-red-50 dark:bg-red-950/20 text-red-500 rounded-full flex items-center justify-center mx-auto">
           <AlertTriangle size={32} />
         </div>
-        <h2 className="text-xl font-extrabold text-slate-800">Recommendation Item Not Found</h2>
-        <p className="text-slate-500 text-xs sm:text-sm">
+        <h2 className="text-xl font-extrabold text-slate-800 dark:text-white">Recommendation Item Not Found</h2>
+        <p className="text-slate-500 dark:text-slate-400 text-xs sm:text-sm">
           The requested product ID does not exist in our catalog index. Let's redirect you back to active catalog.
         </p>
         <Link
@@ -179,11 +175,11 @@ export default function ProductDetail() {
   const galleryImages = product.images && product.images.length > 0 ? product.images : [product.image];
 
   return (
-    <div className="bg-slate-50 py-8 relative">
+    <div className="bg-slate-50 dark:bg-slate-950 py-8 relative transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Breadcrumb Section */}
-        <nav className="flex flex-wrap items-center gap-2 text-xs font-bold text-slate-500 mb-6">
+        <nav className="flex flex-wrap items-center gap-2 text-xs font-bold text-slate-500 dark:text-slate-400 mb-6">
           <Link to="/" className="hover:text-orange-500">Home</Link>
           <ChevronRight size={12} />
           <Link to="/products" className="hover:text-orange-500">Products Catalog</Link>
@@ -192,11 +188,11 @@ export default function ProductDetail() {
         </nav>
 
         {/* Outer Grid Panel: Product Info */}
-        <div className="bg-white rounded-3xl border border-slate-200/60 shadow-md p-6 sm:p-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-12">
+        <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800 shadow-md p-6 sm:p-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-12 transition-colors">
 
           {/* Left Column: Interactive Image Gallery */}
           <div className="space-y-4">
-            <div className="relative aspect-square bg-slate-50 rounded-2xl overflow-hidden border border-slate-100">
+            <div className="relative aspect-square bg-slate-50 dark:bg-slate-950 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-800">
               <ImageLazy
                 src={activeImage || product.image}
                 alt={product.name}
@@ -211,7 +207,7 @@ export default function ProductDetail() {
               )}
 
               {/* Status Badge */}
-              <div className="absolute top-4 right-4 bg-slate-900/80 backdrop-blur-xs text-white text-[9px] font-bold px-2.5 py-1 rounded-lg">
+              <div className="absolute top-4 right-4 bg-slate-900/80 dark:bg-slate-950/80 backdrop-blur-xs text-white text-[9px] font-bold px-2.5 py-1 rounded-lg">
                 {product.availability || 'In Stock'}
               </div>
             </div>
@@ -224,7 +220,7 @@ export default function ProductDetail() {
                     key={idx}
                     onClick={() => setActiveImage(imgUrl)}
                     className={`w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden border-2 flex-shrink-0 transition-all ${
-                      activeImage === imgUrl ? 'border-orange-500 ring-2 ring-orange-200' : 'border-slate-200 hover:border-slate-300'
+                      activeImage === imgUrl ? 'border-orange-500 ring-2 ring-orange-200' : 'border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700'
                     }`}
                   >
                     <img
@@ -238,18 +234,18 @@ export default function ProductDetail() {
             )}
 
             {/* Seller Certification Seal */}
-            <div className="bg-orange-50 border border-orange-200/60 rounded-2xl p-4 space-y-3">
+            <div className="bg-orange-50 dark:bg-slate-950 border border-orange-200/60 dark:border-slate-800 rounded-2xl p-4 space-y-3">
               <div className="flex gap-3 items-start">
-                <ShieldCheck className="text-orange-500 flex-shrink-0 mt-0.5" size={20} />
+                <ShieldCheck className="text-orange-500 dark:text-orange-400 flex-shrink-0 mt-0.5" size={20} />
                 <div className="space-y-0.5">
-                  <h4 className="text-xs font-extrabold text-orange-900">Genuine Affiliate Outbound Link</h4>
-                  <p className="text-[11px] text-orange-850 leading-relaxed font-semibold">
+                  <h4 className="text-xs font-extrabold text-orange-900 dark:text-orange-400">Genuine Affiliate Outbound Link</h4>
+                  <p className="text-[11px] text-orange-850 dark:text-slate-300 leading-relaxed font-semibold">
                     We verify sellers, ratings, and track markdown prices. Clicking "View on Daraz" takes you directly to the top rated merchant store.
                   </p>
                 </div>
               </div>
-              <div className="border-t border-orange-200/40 pt-2.5 flex gap-2 items-start text-[10px] text-orange-950 font-semibold bg-orange-100/30 p-2.5 rounded-xl">
-                <AlertTriangle className="text-orange-600 flex-shrink-0 mt-0.5" size={16} />
+              <div className="border-t border-orange-200/40 dark:border-slate-800 pt-2.5 flex gap-2 items-start text-[10px] text-orange-950 dark:text-orange-300 font-semibold bg-orange-100/30 dark:bg-orange-950/20 p-2.5 rounded-xl">
+                <AlertTriangle className="text-orange-600 dark:text-orange-400 flex-shrink-0 mt-0.5" size={16} />
                 <p className="leading-relaxed">
                   <strong>Disclaimer:</strong> Prices and stock levels change automatically on Daraz. PK. Always double-check dynamic live pricing prior to finalizing checkout orders.
                 </p>
@@ -263,12 +259,12 @@ export default function ProductDetail() {
 
               {/* Badges Bar */}
               <div className="flex items-center justify-between gap-4 flex-wrap">
-                <span className="text-[10px] font-extrabold text-orange-500 tracking-widest uppercase bg-orange-50 px-2.5 py-1 rounded-lg border border-orange-100">
+                <span className="text-[10px] font-extrabold text-orange-500 dark:text-orange-400 tracking-widest uppercase bg-orange-50 dark:bg-orange-950/30 px-2.5 py-1 rounded-lg border border-orange-100 dark:border-orange-900/50">
                   {product.category}
                 </span>
 
                 {/* Rating Info */}
-                <div className="flex items-center gap-1.5 bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-100 text-amber-700 text-xs font-extrabold">
+                <div className="flex items-center gap-1.5 bg-amber-50 dark:bg-amber-950/25 px-2.5 py-1 rounded-lg border border-amber-100 dark:border-amber-900/45 text-amber-700 dark:text-amber-400 text-xs font-extrabold">
                   <Star size={14} fill="currentColor" />
                   <span>{product.rating} ({product.reviewsCount} reviews on Daraz)</span>
                 </div>
@@ -279,22 +275,22 @@ export default function ProductDetail() {
                 <span className="text-xs font-extrabold text-slate-400 block uppercase tracking-wider">
                   {product.brand} &bull; {product.model}
                 </span>
-                <h1 className="text-xl sm:text-2xl font-black text-slate-900 leading-snug">
+                <h1 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white leading-snug">
                   {product.name}
                 </h1>
               </div>
 
               {/* Last Updated badge */}
-              <div className="flex items-center gap-1.5 text-slate-400 text-xs font-bold bg-slate-50 px-2.5 py-1.5 rounded-lg border border-slate-100 w-max">
+              <div className="flex items-center gap-1.5 text-slate-400 dark:text-slate-500 text-xs font-bold bg-slate-50 dark:bg-slate-950 px-2.5 py-1.5 rounded-lg border border-slate-100 dark:border-slate-800 w-max">
                 <Clock size={13} />
                 <span>Last Updated: {product.lastUpdated}</span>
               </div>
 
               {/* Pricing section */}
-              <div className="flex items-baseline gap-3 bg-slate-50 p-4 rounded-2xl border border-slate-100/80">
+              <div className="flex items-baseline gap-3 bg-slate-50 dark:bg-slate-950 p-4 rounded-2xl border border-slate-100/80 dark:border-slate-800">
                 <div className="space-y-0.5">
                   <span className="text-[10px] font-bold text-slate-400 block uppercase tracking-wider">Discounted Price</span>
-                  <span className="text-2xl sm:text-3xl font-black text-slate-900 leading-none">
+                  <span className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white leading-none">
                     {formatCurrency(product.currentPrice)}
                   </span>
                 </div>
@@ -313,7 +309,7 @@ export default function ProductDetail() {
               {/* Review Text */}
               <div className="space-y-1">
                 <h3 className="font-extrabold text-[10px] uppercase tracking-widest text-slate-400">Expert Curated Review</h3>
-                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-semibold">
+                <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed font-semibold">
                   {product.longDescription}
                 </p>
               </div>
@@ -321,7 +317,7 @@ export default function ProductDetail() {
             </div>
 
             {/* Outbound affiliate direct actions */}
-            <div className="pt-4 border-t border-slate-100 space-y-3">
+            <div className="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-3">
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
                   href={product.darazUrl}
@@ -337,7 +333,7 @@ export default function ProductDetail() {
                 {/* Share Page Link */}
                 <button
                   onClick={handleShare}
-                  className="px-4 py-3.5 bg-slate-50 hover:bg-orange-50 border border-slate-200/60 hover:border-orange-100 rounded-xl text-slate-600 hover:text-orange-500 font-extrabold text-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+                  className="px-4 py-3.5 bg-slate-50 dark:bg-slate-800 hover:bg-orange-50 dark:hover:bg-slate-800 border border-slate-200/60 dark:border-slate-700 hover:border-orange-100 dark:hover:border-orange-950 rounded-xl text-slate-600 dark:text-slate-300 hover:text-orange-500 dark:hover:text-orange-400 font-extrabold text-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
                 >
                   <Share2 size={16} />
                   {copied ? 'Copied Link!' : 'Share Review'}
@@ -345,7 +341,7 @@ export default function ProductDetail() {
               </div>
 
               {copied && (
-                <p className="text-[10px] text-emerald-600 font-bold text-center">
+                <p className="text-[10px] text-emerald-600 dark:text-emerald-400 font-bold text-center">
                   Product review link copied to your clipboard successfully!
                 </p>
               )}
@@ -360,8 +356,8 @@ export default function ProductDetail() {
           {/* Tech Specifications & Key Features list */}
           <div className="lg:col-span-2 space-y-8">
             {/* Specs list */}
-            <div className="bg-white rounded-3xl border border-slate-200/60 shadow-sm p-6 sm:p-8 space-y-4">
-              <h3 className="font-black text-slate-900 text-lg flex items-center gap-2 pb-2 border-b border-slate-100">
+            <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800 shadow-sm p-6 sm:p-8 space-y-4 transition-colors">
+              <h3 className="font-black text-slate-900 dark:text-white text-lg flex items-center gap-2 pb-2 border-b border-slate-100 dark:border-slate-800">
                 <Info size={20} className="text-orange-500" />
                 Technical Specifications
               </h3>
@@ -371,12 +367,12 @@ export default function ProductDetail() {
                     {Object.entries(product.specifications).map(([key, val], index) => (
                       <tr
                         key={key}
-                        className={`border-b border-slate-100/80 ${
-                          index % 2 === 0 ? 'bg-slate-50/50' : 'bg-transparent'
+                        className={`border-b border-slate-100/80 dark:border-slate-800/80 ${
+                          index % 2 === 0 ? 'bg-slate-50/50 dark:bg-slate-950/20' : 'bg-transparent'
                         }`}
                       >
-                        <td className="py-3 px-4 font-extrabold text-slate-500 w-1/3">{key}</td>
-                        <td className="py-3 px-4 font-semibold text-slate-800">{val}</td>
+                        <td className="py-3 px-4 font-extrabold text-slate-500 dark:text-slate-400 w-1/3">{key}</td>
+                        <td className="py-3 px-4 font-semibold text-slate-800 dark:text-slate-200">{val}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -386,18 +382,18 @@ export default function ProductDetail() {
 
             {/* Key Features array rendering */}
             {product.features && product.features.length > 0 && (
-              <div className="bg-white rounded-3xl border border-slate-200/60 shadow-sm p-6 sm:p-8 space-y-4">
-                <h3 className="font-black text-slate-900 text-lg flex items-center gap-2 pb-2 border-b border-slate-100">
+              <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800 shadow-sm p-6 sm:p-8 space-y-4 transition-colors">
+                <h3 className="font-black text-slate-900 dark:text-white text-lg flex items-center gap-2 pb-2 border-b border-slate-100 dark:border-slate-800">
                   <Sparkles size={20} className="text-orange-500" />
                   Key Features & Highlights
                 </h3>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {product.features.map((feature, idx) => (
-                    <li key={idx} className="bg-slate-50 border border-slate-100 p-3.5 rounded-xl flex gap-3 items-start">
-                      <span className="w-6 h-6 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center text-xs font-bold flex-shrink-0">
+                    <li key={idx} className="bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800 p-3.5 rounded-xl flex gap-3 items-start">
+                      <span className="w-6 h-6 rounded-lg bg-orange-100 dark:bg-orange-950 text-orange-600 dark:text-orange-400 flex items-center justify-center text-xs font-bold flex-shrink-0">
                         {idx + 1}
                       </span>
-                      <p className="text-xs sm:text-sm text-slate-600 font-semibold leading-relaxed">
+                      <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-semibold leading-relaxed">
                         {feature}
                       </p>
                     </li>
@@ -409,8 +405,8 @@ export default function ProductDetail() {
 
           {/* Pros & Cons Columns (Expert breakdown) */}
           <div className="lg:col-span-1 space-y-8">
-            <div className="bg-white rounded-3xl border border-slate-200/60 shadow-sm p-6 sm:p-8 space-y-6">
-              <h3 className="font-black text-slate-900 text-lg pb-2 border-b border-slate-100">
+            <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800 shadow-sm p-6 sm:p-8 space-y-6 transition-colors">
+              <h3 className="font-black text-slate-900 dark:text-white text-lg pb-2 border-b border-slate-100 dark:border-slate-800">
                 Quick Highlights
               </h3>
 
@@ -421,8 +417,8 @@ export default function ProductDetail() {
                 </h4>
                 <ul className="space-y-2">
                   {product.pros.map((p, idx) => (
-                    <li key={idx} className="flex gap-2 text-xs font-semibold text-slate-700 leading-relaxed">
-                      <span className="w-5 h-5 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center text-[10px] flex-shrink-0 font-bold">
+                    <li key={idx} className="flex gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 leading-relaxed">
+                      <span className="w-5 h-5 rounded-full bg-emerald-50 dark:bg-emerald-950/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-[10px] flex-shrink-0 font-bold animate-pulse">
                         ✓
                       </span>
                       <span>{p}</span>
@@ -438,8 +434,8 @@ export default function ProductDetail() {
                 </h4>
                 <ul className="space-y-2">
                   {product.cons.map((c, idx) => (
-                    <li key={idx} className="flex gap-2 text-xs font-semibold text-slate-700 leading-relaxed">
-                      <span className="w-5 h-5 rounded-full bg-red-50 text-red-500 flex items-center justify-center text-[10px] flex-shrink-0 font-bold">
+                    <li key={idx} className="flex gap-2 text-xs font-semibold text-slate-750 dark:text-slate-300 leading-relaxed">
+                      <span className="w-5 h-5 rounded-full bg-red-50 dark:bg-red-950/20 text-red-500 dark:text-red-400 flex items-center justify-center text-[10px] flex-shrink-0 font-bold">
                         &times;
                       </span>
                       <span>{c}</span>
@@ -450,7 +446,7 @@ export default function ProductDetail() {
             </div>
 
             {/* Who should buy it & Buying recommendation callouts */}
-            <div className="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 space-y-5 border border-slate-850">
+            <div className="bg-slate-900 dark:bg-slate-950 text-white rounded-3xl p-6 sm:p-8 space-y-5 border border-slate-800 dark:border-slate-900 transition-colors">
               <div className="space-y-2">
                 <h4 className="text-xs font-extrabold text-orange-400 uppercase tracking-widest">
                   Who Should Buy?
@@ -460,7 +456,7 @@ export default function ProductDetail() {
                 </p>
               </div>
 
-              <div className="border-t border-slate-800 pt-4 space-y-2">
+              <div className="border-t border-slate-800 dark:border-slate-900 pt-4 space-y-2">
                 <h4 className="text-xs font-extrabold text-orange-400 uppercase tracking-widest">
                   Buying Recommendation
                 </h4>
@@ -475,17 +471,17 @@ export default function ProductDetail() {
 
         {/* Product-specific FAQs accordion */}
         {product.faqs && product.faqs.length > 0 && (
-          <div className="bg-white rounded-3xl border border-slate-200/60 shadow-sm p-6 sm:p-8 mb-12 space-y-6">
-            <div className="border-b border-slate-100 pb-3 flex items-center gap-2">
+          <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800 shadow-sm p-6 sm:p-8 mb-12 space-y-6 transition-colors">
+            <div className="border-b border-slate-100 dark:border-slate-800 pb-3 flex items-center gap-2">
               <HelpCircle size={22} className="text-orange-500" />
-              <h3 className="font-black text-slate-900 text-lg">Product FAQs</h3>
+              <h3 className="font-black text-slate-900 dark:text-white text-lg">Product FAQs</h3>
             </div>
             <div className="space-y-4">
               {product.faqs.map((faq, idx) => (
-                <div key={idx} className="border border-slate-100 rounded-xl overflow-hidden">
+                <div key={idx} className="border border-slate-100 dark:border-slate-800 rounded-xl overflow-hidden">
                   <button
                     onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                    className="w-full text-left px-5 py-3.5 bg-slate-50/50 hover:bg-orange-50/20 text-slate-850 font-extrabold text-xs sm:text-sm flex items-center justify-between outline-none transition-all"
+                    className="w-full text-left px-5 py-3.5 bg-slate-50/50 dark:bg-slate-950/20 hover:bg-orange-50/20 text-slate-800 dark:text-white font-extrabold text-xs sm:text-sm flex items-center justify-between outline-none transition-all"
                   >
                     <span>{faq.q}</span>
                     <span className="text-orange-500 font-black">
@@ -493,8 +489,8 @@ export default function ProductDetail() {
                     </span>
                   </button>
                   {openFaq === idx && (
-                    <div className="p-5 border-t border-slate-100 bg-white">
-                      <p className="text-xs sm:text-sm text-slate-500 leading-relaxed font-semibold">
+                    <div className="p-5 border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900">
+                      <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 leading-relaxed font-semibold">
                         {faq.a}
                       </p>
                     </div>
@@ -508,8 +504,8 @@ export default function ProductDetail() {
         {/* Related Categories and Popular Articles SEO Block */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {/* Related Categories */}
-          <div className="bg-white rounded-3xl border border-slate-200/60 shadow-sm p-6 space-y-4">
-            <h3 className="font-black text-slate-900 text-base flex items-center gap-2 border-b border-slate-100 pb-2">
+          <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800 shadow-sm p-6 space-y-4 transition-colors">
+            <h3 className="font-black text-slate-900 dark:text-white text-base flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-2">
               <Layers size={18} className="text-orange-500" />
               Related Categories
             </h3>
@@ -518,7 +514,7 @@ export default function ProductDetail() {
                 <Link
                   key={idx}
                   to={`/products?category=${encodeURIComponent(cat)}`}
-                  className="px-4 py-2 bg-slate-50 border border-slate-200 hover:border-orange-300 hover:bg-orange-50 text-slate-700 hover:text-orange-600 rounded-xl text-xs font-bold transition-all"
+                  className="px-4 py-2 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 hover:border-orange-300 dark:hover:border-orange-500 hover:bg-orange-50 dark:hover:bg-orange-950/30 text-slate-700 dark:text-slate-200 hover:text-orange-600 dark:hover:text-orange-400 rounded-xl text-xs font-bold transition-all"
                 >
                   {cat}
                 </Link>
@@ -527,8 +523,8 @@ export default function ProductDetail() {
           </div>
 
           {/* Popular Articles */}
-          <div className="bg-white rounded-3xl border border-slate-200/60 shadow-sm p-6 space-y-4">
-            <h3 className="font-black text-slate-900 text-base flex items-center gap-2 border-b border-slate-100 pb-2">
+          <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800 shadow-sm p-6 space-y-4 transition-colors">
+            <h3 className="font-black text-slate-900 dark:text-white text-base flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-2">
               <FileText size={18} className="text-orange-500" />
               Popular Articles & Guides
             </h3>
@@ -537,7 +533,7 @@ export default function ProductDetail() {
                 <Link
                   key={idx}
                   to={`/guides/${guide.slug}`}
-                  className="text-xs sm:text-sm font-extrabold text-slate-700 hover:text-orange-500 flex items-center gap-1 hover:underline transition-colors"
+                  className="text-xs sm:text-sm font-extrabold text-slate-700 dark:text-slate-300 hover:text-orange-500 dark:hover:text-orange-400 flex items-center gap-1 hover:underline transition-colors"
                 >
                   <ChevronRight size={14} className="text-orange-500" />
                   {guide.label}
@@ -550,8 +546,8 @@ export default function ProductDetail() {
         {/* Related Products Recommendations */}
         {relatedProducts.length > 0 && (
           <section className="space-y-6 mb-12">
-            <div className="border-b border-slate-200 pb-3">
-              <h2 className="text-xl font-black text-slate-900 flex items-center gap-2">
+            <div className="border-b border-slate-200 dark:border-slate-800 pb-3">
+              <h2 className="text-xl font-black text-slate-900 dark:text-white flex items-center gap-2">
                 <Layers size={20} className="text-orange-500" />
                 Related Products
               </h2>
@@ -567,8 +563,8 @@ export default function ProductDetail() {
         {/* Similar Alternatives Recommendations */}
         {similarAlternatives.length > 0 && (
           <section className="space-y-6">
-            <div className="border-b border-slate-200 pb-3">
-              <h2 className="text-xl font-black text-slate-900 flex items-center gap-2">
+            <div className="border-b border-slate-200 dark:border-slate-800 pb-3">
+              <h2 className="text-xl font-black text-slate-900 dark:text-white flex items-center gap-2">
                 <Layers size={20} className="text-orange-500" />
                 Similar Products
               </h2>
@@ -584,10 +580,10 @@ export default function ProductDetail() {
       </div>
 
       {/* Sticky Mobile CTA Action Bar */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 p-4 shadow-xl flex items-center justify-between gap-4 animate-slideUp">
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 p-4 shadow-xl flex items-center justify-between gap-4 animate-slideUp transition-colors">
         <div className="flex flex-col min-w-0">
-          <span className="text-[10px] font-bold text-slate-400 truncate uppercase tracking-widest">{product.brand}</span>
-          <span className="text-sm font-black text-slate-900 leading-tight truncate">{formatCurrency(product.currentPrice)}</span>
+          <span className="text-[10px] font-bold text-slate-400 dark:text-slate-500 truncate uppercase tracking-widest">{product.brand}</span>
+          <span className="text-sm font-black text-slate-900 dark:text-white leading-tight truncate">{formatCurrency(product.currentPrice)}</span>
         </div>
         <a
           href={product.darazUrl}

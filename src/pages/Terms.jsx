@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { FileText, Scale, RefreshCw, HelpCircle } from 'lucide-react';
 import useSEO from '../hooks/useSEO';
 
@@ -12,22 +11,22 @@ export default function Terms() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div className="bg-white rounded-3xl border border-slate-200/60 shadow-sm p-6 sm:p-10 space-y-8">
+      <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800 shadow-sm p-6 sm:p-10 space-y-8 transition-colors">
 
         {/* Title area */}
-        <div className="text-center space-y-2 border-b border-slate-100 pb-6">
-          <div className="w-12 h-12 bg-orange-50 text-orange-500 rounded-full flex items-center justify-center mx-auto">
+        <div className="text-center space-y-2 border-b border-slate-100 dark:border-slate-800 pb-6">
+          <div className="w-12 h-12 bg-orange-50 dark:bg-orange-950/20 text-orange-500 rounded-full flex items-center justify-center mx-auto">
             <Scale size={26} />
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black text-slate-900">Terms & Conditions</h1>
-          <p className="text-slate-500 text-xs font-bold">Last Updated: August 05, 2026</p>
+          <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">Terms & Conditions</h1>
+          <p className="text-slate-500 dark:text-slate-400 text-xs font-bold">Last Updated: August 05, 2026</p>
         </div>
 
         {/* Content Details */}
-        <div className="space-y-6 text-sm text-slate-600 leading-relaxed font-medium">
+        <div className="space-y-6 text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
 
           <section className="space-y-2">
-            <h2 className="text-lg font-black text-slate-800 flex items-center gap-2">
+            <h2 className="text-lg font-black text-slate-800 dark:text-white flex items-center gap-2">
               <FileText size={18} className="text-orange-500" />
               1. Acceptance of Terms
             </h2>
@@ -37,7 +36,7 @@ export default function Terms() {
           </section>
 
           <section className="space-y-2">
-            <h2 className="text-lg font-black text-slate-800 flex items-center gap-2">
+            <h2 className="text-lg font-black text-slate-800 dark:text-white flex items-center gap-2">
               <RefreshCw size={18} className="text-orange-500" />
               2. Catalog Pricing & Affiliate Link Disclaimers
             </h2>
@@ -55,7 +54,7 @@ export default function Terms() {
           </section>
 
           <section className="space-y-2">
-            <h2 className="text-lg font-black text-slate-800 flex items-center gap-2">
+            <h2 className="text-lg font-black text-slate-800 dark:text-white flex items-center gap-2">
               <HelpCircle size={18} className="text-orange-500" />
               3. Intellectual Property Rights
             </h2>
@@ -64,7 +63,7 @@ export default function Terms() {
             </p>
           </section>
 
-          <div className="bg-slate-50 border border-slate-100 p-4 rounded-xl text-xs text-slate-500">
+          <div className="bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800 p-4 rounded-xl text-xs text-slate-500 dark:text-slate-400">
             For further queries regarding terms of service or copyright permissions, please reach out to us using our standard contact channels.
           </div>
 

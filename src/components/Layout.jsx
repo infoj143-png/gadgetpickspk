@@ -23,9 +23,9 @@ export default function Layout({ children }) {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 transition-colors duration-300">
+    <div className="min-h-screen w-full overflow-x-hidden flex flex-col bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
       <Header />
-      <main className="flex-grow animate-fadeIn">
+      <main className="flex-grow w-full overflow-x-hidden animate-fadeIn text-slate-900 dark:text-slate-100">
         {children}
       </main>
 

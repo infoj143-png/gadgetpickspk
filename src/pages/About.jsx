@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles, Award, ShieldCheck, Mail, Heart, ArrowRight } from 'lucide-react';
+import { Sparkles, Award, ShieldCheck, Heart, ArrowRight } from 'lucide-react';
 import useSEO from '../hooks/useSEO';
 
 export default function About() {
@@ -12,22 +12,22 @@ export default function About() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div className="bg-white rounded-3xl border border-slate-200/60 shadow-sm p-6 sm:p-10 space-y-8">
+      <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800 shadow-sm p-6 sm:p-10 space-y-8 transition-colors">
 
         {/* Title area */}
-        <div className="text-center space-y-2 border-b border-slate-100 pb-6">
-          <div className="w-12 h-12 bg-orange-50 text-orange-500 rounded-full flex items-center justify-center mx-auto">
+        <div className="text-center space-y-2 border-b border-slate-100 dark:border-slate-800 pb-6">
+          <div className="w-12 h-12 bg-orange-50 dark:bg-orange-950/20 text-orange-500 rounded-full flex items-center justify-center mx-auto">
             <Heart size={26} />
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black text-slate-900">About GadgetPicksPK</h1>
-          <p className="text-slate-500 text-xs font-bold">Unbiased, Curated, and Verified Tech Recommendations</p>
+          <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">About GadgetPicksPK</h1>
+          <p className="text-slate-500 dark:text-slate-400 text-xs font-bold">Unbiased, Curated, and Verified Tech Recommendations</p>
         </div>
 
         {/* Content Details */}
-        <div className="space-y-6 text-sm text-slate-600 leading-relaxed font-medium">
+        <div className="space-y-6 text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
 
           <section className="space-y-2">
-            <h2 className="text-lg font-black text-slate-800 flex items-center gap-2">
+            <h2 className="text-lg font-black text-slate-800 dark:text-white flex items-center gap-2">
               <Sparkles size={18} className="text-orange-500" />
               Who We Are
             </h2>
@@ -37,7 +37,7 @@ export default function About() {
           </section>
 
           <section className="space-y-2">
-            <h2 className="text-lg font-black text-slate-800 flex items-center gap-2">
+            <h2 className="text-lg font-black text-slate-800 dark:text-white flex items-center gap-2">
               <Award size={18} className="text-orange-500" />
               Our Strict Curation Pillars
             </h2>
@@ -61,7 +61,7 @@ export default function About() {
           </section>
 
           <section className="space-y-2">
-            <h2 className="text-lg font-black text-slate-800 flex items-center gap-2">
+            <h2 className="text-lg font-black text-slate-800 dark:text-white flex items-center gap-2">
               <ShieldCheck size={18} className="text-orange-500" />
               Affiliate Integrity & Transparency
             </h2>
@@ -70,10 +70,10 @@ export default function About() {
             </p>
           </section>
 
-          <div className="bg-slate-50 border border-slate-100 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-4">
+          <div className="bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-4">
             <div>
-              <h4 className="font-extrabold text-slate-800 text-sm">Have any product review feedback?</h4>
-              <p className="text-xs text-slate-500">We love hearing back from our Pakistani tech community!</p>
+              <h4 className="font-extrabold text-slate-800 dark:text-white text-sm">Have any product review feedback?</h4>
+              <p className="text-xs text-slate-500 dark:text-slate-400">We love hearing back from our Pakistani tech community!</p>
             </div>
             <Link
               to="/contact"
