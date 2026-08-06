@@ -14,6 +14,7 @@
     "discount": 31,
     "rating": 4.8,
     "reviewsCount": 245,
+    "soldCount": "1.2k+",
     "shortDescription": "Cordless high-speed portable blender with rechargeable battery, perfect for quick smoothies, protein shakes, and juices on the go.",
     "longDescription": "The Slique Portable Electric USB Juice Blender is designed for health-conscious individuals who are always on the move. Outfitted with six powerful stainless steel 3D blades and a high-rotation speed motor, it easily crushes ice, frozen fruits, and leafy greens in seconds. Powered by a long-lasting rechargeable 2000mAh battery, it can blend up to 15 times on a single USB charge. Highly convenient, sleek, and exceptionally easy to clean.",
     "features": [
@@ -79,6 +80,7 @@
     "discount": 30,
     "rating": 4.7,
     "reviewsCount": 112,
+    "soldCount": "480+",
     "shortDescription": "1.5L multi-functional electric pot with premium non-stick inner surface and steam rack, perfect for ramen, hot pot, frying, and steaming.",
     "longDescription": "The Crown HP-300 Electric Hot Pot is the ultimate desktop cooking appliance. With its dual-power settings (220W & 600W), you can easily adjust power levels for boiling, simmering, sautéing, or steaming. It includes a food-grade stainless steel steam rack, allowing you to cook soup and steam dumplings or vegetables simultaneously. Designed with a double-walled safety design to prevent accidental burns.",
     "features": [
@@ -140,6 +142,7 @@
     "discount": 33,
     "rating": 4.8,
     "reviewsCount": 380,
+    "soldCount": "1.5k+",
     "shortDescription": "500ml quiet ultrasonic cool mist humidifier with 7-color auto-changing LED lights and waterless auto shut-off.",
     "longDescription": "The PureAire Humidifier-M1 uses high-frequency ultrasonic vibrations to instantly atomize pure water and essential oils into an ultra-fine, soothing cool mist. With a generous 500ml water tank, it operates continuously for up to 10 hours. Ideal for adding healthy moisture to dry indoor air in air-conditioned rooms, while the beautiful, calm LED light colors create an atmospheric ambience.",
     "features": [
@@ -201,6 +204,7 @@
     "discount": 38,
     "rating": 4.6,
     "reviewsCount": 420,
+    "soldCount": "2.3k+",
     "shortDescription": "180-degree rotating high-definition crystal lens sunset projection lamp with USB power, ideal for photography, bedroom styling, and mood aesthetics.",
     "longDescription": "The Lumina Sunset Projector Lamp brings the magical, comforting warmth of a natural sunset directly into your personal space. Utilizing a thick, premium optical crystal lens and a highly efficient 10W LED bulb, it projects a high-definition, halo-shaped sunset pattern with unmatched color depth. Features a robust 180-degree flexible rotating head to alter halo sizes on walls and ceilings.",
     "features": [
@@ -262,6 +266,7 @@
     "discount": 33,
     "rating": 4.9,
     "reviewsCount": 98,
+    "soldCount": "350+",
     "shortDescription": "Premium multi-layer anti-theft smart backpack with TSA lock, water-resistant Oxford material, and external USB-C charging port.",
     "longDescription": "The Mark Ryden MR-9008 is a masterpiece of travel engineering. Designed for tech-savvy commuters, it features a smart TSA-approved security lock, a hidden anti-theft back pocket, and water-resistant premium Oxford shell fabric. It safely houses laptops up to 15.6 inches in a heavily padded compartment, while distributing weight evenly across your shoulders with its honeycomb breathable back pads.",
     "features": [
@@ -323,6 +328,7 @@
     "discount": 33,
     "rating": 4.8,
     "reviewsCount": 150,
+    "soldCount": "850+",
     "shortDescription": "Heavy-duty EVA hardshell water-resistant organizer case with flexible multi-layer compartments for chargers, cables, SSDs, and power banks.",
     "longDescription": "The BANGE Tech Organizer Pouch is a compact travel gear case engineered to protect and compartmentalize your vital tech essentials. Built with an impact-resistant EVA hardshell wrapped in waterproof jacquard fabric, it prevents drops and scrapes from ruining your expensive SSDs, power banks, and adapters. Elastic mesh partitions and high-quality YKK zippers keep everything securely in place.",
     "features": [
@@ -383,6 +389,7 @@
     "discount": 30,
     "rating": 4.8,
     "reviewsCount": 185,
+    "soldCount": "620+",
     "shortDescription": "Cervical contour support memory foam pillow designed for back and side sleepers, offering neck pain relief and spinal alignment.",
     "longDescription": "The RestEasy Orthopedic Pillow features an ergonomic cervical contour shape that conforms perfectly to the natural curve of your neck and head. Crafted from 100% premium, high-density slow-rebound memory foam, it dynamically absorbs pressure and provides solid structural support. Comes with a breathable, hypoallergenic, and washable cotton-polyester zippered cover.",
     "features": [
@@ -443,6 +450,7 @@
     "discount": 32,
     "rating": 4.7,
     "reviewsCount": 210,
+    "soldCount": "1.1k+",
     "shortDescription": "Set of 2 ultra-smooth envelope style luxury satin pillowcases for beautiful hair and skin, reducing friction and preventing wrinkles.",
     "longDescription": "The SilkNest Satin Pillowcase Pair elevates your bedroom comfort while providing significant beauty benefits. Made of premium high-grade satin microfiber, it creates an incredibly smooth surface that reduces friction on your hair and face. This prevents sleep wrinkles, fine lines, and morning hair tangles or breakage. Featuring a convenient envelope closure style to keep pillows tucked securely.",
     "features": [
@@ -503,6 +511,7 @@
     "discount": 32,
     "rating": 4.9,
     "reviewsCount": 164,
+    "soldCount": "1.8k+",
     "shortDescription": "Ultra-lightweight cordless stick vacuum cleaner with 8000Pa powerful cyclonic suction, HEPA filtration, and versatile multi-nozzles.",
     "longDescription": "The Xiaomi Deerma VC20 Plus is an award-winning cordless handheld vacuum cleaner engineered to simplify your daily cleaning routine. Weighing under 1.8kg, its lightweight modular design allows you to transition seamlessly from sweeping hard floors to cleaning sofas, car interiors, and ceiling corners. Driven by an advanced independent motor with 8000Pa cyclonic suction power, it filters dust and allergens effectively through its premium HEPA filtration system.",
     "features": [
@@ -564,6 +573,7 @@
     "discount": 30,
     "rating": 4.6,
     "reviewsCount": 115,
+    "soldCount": "940+",
     "shortDescription": "1500W rapid heating portable garment steamer with stainless steel soleplate, ideal for home and travel fabric wrinkle removal.",
     "longDescription": "The Sokany SK-3060 Garment Steamer features a high-powered 1500W heating element that produces thick, continuous steam in under 30 seconds. Perfect for removing stubborn wrinkles from delicate silk, wedding gowns, linen shirts, and heavy drapes without the risk of scorching or burning. Its lightweight, hand-held design makes it an essential travel accessory.",
     "features": [
@@ -625,6 +635,7 @@
     "discount": 26,
     "rating": 4.9,
     "reviewsCount": 84,
+    "soldCount": "210+",
     "shortDescription": "Premium, hand-crafted original grain genuine leather bi-fold slim wallet with RFID-blocking security slots.",
     "longDescription": "From Pakistan's legendary luxury leather house Jafferjees, this classic bi-fold wallet represents unmatched sophistication and durability. Hand-crafted from top-grain aniline genuine calf leather, it features a slim, minimalist profile that fits comfortably in your front pocket. Lined with highly advanced, built-in RFID-blocking weave technology to protect your credit cards and IDs from digital theft.",
     "features": [
@@ -686,6 +697,7 @@
     "discount": 30,
     "rating": 4.7,
     "reviewsCount": 134,
+    "soldCount": "530+",
     "shortDescription": "Classic retro-style polarized sunglasses featuring high-grade UV400 protective lenses and durable TR90 polymer frames.",
     "longDescription": "The Hawkers Retro Polarized Sunglasses combine a timeless vintage aesthetic with advanced optical protection. Featuring high-definition polarized lenses that eliminate blinding sun glare, they provide vivid color contrast and exceptional visual clarity. The lightweight, flexible TR90 polymer frame ensures all-day wearing comfort and extreme shatterproof durability.",
     "features": [
@@ -747,6 +759,7 @@
     "discount": 30,
     "rating": 4.8,
     "reviewsCount": 142,
+    "soldCount": "740+",
     "shortDescription": "3L automatic drinking fountain with triple-action water softening filter, promoting hydration for cats and small dogs.",
     "longDescription": "The Catit Flower Automatic Pet Water Fountain is a veterinary-recommended hydration solution designed to keep cats and small dogs healthy. Moving water attracts pets to drink more frequently, helping to prevent painful urinary tract infections and kidney issues. Features three adjustable water flow settings (gentle flow, bubbling top, or calm streams) and a highly efficient, multi-stage water softening filter.",
     "features": [
@@ -808,6 +821,7 @@
     "discount": 32,
     "rating": 4.9,
     "reviewsCount": 215,
+    "soldCount": "1.6k+",
     "shortDescription": "Ergonomic undercoat deshedding grooming brush tool with FURejector button, reducing loose pet hair shedding up to 90%.",
     "longDescription": "The Furminator Professional Deshedding Brush is the gold standard for pet grooming. Built with a high-precision stainless steel edge, it safely reaches deep under your pet's topcoat to gently remove loose undercoat hair and dander without cutting the delicate topcoat or scraping their skin. Features the patented FURejector button to clear hair from the brush head instantly.",
     "features": [

@@ -123,8 +123,8 @@ export default function ProductDetail() {
     const absoluteProductUrl = window.location.href;
     if (navigator.share) {
       navigator.share({
-        title: product.name,
-        text: `Read the premium review of ${product.name} on GadgetPicksPK!`,
+        title: product?.name || 'Product Details',
+        text: `Read the premium review of ${product?.name} on GadgetPicksPK!`,
         url: absoluteProductUrl
       }).catch(() => {});
     } else {
@@ -171,8 +171,32 @@ export default function ProductDetail() {
     );
   }
 
+  // Fallbacks for properties
+  const brandName = product.brand || 'Premium';
+  const modelName = product.model || 'Product';
+  const productName = product.name || 'High-Quality Product';
+  const categoryName = product.category || 'Lifestyle';
+  const productRating = product.rating !== undefined ? product.rating : null;
+  const productReviewsCount = product.reviewsCount !== undefined ? product.reviewsCount : null;
+  const productSoldCount = product.soldCount || null;
+  const currentPrice = product.currentPrice || 0;
+  const oldPrice = product.oldPrice || null;
+  const discount = product.discount || 0;
+  const availability = product.availability || 'In Stock';
+  const lastUpdated = product.lastUpdated || 'Recently';
+  const longDescription = product.longDescription || '';
+  const darazUrl = product.darazUrl || 'https://www.daraz.pk';
+  const specifications = product.specifications || {};
+  const features = product.features || [];
+  const pros = product.pros || [];
+  const cons = product.cons || [];
+  const whoShouldBuy = product.whoShouldBuy || '';
+  const buyingRecommendation = product.buyingRecommendation || '';
+  const faqs = product.faqs || [];
+
   // Get gallery images array, fallback to single image if array is empty
-  const galleryImages = product.images && product.images.length > 0 ? product.images : [product.image];
+  const galleryImages = product.images && product.images.length > 0 ? product.images : [product.image || ''];
+  const descriptiveAlt = `${brandName} ${modelName} - ${productName}`;
 
   return (
     <div className="bg-slate-50 dark:bg-slate-950 py-8 relative transition-colors">
@@ -184,7 +208,7 @@ export default function ProductDetail() {
           <ChevronRight size={12} />
           <Link to="/products" className="hover:text-orange-500">Products Catalog</Link>
           <ChevronRight size={12} />
-          <span className="text-orange-500 line-clamp-1 max-w-[250px]">{product.name}</span>
+          <span className="text-orange-500 line-clamp-1 max-w-[250px]">{productName}</span>
         </nav>
 
         {/* Outer Grid Panel: Product Info */}
@@ -195,20 +219,20 @@ export default function ProductDetail() {
             <div className="relative aspect-square bg-slate-50 dark:bg-slate-950 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-800">
               <ImageLazy
                 src={activeImage || product.image}
-                alt={product.name}
+                alt={descriptiveAlt}
                 className="w-full h-full object-cover"
               />
 
               {/* Discount Badge */}
-              {product.discount > 0 && (
+              {discount > 0 && (
                 <div className="absolute top-4 left-4 bg-orange-500 text-white text-[10px] sm:text-xs font-black tracking-widest px-3 py-1.5 rounded-xl uppercase shadow">
-                  -{product.discount}% OFF
+                  -{discount}% OFF
                 </div>
               )}
 
               {/* Status Badge */}
               <div className="absolute top-4 right-4 bg-slate-900/80 dark:bg-slate-950/80 backdrop-blur-xs text-white text-[9px] font-bold px-2.5 py-1 rounded-lg">
-                {product.availability || 'In Stock'}
+                {availability}
               </div>
             </div>
 
@@ -222,10 +246,11 @@ export default function ProductDetail() {
                     className={`w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden border-2 flex-shrink-0 transition-all ${
                       activeImage === imgUrl ? 'border-orange-500 ring-2 ring-orange-200' : 'border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700'
                     }`}
+                    aria-label={`Show gallery image ${idx + 1}`}
                   >
                     <img
                       src={imgUrl}
-                      alt={`${product.name} gallery ${idx + 1}`}
+                      alt={`${productName} gallery thumbnail ${idx + 1}`}
                       className="w-full h-full object-cover"
                     />
                   </button>
@@ -260,30 +285,46 @@ export default function ProductDetail() {
               {/* Badges Bar */}
               <div className="flex items-center justify-between gap-4 flex-wrap">
                 <span className="text-[10px] font-extrabold text-orange-500 dark:text-orange-400 tracking-widest uppercase bg-orange-50 dark:bg-orange-950/30 px-2.5 py-1 rounded-lg border border-orange-100 dark:border-orange-900/50">
-                  {product.category}
+                  {categoryName}
                 </span>
 
-                {/* Rating Info */}
-                <div className="flex items-center gap-1.5 bg-amber-50 dark:bg-amber-950/25 px-2.5 py-1 rounded-lg border border-amber-100 dark:border-amber-900/45 text-amber-700 dark:text-amber-400 text-xs font-extrabold">
-                  <Star size={14} fill="currentColor" />
-                  <span>{product.rating} ({product.reviewsCount} reviews on Daraz)</span>
+                <div className="flex items-center gap-2 flex-wrap">
+                  {/* Rating Info */}
+                  {productRating !== null ? (
+                    <div className="flex items-center gap-1.5 bg-amber-50 dark:bg-amber-950/25 px-2.5 py-1 rounded-lg border border-amber-100 dark:border-amber-900/45 text-amber-700 dark:text-amber-400 text-xs font-extrabold">
+                      <Star size={14} fill="currentColor" />
+                      <span>
+                        {productRating}
+                        {productReviewsCount !== null && ` (${productReviewsCount} reviews on Daraz)`}
+                      </span>
+                    </div>
+                  ) : (
+                    <span className="text-xs font-bold text-slate-400 dark:text-slate-500">Unrated</span>
+                  )}
+
+                  {/* Sold count badge */}
+                  {productSoldCount && (
+                    <span className="text-slate-500 dark:text-slate-450 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded-lg text-xs font-bold border border-slate-200 dark:border-slate-700">
+                      {productSoldCount} sold
+                    </span>
+                  )}
                 </div>
               </div>
 
               {/* Title & Brand Model labels */}
               <div className="space-y-1">
                 <span className="text-xs font-extrabold text-slate-400 block uppercase tracking-wider">
-                  {product.brand} &bull; {product.model}
+                  {brandName} &bull; {modelName}
                 </span>
                 <h1 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white leading-snug">
-                  {product.name}
+                  {productName}
                 </h1>
               </div>
 
               {/* Last Updated badge */}
               <div className="flex items-center gap-1.5 text-slate-400 dark:text-slate-500 text-xs font-bold bg-slate-50 dark:bg-slate-950 px-2.5 py-1.5 rounded-lg border border-slate-100 dark:border-slate-800 w-max">
                 <Clock size={13} />
-                <span>Last Updated: {product.lastUpdated}</span>
+                <span>Last Updated: {lastUpdated}</span>
               </div>
 
               {/* Pricing section */}
@@ -291,16 +332,16 @@ export default function ProductDetail() {
                 <div className="space-y-0.5">
                   <span className="text-[10px] font-bold text-slate-400 block uppercase tracking-wider">Discounted Price</span>
                   <span className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white leading-none">
-                    {formatCurrency(product.currentPrice)}
+                    {formatCurrency(currentPrice)}
                   </span>
                 </div>
-                {product.oldPrice && (
+                {oldPrice && (
                   <div className="space-y-0.5 self-end">
                     <span className="text-xs text-slate-400 line-through font-semibold block">
-                      {formatCurrency(product.oldPrice)}
+                      {formatCurrency(oldPrice)}
                     </span>
                     <span className="text-xs font-extrabold text-orange-500 block">
-                      Save {formatCurrency(product.oldPrice - product.currentPrice)} ({product.discount}%)
+                      Save {formatCurrency(oldPrice - currentPrice)} ({discount}%)
                     </span>
                   </div>
                 )}
@@ -310,7 +351,7 @@ export default function ProductDetail() {
               <div className="space-y-1">
                 <h3 className="font-extrabold text-[10px] uppercase tracking-widest text-slate-400">Expert Curated Review</h3>
                 <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed font-semibold">
-                  {product.longDescription}
+                  {longDescription}
                 </p>
               </div>
 
@@ -320,10 +361,11 @@ export default function ProductDetail() {
             <div className="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-3">
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
-                  href={product.darazUrl}
+                  href={darazUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-grow inline-flex items-center justify-center gap-2 px-6 py-4 bg-orange-500 hover:bg-orange-600 text-white font-black text-sm sm:text-base rounded-xl shadow-lg shadow-orange-500/20 transition-all hover:translate-y-[-1px] cursor-pointer"
+                  aria-label={`Buy ${productName} on Daraz`}
                 >
                   <ShoppingBag size={20} />
                   View on Daraz PK
@@ -334,6 +376,7 @@ export default function ProductDetail() {
                 <button
                   onClick={handleShare}
                   className="px-4 py-3.5 bg-slate-50 dark:bg-slate-800 hover:bg-orange-50 dark:hover:bg-slate-800 border border-slate-200/60 dark:border-slate-700 hover:border-orange-100 dark:hover:border-orange-950 rounded-xl text-slate-600 dark:text-slate-300 hover:text-orange-500 dark:hover:text-orange-400 font-extrabold text-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+                  aria-label={`Share the review of ${productName}`}
                 >
                   <Share2 size={16} />
                   {copied ? 'Copied Link!' : 'Share Review'}
@@ -364,7 +407,7 @@ export default function ProductDetail() {
               <div className="overflow-x-auto">
                 <table className="w-full text-xs sm:text-sm">
                   <tbody>
-                    {Object.entries(product.specifications).map(([key, val], index) => (
+                    {Object.entries(specifications).map(([key, val], index) => (
                       <tr
                         key={key}
                         className={`border-b border-slate-100/80 dark:border-slate-800/80 ${
@@ -381,14 +424,14 @@ export default function ProductDetail() {
             </div>
 
             {/* Key Features array rendering */}
-            {product.features && product.features.length > 0 && (
+            {features.length > 0 && (
               <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800 shadow-sm p-6 sm:p-8 space-y-4 transition-colors">
                 <h3 className="font-black text-slate-900 dark:text-white text-lg flex items-center gap-2 pb-2 border-b border-slate-100 dark:border-slate-800">
                   <Sparkles size={20} className="text-orange-500" />
                   Key Features & Highlights
                 </h3>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {product.features.map((feature, idx) => (
+                  {features.map((feature, idx) => (
                     <li key={idx} className="bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800 p-3.5 rounded-xl flex gap-3 items-start">
                       <span className="w-6 h-6 rounded-lg bg-orange-100 dark:bg-orange-950 text-orange-600 dark:text-orange-400 flex items-center justify-center text-xs font-bold flex-shrink-0">
                         {idx + 1}
@@ -416,7 +459,7 @@ export default function ProductDetail() {
                   <ThumbsUp size={14} /> Pros / Advantages
                 </h4>
                 <ul className="space-y-2">
-                  {product.pros.map((p, idx) => (
+                  {pros.map((p, idx) => (
                     <li key={idx} className="flex gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 leading-relaxed">
                       <span className="w-5 h-5 rounded-full bg-emerald-50 dark:bg-emerald-950/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-[10px] flex-shrink-0 font-bold animate-pulse">
                         ✓
@@ -433,7 +476,7 @@ export default function ProductDetail() {
                   <ThumbsDown size={14} /> Cons / Limitations
                 </h4>
                 <ul className="space-y-2">
-                  {product.cons.map((c, idx) => (
+                  {cons.map((c, idx) => (
                     <li key={idx} className="flex gap-2 text-xs font-semibold text-slate-750 dark:text-slate-300 leading-relaxed">
                       <span className="w-5 h-5 rounded-full bg-red-50 dark:bg-red-950/20 text-red-500 dark:text-red-400 flex items-center justify-center text-[10px] flex-shrink-0 font-bold">
                         &times;
@@ -452,7 +495,7 @@ export default function ProductDetail() {
                   Who Should Buy?
                 </h4>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-semibold">
-                  {product.whoShouldBuy || 'Tech consumers looking for top quality features.'}
+                  {whoShouldBuy || 'Tech consumers looking for top quality features.'}
                 </p>
               </div>
 
@@ -461,7 +504,7 @@ export default function ProductDetail() {
                   Buying Recommendation
                 </h4>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-semibold">
-                  {product.buyingRecommendation || 'An excellent purchase option in this tier.'}
+                  {buyingRecommendation || 'An excellent purchase option in this tier.'}
                 </p>
               </div>
             </div>
@@ -470,14 +513,14 @@ export default function ProductDetail() {
         </div>
 
         {/* Product-specific FAQs accordion */}
-        {product.faqs && product.faqs.length > 0 && (
+        {faqs.length > 0 && (
           <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800 shadow-sm p-6 sm:p-8 mb-12 space-y-6 transition-colors">
             <div className="border-b border-slate-100 dark:border-slate-800 pb-3 flex items-center gap-2">
               <HelpCircle size={22} className="text-orange-500" />
               <h3 className="font-black text-slate-900 dark:text-white text-lg">Product FAQs</h3>
             </div>
             <div className="space-y-4">
-              {product.faqs.map((faq, idx) => (
+              {faqs.map((faq, idx) => (
                 <div key={idx} className="border border-slate-100 dark:border-slate-800 rounded-xl overflow-hidden">
                   <button
                     onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
@@ -582,14 +625,15 @@ export default function ProductDetail() {
       {/* Sticky Mobile CTA Action Bar */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 p-4 shadow-xl flex items-center justify-between gap-4 animate-slideUp transition-colors">
         <div className="flex flex-col min-w-0">
-          <span className="text-[10px] font-bold text-slate-400 dark:text-slate-500 truncate uppercase tracking-widest">{product.brand}</span>
-          <span className="text-sm font-black text-slate-900 dark:text-white leading-tight truncate">{formatCurrency(product.currentPrice)}</span>
+          <span className="text-[10px] font-bold text-slate-400 dark:text-slate-500 truncate uppercase tracking-widest">{brandName}</span>
+          <span className="text-sm font-black text-slate-900 dark:text-white leading-tight truncate">{formatCurrency(currentPrice)}</span>
         </div>
         <a
-          href={product.darazUrl}
+          href={darazUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="flex-grow max-w-[200px] inline-flex items-center justify-center gap-1.5 px-4 py-2.5 bg-orange-500 hover:bg-orange-600 text-white font-extrabold text-xs rounded-xl shadow-md cursor-pointer"
+          aria-label={`Buy ${productName} on Daraz`}
         >
           View on Daraz
           <ArrowUpRight size={14} />
