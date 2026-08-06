@@ -68,10 +68,11 @@ export default function ProductDetail() {
       const productSchema = getProductSchema(product);
       injectJSONLD('product-schema', productSchema);
 
+      const categorySlug = product.category.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-');
       const breadcrumbSchema = getBreadcrumbSchema([
         { name: 'Home', url: '/' },
         { name: 'Recommendations', url: '/products' },
-        { name: product.category, url: `/products?category=${encodeURIComponent(product.category)}` },
+        { name: product.category, url: `/category/${categorySlug}` },
         { name: product.name, url: `/products/${product.id}` }
       ]);
       injectJSONLD('breadcrumb-schema', breadcrumbSchema);
@@ -553,15 +554,18 @@ export default function ProductDetail() {
               Related Categories
             </h3>
             <div className="flex flex-wrap gap-2.5">
-              {relatedCategories.map((cat, idx) => (
-                <Link
-                  key={idx}
-                  to={`/products?category=${encodeURIComponent(cat)}`}
-                  className="px-4 py-2 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 hover:border-orange-300 dark:hover:border-orange-500 hover:bg-orange-50 dark:hover:bg-orange-950/30 text-slate-700 dark:text-slate-200 hover:text-orange-600 dark:hover:text-orange-400 rounded-xl text-xs font-bold transition-all"
-                >
-                  {cat}
-                </Link>
-              ))}
+              {relatedCategories.map((cat, idx) => {
+                const categorySlug = cat.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-');
+                return (
+                  <Link
+                    key={idx}
+                    to={`/category/${categorySlug}`}
+                    className="px-4 py-2 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 hover:border-orange-300 dark:hover:border-orange-500 hover:bg-orange-50 dark:hover:bg-orange-950/30 text-slate-700 dark:text-slate-200 hover:text-orange-600 dark:hover:text-orange-400 rounded-xl text-xs font-bold transition-all"
+                  >
+                    {cat}
+                  </Link>
+                );
+              })}
             </div>
           </div>
 

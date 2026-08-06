@@ -84,7 +84,7 @@ export default function Home() {
       badge: "Kitchen & Dining",
       image: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=1200&auto=format&fit=crop",
       cta: "Explore Kitchen Deals",
-      link: "/products?category=Kitchen%20%26%20Dining"
+      link: "/category/kitchen-dining"
     },
     {
       title: "Elevate Your Home Aesthetics",
@@ -92,7 +92,7 @@ export default function Home() {
       badge: "Home & Living",
       image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1200&auto=format&fit=crop",
       cta: "Upgrade Your Space",
-      link: "/products?category=Home%20%26%20Living"
+      link: "/category/home-living"
     },
     {
       title: "Travel & Tech Organizers",
@@ -100,7 +100,7 @@ export default function Home() {
       badge: "Bags & Travel",
       image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=1200&auto=format&fit=crop",
       cta: "Explore Travel Bags",
-      link: "/products?category=Bags%20%26%20Travel"
+      link: "/category/bags-travel"
     }
   ];
 
@@ -146,7 +146,7 @@ export default function Home() {
       desc: 'Smart blenders, electric steamers, premium non-stick pots & tools.',
       count: '15+ Products',
       image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=400&auto=format&fit=crop',
-      link: '/products?category=Kitchen%20%26%20Dining'
+      link: '/category/kitchen-dining'
     },
     {
       name: 'Home & Living',
@@ -154,7 +154,7 @@ export default function Home() {
       desc: 'Ultrasonic humidifiers, mood-setting lamps & home comfort items.',
       count: '20+ Products',
       image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=400&auto=format&fit=crop',
-      link: '/products?category=Home%20%26%20Living'
+      link: '/category/home-living'
     },
     {
       name: 'Bags & Travel',
@@ -162,7 +162,7 @@ export default function Home() {
       desc: 'TSA-safe backpacks, tech pouches, and travel organizers.',
       count: '12+ Products',
       image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=400&auto=format&fit=crop',
-      link: '/products?category=Bags%20%26%20Travel'
+      link: '/category/bags-travel'
     },
     {
       name: 'Bedding & Bath',
@@ -170,7 +170,7 @@ export default function Home() {
       desc: 'Orthopedic memory foam pillows, satin sheets & soft towels.',
       count: '18+ Products',
       image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=400&auto=format&fit=crop',
-      link: '/products?category=Bedding%20%26%20Bath'
+      link: '/category/bedding-bath'
     },
     {
       name: 'Laundry & Cleaning',
@@ -178,7 +178,7 @@ export default function Home() {
       desc: 'Handheld cordless stick vacuums, steamers & scrubbers.',
       count: '10+ Products',
       image: 'https://images.unsplash.com/photo-1558317374-067fb5f30001?q=80&w=400&auto=format&fit=crop',
-      link: '/products?category=Laundry%20%26%20Cleaning'
+      link: '/category/laundry-cleaning'
     },
     {
       name: 'Fashion',
@@ -186,7 +186,7 @@ export default function Home() {
       desc: 'Minimalist genuine leather wallets, sunglasses & unisex bags.',
       count: '24+ Products',
       image: 'https://images.unsplash.com/photo-1479064555552-3ef4979f8908?q=80&w=400&auto=format&fit=crop',
-      link: '/products?category=Fashion'
+      link: '/category/fashion'
     },
     {
       name: 'Pet Supplies',
@@ -194,7 +194,7 @@ export default function Home() {
       desc: 'Automatic cat water fountains, grooming brushes & healthy pet gear.',
       count: '14+ Products',
       image: 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=400&auto=format&fit=crop',
-      link: '/products?category=Pet%20Supplies'
+      link: '/category/pet-supplies'
     }
   ];
 

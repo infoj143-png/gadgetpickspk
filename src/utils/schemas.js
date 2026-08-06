@@ -123,6 +123,48 @@ export function getFAQSchema(faqs) {
   };
 }
 
+export function getCategorySchema(categoryName, products) {
+  const categorySlug = categoryName.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-');
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": `${categoryName} Recommendations Catalog`,
+    "description": `Browse the best reviewed and top recommended ${categoryName} items on GadgetPicksPK.`,
+    "url": `https://gadgetpickspk.vercel.app/category/${categorySlug}`,
+    "mainEntity": {
+      "@type": "ItemList",
+      "numberOfItems": products.length,
+      "itemListElement": products.map((product, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "item": {
+          "@type": "Product",
+          "name": product.name,
+          "image": product.image,
+          "description": product.shortDescription,
+          "sku": product.id,
+          "brand": {
+            "@type": "Brand",
+            "name": product.brand || "Generic"
+          },
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "PKR",
+            "price": product.currentPrice,
+            "itemCondition": "https://schema.org/NewCondition",
+            "availability": "https://schema.org/InStock"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": product.rating,
+            "reviewCount": product.reviewsCount || 10
+          }
+        }
+      }))
+    }
+  };
+}
+
 /**
  * Appends or replaces the structured JSON-LD schema inside the document head.
  * @param {string} id - HTML ID attribute to uniquely identify script tag

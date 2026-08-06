@@ -40,25 +40,25 @@ export default function NotFound() {
         <h4 className="text-xs font-extrabold uppercase tracking-widest text-slate-400 dark:text-slate-500">Explore Active Categories</h4>
         <div className="grid grid-cols-2 gap-2 text-xs font-bold">
           <Link
-            to="/products?category=Kitchen%20%26%20Dining"
+            to="/category/kitchen-dining"
             className="p-2.5 bg-slate-50 dark:bg-slate-800 hover:bg-orange-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 hover:text-orange-600 dark:hover:text-orange-400 rounded-xl transition-all border border-slate-100 dark:border-slate-800"
           >
             Kitchen & Dining
           </Link>
           <Link
-            to="/products?category=Home%20%26%20Living"
+            to="/category/home-living"
             className="p-2.5 bg-slate-50 dark:bg-slate-800 hover:bg-orange-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 hover:text-orange-600 dark:hover:text-orange-400 rounded-xl transition-all border border-slate-100 dark:border-slate-800"
           >
             Home & Living
           </Link>
           <Link
-            to="/products?category=Bags%20%26%20Travel"
+            to="/category/bags-travel"
             className="p-2.5 bg-slate-50 dark:bg-slate-800 hover:bg-orange-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 hover:text-orange-600 dark:hover:text-orange-400 rounded-xl transition-all border border-slate-100 dark:border-slate-800"
           >
             Bags & Travel
           </Link>
           <Link
-            to="/products?category=Pet%20Supplies"
+            to="/category/pet-supplies"
             className="p-2.5 bg-slate-50 dark:bg-slate-800 hover:bg-orange-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 hover:text-orange-600 dark:hover:text-orange-400 rounded-xl transition-all border border-slate-100 dark:border-slate-800"
           >
             Pet Supplies
