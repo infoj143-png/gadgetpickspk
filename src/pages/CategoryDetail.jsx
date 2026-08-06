@@ -59,6 +59,12 @@ export default function CategoryDetail() {
     return list.length > 0 ? list : categoryProducts;
   }, [categoryProducts]);
 
+  // Query Trending Products
+  const trendingProducts = useMemo(() => {
+    const list = categoryProducts.filter(p => p.isTrending || p.badges?.some(b => b.toLowerCase() === 'trending'));
+    return list.length > 0 ? list : categoryProducts;
+  }, [categoryProducts]);
+
   // Get Related Categories
   const relatedCategories = useMemo(() => {
     return categoriesData.filter((cat) => cat.slug !== categorySlug);
@@ -117,16 +123,16 @@ export default function CategoryDetail() {
   }
 
   return (
-    <div className="bg-slate-50 dark:bg-slate-950 min-h-screen py-8 transition-colors duration-300">
+    <main className="bg-slate-50 dark:bg-slate-950 min-h-screen py-8 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 animate-fadeIn">
 
         {/* Breadcrumb Navigation */}
-        <nav className="flex flex-wrap items-center gap-2 text-xs font-bold text-slate-500 dark:text-slate-400">
+        <nav className="flex flex-wrap items-center gap-2 text-xs font-bold text-slate-500 dark:text-slate-400" aria-label="Breadcrumb">
           <Link to="/" className="hover:text-orange-500 transition-colors">Home</Link>
           <ChevronRight size={12} />
           <Link to="/products" className="hover:text-orange-500 transition-colors">Products Catalog</Link>
           <ChevronRight size={12} />
-          <span className="text-orange-500 font-extrabold">{categoryMeta.name}</span>
+          <span className="text-orange-500 font-extrabold" aria-current="page">{categoryMeta.name}</span>
         </nav>
 
         {/* Hero Banner Section */}
@@ -194,6 +200,23 @@ export default function CategoryDetail() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {bestSellingProducts.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Trending Products Section */}
+        {trendingProducts.length > 0 && (
+          <section className="space-y-6">
+            <div className="border-b border-slate-200 dark:border-slate-800 pb-3 flex items-center gap-2">
+              <TrendingUp className="text-orange-500" size={22} />
+              <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white tracking-tight">
+                Trending {categoryMeta.name} Products
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {trendingProducts.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
             </div>
@@ -275,9 +298,9 @@ export default function CategoryDetail() {
           <section className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800 p-6 sm:p-8 shadow-sm transition-colors duration-300 space-y-4">
             <div className="border-b border-slate-100 dark:border-slate-800 pb-2 flex items-center gap-2">
               <Layers size={18} className="text-orange-500" />
-              <h3 className="font-extrabold text-slate-900 dark:text-white text-base">
+              <h2 className="font-extrabold text-slate-900 dark:text-white text-base">
                 Explore Other Categories
-              </h3>
+              </h2>
             </div>
             <div className="flex flex-wrap gap-2.5">
               {relatedCategories.map((cat, idx) => (
@@ -294,6 +317,6 @@ export default function CategoryDetail() {
         )}
 
       </div>
-    </div>
+    </main>
   );
 }
