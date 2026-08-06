@@ -82,7 +82,8 @@ export default function Header() {
 
   const handleCategorySelect = (category) => {
     setIsCategoryDropdownOpen(false);
-    navigate(`/products?category=${encodeURIComponent(category)}`);
+    const slug = category.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-');
+    navigate(`/category/${slug}`);
   };
 
   // Seven Main Categories

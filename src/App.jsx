@@ -17,6 +17,7 @@ function PageLoader() {
 // Lazy loaded page components
 const Home = lazy(() => import('./pages/Home'));
 const CategoryListing = lazy(() => import('./pages/CategoryListing'));
+const CategoryDetail = lazy(() => import('./pages/CategoryDetail'));
 const ProductDetail = lazy(() => import('./pages/ProductDetail'));
 const Compare = lazy(() => import('./pages/Compare'));
 const BuyingGuide = lazy(() => import('./pages/BuyingGuide'));
@@ -54,6 +55,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<CategoryListing />} />
+            <Route path="/category/:categorySlug" element={<CategoryDetail />} />
             <Route path="/products/:id" element={<ProductDetail />} />
             <Route path="/compare/:type" element={<Compare />} />
             <Route path="/guides/:categorySlug" element={<BuyingGuide />} />
