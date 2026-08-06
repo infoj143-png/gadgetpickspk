@@ -67,7 +67,7 @@ export default function Contact() {
       form.append('subject', formData.subject);
       form.append('message', formData.message);
 
-      const response = await fetch('https://formsubmit.co/infome.daraz@gmail.com', {
+      const response = await fetch('https://formsubmit.co/ajax/infome.daraz@gmail.com', {
         method: 'POST',
         headers: {
           'Accept': 'application/json'
