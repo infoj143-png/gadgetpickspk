@@ -17,7 +17,12 @@ import {
   ArrowUpRight,
   Star,
   ThumbsUp,
-  ShoppingBag
+  ShoppingBag,
+  Bath,
+  Smile,
+  Lock,
+  LayoutGrid,
+  Box
 } from 'lucide-react';
 import useSEO from '../hooks/useSEO';
 import productsData from '../data/products.json';
@@ -64,6 +69,40 @@ export default function CategoryDetail() {
     const list = categoryProducts.filter(p => p.isTrending || p.badges?.some(b => b.toLowerCase() === 'trending'));
     return list.length > 0 ? list : categoryProducts;
   }, [categoryProducts]);
+
+  // Home & Living Subcategory Shelves config
+  const homeLivingSubCategories = useMemo(() => [
+    {
+      name: 'Bathroom Shelves',
+      slug: 'bathroom-shelves',
+      desc: 'Premium rustproof wall-mounted shelves and corner organizers to declutter your shower experience.',
+      icon: <Bath size={16} />
+    },
+    {
+      name: 'Toothpaste Dispensers',
+      slug: 'toothpaste-dispensers',
+      desc: 'Hands-free automatic squeezers and dustproof toothbrush holders designed for family hygiene.',
+      icon: <Smile size={16} />
+    },
+    {
+      name: 'Refrigerator Locks',
+      slug: 'refrigerator-locks',
+      desc: 'Baby-proofing safety solutions to secure cabinets, drawers, and refrigerators with ease.',
+      icon: <Lock size={16} />
+    },
+    {
+      name: 'Home Organizers',
+      slug: 'home-organizers',
+      desc: 'Sleek, minimalist desktop and cable organizers to keep your workspace clear and tidy.',
+      icon: <LayoutGrid size={16} />
+    },
+    {
+      name: 'Storage Boxes',
+      slug: 'storage-boxes',
+      desc: 'Durable collapsible canvas fabric bins with steel supports for structured wardrobe storage.',
+      icon: <Box size={16} />
+    }
+  ], []);
 
   // Get Related Categories
   const relatedCategories = useMemo(() => {
@@ -219,6 +258,80 @@ export default function CategoryDetail() {
               {trendingProducts.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
+            </div>
+          </section>
+        )}
+
+        {/* Home & Living Specialist Subcategories */}
+        {categorySlug === 'home-living' && (
+          <section className="space-y-12 pt-4">
+            <div className="border-b border-slate-200 dark:border-slate-800 pb-4">
+              <span className="text-xs font-black uppercase tracking-widest text-orange-500 bg-orange-500/10 px-3 py-1 rounded-full border border-orange-500/20">
+                Specialist Shelves
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight mt-2">
+                Home & Living Specialized Collections
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-semibold">
+                Explore specialized storage, safety, and organization solutions designed for modern Pakistani homes.
+              </p>
+
+              {/* Scrollable Subcategory Jump Links */}
+              <div className="flex flex-wrap gap-2 mt-4">
+                {homeLivingSubCategories.map((sub) => (
+                  <a
+                    key={sub.slug}
+                    href={`#${sub.slug}`}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-orange-500 dark:hover:border-orange-500 rounded-xl text-xs font-bold text-slate-750 dark:text-slate-300 hover:text-orange-500 dark:hover:text-orange-400 transition-all shadow-xs"
+                  >
+                    {sub.icon}
+                    {sub.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Subcategory Shelves Grid */}
+            <div className="space-y-12">
+              {homeLivingSubCategories.map((sub) => {
+                const subProducts = categoryProducts.filter(
+                  (p) => p.subCategory?.toLowerCase() === sub.name.toLowerCase()
+                );
+                if (subProducts.length === 0) return null;
+
+                return (
+                  <div
+                    key={sub.slug}
+                    id={sub.slug}
+                    className="scroll-mt-20 bg-white dark:bg-slate-900/40 rounded-3xl border border-slate-200/60 dark:border-slate-800/80 p-6 sm:p-8 space-y-6 shadow-xs transition-all duration-300"
+                  >
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-150 dark:border-slate-800/60 pb-4">
+                      <div className="space-y-1">
+                        <div className="flex items-center gap-2">
+                          <div className="p-2 bg-orange-100 dark:bg-orange-950/40 text-orange-600 dark:text-orange-400 rounded-xl">
+                            {sub.icon}
+                          </div>
+                          <h3 className="text-lg sm:text-xl font-black text-slate-900 dark:text-white tracking-tight">
+                            {sub.name} Collection
+                          </h3>
+                        </div>
+                        <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-semibold max-w-2xl">
+                          {sub.desc}
+                        </p>
+                      </div>
+                      <span className="self-start sm:self-center text-[11px] font-extrabold text-orange-600 dark:text-orange-400 bg-orange-50 dark:bg-orange-950/30 border border-orange-100 dark:border-orange-900/50 px-2.5 py-1 rounded-full">
+                        {subProducts.length} {subProducts.length === 1 ? 'Product' : 'Products'} Verified
+                      </span>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                      {subProducts.map((product) => (
+                        <ProductCard key={product.id} product={product} />
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </section>
         )}
