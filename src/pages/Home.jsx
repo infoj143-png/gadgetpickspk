@@ -323,10 +323,10 @@ export default function Home() {
 
       {/* Interactive Search Bar Section */}
       <div className="max-w-4xl mx-auto px-4 -mt-12 relative z-30">
-        <div className="bg-white rounded-2xl shadow-xl border border-slate-150 p-4 sm:p-6 flex flex-col md:flex-row gap-4 items-center">
+        <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-slate-150 dark:border-slate-800 p-4 sm:p-6 flex flex-col md:flex-row gap-4 items-center transition-colors">
           <div className="text-center md:text-left flex-shrink-0">
-            <h3 className="font-extrabold text-slate-800 text-base">Quick Search</h3>
-            <p className="text-xs text-slate-500">Find products, brands, or models instantly</p>
+            <h3 className="font-extrabold text-slate-800 dark:text-white text-base">Quick Search</h3>
+            <p className="text-xs text-slate-500 dark:text-slate-400">Find products, brands, or models instantly</p>
           </div>
           <form onSubmit={handleSearchSubmit} className="w-full flex-1 relative flex items-center">
             <input
@@ -334,7 +334,7 @@ export default function Home() {
               placeholder="Search e.g., Xiaomi Deerma, Catit, Slique, wallet..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-4 pr-12 py-3 bg-slate-50 border border-slate-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 rounded-xl text-sm font-semibold outline-none transition-all placeholder:text-slate-400"
+              className="w-full pl-4 pr-12 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 dark:focus:ring-orange-950 rounded-xl text-sm font-semibold outline-none transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500 dark:text-white"
             />
             <button
               type="submit"
@@ -349,14 +349,14 @@ export default function Home() {
 
       {/* Affiliate Disclosure Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-semibold text-slate-600">
+        <div className="bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-semibold text-slate-600 dark:text-slate-300">
           <div className="flex items-center gap-2">
             <ShieldCheck className="text-orange-500 flex-shrink-0" size={18} />
             <p>
               <strong>Affiliate Disclosure:</strong> GadgetPicksPK is supported by readers. When you buy through our outbound affiliate links, we may earn a small referral commission at absolutely no extra cost to you.
             </p>
           </div>
-          <div className="flex items-center gap-1.5 bg-orange-100/60 border border-orange-200 px-3 py-1 rounded-full text-orange-800 text-[10px] font-bold whitespace-nowrap">
+          <div className="flex items-center gap-1.5 bg-orange-100/60 dark:bg-orange-950/25 border border-orange-200 dark:border-orange-950 px-3 py-1 rounded-full text-orange-800 dark:text-orange-400 text-[10px] font-bold whitespace-nowrap">
             Updated Daily
           </div>
         </div>
@@ -365,13 +365,13 @@ export default function Home() {
       {/* Seven Main Categories Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-lg mx-auto mb-10">
-          <span className="text-xs font-extrabold text-orange-500 uppercase tracking-widest bg-orange-50 px-3 py-1 rounded-full">
+          <span className="text-xs font-extrabold text-orange-500 dark:text-orange-400 uppercase tracking-widest bg-orange-50 dark:bg-orange-950/30 px-3 py-1 rounded-full">
             Main Categories
           </span>
-          <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-2">
+          <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mt-2">
             Explore Seven Main Categories
           </h2>
-          <p className="text-slate-500 text-xs sm:text-sm mt-1">
+          <p className="text-slate-500 dark:text-slate-400 text-xs sm:text-sm mt-1">
             Carefully curated product catalogs supporting the new core lifestyle identity of GadgetPicksPK.
           </p>
         </div>
@@ -381,11 +381,11 @@ export default function Home() {
             <div
               key={idx}
               onClick={() => navigate(cat.link)}
-              className="bg-white rounded-2xl border border-slate-200/60 shadow-sm hover:shadow-lg hover:border-orange-200 transition-all cursor-pointer group text-center relative overflow-hidden flex flex-col justify-between"
+              className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/60 dark:border-slate-800 shadow-sm hover:shadow-lg hover:border-orange-200 dark:hover:border-orange-500/30 transition-all cursor-pointer group text-center relative overflow-hidden flex flex-col justify-between"
             >
               <div className="absolute top-0 left-0 w-full h-1 bg-orange-500" />
               <div className="p-5 flex-1 flex flex-col items-center">
-                <div className="w-20 h-20 rounded-full overflow-hidden bg-slate-100 mb-4 border border-slate-200 group-hover:scale-105 transition-transform duration-300">
+                <div className="w-20 h-20 rounded-full overflow-hidden bg-slate-100 dark:bg-slate-950 mb-4 border border-slate-200 dark:border-slate-800 group-hover:scale-105 transition-transform duration-300">
                   <img
                     src={cat.image}
                     alt={cat.name}
@@ -393,20 +393,20 @@ export default function Home() {
                     loading="lazy"
                   />
                 </div>
-                <div className="w-10 h-10 rounded-xl bg-orange-50 text-orange-500 flex items-center justify-center mb-3">
+                <div className="w-10 h-10 rounded-xl bg-orange-50 dark:bg-orange-950/30 text-orange-500 flex items-center justify-center mb-3">
                   {cat.icon}
                 </div>
-                <h3 className="font-extrabold text-slate-800 text-base group-hover:text-orange-500 transition-colors">
+                <h3 className="font-extrabold text-slate-800 dark:text-white text-base group-hover:text-orange-500 dark:group-hover:text-orange-400 transition-colors">
                   {cat.name}
                 </h3>
-                <p className="text-slate-500 text-xs mt-1 font-medium px-2 line-clamp-2">
+                <p className="text-slate-500 dark:text-slate-400 text-xs mt-1 font-medium px-2 line-clamp-2">
                   {cat.desc}
                 </p>
-                <span className="text-[10px] font-bold text-orange-600 bg-orange-50 border border-orange-100 px-2 py-0.5 rounded-full mt-3">
+                <span className="text-[10px] font-bold text-orange-600 dark:text-orange-400 bg-orange-50 dark:bg-orange-950/30 border border-orange-100 dark:border-orange-900/50 px-2 py-0.5 rounded-full mt-3">
                   {cat.count}
                 </span>
               </div>
-              <div className="bg-slate-50 border-t border-slate-100 p-3.5 flex items-center justify-center gap-1 text-xs font-bold text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-all">
+              <div className="bg-slate-50 dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800 p-3.5 flex items-center justify-center gap-1 text-xs font-bold text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-all">
                 Browse Products
                 <ChevronRight size={14} />
               </div>
@@ -420,16 +420,16 @@ export default function Home() {
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-end justify-between mb-6">
             <div>
-              <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-orange-600 uppercase tracking-widest bg-orange-50 px-2.5 py-1 rounded border border-orange-100">
+              <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-orange-600 dark:text-orange-400 uppercase tracking-widest bg-orange-50 dark:bg-orange-950/30 px-2.5 py-1 rounded border border-orange-100 dark:border-orange-900/50">
                 <Flame size={12} className="text-orange-500 animate-pulse" /> Popular Choices
               </span>
-              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-1">
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mt-1">
                 Trending Products
               </h2>
             </div>
             <Link
               to="/products?tag=Trending"
-              className="group flex items-center gap-1.5 font-bold text-sm text-orange-500 hover:text-orange-600 transition-colors"
+              className="group flex items-center gap-1.5 font-bold text-sm text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 transition-colors"
             >
               See All Trending
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -445,20 +445,20 @@ export default function Home() {
 
       {/* Best Selling Products Section */}
       {bestSellers.length > 0 && (
-        <section className="bg-slate-100/50 py-12 border-y border-slate-200/50">
+        <section className="bg-slate-100/50 dark:bg-slate-900/30 py-12 border-y border-slate-200/50 dark:border-slate-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-end justify-between mb-8">
               <div>
-                <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-orange-600 uppercase tracking-widest bg-orange-50 px-2.5 py-1 rounded border border-orange-100">
+                <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-orange-600 dark:text-orange-400 uppercase tracking-widest bg-orange-50 dark:bg-orange-950/30 px-2.5 py-1 rounded border border-orange-100 dark:border-orange-900/50">
                   <Award size={12} className="text-orange-500" /> Top Sales volume
                 </span>
-                <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-1">
+                <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mt-1">
                   Best Selling Products
                 </h2>
               </div>
               <Link
                 to="/products"
-                className="group flex items-center gap-1.5 font-bold text-sm text-orange-500 hover:text-orange-600 transition-colors"
+                className="group flex items-center gap-1.5 font-bold text-sm text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 transition-colors"
               >
                 See All Catalog
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -478,16 +478,16 @@ export default function Home() {
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-end justify-between mb-6">
             <div>
-              <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-orange-600 uppercase tracking-widest bg-orange-50 px-2.5 py-1 rounded border border-orange-100">
+              <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-orange-600 dark:text-orange-400 uppercase tracking-widest bg-orange-50 dark:bg-orange-950/30 px-2.5 py-1 rounded border border-orange-100 dark:border-orange-900/50">
                 <Star size={12} fill="currentColor" className="text-orange-500" /> Rated 4.5+ Stars
               </span>
-              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-1">
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mt-1">
                 Top Rated Products
               </h2>
             </div>
             <Link
               to="/products"
-              className="group flex items-center gap-1.5 font-bold text-sm text-orange-500 hover:text-orange-600 transition-colors"
+              className="group flex items-center gap-1.5 font-bold text-sm text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 transition-colors"
             >
               Browse Top Rated
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -503,20 +503,20 @@ export default function Home() {
 
       {/* Featured Deals Section */}
       {featuredDeals.length > 0 && (
-        <section className="bg-slate-100/50 py-12 border-y border-slate-200/50">
+        <section className="bg-slate-100/50 dark:bg-slate-900/30 py-12 border-y border-slate-200/50 dark:border-slate-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-end justify-between mb-8">
               <div>
-                <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-orange-600 uppercase tracking-widest bg-orange-50 px-2.5 py-1 rounded border border-orange-100">
+                <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-orange-600 dark:text-orange-400 uppercase tracking-widest bg-orange-50 dark:bg-orange-950/30 px-2.5 py-1 rounded border border-orange-100 dark:border-orange-900/50">
                   <Percent size={12} className="text-orange-500" /> Special Markdowns
                 </span>
-                <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-1">
+                <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mt-1">
                   Featured Deals
                 </h2>
               </div>
               <Link
                 to="/products?tag=Deals"
-                className="group flex items-center gap-1.5 font-bold text-sm text-orange-500 hover:text-orange-600 transition-colors"
+                className="group flex items-center gap-1.5 font-bold text-sm text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 transition-colors"
               >
                 View Hot Deals
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -536,16 +536,16 @@ export default function Home() {
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-end justify-between mb-6">
             <div>
-              <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-orange-600 uppercase tracking-widest bg-orange-50 px-2.5 py-1 rounded border border-orange-100">
+              <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-orange-600 dark:text-orange-400 uppercase tracking-widest bg-orange-50 dark:bg-orange-950/30 px-2.5 py-1 rounded border border-orange-100 dark:border-orange-900/50">
                 <Zap size={12} className="text-orange-500 animate-pulse" /> Handpicked Daily
               </span>
-              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-1">
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mt-1">
                 Today's Picks
               </h2>
             </div>
             <Link
               to="/products"
-              className="group flex items-center gap-1.5 font-bold text-sm text-orange-500 hover:text-orange-600 transition-colors"
+              className="group flex items-center gap-1.5 font-bold text-sm text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 transition-colors"
             >
               Explore Today
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -561,20 +561,20 @@ export default function Home() {
 
       {/* Budget Picks Section */}
       {budgetPicks.length > 0 && (
-        <section className="bg-slate-100/50 py-12 border-y border-slate-200/50">
+        <section className="bg-slate-100/50 dark:bg-slate-900/30 py-12 border-y border-slate-200/50 dark:border-slate-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-end justify-between mb-8">
               <div>
-                <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-orange-600 uppercase tracking-widest bg-orange-50 px-2.5 py-1 rounded border border-orange-100">
+                <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-orange-600 dark:text-orange-400 uppercase tracking-widest bg-orange-50 dark:bg-orange-950/30 px-2.5 py-1 rounded border border-orange-100 dark:border-orange-900/50">
                   <Tag size={12} className="text-orange-500" /> Maximum Value
                 </span>
-                <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-1">
+                <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mt-1">
                   Budget Picks (Under Rs. 5,000)
                 </h2>
               </div>
               <Link
                 to="/products"
-                className="group flex items-center gap-1.5 font-bold text-sm text-orange-500 hover:text-orange-600 transition-colors"
+                className="group flex items-center gap-1.5 font-bold text-sm text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 transition-colors"
               >
                 View Value Picks
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -594,16 +594,16 @@ export default function Home() {
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-end justify-between mb-6">
             <div>
-              <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-orange-600 uppercase tracking-widest bg-orange-50 px-2.5 py-1 rounded border border-orange-100">
+              <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-orange-600 dark:text-orange-400 uppercase tracking-widest bg-orange-50 dark:bg-orange-950/30 px-2.5 py-1 rounded border border-orange-100 dark:border-orange-900/50">
                 <Clock size={12} className="text-orange-500" /> Brand New Additions
               </span>
-              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-1">
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mt-1">
                 Recently Added
               </h2>
             </div>
             <Link
               to="/products?tag=Featured"
-              className="group flex items-center gap-1.5 font-bold text-sm text-orange-500 hover:text-orange-600 transition-colors"
+              className="group flex items-center gap-1.5 font-bold text-sm text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 transition-colors"
             >
               Browse Latest
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -619,9 +619,9 @@ export default function Home() {
 
       {/* Recently Viewed Products Section */}
       {recentlyViewed.length > 0 && (
-        <section className="bg-orange-50/40 py-12 border-y border-orange-100/60">
+        <section className="bg-orange-50/40 dark:bg-orange-950/20 py-12 border-y border-orange-100/60 dark:border-orange-950">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center gap-2 mb-6 text-slate-800">
+            <div className="flex items-center gap-2 mb-6 text-slate-800 dark:text-white">
               <Eye className="text-orange-500" size={20} />
               <h2 className="text-xl sm:text-2xl font-black">Recently Viewed</h2>
             </div>
@@ -635,7 +635,7 @@ export default function Home() {
       )}
 
       {/* Why Trust GadgetPicksPK Section */}
-      <section className="bg-slate-900 text-white py-16">
+      <section className="bg-slate-900 dark:bg-slate-950 text-white py-16 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-xl mx-auto mb-12">
             <span className="text-orange-500 text-xs font-extrabold uppercase tracking-widest">
@@ -650,7 +650,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-slate-800/50 rounded-2xl p-6 border border-slate-800 text-center space-y-3">
+            <div className="bg-slate-800/50 dark:bg-slate-900/40 rounded-2xl p-6 border border-slate-800 dark:border-slate-900 text-center space-y-3">
               <div className="w-12 h-12 rounded-xl bg-orange-500/15 text-orange-500 flex items-center justify-center mx-auto mb-2">
                 <ShieldCheck size={26} />
               </div>
@@ -660,7 +660,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="bg-slate-800/50 rounded-2xl p-6 border border-slate-800 text-center space-y-3">
+            <div className="bg-slate-800/50 dark:bg-slate-900/40 rounded-2xl p-6 border border-slate-800 dark:border-slate-900 text-center space-y-3">
               <div className="w-12 h-12 rounded-xl bg-orange-500/15 text-orange-500 flex items-center justify-center mx-auto mb-2">
                 <HeartHandshake size={26} />
               </div>
@@ -670,7 +670,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="bg-slate-800/50 rounded-2xl p-6 border border-slate-800 text-center space-y-3">
+            <div className="bg-slate-800/50 dark:bg-slate-900/40 rounded-2xl p-6 border border-slate-800 dark:border-slate-900 text-center space-y-3">
               <div className="w-12 h-12 rounded-xl bg-orange-500/15 text-orange-500 flex items-center justify-center mx-auto mb-2">
                 <Truck size={26} />
               </div>
@@ -686,10 +686,10 @@ export default function Home() {
       {/* FAQ Preview Section */}
       <section className="max-w-4xl mx-auto px-4">
         <div className="text-center max-w-lg mx-auto mb-10">
-          <span className="text-xs font-extrabold text-orange-500 uppercase tracking-widest bg-orange-50 px-3 py-1 rounded-full">
+          <span className="text-xs font-extrabold text-orange-500 dark:text-orange-400 uppercase tracking-widest bg-orange-50 dark:bg-orange-950/30 px-3 py-1 rounded-full">
             Got Questions?
           </span>
-          <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-2">
+          <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mt-2">
             Frequently Asked Questions
           </h2>
           <p className="text-slate-500 text-xs sm:text-sm mt-1">
@@ -701,11 +701,11 @@ export default function Home() {
           {homeFaqs.map((faq, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-2xl border border-slate-200/80 shadow-xs overflow-hidden transition-all duration-300"
+              className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-xs overflow-hidden transition-all duration-300"
             >
               <button
                 onClick={() => toggleFaq(idx)}
-                className="w-full text-left px-6 py-4 flex items-center justify-between text-slate-800 font-extrabold hover:text-orange-500 text-sm sm:text-base outline-none transition-colors"
+                className="w-full text-left px-6 py-4 flex items-center justify-between text-slate-800 dark:text-white font-extrabold hover:text-orange-500 dark:hover:text-orange-400 text-sm sm:text-base outline-none transition-colors"
               >
                 <span>{faq.q}</span>
                 {openFaq === idx ? (
@@ -723,7 +723,7 @@ export default function Home() {
                     exit={{ height: 0, opacity: 0 }}
                     className="overflow-hidden"
                   >
-                    <p className="px-6 pb-5 text-xs sm:text-sm text-slate-500 leading-relaxed border-t border-slate-100 pt-3 bg-slate-50/50 font-semibold">
+                    <p className="px-6 pb-5 text-xs sm:text-sm text-slate-500 dark:text-slate-400 leading-relaxed border-t border-slate-100 dark:border-slate-800 pt-3 bg-slate-50/50 dark:bg-slate-950/50 font-semibold">
                       {faq.a}
                     </p>
                   </motion.div>
@@ -736,18 +736,18 @@ export default function Home() {
 
       {/* Newsletter Section */}
       <section className="max-w-5xl mx-auto px-4">
-        <div className="bg-gradient-to-br from-orange-50 to-orange-100/50 border border-orange-200/60 rounded-3xl p-8 md:p-12 text-center relative overflow-hidden">
+        <div className="bg-gradient-to-br from-orange-50 to-orange-100/50 dark:from-slate-900 dark:to-slate-800 border border-orange-200/60 dark:border-slate-800 rounded-3xl p-8 md:p-12 text-center relative overflow-hidden transition-colors">
           <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/5 rounded-full -mr-16 -mt-16" />
           <div className="absolute bottom-0 left-0 w-24 h-24 bg-orange-500/5 rounded-full -ml-12 -mb-12" />
 
           <div className="relative z-10 max-w-xl mx-auto space-y-4">
-            <span className="inline-block px-3 py-1 rounded-full text-xs font-extrabold text-orange-600 bg-orange-100/60 border border-orange-200">
+            <span className="inline-block px-3 py-1 rounded-full text-xs font-extrabold text-orange-600 dark:text-orange-400 bg-orange-100/60 dark:bg-orange-950/30 border border-orange-200 dark:border-orange-900/50">
               Never Miss A Deal
             </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
               Get Curated Deals in Your Inbox
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+            <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed">
               Sign up for our newsletter to receive weekly alerts for massive coupon drops, markdown deals, and hot reviews in Pakistan.
             </p>
 
@@ -767,7 +767,7 @@ export default function Home() {
                     placeholder="Enter your email address (e.g. asim@gmail.com)"
                     value={newsletterEmail}
                     onChange={(e) => setNewsletterEmail(e.target.value)}
-                    className="flex-grow px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent font-medium"
+                    className="flex-grow px-4 py-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent dark:text-white font-medium"
                   />
                   <button
                     type="submit"
@@ -781,7 +781,7 @@ export default function Home() {
                   key="success"
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="bg-white/80 border border-emerald-200 p-4 rounded-xl max-w-sm mx-auto text-emerald-800 text-xs font-semibold flex items-center justify-center gap-2"
+                  className="bg-white/80 dark:bg-slate-800/80 border border-emerald-200 dark:border-emerald-900/50 p-4 rounded-xl max-w-sm mx-auto text-emerald-800 dark:text-emerald-400 text-xs font-semibold flex items-center justify-center gap-2"
                 >
                   <CheckCircle className="text-emerald-500" size={18} />
                   Thank you! You have successfully subscribed to GadgetPicksPK.

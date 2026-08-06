@@ -11,21 +11,21 @@ export default function Disclaimer() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div className="bg-white rounded-3xl border border-slate-200/60 shadow-sm p-6 sm:p-10 space-y-8">
+      <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800 shadow-sm p-6 sm:p-10 space-y-8 transition-colors">
 
         {/* Title area */}
-        <div className="text-center space-y-2 border-b border-slate-100 pb-6">
-          <div className="w-12 h-12 bg-orange-50 text-orange-500 rounded-full flex items-center justify-center mx-auto">
+        <div className="text-center space-y-2 border-b border-slate-100 dark:border-slate-800 pb-6">
+          <div className="w-12 h-12 bg-orange-50 dark:bg-orange-950/20 text-orange-500 rounded-full flex items-center justify-center mx-auto">
             <AlertCircle size={26} />
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black text-slate-900">Affiliate & Pricing Disclaimer</h1>
-          <p className="text-slate-500 text-xs font-bold">Important Notice to Our Valued Visitors</p>
+          <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">Affiliate & Pricing Disclaimer</h1>
+          <p className="text-slate-500 dark:text-slate-400 text-xs font-bold">Important Notice to Our Valued Visitors</p>
         </div>
 
         {/* Content Details */}
-        <div className="space-y-6 text-sm text-slate-600 leading-relaxed font-medium">
+        <div className="space-y-6 text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
 
-          <div className="p-5 bg-orange-50 border border-orange-200/60 rounded-2xl text-orange-800 space-y-1.5">
+          <div className="p-5 bg-orange-50 dark:bg-slate-950 border border-orange-200/60 dark:border-slate-800 rounded-2xl text-orange-800 dark:text-orange-400 space-y-1.5">
             <h3 className="font-extrabold text-base flex items-center gap-2">
               <AlertCircle size={18} className="text-orange-600" />
               Critical Price Notice
@@ -36,7 +36,7 @@ export default function Disclaimer() {
           </div>
 
           <section className="space-y-2">
-            <h2 className="text-lg font-black text-slate-800 flex items-center gap-2">
+            <h2 className="text-lg font-black text-slate-800 dark:text-white flex items-center gap-2">
               <ShieldCheck size={18} className="text-orange-500" />
               1. Affiliate Compensation Disclosure
             </h2>
@@ -46,7 +46,7 @@ export default function Disclaimer() {
           </section>
 
           <section className="space-y-2">
-            <h2 className="text-lg font-black text-slate-800 flex items-center gap-2">
+            <h2 className="text-lg font-black text-slate-800 dark:text-white flex items-center gap-2">
               <RefreshCw size={18} className="text-orange-500" />
               2. Accuracy of Curated Information
             </h2>
