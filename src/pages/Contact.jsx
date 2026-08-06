@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, MessageSquare, ShieldCheck, MapPin, CheckCircle2, Send, Clock } from 'lucide-react';
+import { Mail, MessageSquare, ShieldCheck, MapPin, CheckCircle2, Send, Clock, AlertCircle } from 'lucide-react';
 import useSEO from '../hooks/useSEO';
 
 export default function Contact() {
@@ -19,6 +19,7 @@ export default function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState('');
   const [errors, setErrors] = useState({});
 
   // Client-side simple validation
@@ -52,23 +53,45 @@ export default function Contact() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateForm()) return;
 
     setIsSubmitting(true);
+    setSubmitError('');
 
-    // Simulate API delay
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitSuccess(true);
-      setFormData({
-        name: '',
-        email: '',
-        subject: 'General Inquiry',
-        message: ''
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/infome.daraz@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message
+        })
       });
-    }, 1200);
+
+      if (response.ok) {
+        setSubmitSuccess(true);
+        setFormData({
+          name: '',
+          email: '',
+          subject: 'General Inquiry',
+          message: ''
+        });
+      } else {
+        const errData = await response.json().catch(() => ({}));
+        setSubmitError(errData.message || 'An error occurred while sending your message. Please try again.');
+      }
+    } catch (err) {
+      setSubmitError('Failed to connect to the server. Please check your internet connection and try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -222,6 +245,13 @@ export default function Contact() {
                     <span className="text-[10px] font-bold text-red-500 block">{errors.message}</span>
                   )}
                 </div>
+
+                {submitError && (
+                  <div className="p-3.5 bg-red-50 border border-red-200/60 rounded-xl text-red-600 flex items-start gap-2.5 text-xs font-semibold leading-relaxed">
+                    <AlertCircle className="flex-shrink-0 text-red-500 mt-0.5" size={16} />
+                    <span>{submitError}</span>
+                  </div>
+                )}
 
                 {/* Submit button */}
                 <button
