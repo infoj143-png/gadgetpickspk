@@ -10,64 +10,64 @@ export default function BuyingGuide() {
 
   // Map category slugs to full category titles and guide content
   const guides = {
-    'best-wireless-earbuds-in-pakistan': {
-      title: 'Best Wireless Earbuds in Pakistan (Buying Guide)',
-      category: 'Earbuds',
-      intro: 'Finding premium true wireless earbuds in Pakistan can be overwhelming. From active noise cancellation (ANC) to massive battery capacities and reliable waterproof ratings, this guide highlights top-tier earbuds based on intensive testing, expert comparisons, and authentic user ratings.',
+    'best-kitchen-and-dining-gadgets': {
+      title: 'Best Kitchen & Dining Gadgets (Buying Guide)',
+      category: 'Kitchen & Dining',
+      intro: 'Equipping your kitchen with smart, space-saving gadgets can elevate your cooking game. From cordless portable USB blenders to versatile multi-functional desktop electric hot pots, this guide details the best products selected for their durability, convenience, and superior buyer reviews.',
       keyFactors: [
-        { name: 'Active Noise Cancellation (ANC)', desc: 'Blocks out distracting engine hums, fan whirrs, and indoor chatter.' },
-        { name: 'Driver Size', desc: 'Larger drivers (e.g., 10mm to 12.4mm) deliver deep, punchy sub-bass profiles.' },
-        { name: 'Playtime & Fast Charging', desc: 'Look for total backup of 30+ hours with USB-C speed charge support.' },
-        { name: 'Sweat Protection', desc: 'At least IPX4 sweatproof water protection for gym workouts and light rain showers.' }
+        { name: 'Power and Efficiency', desc: 'Ensure motor ratings (e.g., 150W for blenders) are strong enough to process ingredients quickly.' },
+        { name: 'Material and Food Safety', desc: 'Always prioritize BPA-free food-grade polymers (like PCTG) and Teflon-free non-stick coatings.' },
+        { name: 'Multi-functionality', desc: 'Look for appliances that serve dual purposes, such as hot pots that also let you steam simultaneously.' },
+        { name: 'Ease of Cleaning', desc: 'Pots with non-stick liners and blenders with one-touch auto-cleaning make kitchen maintenance seamless.' }
       ],
       faqs: [
-        { q: 'What are the best earbuds under Rs. 5,000?', a: 'The Anker Soundcore R50i is the absolute best option under 5k with customizable EQ and powerful 10mm drivers.' },
-        { q: 'Is ANC necessary for daily commuters?', a: 'Yes, ANC models like Redmi Buds 5 are highly recommended to isolate background hums in trains and traffic.' }
+        { q: 'Can portable blenders crush ice cubes?', a: 'Yes! High-speed 6-blade blenders like the Slique Portable Blender crush smaller ice cubes easily when mixed with liquids.' },
+        { q: 'Is it safe to wash electric hot pots under a running tap?', a: 'Always wash the non-stick interior lining carefully and prevent water from directly splashing into the integrated electrical power port.' }
       ]
     },
-    'best-headphones-in-pakistan': {
-      title: 'Best Headphones in Pakistan (Buying Guide)',
-      category: 'Headphones',
-      intro: 'Whether you need a dedicated companion for high-quality studio audio monitoring, comfortable office calls, or heavy mobile gaming, selecting the perfect over-ear or on-ear headphones makes a huge difference in acoustic isolation and fatigue limits.',
+    'best-home-and-living-accessories': {
+      title: 'Best Home & Living Accessories (Buying Guide)',
+      category: 'Home & Living',
+      intro: 'Creating a cozy, aesthetically pleasing atmosphere inside your home plays a crucial role in relaxation. This guide highlights the absolute finest ultrasonic humidifiers and atmospheric projector lamps curated for modern Pakistani bedrooms and living rooms.',
       keyFactors: [
-        { name: 'Over-Ear vs. On-Ear Comfort', desc: 'Over-ear style wraps around the whole ear, offering the best acoustic seal and all-day comfort.' },
-        { name: 'Battery Runtime', desc: 'Look for high battery performance, such as 40 hours to a massive 100 hours (Baseus Bowie H1i).' },
-        { name: 'Wired Aux Versatility', desc: 'Analog 3.5mm input cables let you listen to high-resolution tracks even if the battery fully runs out.' },
-        { name: 'Audio Enhancement Tech', desc: 'DSEE or Hi-Res certifications bring compressed MP3 tracks back to rich life.' }
+        { name: 'Ultrasonic Atomization', desc: 'Silent ultrasonic technology (<28 dB) ensures high mist dispersion without disturbing your sleep or work.' },
+        { name: 'Lens Clarity', desc: 'For projection lamps, thick optical crystal lenses generate much deeper and high-definition colored light halos.' },
+        { name: 'Safety Protections', desc: 'Humidifiers must contain a waterless auto shut-off function to prevent dry boiling and electrical risks.' },
+        { name: 'Aesthetic Versatility', desc: 'Look for lamps with 180-degree adjustable angles to project beautiful glows across walls and ceilings.' }
       ],
       faqs: [
-        { q: 'What headphones have the longest battery backup in Pakistan?', a: 'The Baseus Bowie H1i offers an astounding 100-hour battery life on a single charge with ANC off.' },
-        { q: 'Can I use Bluetooth headphones for editing and music creation?', a: 'Wired connections (or models with 3.5mm aux cable backup like Sennheiser HD 206) are preferred to avoid wireless latency.' }
+        { q: 'What are the benefits of using an ultrasonic cool mist humidifier?', a: 'They introduce healthy moisture to dry indoor air, providing relief for dry sinuses, chapped lips, and seasonal allergies.' },
+        { q: 'Can I add any essential oils to the diffuser?', a: 'Yes! You can add 2-3 drops of natural essential oils (lavender, eucalyptus) to the water reservoir for relaxing aromatherapy.' }
       ]
     },
-    'best-mobile-accessories': {
-      title: 'Best Mobile Accessories in Pakistan (Buying Guide)',
-      category: 'Mobile Accessories',
-      intro: 'Protect your valuable smartphones and maximize your daily charging speeds with physical accessories built from premium heat-resistant polycarbonate or armored double nylon braids. Here are the top-rated charging bricks, high-output cables, and massive power reserves.',
+    'best-bags-and-travel-essentials': {
+      title: 'Best Bags & Travel Essentials (Buying Guide)',
+      category: 'Bags & Travel',
+      intro: 'Protect your costly tech gear and travel hassle-free with anti-theft smart backpacks and heavy-duty EVA hardshell organizer pouches. Select the perfect storage accessories built to withstand demanding business trips and rugged vacations.',
       keyFactors: [
-        { name: 'Power Delivery (PD) Wattage', desc: 'At least 20W PD is recommended for modern iPhones, and up to 100W for notebooks and ultra-premium tablets.' },
-        { name: 'Armored Cable Braids', desc: 'Double nylon-braided cables with aluminum alloy shells withstand over 10,000 flex bends.' },
-        { name: 'Smart E-Marker Chips', desc: 'Ensures safe power flows during high power delivery streams (up to 100W).' },
-        { name: 'Power Bank Safety Protections', desc: 'Ensure multi-layer security protections like surge control and temperature regulation.' }
+        { name: 'Anti-Theft Features', desc: 'Look for TSA-approved combination locks and hidden back pockets to secure laptops and credit cards.' },
+        { name: 'Hardshell Protection', desc: 'Shock-resistant EVA hardshell pouches protect delicate external SSDs, chargers, and power banks from high drops.' },
+        { name: 'Fabric and Water Resistance', desc: 'Premium Oxford and waterproof jacquard fabrics protect expensive electronics from rain showers.' },
+        { name: 'Ergonomic Weight Support', desc: 'Honeycomb breathable shoulder pads distribute luggage loads evenly, reducing posture fatigue.' }
       ],
       faqs: [
-        { q: 'How fast can a 20W charger power an iPhone?', a: 'The Anker PowerPort III 20W Cube can charge typical iPhone models up to 50% in just 30 minutes.' },
-        { q: 'Are standard plastic charging cables reliable?', a: 'No, double nylon-braided accessories are far superior and prevent joint splits.' }
+        { q: 'Can a 15.6 inch laptop fit into these backpacks?', a: 'Yes, the Mark Ryden MR-9008 backpack features a heavily padded slot specifically designed to fit laptops up to 15.6 inches.' },
+        { q: 'Are hardshell tech pouches better than soft sleeves?', a: 'Absolutely. Hardshell EVA materials absorb heavy impact and prevent items from crushing when squished inside luggage.' }
       ]
     },
-    'best-computer-accessories': {
-      title: 'Best Computer Accessories (Buying Guide)',
-      category: 'Computer Accessories',
-      intro: 'Upgrade your productivity or desktop battle station with ergonomic contour mice, tenkeyless mechanical keyboards, and 7-in-1 Type-C expansion adapters. Ensure maximum comfort and zero latency during heavy office work or intense gaming.',
+    'best-bedding-and-bath-comforts': {
+      title: 'Best Bedding & Bath Comforts (Buying Guide)',
+      category: 'Bedding & Bath',
+      intro: 'Achieve deep, restorative sleep by choosing orthopedic memory foam cervical supports and friction-free satin pillowcases. We compare and review top bedding enhancements to maximize your sleeping posture and overall wellness.',
       keyFactors: [
-        { name: 'Sensor Accuracy (DPI)', desc: 'High-precision tracking sensors (such as Darkfield) track seamlessly even on physical glass surfaces.' },
-        { name: 'Mechanical Key Feedback', desc: 'Choose mechanical key switches (Blue/Red) for highly responsive tactile input speeds and durability.' },
-        { name: 'Type-C Expansion Ports', desc: 'Look for multi-port docks with 4K HDMI, Power Delivery, SD readers, and high-speed USB hubs.' },
-        { name: 'Chassis & Structural Integrity', desc: 'Aircraft-grade aluminum alloys block heat and prevent flexing.' }
+        { name: 'Slow-Rebound Memory Foam', desc: 'Cervical contour pillows conform to the natural curvature of your neck, releasing muscle tension.' },
+        { name: 'Hypoallergenic Properties', desc: 'Ensure covers are breathable, dust-mite resistant, and machine washable for maximum cleanliness.' },
+        { name: 'Silk or Satin Textures', desc: 'Satin pillowcases create a friction-free surface that prevents morning hair frizz, breakage, and wrinkles.' },
+        { name: 'Dual-Height Design', desc: 'Different heights cater dynamically to both side sleepers and back sleepers.' }
       ],
       faqs: [
-        { q: 'Why choose an ergonomic productivity mouse?', a: 'Sculpted contours support your forearm muscles and prevent repetitive strain injuries.' },
-        { q: 'What is a hot-swappable mechanical keyboard?', a: 'It allows swapping out the key switches without any soldering work.' }
+        { q: 'Why is memory foam better than cotton/feather pillows?', a: 'Memory foam provides uniform cervical orthopedic support and retains its therapeutic shape without flattening out over time.' },
+        { q: 'Do satin pillowcases prevent hair breakage?', a: 'Yes! Silk and satin reduce friction by up to 45%, preventing curly hair frizz, knots, and breakage.' }
       ]
     }
   };

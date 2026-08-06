@@ -83,25 +83,29 @@ export default function Header() {
     navigate(`/products?category=${encodeURIComponent(category)}`);
   };
 
+  // Seven Main Categories
   const categories = [
-    'Earbuds',
-    'Headphones',
-    'Mobile Accessories',
-    'Computer Accessories'
+    'Kitchen & Dining',
+    'Home & Living',
+    'Bags & Travel',
+    'Bedding & Bath',
+    'Laundry & Cleaning',
+    'Fashion',
+    'Pet Supplies'
   ];
 
   const comparisons = [
-    { label: 'Lenovo vs JBL Earbuds', path: '/compare/lenovo-vs-jbl-earbuds' },
-    { label: 'JBL vs Soundcore', path: '/compare/jbl-vs-soundcore' },
-    { label: 'Best Earbuds Under 5k', path: '/compare/best-earbuds-under-5000' },
-    { label: 'Best Headphones Under 10k', path: '/compare/best-headphones-under-10000' }
+    { label: 'Slique Blender vs Hot Pot', path: '/compare/slique-blender-vs-hot-pot' },
+    { label: 'Vacuum Cleaner vs Steam Iron', path: '/compare/vacuum-cleaner-vs-steam-iron' },
+    { label: 'Best Home Gadgets Under 5k', path: '/compare/best-home-gadgets-under-5000' },
+    { label: 'Best Kitchen Tools Under 5k', path: '/compare/best-kitchen-tools-under-5000' }
   ];
 
   const buyingGuides = [
-    { label: 'Best Wireless Earbuds in Pakistan', path: '/guides/best-wireless-earbuds-in-pakistan' },
-    { label: 'Best Headphones in Pakistan', path: '/guides/best-headphones-in-pakistan' },
-    { label: 'Best Mobile Accessories', path: '/guides/best-mobile-accessories' },
-    { label: 'Best Computer Accessories', path: '/guides/best-computer-accessories' }
+    { label: 'Best Kitchen & Dining Gadgets', path: '/guides/best-kitchen-and-dining-gadgets' },
+    { label: 'Best Home & Living Accessories', path: '/guides/best-home-and-living-accessories' },
+    { label: 'Best Bags & Travel Essentials', path: '/guides/best-bags-and-travel-essentials' },
+    { label: 'Best Bedding & Bath Comforts', path: '/guides/best-bedding-and-bath-comforts' }
   ];
 
   const [isCompareDropdownOpen, setIsCompareDropdownOpen] = useState(false);
@@ -183,7 +187,7 @@ export default function Header() {
               </button>
 
               {isCategoryDropdownOpen && (
-                <div className="absolute left-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-slate-100 py-2 z-50">
+                <div className="absolute left-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-slate-100 py-2 z-50 max-h-80 overflow-y-auto">
                   {categories.map((cat) => (
                     <button
                       key={cat}
@@ -202,11 +206,11 @@ export default function Header() {
               <form onSubmit={handleSearchSubmit} className="flex items-center">
                 <input
                   type="text"
-                  placeholder="Search verified gadgets (e.g. Anker, Sony, power bank)..."
+                  placeholder="Search verified home & lifestyle products (e.g. Xiaomi, Slique, Catit)..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   onFocus={() => searchQuery.trim().length >= 2 && setShowSuggestions(true)}
-                  className="w-full pl-4 pr-12 py-2 bg-slate-50 border border-slate-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 rounded-lg text-sm outline-none transition-all placeholder:text-slate-400"
+                  className="w-full pl-4 pr-12 py-2 bg-slate-50 border border-slate-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 rounded-lg text-sm outline-none transition-all placeholder:text-slate-400 font-medium"
                 />
                 <button
                   type="submit"
@@ -317,7 +321,7 @@ export default function Header() {
             </div>
 
             <Link
-              to="/products?tag=featured"
+              to="/products?tag=Featured"
               className="text-slate-600 hover:text-orange-500 font-semibold text-sm flex items-center gap-1"
             >
               <Flame size={15} className="text-orange-500 animate-pulse" />
@@ -350,10 +354,10 @@ export default function Header() {
           <form onSubmit={handleSearchSubmit} className="relative flex items-center">
             <input
               type="text"
-              placeholder="Search verified gadgets..."
+              placeholder="Search verified lifestyle products..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-4 pr-12 py-2 bg-slate-50 border border-slate-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 rounded-lg text-sm outline-none transition-all"
+              className="w-full pl-4 pr-12 py-2 bg-slate-50 border border-slate-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 rounded-lg text-sm outline-none transition-all font-medium"
             />
             <button
               type="submit"
@@ -369,41 +373,41 @@ export default function Header() {
       {/* Mobile Drawer Navigation Menu */}
       {isMobileMenuOpen && (
         <div className="lg:hidden border-t border-slate-100 bg-white shadow-inner py-4 px-6 space-y-4 animate-fadeIn">
-              <div>
-                <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Comparisons</h4>
-                <div className="grid grid-cols-2 gap-2">
-                  {comparisons.map((comp) => (
-                    <Link
-                      key={comp.path}
-                      to={comp.path}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className="text-left px-3 py-2 bg-slate-50 hover:bg-orange-50 text-slate-700 hover:text-orange-600 font-semibold text-xs rounded-lg transition-colors block"
-                    >
-                      {comp.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
+          <div>
+            <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Comparisons</h4>
+            <div className="grid grid-cols-2 gap-2">
+              {comparisons.map((comp) => (
+                <Link
+                  key={comp.path}
+                  to={comp.path}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-left px-3 py-2 bg-slate-50 hover:bg-orange-50 text-slate-700 hover:text-orange-600 font-semibold text-xs rounded-lg transition-colors block"
+                >
+                  {comp.label}
+                </Link>
+              ))}
+            </div>
+          </div>
 
-              <div className="h-px bg-slate-100"></div>
+          <div className="h-px bg-slate-100"></div>
 
-              <div>
-                <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Buying Guides</h4>
-                <div className="grid grid-cols-2 gap-2">
-                  {buyingGuides.map((guide) => (
-                    <Link
-                      key={guide.path}
-                      to={guide.path}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className="text-left px-3 py-2 bg-slate-50 hover:bg-orange-50 text-slate-700 hover:text-orange-600 font-semibold text-xs rounded-lg transition-colors block"
-                    >
-                      {guide.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
+          <div>
+            <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Buying Guides</h4>
+            <div className="grid grid-cols-2 gap-2">
+              {buyingGuides.map((guide) => (
+                <Link
+                  key={guide.path}
+                  to={guide.path}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-left px-3 py-2 bg-slate-50 hover:bg-orange-50 text-slate-700 hover:text-orange-600 font-semibold text-xs rounded-lg transition-colors block"
+                >
+                  {guide.label}
+                </Link>
+              ))}
+            </div>
+          </div>
 
-              <div className="h-px bg-slate-100"></div>
+          <div className="h-px bg-slate-100"></div>
           <div>
             <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Categories</h4>
             <div className="grid grid-cols-2 gap-2">
@@ -429,10 +433,10 @@ export default function Header() {
               All Products
             </Link>
             <Link
-              to="/products?tag=featured"
+              to="/products?tag=Featured"
               className="font-bold text-sm text-slate-700 hover:text-orange-500 transition-colors py-1 flex items-center gap-2"
             >
-              <Flame size={16} className="text-orange-500" />
+              <Flame size={16} className="text-orange-500 animate-pulse" />
               Featured Picks
             </Link>
             <Link

@@ -1,62 +1,59 @@
 [
   {
-    "id": "eb-01",
-    "brand": "Anker Soundcore",
-    "model": "R50i",
-    "category": "Earbuds",
-    "name": "Anker Soundcore R50i True Wireless Earbuds",
-    "image": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?q=80&w=600&auto=format&fit=crop",
+    "id": "kd-01",
+    "brand": "Slique",
+    "model": "USB-Blender",
+    "category": "Kitchen & Dining",
+    "name": "Slique Portable Electric USB Smoothie Juice Blender",
+    "image": "https://images.unsplash.com/photo-1578643463396-0997cb5328c1?q=80&w=600&auto=format&fit=crop",
     "images": [
-      "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1608156639585-b3a032ef9689?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?q=80&w=600&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1578643463396-0997cb5328c1?q=80&w=600&auto=format&fit=crop"
     ],
-    "currentPrice": 4650,
-    "oldPrice": 6500,
-    "discount": 28,
+    "currentPrice": 3450,
+    "oldPrice": 4999,
+    "discount": 31,
     "rating": 4.8,
-    "reviewsCount": 312,
-    "shortDescription": "TWS Earbuds with 10mm drivers, 30-hour battery life, IPX5 water resistance, and customize sound via Soundcore app.",
-    "longDescription": "The Anker Soundcore R50i features big, punchy bass via its extra-large 10mm drivers, giving you an immersive listening experience. It's incredibly light and features an ergonomic shape, ensuring all-day comfort. With 10 hours of playtime on a single charge and up to 30 hours with the case, you'll never run out of music. It also offers fast charging—a quick 10-minute charge gives you 2 hours of playback.",
+    "reviewsCount": 245,
+    "shortDescription": "Cordless high-speed portable blender with rechargeable battery, perfect for quick smoothies, protein shakes, and juices on the go.",
+    "longDescription": "The Slique Portable Electric USB Juice Blender is designed for health-conscious individuals who are always on the move. Outfitted with six powerful stainless steel 3D blades and a high-rotation speed motor, it easily crushes ice, frozen fruits, and leafy greens in seconds. Powered by a long-lasting rechargeable 2000mAh battery, it can blend up to 15 times on a single USB charge. Highly convenient, sleek, and exceptionally easy to clean.",
     "features": [
-      "Extra-large 10mm drivers for rich and deep bass delivery",
-      "Up to 30 hours total playtime with the pocket-sized charging case",
-      "IPX5 sweatproof and rainproof protection",
-      "Highly responsive dual touch control panels",
-      "Comprehensive customization through the official Soundcore App"
+      "Six ultra-sharp 3D stainless steel blades for quick, smooth blending",
+      "Built-in rechargeable 2000mAh lithium battery with fast USB-C charging",
+      "Made of food-grade non-toxic PCTG material, BPA-free",
+      "One-button smart safety auto-lock and self-cleaning mechanism",
+      "Compact 400ml bottle footprint with leakproof sealing lid"
     ],
     "specifications": {
-      "Brand": "Anker Soundcore",
-      "Model": "R50i",
-      "Bluetooth Version": "5.3",
-      "Driver Size": "10mm Dynamic",
-      "Playtime": "Up to 30 Hours (with Case)",
-      "Water Resistance": "IPX5 Waterproof",
-      "Charging Port": "Type-C Fast Charge"
+      "Brand": "Slique",
+      "Model": "USB-Blender",
+      "Capacity": "400ml",
+      "Power Rating": "150W",
+      "Battery Capacity": "2000mAh",
+      "Blade Material": "304 Stainless Steel",
+      "Charging Port": "Type-C USB"
     },
     "pros": [
-      "Outstanding deep bass and crisp vocals",
-      "Highly customizable EQ via Soundcore app",
-      "Excellent battery life with rapid charging",
-      "IPX5 rating offers reliable sweat & rain protection"
+      "Extremely portable and fits standard cup holders",
+      "Six-blade setup crushes ice cubes with ease",
+      "Self-cleaning feature saves time"
     ],
     "cons": [
-      "No Active Noise Cancellation (ANC)",
-      "Touch controls can occasionally be hypersensitive"
+      "Cannot blend large, solid frozen blocks without liquid addition",
+      "Capacity limited to single-serve sizes"
     ],
-    "darazUrl": "https://www.daraz.pk/products/anker-soundcore-r50i-i422638421.html",
+    "darazUrl": "https://www.daraz.pk",
     "availability": "In Stock",
-    "lastUpdated": "2024-10-24",
-    "whoShouldBuy": "Perfect for fitness enthusiasts, daily commuters, and music lovers who prioritize punchy bass, long battery runtime, and extensive app-based equalizer controls over active noise isolation.",
-    "buyingRecommendation": "At under Rs. 5,000, this is the most reliable true wireless model in Pakistan in terms of Bluetooth connectivity stability, brand warranty, and software customization. Highly recommended.",
+    "lastUpdated": "2025-01-10",
+    "whoShouldBuy": "Ideal for gym enthusiasts, busy office professionals, and students who want freshly prepared protein shakes and fruit smoothies instantly anywhere.",
+    "buyingRecommendation": "An absolute bargain under Rs. 4,000. It offers unmatched portability and reliable battery runtime.",
     "faqs": [
       {
-        "q": "Does it have Active Noise Cancellation (ANC)?",
-        "a": "No, it features passive noise isolation through silicone eartips, but it does not have Active Noise Cancellation."
+        "q": "Can it crush solid ice cubes?",
+        "a": "Yes, but we recommend adding some water or milk along with smaller ice cubes for the best blending results."
       },
       {
-        "q": "How long does the battery last on a single charge?",
-        "a": "You get up to 10 hours of playback from the earbuds themselves and a total of 30 hours with the charging case."
+        "q": "How long does a full charge take?",
+        "a": "A full charge takes about 2 hours via any standard Type-C USB port."
       }
     ],
     "isFeatured": true,
@@ -68,59 +65,56 @@
     "badges": ["Trending", "Best Seller", "Editor's Choice", "Budget Pick"]
   },
   {
-    "id": "eb-02",
-    "brand": "Redmi (Xiaomi)",
-    "model": "Buds 5",
-    "category": "Earbuds",
-    "name": "Redmi Buds 5 Wireless Earbuds",
-    "image": "https://images.unsplash.com/photo-1608156639585-b3a032ef9689?q=80&w=600&auto=format&fit=crop",
+    "id": "kd-02",
+    "brand": "Crown",
+    "model": "HP-300",
+    "category": "Kitchen & Dining",
+    "name": "Crown Multi-Functional Electric Hot Pot & Steamer",
+    "image": "https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=600&auto=format&fit=crop",
     "images": [
-      "https://images.unsplash.com/photo-1608156639585-b3a032ef9689?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?q=80&w=600&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=600&auto=format&fit=crop"
     ],
-    "currentPrice": 5899,
-    "oldPrice": 8500,
-    "discount": 31,
+    "currentPrice": 4899,
+    "oldPrice": 6999,
+    "discount": 30,
     "rating": 4.7,
-    "reviewsCount": 184,
-    "shortDescription": "46dB Active Noise Cancelling earbuds with dual-mic AI noise reduction and up to 40 hours playtime.",
-    "longDescription": "The Redmi Buds 5 delivers an incredible acoustic experience with 46dB Active Noise Cancellation (ANC). Block out background chatter and commute noise easily. It features an independent acoustic cavity, a 12.4mm dynamic driver with titanium-plated diaphragm, and 3 noise cancellation levels. With up to 40 hours of battery life with the charging case and quick charging, you're always ready.",
+    "reviewsCount": 112,
+    "shortDescription": "1.5L multi-functional electric pot with premium non-stick inner surface and steam rack, perfect for ramen, hot pot, frying, and steaming.",
+    "longDescription": "The Crown HP-300 Electric Hot Pot is the ultimate desktop cooking appliance. With its dual-power settings (220W & 600W), you can easily adjust power levels for boiling, simmering, sautéing, or steaming. It includes a food-grade stainless steel steam rack, allowing you to cook soup and steam dumplings or vegetables simultaneously. Designed with a double-walled safety design to prevent accidental burns.",
     "features": [
-      "46dB Active Noise Cancellation with three transparency modes",
-      "12.4mm titanium-plated dynamic drivers for balanced audio performance",
-      "Up to 40 hours of total playtime with the case",
-      "Dual-mic AI intelligent noise reduction for crystal clear voice calls",
-      "Supports Google Fast Pair for seamless Android pairing"
+      "Versatile 1.5L capacity with dual heating control switches",
+      "Teflon-free premium non-stick cooking liner for effortless cleaning",
+      "Over-heating and dry-boil safety protection auto-cutoffs",
+      "Ergonomic stay-cool handle with steam-release tempered glass cover",
+      "Includes a durable stainless steel steamer rack attachment"
     ],
     "specifications": {
-      "Brand": "Redmi (Xiaomi)",
-      "Model": "Buds 5",
-      "Active Noise Cancellation": "Up to 46dB Hybrid ANC",
-      "Driver Size": "12.4mm Titanium",
-      "Playtime": "Up to 40 Hours (with Case)",
-      "Charging Port": "Type-C Fast Charge",
-      "Bluetooth Version": "5.3"
+      "Brand": "Crown",
+      "Model": "HP-300",
+      "Capacity": "1.5 Liters",
+      "Wattage": "220W - 600W Adjustments",
+      "Inner Coating": "Premium Non-Stick",
+      "Voltage": "220V standard",
+      "Safe Shutoff": "Yes, dry-boil safety cut-off"
     },
     "pros": [
-      "Amazing 46dB Active Noise Cancellation at this price point",
-      "Massive 12.4mm titanium-plated drivers for exceptional soundstage",
-      "Dual-microphone AI noise reduction for extremely clear calls",
-      "Google Fast Pair support"
+      "Extremely multi-functional: boils, steams, sautés, and fries",
+      "Compact size is incredibly space-saving for hostels or offices",
+      "Non-stick layer makes cleanup extremely simple"
     ],
     "cons": [
-      "The charging case has a slightly bulky square footprint",
-      "In-ear detection can feel slightly delayed"
+      "The electrical base is integrated, so you must wash it carefully to avoid water getting into the port",
+      "Power cord is slightly short"
     ],
-    "darazUrl": "https://www.daraz.pk/products/xiaomi-redmi-buds-5-i451873109.html",
+    "darazUrl": "https://www.daraz.pk",
     "availability": "In Stock",
-    "lastUpdated": "2024-10-22",
-    "whoShouldBuy": "Ideal for students and professionals who commute frequently or study in louder environments and want active noise cancelling on a friendly budget.",
-    "buyingRecommendation": "If you are looking for genuine ANC under Rs. 6,000, the Redmi Buds 5 is an absolute powerhouse. It outperforms many models costing double.",
+    "lastUpdated": "2025-01-08",
+    "whoShouldBuy": "Perfect for hostel students, singles, studio apartments, or anyone looking for a quick and simple way to cook instant noodles, oatmeal, and small meals.",
+    "buyingRecommendation": "For under Rs. 5,000, it replaces multiple pots and pans. Essential kitchen appliance for students.",
     "faqs": [
       {
-        "q": "How effective is the noise cancellation?",
-        "a": "It cancels up to 46dB of low-frequency hums like engine noise and indoor chatter quite effectively."
+        "q": "Can I fry eggs or onions in this hot pot?",
+        "a": "Yes! The premium non-stick liner makes it highly suitable for shallow frying, scrambled eggs, and sautéing onions."
       }
     ],
     "isFeatured": false,
@@ -129,888 +123,605 @@
     "isBestSeller": false,
     "isEditorChoice": true,
     "isNewArrival": true,
-    "badges": ["Trending", "Editor's Choice", "New", "Premium Pick"]
+    "badges": ["Trending", "Editor's Choice", "New"]
   },
   {
-    "id": "eb-03",
-    "brand": "QCY",
-    "model": "T13",
-    "category": "Earbuds",
-    "name": "QCY T13 TWS Smart Earbuds",
-    "image": "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?q=80&w=600&auto=format&fit=crop",
+    "id": "hl-01",
+    "brand": "PureAire",
+    "model": "Humidifier-M1",
+    "category": "Home & Living",
+    "name": "PureAire Ultrasonic Aroma Diffuser & Cool Mist Humidifier",
+    "image": "https://images.unsplash.com/photo-1602928321679-560bb453f190?q=80&w=600&auto=format&fit=crop",
     "images": [
-      "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1608156639585-b3a032ef9689?q=80&w=600&auto=format&fit=crop"
-    ],
-    "currentPrice": 3850,
-    "oldPrice": 5500,
-    "discount": 30,
-    "rating": 4.6,
-    "reviewsCount": 420,
-    "shortDescription": "Budget-friendly king with 4 micro phones, ENC noise reduction, and ultra-fast charging.",
-    "longDescription": "The QCY T13 has earned its reputation as the ultimate budget-friendly TWS earbuds in Pakistan. Packed with 4 high-definition ENC microphones, it filters out ambient noise to keep your voice clear and crisp during calls. Equipped with a 7.2mm dynamic driver and Bluetooth 5.1, it delivers premium, rich acoustics. Fully customizable through the QCY app.",
-    "features": [
-      "4-Microphone Environmental Noise Cancellation (ENC) for clear calls",
-      "7.2mm dynamic driver delivering clear acoustics and rich bass",
-      "Quick Charge capability (10-minute charge gets 1 hour of playtime)",
-      "Up to 40 hours of combined battery backup with the case",
-      "Smart companion app support for personalized EQ tuning"
-    ],
-    "specifications": {
-      "Brand": "QCY",
-      "Model": "T13",
-      "Bluetooth Version": "5.1",
-      "Microphones": "4 x ENC Microphones",
-      "Driver Size": "7.2mm Dynamic",
-      "Playtime": "Up to 40 Hours total",
-      "Charging Type": "Type-C"
-    },
-    "pros": [
-      "Extremely affordable with incredible cost-performance ratio",
-      "4-mic ENC system performs outstandingly in loud environments",
-      "Fully featured companion app support on iOS and Android",
-      "Snug, comfortable, and lightweight fit"
-    ],
-    "cons": [
-      "Plastic gloss case easily collects micro-scratches",
-      "The default bass profile might feel slightly flat without app EQ"
-    ],
-    "darazUrl": "https://www.daraz.pk/products/qcy-t13-i264624467.html",
-    "availability": "In Stock",
-    "lastUpdated": "2024-10-20",
-    "whoShouldBuy": "An exceptional choice for calling, remote work meetings, or students who want high-value earbuds under a strict Rs. 4,000 budget limit.",
-    "buyingRecommendation": "For pure budget-to-performance efficiency, QCY T13 is unchallenged in Pakistan's online marketplace. Buy it without hesitation if you want crisp call qualities.",
-    "faqs": [
-      {
-        "q": "Does QCY T13 work with iPhones?",
-        "a": "Yes, it works flawlessly on both iOS and Android platforms, including dedicated QCY application support."
-      }
-    ],
-    "isFeatured": true,
-    "isTrending": false,
-    "isTopDeal": false,
-    "isBestSeller": true,
-    "isEditorChoice": false,
-    "isNewArrival": false,
-    "badges": ["Best Seller", "Budget Pick", "Top Rated"]
-  },
-  {
-    "id": "eb-04",
-    "brand": "Lenovo",
-    "model": "ThinkPlus LP40",
-    "category": "Earbuds",
-    "name": "Lenovo ThinkPlus LivePods LP40 TWS Earbuds",
-    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=600&auto=format&fit=crop",
-    "images": [
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?q=80&w=600&auto=format&fit=crop"
-    ],
-    "currentPrice": 3200,
-    "oldPrice": 4800,
-    "discount": 33,
-    "rating": 4.5,
-    "reviewsCount": 210,
-    "shortDescription": "Ultralight semi-in-ear TWS earbuds with Bluetooth 5.0, HD calls, and dynamic dual sound drivers.",
-    "longDescription": "The Lenovo ThinkPlus LivePods LP40 features an ultra-lightweight, ergonomic semi-in-ear design that comfortably sits in your ears without causing any pressure. Backed by Bluetooth 5.0, it ensures minimal latency and stable connectivity. Designed with a 13mm dynamic unit, it delivers high-definition stereo sound and crisp instrument separation.",
-    "features": [
-      "Comfortable semi-in-ear design suited for long-term wear",
-      "13mm large dynamic speaker unit for crisp details",
-      "Dual independent master-slave switching technology",
-      "High-speed Bluetooth 5.0 transmission with low power consumption",
-      "IPX4 splash and sweat resistance rating"
-    ],
-    "specifications": {
-      "Brand": "Lenovo",
-      "Model": "ThinkPlus LivePods LP40",
-      "Bluetooth Version": "5.0",
-      "Driver Size": "13mm Dynamic",
-      "Playtime": "Up to 12 Hours (with Case)",
-      "Form Factor": "Semi-In-Ear",
-      "Water Resistance": "IPX4 Sweatproof"
-    },
-    "pros": [
-      "Very comfortable to wear for users who dislike standard in-ear tips",
-      "Decent mid and high tones for acoustics and podcast audio",
-      "Extremely light casing fits anywhere easily"
-    ],
-    "cons": [
-      "Weak sub-bass presence due to semi-in-ear layout",
-      "Shorter single-charge playtime compared to in-ear rivals"
-    ],
-    "darazUrl": "https://www.daraz.pk/products/lenovo-thinkplus-lp40-i242131234.html",
-    "availability": "In Stock",
-    "lastUpdated": "2024-10-21",
-    "whoShouldBuy": "Perfect for budget-conscious buyers, casual talkers, and users who dislike silicon tips and prefer a semi-open design similar to standard AirPods.",
-    "buyingRecommendation": "A strong entry-level option under Rs. 3,500. Highly recommended for general office tasks and casual media viewing.",
-    "faqs": [
-      {
-        "q": "Does LP40 support touch controls?",
-        "a": "Yes, you can control music play/pause, volume adjustment, and voice assistants via tap panels on either earbud."
-      }
-    ],
-    "isFeatured": false,
-    "isTrending": true,
-    "isTopDeal": false,
-    "isBestSeller": false,
-    "isEditorChoice": false,
-    "isNewArrival": true,
-    "badges": ["Trending", "New", "Budget Pick"]
-  },
-  {
-    "id": "eb-05",
-    "brand": "JBL",
-    "model": "Wave 100 TWS",
-    "category": "Earbuds",
-    "name": "JBL Wave 100 True Wireless Earbuds",
-    "image": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?q=80&w=600&auto=format&fit=crop",
-    "images": [
-      "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1608156639585-b3a032ef9689?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?q=80&w=600&auto=format&fit=crop"
-    ],
-    "currentPrice": 4900,
-    "oldPrice": 7500,
-    "discount": 34,
-    "rating": 4.6,
-    "reviewsCount": 115,
-    "shortDescription": "Topped with signature JBL Deep Bass, dual connection modes, 20 hours combined playtime, and open-case layout.",
-    "longDescription": "The JBL Wave 100 features legendary audio quality with JBL Deep Bass Sound. Featuring a unique topless case design, the earbuds are held in magnetically and are incredibly accessible. With dual-connect capabilities, you can use either earbud independently for phone calls or music listening.",
-    "features": [
-      "Signature JBL Deep Bass Sound for ultimate musical immersion",
-      "Unique topless magnetic case design for hassle-free access",
-      "Dual Connection mode allowing single-earbud mono operation",
-      "Up to 20 hours combined playback battery life",
-      "Hands-free calling with ergonomic fit"
-    ],
-    "specifications": {
-      "Brand": "JBL",
-      "Model": "Wave 100 TWS",
-      "Bluetooth Version": "5.0",
-      "Driver Size": "8mm Dynamic",
-      "Playtime": "Up to 20 Hours (with Case)",
-      "Audio Quality": "JBL Deep Bass",
-      "Charging Port": "Type-C"
-    },
-    "pros": [
-      "Punchy, punch-above-weight JBL deep bass curve",
-      "Innovative, extremely pocketable open lidless charging case",
-      "Highly durable construction and reliable brand name"
-    ],
-    "cons": [
-      "Open case may accumulate dust inside pockets over time",
-      "Lacks companion app EQ support"
-    ],
-    "darazUrl": "https://www.daraz.pk/products/jbl-wave-100-tws-i290312456.html",
-    "availability": "In Stock",
-    "lastUpdated": "2024-10-23",
-    "whoShouldBuy": "Great choice for brand-oriented audiophiles, youth, and urban daily travelers who value rich bass output and robust structural longevity.",
-    "buyingRecommendation": "At under Rs. 5,000, having JBL signature bass with stable connectivity is an absolute treat. One of the top budget-friendly deals in our catalog.",
-    "faqs": [
-      {
-        "q": "Will the earbuds fall out of the topless case?",
-        "a": "No, the case uses extremely powerful magnets that hold the earbuds firmly in place even if shaken upside down."
-      }
-    ],
-    "isFeatured": true,
-    "isTrending": true,
-    "isTopDeal": true,
-    "isBestSeller": true,
-    "isEditorChoice": false,
-    "isNewArrival": false,
-    "badges": ["Trending", "Best Seller", "Budget Pick"]
-  },
-  {
-    "id": "hp-01",
-    "brand": "Sony",
-    "model": "WH-CH520",
-    "category": "Headphones",
-    "name": "Sony WH-CH520 Wireless Headset",
-    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=600&auto=format&fit=crop",
-    "images": [
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1546435770-a3e426bf472b?q=80&w=600&auto=format&fit=crop"
-    ],
-    "currentPrice": 12499,
-    "oldPrice": 18500,
-    "discount": 32,
-    "rating": 4.9,
-    "reviewsCount": 98,
-    "shortDescription": "Premium Sony on-ear headphones with up to 50 hours battery life, DSEE sound upscaling, and multipoint connection.",
-    "longDescription": "Enjoy high sound quality all day long with the Sony WH-CH520. Featuring up to 50 hours of battery life, stable connectivity, and enhanced call performance, they meet all your daily listening requirements. The Digital Sound Enhancement Engine (DSEE) restores harmonics lost during compression, giving you rich, premium audio that is close to the original recording.",
-    "features": [
-      "Exceptional battery backup with up to 50 hours of playtime",
-      "Sony DSEE technology for intelligent compressed music restoration",
-      "Multipoint connection pairs with 2 devices simultaneously",
-      "Built-in mic for crystal-clear hands-free calling",
-      "Adjustable headband and soft plush ear pads for long sessions"
-    ],
-    "specifications": {
-      "Brand": "Sony",
-      "Model": "WH-CH520",
-      "Battery Life": "Up to 50 Hours",
-      "Charging Time": "3 Hours (Fast charge: 3 min for 1.5 hr)",
-      "Multipoint Connection": "Yes (Pair with 2 devices simultaneously)",
-      "Sound Enhancement": "DSEE (Digital Sound Enhancement Engine)",
-      "Bluetooth Version": "5.2"
-    },
-    "pros": [
-      "Unbelievable 50-hour battery life keeps you going for days",
-      "Super comfortable lightweight design with plush earpads",
-      "DSEE upscales compressed audio files beautifuly",
-      "Crystal-clear hands-free calling with noise suppression"
-    ],
-    "cons": [
-      "On-ear design may feel warm after hours of continuous use",
-      "No physical 3.5mm headphone jack for wired listening"
-    ],
-    "darazUrl": "https://www.daraz.pk/products/sony-wh-ch520-i422616231.html",
-    "availability": "In Stock",
-    "lastUpdated": "2024-10-25",
-    "whoShouldBuy": "Recommended for office professionals, students taking online lectures, and casual music listeners who prioritize class-leading battery backup and seamless multi-device switching.",
-    "buyingRecommendation": "An absolute masterpiece from Sony. While it lacks ANC, its battery, mic quality, and custom sound profiles via Sony Headphones Connect app justify every rupee.",
-    "faqs": [
-      {
-        "q": "Does this model support aux cable connections?",
-        "a": "No, the WH-CH520 is a strictly wireless model and does not contain a 3.5mm analog input port."
-      }
-    ],
-    "isFeatured": true,
-    "isTrending": true,
-    "isTopDeal": true,
-    "isBestSeller": true,
-    "isEditorChoice": true,
-    "isNewArrival": false,
-    "badges": ["Trending", "Best Seller", "Editor's Choice", "Premium Pick", "Top Rated"]
-  },
-  {
-    "id": "hp-02",
-    "brand": "Baseus",
-    "model": "Bowie H1i",
-    "category": "Headphones",
-    "name": "Baseus Bowie H1i Active Noise Cancelling Headphones",
-    "image": "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?q=80&w=600&auto=format&fit=crop",
-    "images": [
-      "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1546435770-a3e426bf472b?q=80&w=600&auto=format&fit=crop"
-    ],
-    "currentPrice": 8850,
-    "oldPrice": 13000,
-    "discount": 32,
-    "rating": 4.7,
-    "reviewsCount": 154,
-    "shortDescription": "Over-ear ANC headphones featuring -38dB active noise cancellation, Hi-Res Audio certification, and 100h playback.",
-    "longDescription": "The Baseus Bowie H1i features dual-channel active noise cancellation that effectively suppresses background noise up to -38dB. Enjoy high-resolution audio certified quality with LHDC support. What makes the H1i legendary is its astounding 100-hour battery life (with ANC off), meaning you only need to charge it once or twice a month!",
-    "features": [
-      "Powerful Hybrid Active Noise Cancellation up to -38dB",
-      "Hi-Res Wireless & LHDC codec high-definition audio certified",
-      "Astounding 100-hour battery life (ANC off) / 70 hours (ANC on)",
-      "Ultra-low 0.038s latency mode for flawless mobile gaming",
-      "Dual-channel connection support to pair with phone and laptop"
-    ],
-    "specifications": {
-      "Brand": "Baseus",
-      "Model": "Bowie H1i",
-      "Noise Cancellation": "Up to -38dB Active ANC",
-      "Battery Life": "Up to 100 Hours (ANC off) / 70 Hours (ANC on)",
-      "Audio Standards": "Hi-Res Wireless & LHDC Certified",
-      "Latency": "0.038s Low Latency Mode",
-      "Connectivity": "Bluetooth 5.3 + 3.5mm Audio Cable"
-    },
-    "pros": [
-      "Mind-blowing 100-hour maximum battery life",
-      "Officially Hi-Res certified with gorgeous clarity and response",
-      "Support for hybrid active noise cancellation",
-      "Includes a 3.5mm aux input port for analog wired playback"
-    ],
-    "cons": [
-      "The companion app requires creating an account for some features",
-      "Earcup hinges are fully plastic and require gentle handling"
-    ],
-    "darazUrl": "https://www.daraz.pk/products/baseus-bowie-h1i-i434234567.html",
-    "availability": "In Stock",
-    "lastUpdated": "2024-10-24",
-    "whoShouldBuy": "Perfect for heavy travelers, mobile gamers, and audio enthusiasts who want the dual benefit of active noise reduction and wired 3.5mm aux audio versatility.",
-    "buyingRecommendation": "At under Rs. 10,000, the Bowie H1i provides the longest battery runtime in Pakistan along with true Hi-Res certification. A supreme budget premium deal.",
-    "faqs": [
-      {
-        "q": "Can I use these headphones wired?",
-        "a": "Yes! The package includes a 3.5mm aux cable that allows you to listen to audio even if the battery is fully depleted."
-      }
-    ],
-    "isFeatured": true,
-    "isTrending": true,
-    "isTopDeal": false,
-    "isBestSeller": false,
-    "isEditorChoice": true,
-    "isNewArrival": false,
-    "badges": ["Trending", "Editor's Choice", "Premium Pick"]
-  },
-  {
-    "id": "hp-03",
-    "brand": "Sennheiser",
-    "model": "HD 206",
-    "category": "Headphones",
-    "name": "Sennheiser HD 206 Stereo Headphones",
-    "image": "https://images.unsplash.com/photo-1546435770-a3e426bf472b?q=80&w=600&auto=format&fit=crop",
-    "images": [
-      "https://images.unsplash.com/photo-1546435770-a3e426bf472b?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?q=80&w=600&auto=format&fit=crop"
-    ],
-    "currentPrice": 6999,
-    "oldPrice": 9999,
-    "discount": 30,
-    "rating": 4.5,
-    "reviewsCount": 73,
-    "shortDescription": "Classic over-ear audiophile headphones with dynamic stereo sound, powerful bass, and comfortable fit.",
-    "longDescription": "The Sennheiser HD 206 is a pair of closed-back, dynamic stereo headphones for budget-conscious music lovers. Offering powerful sound reproduction, solid ambient noise attenuation, and outstanding comfort, they're perfect for listening to music, practicing instruments, or simple studio work in home environments.",
-    "features": [
-      "Closed-back acoustic seal for great passive noise cancellation",
-      "Dynamic drivers optimized for clean trebles and flat natural response",
-      "Extremely lightweight body with padded headband and earcups",
-      "Tough gold-plated 6.3mm adapter included for studio equipment",
-      "Heavy-duty 3-meter dual-sided oxygen-free copper cable"
-    ],
-    "specifications": {
-      "Brand": "Sennheiser",
-      "Model": "HD 206",
-      "Form Factor": "Closed-Back, Over-Ear",
-      "Frequency Response": "21 - 18,000 Hz",
-      "Impedance": "24 Ohms",
-      "Cable Length": "3.0 meters (9.8 ft)",
-      "Jack Plug": "3.5mm Stereo with 6.3mm Adapter"
-    },
-    "pros": [
-      "Sennheiser signature sound reproduction quality at a stellar price",
-      "Superb ambient isolation due to tight closed-back seal",
-      "Very lightweight design makes it suitable for extended wearing",
-      "Strong gold-plated 1/4\" (6.3 mm) stereo jack adapter included"
-    ],
-    "cons": [
-      "Extra-long 3-meter cable can get easily tangled in travel setups",
-      "No built-in microphone or inline control buttons"
-    ],
-    "darazUrl": "https://www.daraz.pk/products/sennheiser-hd-206-i10034267.html",
-    "availability": "In Stock",
-    "lastUpdated": "2024-10-18",
-    "whoShouldBuy": "An ideal choice for entry-level music producers, video editors, instrumentalists, and pure desktop audiophiles who prefer a flat reference response over boosted bass curves.",
-    "buyingRecommendation": "For studio editing on a budget under Rs. 10,000, there is no wired headphone with better response accuracy than the Sennheiser HD 206.",
-    "faqs": [
-      {
-        "q": "Does this model have a microphone?",
-        "a": "No, this is a dedicated studio recording/listening headphone and does not feature a built-in microphone or volume control."
-      }
-    ],
-    "isFeatured": false,
-    "isTrending": false,
-    "isTopDeal": false,
-    "isBestSeller": false,
-    "isEditorChoice": false,
-    "isNewArrival": false,
-    "badges": ["Premium Pick"]
-  },
-  {
-    "id": "hp-04",
-    "brand": "JBL",
-    "model": "Tune 510BT",
-    "category": "Headphones",
-    "name": "JBL Tune 510BT Wireless On-Ear Headphones",
-    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=600&auto=format&fit=crop",
-    "images": [
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1546435770-a3e426bf472b?q=80&w=600&auto=format&fit=crop"
-    ],
-    "currentPrice": 9499,
-    "oldPrice": 14500,
-    "discount": 34,
-    "rating": 4.7,
-    "reviewsCount": 134,
-    "shortDescription": "Features JBL Pure Bass Sound, wireless Bluetooth 5.0 streaming, multi-point connection, and 40-hour battery life.",
-    "longDescription": "The JBL Tune 510BT headphones let you stream powerful JBL Pure Bass sound with no strings attached. Easy to use, these headphones provide up to 40 hours of pure pleasure and an extra 2 hours of battery with just 5 minutes of power with the USB-C charging cable. If a call comes in while you are watching a video on another device, the JBL Tune 510BT seamlessly switches to your mobile.",
-    "features": [
-      "JBL Pure Bass Sound technology delivers rich sub-bass notes",
-      "Wireless Bluetooth 5.0 streaming with robust range coverage",
-      "Up to 40 hours of maximum wireless battery playtime",
-      "Super fast speed charging (5 min charge = 2 hours playback)",
-      "Hands-free call control buttons integrated directly into earcups"
-    ],
-    "specifications": {
-      "Brand": "JBL",
-      "Model": "Tune 510BT",
-      "Battery Life": "Up to 40 Hours",
-      "Charging Port": "Type-C Fast Charge",
-      "Multipoint Connection": "Yes",
-      "Audio Output": "JBL Pure Bass",
-      "Foldable Design": "Yes, flat foldable earcups"
-    },
-    "pros": [
-      "Deep, heavy, extremely energetic JBL Pure Bass signature",
-      "Very durable foldable plastic build with strong hinges",
-      "Fast Type-C charging yields instant media playtime"
-    ],
-    "cons": [
-      "On-ear clamping force can feel slightly tight during first few uses",
-      "No 3.5mm analog wire jack"
-    ],
-    "darazUrl": "https://www.daraz.pk/products/jbl-tune-510bt-i214352132.html",
-    "availability": "In Stock",
-    "lastUpdated": "2024-10-23",
-    "whoShouldBuy": "Great for gym-goers, energetic pop/hip-hop music listeners, and youngsters looking for authentic heavy bass on a budget.",
-    "buyingRecommendation": "An outstanding choice under Rs. 10,000 for people seeking punchy performance and robust brand durability over reference monitor audio.",
-    "faqs": [
-      {
-        "q": "Are they sweatproof?",
-        "a": "They do not carry an official IP rating, but they withstand standard sweat and ambient gym humidity easily."
-      }
-    ],
-    "isFeatured": true,
-    "isTrending": true,
-    "isTopDeal": false,
-    "isBestSeller": true,
-    "isEditorChoice": false,
-    "isNewArrival": false,
-    "badges": ["Trending", "Best Seller", "Premium Pick"]
-  },
-  {
-    "id": "hp-05",
-    "brand": "Anker Soundcore",
-    "model": "Life Q20",
-    "category": "Headphones",
-    "name": "Soundcore Life Q20 Hybrid ANC Headphones",
-    "image": "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?q=80&w=600&auto=format&fit=crop",
-    "images": [
-      "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1546435770-a3e426bf472b?q=80&w=600&auto=format&fit=crop"
-    ],
-    "currentPrice": 11800,
-    "oldPrice": 16999,
-    "discount": 30,
-    "rating": 4.8,
-    "reviewsCount": 165,
-    "shortDescription": "Certified Hi-Res Audio headphones featuring hybrid Active Noise Cancellation, BassUp tech, and 40h playtime.",
-    "longDescription": "The Soundcore Life Q20 headphones feature custom oversized 40 mm dynamic drivers to produce Hi-Res Audio. Our hybrid active noise cancellation is designed with internal and external microphones to cancel out an extended range of low and mid-frequency noises such as airplane engines and traffic. BassUp technology analyzes low frequencies to instantly strengthen the bass output.",
-    "features": [
-      "Certified Hi-Res Audio with custom 40mm dynamic drivers",
-      "Hybrid Active Noise Cancellation filters out up to 90% of ambient sounds",
-      "Exclusive BassUp technology dynamically increases low frequencies",
-      "Up to 40 hours of playtime in active ANC mode (60 hours in standard mode)",
-      "Memory foam earcups wrapped in soft protein leather for comfort"
-    ],
-    "specifications": {
-      "Brand": "Anker Soundcore",
-      "Model": "Life Q20",
-      "Noise Cancellation": "Hybrid Active Noise Cancelling (ANC)",
-      "Playtime": "40 Hours (ANC on) / 60 Hours (ANC off)",
-      "Driver Size": "40mm Dynamic",
-      "Audio Standards": "Hi-Res Audio Certified",
-      "Audio Tech": "BassUp Equalizer Technology"
-    },
-    "pros": [
-      "Phenomenal over-ear hybrid ANC efficiency",
-      "Super comfortable memory foam ear cups for long flights",
-      "Rich sound profiles with optional deep bass booster"
-    ],
-    "cons": [
-      "Uses slightly older Micro-USB charging port",
-      "Does not fold flat into an ultra-compact package"
-    ],
-    "darazUrl": "https://www.daraz.pk/products/anker-soundcore-life-q20-i1243525.html",
-    "availability": "In Stock",
-    "lastUpdated": "2024-10-25",
-    "whoShouldBuy": "Ideal for students, office workers, and travelers who need professional-grade active noise isolation and cloud-like over-ear cushion comfort.",
-    "buyingRecommendation": "Still the undisputed champion of hybrid active noise cancellation comfort under Rs. 15,000 in Pakistan.",
-    "faqs": [
-      {
-        "q": "Does the package include a carrying pouch?",
-        "a": "Yes, a soft travel draw-string pouch and a 3.5mm aux cable are included in the package."
-      }
-    ],
-    "isFeatured": true,
-    "isTrending": true,
-    "isTopDeal": true,
-    "isBestSeller": false,
-    "isEditorChoice": true,
-    "isNewArrival": false,
-    "badges": ["Trending", "Editor's Choice", "Premium Pick"]
-  },
-  {
-    "id": "ma-01",
-    "brand": "Anker",
-    "model": "PowerPort III Cube",
-    "category": "Mobile Accessories",
-    "name": "Anker PowerPort III 20W Cube Charger",
-    "image": "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?q=80&w=600&auto=format&fit=crop",
-    "images": [
-      "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1620283085439-39620a1e21c4?q=80&w=600&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1602928321679-560bb453f190?q=80&w=600&auto=format&fit=crop"
     ],
     "currentPrice": 2999,
     "oldPrice": 4500,
     "discount": 33,
     "rating": 4.8,
-    "reviewsCount": 512,
-    "shortDescription": "Ultra-compact 20W Power Delivery wall charger with foldable plug, ideal for high-speed charging of iPhone and Galaxy.",
-    "longDescription": "PowerPort III 20W Cube is designed with a foldable plug to offer ultimate portability and convenience. Equipped with our legendary PowerIQ 3.0 technology, it delivers high-speed charging for your smartphone. Charge an iPhone 13/14 up to 50% in just 30 minutes—that's up to 3x faster than with an original 5W charger.",
+    "reviewsCount": 380,
+    "shortDescription": "500ml quiet ultrasonic cool mist humidifier with 7-color auto-changing LED lights and waterless auto shut-off.",
+    "longDescription": "The PureAire Humidifier-M1 uses high-frequency ultrasonic vibrations to instantly atomize pure water and essential oils into an ultra-fine, soothing cool mist. With a generous 500ml water tank, it operates continuously for up to 10 hours. Ideal for adding healthy moisture to dry indoor air in air-conditioned rooms, while the beautiful, calm LED light colors create an atmospheric ambience.",
     "features": [
-      "PowerIQ 3.0 technology supports multi-protocol high-speed charging",
-      "Stunningly compact body with convenient collapsible metal prongs",
-      "MultiProtect safety system prevents power surges and short circuits",
-      "Universal compatibility with high-speed charging profiles",
-      "High grade heat resistant premium polycarbonate build"
+      "Whisper-quiet ultrasonic operation is perfect for sleep or yoga",
+      "500ml water capacity with smart high/low mist spray options",
+      "Integrated 7-color LED night light with cycling or solid modes",
+      "Intelligent waterless auto shut-off safety protection",
+      "Functions as an aromatherapy humidifier, night lamp, and air purifier"
     ],
     "specifications": {
-      "Brand": "Anker",
-      "Model": "PowerPort III Cube",
-      "Wattage": "20W PD Fast Charging",
-      "Output Port": "USB-C",
-      "Technologies": "PowerIQ 3.0, Multiprotect Safety Suite",
-      "Dimensions": "1.27 x 1.27 x 1.3 inches"
+      "Brand": "PureAire",
+      "Model": "Humidifier-M1",
+      "Tank Volume": "500ml",
+      "Noise Level": "<28 dB",
+      "Runtime": "8 - 10 hours",
+      "LED Color Modes": "7 Color Options",
+      "Method": "Ultrasonic Atomization"
     },
     "pros": [
-      "Super compact cube body with collapsible premium prongs",
-      "Full compatibility with iPhones, iPads, and Samsung Super Fast Charge",
-      "MultiProtect safety system prevents overcharging and thermal spikes",
-      "Extremely robust built that withstands drop after drop"
+      "Extremely quiet, making it perfect for bedroom side tables",
+      "Auto shutoff triggers reliably when water levels get too low",
+      "Spans a generous mist radius for standard rooms"
     ],
     "cons": [
-      "Charging cable is not included in the retail box",
-      "Only has a single USB-C port, cannot charge multiple devices simultaneously"
+      "Requires frequent cleaning to avoid mineral buildup if hard tap water is used",
+      "Does not come with essential oils included in the package"
     ],
-    "darazUrl": "https://www.daraz.pk/products/anker-20w-charger-i392842103.html",
+    "darazUrl": "https://www.daraz.pk",
     "availability": "In Stock",
-    "lastUpdated": "2024-10-24",
-    "whoShouldBuy": "An absolute essential for premium iPhone, iPad, and Samsung Galaxy phone buyers who need high speed charging in a miniature, travel-friendly layout.",
-    "buyingRecommendation": "Do not buy counterfeit adapters. Anker PowerPort III offers guaranteed safety and high-speed delivery without ruining your device's battery lifespan.",
+    "lastUpdated": "2025-01-11",
+    "whoShouldBuy": "Perfect for individuals seeking relief from dry skin, sinuses, and allergies, and those wanting to infuse therapeutic essential oils into their living areas.",
+    "buyingRecommendation": "Highly recommended budget humidifier with robust structural safety. Exceptional cost-performance ratio.",
     "faqs": [
       {
-        "q": "Will it charge a Macbook?",
-        "a": "It can trickle-charge a Macbook Air slowly in emergency setups, but 20W is primarily optimized for smartphones and tablets."
-      }
-    ],
-    "isFeatured": true,
-    "isTrending": true,
-    "isTopDeal": true,
-    "isBestSeller": true,
-    "isEditorChoice": true,
-    "isNewArrival": false,
-    "badges": ["Trending", "Best Seller", "Editor's Choice", "Budget Pick"]
-  },
-  {
-    "id": "ma-02",
-    "brand": "Ugreen",
-    "model": "US316",
-    "category": "Mobile Accessories",
-    "name": "Ugreen Premium Braided USB-C to USB-C Cable (100W)",
-    "image": "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=600&auto=format&fit=crop",
-    "images": [
-      "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1620283085439-39620a1e21c4?q=80&w=600&auto=format&fit=crop"
-    ],
-    "currentPrice": 1450,
-    "oldPrice": 2200,
-    "discount": 34,
-    "rating": 4.9,
-    "reviewsCount": 650,
-    "shortDescription": "Heavy-duty double nylon braided fast-charging cable supporting Power Delivery 3.0 and QC 4.0 up to 100W.",
-    "longDescription": "Ugreen's USB C to USB C cable supports Power Delivery up to 100W (20V/5A), allowing you to charge your MacBooks, laptops, tablets, and phones at lightning speeds. Double-braided premium nylon ensures a lifetime of heavy bends and pulls without cracking, while aluminum-alloy premium housing keeps connector joints highly stable.",
-    "features": [
-      "Massive 100W (20V/5A) power delivery capacity",
-      "Heavy duty double nylon braided armor protects wires",
-      "Built-in smart E-marker chip ensures safe high power flows",
-      "Aluminum alloy premium covers prevent connection losses",
-      "Flexible strain relief structure tested for 10,000+ bends"
-    ],
-    "specifications": {
-      "Brand": "Ugreen",
-      "Model": "US316",
-      "Max Wattage": "100W Power Delivery",
-      "Data Transfer Rate": "Up to 480 Mbps",
-      "Length": "2 Meters (6.6 ft)",
-      "Material": "Double Nylon Braided, Aluminum Shell"
-    },
-    "pros": [
-      "Heavy-duty 100W power delivery is great for laptops and flagship smartphones",
-      "Double nylon braid tested for over 10,000 full flex bends",
-      "High-grade built-in E-Marker intelligent safety chip",
-      "Exceptional tactile feel and robust connections"
-    ],
-    "cons": [
-      "Limits data sync to USB 2.0 (480Mbps) speed, not designed for high-resolution video transfer",
-      "Slightly stiff cord feel due to protective double braiding layers"
-    ],
-    "darazUrl": "https://www.daraz.pk/products/ugreen-100w-c-to-c-i352163554.html",
-    "availability": "In Stock",
-    "lastUpdated": "2024-10-24",
-    "whoShouldBuy": "Highly recommended for laptop owners, tablet professionals, and anyone who tires of standard plastic charging cords splitting apart in months.",
-    "buyingRecommendation": "At under Rs. 1,500, a genuine E-Marker protected 100W cord of this build quality is a must-buy utility. Highly recommended.",
-    "faqs": [
-      {
-        "q": "Does this cable support 4K video monitors?",
-        "a": "No, it supports 100W fast charging and 480Mbps data sync, but it is not optimized as a high-bandwidth video output cable."
+        "q": "Can I use standard tap water?",
+        "a": "Yes, but distilled or filtered water is highly recommended to prevent white dust and mineral scaling."
       }
     ],
     "isFeatured": true,
     "isTrending": false,
-    "isTopDeal": false,
+    "isTopDeal": true,
     "isBestSeller": true,
     "isEditorChoice": false,
     "isNewArrival": false,
-    "badges": ["Best Seller", "Budget Pick", "Top Rated"]
+    "badges": ["Best Seller", "Budget Pick"]
   },
   {
-    "id": "ma-03",
-    "brand": "Joyroom",
-    "model": "JR-T014",
-    "category": "Mobile Accessories",
-    "name": "Joyroom JR-T014 20000mAh Power Bank (15W)",
-    "image": "https://images.unsplash.com/photo-1620283085439-39620a1e21c4?q=80&w=600&auto=format&fit=crop",
+    "id": "hl-02",
+    "brand": "Lumina",
+    "model": "Sunset-S2",
+    "category": "Home & Living",
+    "name": "Lumina Sunset Projector LED Ambient Mood Lamp",
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=600&auto=format&fit=crop",
     "images": [
-      "https://images.unsplash.com/photo-1620283085439-39620a1e21c4?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=600&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=600&auto=format&fit=crop"
     ],
-    "currentPrice": 4499,
-    "oldPrice": 6999,
-    "discount": 35,
-    "rating": 4.7,
-    "reviewsCount": 240,
-    "shortDescription": "20000mAh external battery packs with LED status display, dual USB outputs, and Type-C input/output.",
-    "longDescription": "The Joyroom JR-T014 is a massive 20000mAh capacity power bank designed to keep your devices charged during travel or power outages. With 15W high-speed charging capability and a clear digital smart screen, it monitors remaining energy accurately. Simultaneously charge up to three devices to share the power.",
+    "currentPrice": 1850,
+    "oldPrice": 3000,
+    "discount": 38,
+    "rating": 4.6,
+    "reviewsCount": 420,
+    "shortDescription": "180-degree rotating high-definition crystal lens sunset projection lamp with USB power, ideal for photography, bedroom styling, and mood aesthetics.",
+    "longDescription": "The Lumina Sunset Projector Lamp brings the magical, comforting warmth of a natural sunset directly into your personal space. Utilizing a thick, premium optical crystal lens and a highly efficient 10W LED bulb, it projects a high-definition, halo-shaped sunset pattern with unmatched color depth. Features a robust 180-degree flexible rotating head to alter halo sizes on walls and ceilings.",
     "features": [
-      "Gigantic 20000mAh high capacity charges typical phones 4-5 times",
-      "Stunning digital LED battery percentage status monitor",
-      "Supports 15W fast charging output on multi-ports",
-      "Triple outputs (2 x USB-A + 1 x USB-C bidirectional port)",
-      "Premium fireproof ABS material with multi-layer circuit protection"
+      "Ultra-clear optical crystal lens projects highly intense, natural halos",
+      "180-degree adjustable iron joint for versatile angle projecting",
+      "Stable heavy-duty base stand prevents tipping or shaking",
+      "Operates safely via convenient 1.2m USB cable with manual switch",
+      "Highly suited for warm bedroom aesthetics, photography backdrops, and video streams"
     ],
     "specifications": {
-      "Brand": "Joyroom",
-      "Model": "JR-T014",
-      "Capacity": "20000mAh 3.7V (74Wh)",
-      "Max Output Power": "15W Fast Charge",
-      "Outputs": "2 x USB-A ports",
-      "Input / Output": "1 x Type-C port",
-      "Protection": "Over-charge, Over-heat, Short-circuit protection"
+      "Brand": "Lumina",
+      "Model": "Sunset-S2",
+      "Power": "10W USB Powered",
+      "Rotation Angle": "180 Degrees",
+      "Material": "Anodized Aluminum + Iron Base",
+      "Lens Material": "Thick Optical Crystal",
+      "Cable Length": "1.2 meters with switch"
     },
     "pros": [
-      "Gigantic 20000mAh reserves can charge an average iPhone up to 4.5 times",
-      "Highly readable, precise digital percentage LED indicator",
-      "Allows charging 3 devices at the same time safely",
-      "Meets standard air travel safe power requirements"
+      "Creates stunning, cinematic light patterns instantly",
+      "Heavy base is far superior to cheap plastic models",
+      "Low power consumption with high brightness"
     ],
     "cons": [
-      "Relatively heavy at 420 grams, adding weight to small daily bags",
-      "Takes around 6-7 hours to fully charge the power bank from empty"
+      "The lamp head can become slightly warm during hours of continuous operation",
+      "Standard USB charger block is not included"
     ],
-    "darazUrl": "https://www.daraz.pk/products/joyroom-20000mah-i41221356.html",
+    "darazUrl": "https://www.daraz.pk",
     "availability": "In Stock",
-    "lastUpdated": "2024-10-19",
-    "whoShouldBuy": "An exceptional travel accessory for long road trips, outdoor campers, and professionals in regions facing frequent electrical load-shedding.",
-    "buyingRecommendation": "Under Rs. 5,000, having an authentic 20000mAh power source with an LED smart display is a stellar bargain. Buy it to secure your peace of mind.",
+    "lastUpdated": "2025-01-12",
+    "whoShouldBuy": "Perfect for content creators, photographers, and home decorator enthusiasts looking to elevate their room's aesthetic appeal for videos and cozy nights.",
+    "buyingRecommendation": "At under Rs. 2,000, this is the most durable metal-built sunset lamp on the market. A pure aesthetic win.",
     "faqs": [
       {
-        "q": "Is this power bank allowed on international airplane flights?",
-        "a": "Yes, its energy rating is 74Wh, which is well below the 100Wh limit set by international airlines for hand-carry bags."
+        "q": "How do you adjust the size of the projected sunset halo?",
+        "a": "Simply move the lamp further away from the wall to make the halo larger, or bring it closer to make it smaller and more concentrated."
       }
     ],
     "isFeatured": false,
     "isTrending": true,
-    "isTopDeal": true,
+    "isTopDeal": false,
     "isBestSeller": false,
     "isEditorChoice": false,
     "isNewArrival": true,
-    "badges": ["Trending", "New", "Budget Pick"]
+    "badges": ["New", "Budget Pick", "Trending"]
   },
   {
-    "id": "ca-01",
-    "brand": "Logitech",
-    "model": "MX Master 2S",
-    "category": "Computer Accessories",
-    "name": "Logitech MX Master 2S Wireless Mouse",
-    "image": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?q=80&w=600&auto=format&fit=crop",
+    "id": "bt-01",
+    "brand": "Mark Ryden",
+    "model": "MR-9008",
+    "category": "Bags & Travel",
+    "name": "Mark Ryden Anti-Theft Waterproof Travel Laptop Backpack",
+    "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=600&auto=format&fit=crop",
     "images": [
-      "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1587829741301-dc798b83add3?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1547082299-de196ea013d6?q=80&w=600&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=600&auto=format&fit=crop"
     ],
-    "currentPrice": 14850,
-    "oldPrice": 22000,
+    "currentPrice": 8999,
+    "oldPrice": 13500,
     "discount": 33,
     "rating": 4.9,
-    "reviewsCount": 84,
-    "shortDescription": "Premium productivity mouse with 4000-DPI Darkfield tracking, dual connectivity, and flow control.",
-    "longDescription": "The Logitech MX Master 2S is the ultimate ergonomic productivity mouse. Features a precision speed-adaptive scroll wheel that auto-shifts from click-to-click to hyper-fast scrolling. Tracks seamlessly anywhere—even on glass! Utilize Logitech Flow to seamlessly navigate across three computers, copying and pasting files, text, and images between them.",
+    "reviewsCount": 98,
+    "shortDescription": "Premium multi-layer anti-theft smart backpack with TSA lock, water-resistant Oxford material, and external USB-C charging port.",
+    "longDescription": "The Mark Ryden MR-9008 is a masterpiece of travel engineering. Designed for tech-savvy commuters, it features a smart TSA-approved security lock, a hidden anti-theft back pocket, and water-resistant premium Oxford shell fabric. It safely houses laptops up to 15.6 inches in a heavily padded compartment, while distributing weight evenly across your shoulders with its honeycomb breathable back pads.",
     "features": [
-      "Logitech Flow allows absolute multi-computer control and content copying",
-      "Darkfield 4000 DPI high-precision sensor tracks seamlessly even on glass",
-      "Speed-adaptive scroll wheel auto-shifts to hyper-fast mode",
-      "Fast rechargeable lithium battery (up to 70 days per charge)",
-      "Ergonomically sculpted contours cradle and support hand muscles"
+      "Integrated TSA-approved safety combination lock for maximum travel security",
+      "Highly durable, scratch-proof, and water-resistant Oxford shell lining",
+      "Built-in external USB 3.0 and USB-C dual charging ports",
+      "Ergonomic weight distribution layout with soft, breathable honeycomb shoulder straps",
+      "Multi-compartment design with dedicated slots for tablet, pens, and quick access cards"
     ],
     "specifications": {
-      "Brand": "Logitech",
-      "Model": "MX Master 2S",
-      "Sensor Resolution": "200 to 4000 DPI (set in increments of 50 DPI)",
-      "Battery Life": "Up to 70 days on a single full charge",
-      "Wireless Technology": "Unifying USB Receiver or Bluetooth Smart",
-      "Weight": "145 grams",
-      "Buttons Count": "7 customizable smart buttons"
+      "Brand": "Mark Ryden",
+      "Model": "MR-9008",
+      "Laptop Support": "Up to 15.6 inches",
+      "Material": "Waterproof Oxford Fabric",
+      "Capacity": "22 Liters",
+      "Lock Type": "TSA Combination Lock",
+      "Dimensions": "45 x 30 x 15 cm"
     },
     "pros": [
-      "Incredibly ergonomic contour shape relieves forearm strain",
-      "Advanced speed-adaptive dual-mode scroll wheel is highly satisfying",
-      "Logitech Flow allows absolute multi-computer control",
-      "Top-tier tracking sensor works flawlessly on glass tables"
+      "Top-tier water resistance protects expensive electronic gear during unexpected rains",
+      "Excellent multi-pocket organization keeps things incredibly tidy",
+      "Anti-theft combination lock is extremely reliable"
     ],
     "cons": [
-      "Right-handed physical design ONLY, completely unsuited for left-handed professionals",
-      "Slightly heavy layout might not suit fast-twitch casual shooters"
+      "Relatively rigid structured frame doesn't squeeze into tiny storage spaces easily",
+      "Premium pricing segment"
     ],
-    "darazUrl": "https://www.daraz.pk/products/logitech-mx-master-2s-i1248432.html",
+    "darazUrl": "https://www.daraz.pk",
     "availability": "In Stock",
-    "lastUpdated": "2024-10-25",
-    "whoShouldBuy": "An absolute dream mouse for software engineers, video editors, financial analysts, and graphic designers seeking comfort and smart automation macros.",
-    "buyingRecommendation": "Though a premium item, the time saved via the hyper-scroll and multi-device copy-paste features pays off within weeks of professional usage.",
+    "lastUpdated": "2025-01-07",
+    "whoShouldBuy": "An exceptional travel bag choice for business executives, daily IT commuters, and international travelers wanting peace of mind with structured, safe organization.",
+    "buyingRecommendation": "A true premium upgrade. If you carry a laptop daily in Pakistan, the TSA security and fabric protection is worth every single rupee.",
     "faqs": [
       {
-        "q": "How do I charge this mouse?",
-        "a": "It charges via a micro-USB cable, allowing you to use the mouse as normal during the charge cycle."
+        "q": "Does the backpack have a built-in power bank?",
+        "a": "No, it features a built-in cable pass-through port. You must connect your own power bank inside the backpack."
       }
     ],
     "isFeatured": true,
     "isTrending": true,
     "isTopDeal": false,
-    "isBestSeller": true,
+    "isBestSeller": false,
     "isEditorChoice": true,
     "isNewArrival": false,
-    "badges": ["Trending", "Best Seller", "Editor's Choice", "Premium Pick", "Top Rated"]
+    "badges": ["Trending", "Editor's Choice", "Premium Pick"]
   },
   {
-    "id": "ca-02",
-    "brand": "Redragon",
-    "model": "K552 KUMARA",
-    "category": "Computer Accessories",
-    "name": "Redragon K552 KUMARA Mechanical Keyboard",
-    "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?q=80&w=600&auto=format&fit=crop",
+    "id": "bt-02",
+    "brand": "BANGE",
+    "model": "BG-Organizer",
+    "category": "Bags & Travel",
+    "name": "BANGE Professional Tech Accessories Organizer Pouch",
+    "image": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=600&auto=format&fit=crop",
     "images": [
-      "https://images.unsplash.com/photo-1587829741301-dc798b83add3?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1547082299-de196ea013d6?q=80&w=600&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=600&auto=format&fit=crop"
     ],
-    "currentPrice": 7999,
-    "oldPrice": 12000,
+    "currentPrice": 3200,
+    "oldPrice": 4800,
     "discount": 33,
-    "rating": 4.7,
-    "reviewsCount": 142,
-    "shortDescription": "Premium metal-built mechanical keyboard with dust-proof red/blue switches and gorgeous RGB lighting.",
-    "longDescription": "The Redragon K552 Kumara is a tenkeyless compact mechanical keyboard featuring an industrial aircraft-grade aluminum and ABS casing. Outfitted with heavy-duty mechanical switches, it provides incredible tactile click and durability. Ideal for writers, programmers, and office workers seeking heavy tactile input feedback.",
+    "rating": 4.8,
+    "reviewsCount": 150,
+    "shortDescription": "Heavy-duty EVA hardshell water-resistant organizer case with flexible multi-layer compartments for chargers, cables, SSDs, and power banks.",
+    "longDescription": "The BANGE Tech Organizer Pouch is a compact travel gear case engineered to protect and compartmentalize your vital tech essentials. Built with an impact-resistant EVA hardshell wrapped in waterproof jacquard fabric, it prevents drops and scrapes from ruining your expensive SSDs, power banks, and adapters. Elastic mesh partitions and high-quality YKK zippers keep everything securely in place.",
     "features": [
-      "Compact Tenkeyless (87 keys) frame saves valuable desk spaces",
-      "Solid heavy-duty frame made of aircraft aluminum and ABS materials",
-      "Gold-plated high-speed USB cord for zero latency inputs",
-      "Custom mechanical blue/red equivalent dust-proof switches",
-      "Vivid full spectrum RGB backlit with multiple lighting modes"
+      "Impact-resistant EVA hardshell core protects fragile tech items",
+      "Waterproof jacquard exterior protects from dust, water splashes, and wear",
+      "Smart elastic loops, mesh pockets, and divider slots for efficient storage",
+      "Fitted with robust, smooth gliding YKK dual zippers",
+      "Padded handy carrying handle for easy portability during commutes"
     ],
     "specifications": {
-      "Brand": "Redragon",
-      "Model": "K552 KUMARA",
-      "Keyboard Layout": "TKL (Tenkeyless) 87 Keys",
-      "Switches Type": "Mechanical Cherry MX Blue/Red Equivalent",
-      "Lighting": "Full RGB LED backlit",
-      "Chassis Material": "Aircraft-grade Aluminum & ABS",
-      "Key Rollover": "100% Anti-Ghosting keys"
+      "Brand": "BANGE",
+      "Model": "BG-Organizer",
+      "Material": "Waterproof Jacquard + EVA",
+      "Closure Type": "Original YKK Dual Zippers",
+      "Dimensions": "24.5 x 18.5 x 7.5 cm",
+      "Compartments": "3 Main Layers with 12 Storage slots"
     },
     "pros": [
-      "Super solid metal frame body provides zero flex or wobble during heavy typist sessions",
-      "Double-shot injection molded keycaps never fade or chip",
-      "Brilliant, highly adjustable RGB patterns and speeds",
-      "N-key rollover anti-ghosting design ensures zero missed keystrokes"
+      "Hardshell construction absorbs heavy external shocks",
+      "Perfect size to fit into backpacks and suitcases",
+      "Multiple elastic bands prevent cords from tangling"
     ],
     "cons": [
-      "Blue switch option makes loud clicks, might not be suitable for quiet open office zones",
-      "Has a thick, non-detachable USB cable"
+      "Cannot comfortably store bulky over-ear headphones",
+      "Adds a small amount of bulk to ultralight travel packing"
     ],
-    "darazUrl": "https://www.daraz.pk/products/redragon-k552-kumara-i1289123.html",
+    "darazUrl": "https://www.daraz.pk",
     "availability": "In Stock",
-    "lastUpdated": "2024-10-23",
-    "whoShouldBuy": "An ideal mechanical model for competitive gamers, coders, and writers who want precise key tactile response, thick construction, and full RGB aesthetics.",
-    "buyingRecommendation": "The Kumara K552 is the most popular premium entry-level mechanical keyboard in Pakistan for a reason. Its durability matches keyboards costing thrice.",
+    "lastUpdated": "2025-01-09",
+    "whoShouldBuy": "Essential storage accessory for photographers, freelancers, coders, and travel bloggers who need quick access to cables, dongles, SD cards, and power supplies.",
+    "buyingRecommendation": "One of the sturdiest tech bags available under Rs. 3,500. A lifesaver for travelers tired of tangled cables.",
     "faqs": [
       {
-        "q": "Are the switches hot-swappable?",
-        "a": "Yes, it supports Outemu socket hot-swappable keys and includes extra replacement switches in the box."
+        "q": "Can it fit a standard tablet or iPad Mini?",
+        "a": "Yes! The internal main mesh pocket can comfortably accommodate an iPad Mini or e-readers up to 8 inches."
+      }
+    ],
+    "isFeatured": false,
+    "isTrending": false,
+    "isTopDeal": false,
+    "isBestSeller": true,
+    "isEditorChoice": false,
+    "isNewArrival": false,
+    "badges": ["Best Seller", "Budget Pick"]
+  },
+  {
+    "id": "bb-01",
+    "brand": "RestEasy",
+    "model": "Ortho-Pillow",
+    "category": "Bedding & Bath",
+    "name": "RestEasy Ergonomic Memory Foam Orthopedic Pillow",
+    "image": "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=600&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=600&auto=format&fit=crop"
+    ],
+    "currentPrice": 4499,
+    "oldPrice": 6500,
+    "discount": 30,
+    "rating": 4.8,
+    "reviewsCount": 185,
+    "shortDescription": "Cervical contour support memory foam pillow designed for back and side sleepers, offering neck pain relief and spinal alignment.",
+    "longDescription": "The RestEasy Orthopedic Pillow features an ergonomic cervical contour shape that conforms perfectly to the natural curve of your neck and head. Crafted from 100% premium, high-density slow-rebound memory foam, it dynamically absorbs pressure and provides solid structural support. Comes with a breathable, hypoallergenic, and washable cotton-polyester zippered cover.",
+    "features": [
+      "Ergonomic cervical contour curve aligns your head, neck, and spine",
+      "Crafted with 100% premium slow-rebound memory foam core",
+      "Breathable, double-layer zippered premium cover is machine washable",
+      "Hypoallergenic and dust-mite resistant materials protect skin",
+      "Dual-height design caters to both side, back, and stomach sleepers"
+    ],
+    "specifications": {
+      "Brand": "RestEasy",
+      "Model": "Ortho-Pillow",
+      "Core Material": "Premium Slow-Rebound Memory Foam",
+      "Cover Material": "Hypoallergenic Polyester-Cotton Fabric",
+      "Firmness": "Medium Supportive",
+      "Dimensions": "50 x 30 x 10/7 cm"
+    },
+    "pros": [
+      "Relieves neck and shoulder stiffness noticeably",
+      "Memory foam maintains its supportive shape for years without collapsing",
+      "Washable cover ensures high hygiene standards"
+    ],
+    "cons": [
+      "Has a faint, non-toxic manufacturing smell that dissipates in 48 hours of ventilation",
+      "Requires a brief adaptation period for sleepers accustomed to soft down pillows"
+    ],
+    "darazUrl": "https://www.daraz.pk",
+    "availability": "In Stock",
+    "lastUpdated": "2025-01-05",
+    "whoShouldBuy": "An ideal healthcare sleep accessory for office workers experiencing cervical soreness, neck spasms, or side sleepers wanting proper spine alignment.",
+    "buyingRecommendation": "Excellent clinical sleep quality upgrade under Rs. 5,000. It transforms your sleeping posture and rest patterns.",
+    "faqs": [
+      {
+        "q": "How long does it take for the pillow to adapt to my neck shape?",
+        "a": "The pillow uses temperature-sensitive memory foam, adapting almost immediately upon pressure, but your muscles may require 3 to 5 nights to get fully used to the posture."
       }
     ],
     "isFeatured": true,
     "isTrending": false,
+    "isTopDeal": false,
+    "isBestSeller": false,
+    "isEditorChoice": true,
+    "isNewArrival": false,
+    "badges": ["Editor's Choice", "Budget Pick"]
+  },
+  {
+    "id": "bb-02",
+    "brand": "SilkNest",
+    "model": "Satin-Pair",
+    "category": "Bedding & Bath",
+    "name": "SilkNest Luxury Mulberry Satin Pillowcase Pair",
+    "image": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=600&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=600&auto=format&fit=crop"
+    ],
+    "currentPrice": 2150,
+    "oldPrice": 3200,
+    "discount": 32,
+    "rating": 4.7,
+    "reviewsCount": 210,
+    "shortDescription": "Set of 2 ultra-smooth envelope style luxury satin pillowcases for beautiful hair and skin, reducing friction and preventing wrinkles.",
+    "longDescription": "The SilkNest Satin Pillowcase Pair elevates your bedroom comfort while providing significant beauty benefits. Made of premium high-grade satin microfiber, it creates an incredibly smooth surface that reduces friction on your hair and face. This prevents sleep wrinkles, fine lines, and morning hair tangles or breakage. Featuring a convenient envelope closure style to keep pillows tucked securely.",
+    "features": [
+      "Set includes 2 premium, silky soft standard size pillowcases",
+      "Reduces facial sleep lines and skin friction to prevent wrinkles",
+      "Protects curly and delicate hair from morning tangling, frizz, and damage",
+      "Features a clean, button-free and zipper-free envelope closure design",
+      "Cooling, breathable fabric regulates sleep temperatures beautifully"
+    ],
+    "specifications": {
+      "Brand": "SilkNest",
+      "Model": "Satin-Pair",
+      "Material": "Premium Satin Microfiber Polyester",
+      "Quantity": "2 Pillowcases per pack",
+      "Closure": "Envelope Style",
+      "Dimensions": "50 x 75 cm (Standard/Queen)"
+    },
+    "pros": [
+      "Incredibly gentle on sensitive skin and curly hair types",
+      "Cooling material is perfect for warm Pakistani summer nights",
+      "Retains color and silky texture after multiple laundry washes"
+    ],
+    "cons": [
+      "Can feel slippery if you move a lot during sleep",
+      "Requires delicate laundry cycle washing to prevent fabric snags"
+    ],
+    "darazUrl": "https://www.daraz.pk",
+    "availability": "In Stock",
+    "lastUpdated": "2025-01-06",
+    "whoShouldBuy": "Perfect for skincare-conscious individuals, beauty enthusiasts, and those looking to prevent hair split ends and morning frizz on a strict budget.",
+    "buyingRecommendation": "A must-have beauty sleep utility. At around Rs. 2,000 for a pair, it's an incredibly affordable luxury.",
+    "faqs": [
+      {
+        "q": "How should I wash these satin pillowcases?",
+        "a": "We recommend machine washing on a gentle, cold cycle inside a mesh laundry bag, or hand washing. Air dry for the best results."
+      }
+    ],
+    "isFeatured": false,
+    "isTrending": true,
+    "isTopDeal": false,
+    "isBestSeller": false,
+    "isEditorChoice": false,
+    "isNewArrival": true,
+    "badges": ["Trending", "Budget Pick", "New"]
+  },
+  {
+    "id": "lc-01",
+    "brand": "Xiaomi Deerma",
+    "model": "VC20-Plus",
+    "category": "Laundry & Cleaning",
+    "name": "Xiaomi Deerma Cordless Handheld Vacuum Cleaner",
+    "image": "https://images.unsplash.com/photo-1558317374-067fb5f30001?q=80&w=600&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1558317374-067fb5f30001?q=80&w=600&auto=format&fit=crop"
+    ],
+    "currentPrice": 12499,
+    "oldPrice": 18500,
+    "discount": 32,
+    "rating": 4.9,
+    "reviewsCount": 164,
+    "shortDescription": "Ultra-lightweight cordless stick vacuum cleaner with 8000Pa powerful cyclonic suction, HEPA filtration, and versatile multi-nozzles.",
+    "longDescription": "The Xiaomi Deerma VC20 Plus is an award-winning cordless handheld vacuum cleaner engineered to simplify your daily cleaning routine. Weighing under 1.8kg, its lightweight modular design allows you to transition seamlessly from sweeping hard floors to cleaning sofas, car interiors, and ceiling corners. Driven by an advanced independent motor with 8000Pa cyclonic suction power, it filters dust and allergens effectively through its premium HEPA filtration system.",
+    "features": [
+      "Cordless modular stick layout offers ultimate freedom of movement",
+      "8000Pa powerful vacuum suction extracts deep dirt and pet hairs",
+      "Triple-stage HEPA filtration captures fine microscopic particles and dust",
+      "Rechargeable lithium battery yields up to 30 minutes of runtime",
+      "Includes 3 interchangeable utility brush attachments for corners and upholstery"
+    ],
+    "specifications": {
+      "Brand": "Xiaomi Deerma",
+      "Model": "VC20-Plus",
+      "Suction Power": "8000 Pa",
+      "Dust Cup Volume": "0.6 Liters",
+      "Battery Runtime": "Up to 30 mins (Standard Mode)",
+      "Filtration": "Multi-stage HEPA Filter",
+      "Weight": "1.8 kg"
+    },
+    "pros": [
+      "Extremely lightweight, reducing wrist and back strain",
+      "Includes high-grade filtration, trapping microscopic pollutants",
+      "Interchangeable nozzles make car seat cleaning extremely simple"
+    ],
+    "cons": [
+      "Charge takes around 4 hours from empty",
+      "0.6L dust bin is ideal for daily touchups but requires frequent emptying during deep clean sessions"
+    ],
+    "darazUrl": "https://www.daraz.pk",
+    "availability": "In Stock",
+    "lastUpdated": "2025-01-04",
+    "whoShouldBuy": "An exceptional choice for pet owners, car enthusiasts, apartment dwellers, and anyone wanting a quick, effortless way to clean daily crumbs, dust, and spider webs.",
+    "buyingRecommendation": "A supreme premium home utility. Xiaomi Deerma combines gorgeous minimalist aesthetic appeal with class-leading cordless vacuum performance under Rs. 13,000.",
+    "faqs": [
+      {
+        "q": "Can the HEPA filter be washed and reused?",
+        "a": "Yes! Both the HEPA filter and the plastic dust canister can be washed with clean water. Ensure they are 100% dry before reinstalling."
+      }
+    ],
+    "isFeatured": true,
+    "isTrending": true,
     "isTopDeal": true,
+    "isBestSeller": true,
+    "isEditorChoice": true,
+    "isNewArrival": false,
+    "badges": ["Best Seller", "Trending", "Premium Pick"]
+  },
+  {
+    "id": "lc-02",
+    "brand": "Sokany",
+    "model": "SK-3060",
+    "category": "Laundry & Cleaning",
+    "name": "Sokany Handheld Portable Fabric Steam Iron",
+    "image": "https://images.unsplash.com/photo-1479064555552-3ef4979f8908?q=80&w=600&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1479064555552-3ef4979f8908?q=80&w=600&auto=format&fit=crop"
+    ],
+    "currentPrice": 3850,
+    "oldPrice": 5500,
+    "discount": 30,
+    "rating": 4.6,
+    "reviewsCount": 115,
+    "shortDescription": "1500W rapid heating portable garment steamer with stainless steel soleplate, ideal for home and travel fabric wrinkle removal.",
+    "longDescription": "The Sokany SK-3060 Garment Steamer features a high-powered 1500W heating element that produces thick, continuous steam in under 30 seconds. Perfect for removing stubborn wrinkles from delicate silk, wedding gowns, linen shirts, and heavy drapes without the risk of scorching or burning. Its lightweight, hand-held design makes it an essential travel accessory.",
+    "features": [
+      "Powerful 1500W fast-heating core ready to steam in 30 seconds",
+      "Smooth gliding, heat-resistant stainless steel steam head plate",
+      "Detachable 260ml transparent water tank is easy to refill",
+      "Ergonomic leak-proof design allows vertical and horizontal steaming",
+      "Includes a brush accessory attachment for dust and lint removal from wool"
+    ],
+    "specifications": {
+      "Brand": "Sokany",
+      "Model": "SK-3060",
+      "Power Rating": "1500W",
+      "Water Tank Volume": "260ml",
+      "Soleplate": "Stainless Steel",
+      "Heat Up Time": "30 Seconds",
+      "Steam Output": "Up to 20g/min"
+    },
+    "pros": [
+      "Heats up incredibly fast, saving time during morning rush hours",
+      "Steams delicate fabrics safely without any burn risks",
+      "Compact, folding-friendly design fits in travel luggage easily"
+    ],
+    "cons": [
+      "260ml tank requires refilling after steaming 3-4 shirts",
+      "Power cord can feel slightly stiff"
+    ],
+    "darazUrl": "https://www.daraz.pk",
+    "availability": "In Stock",
+    "lastUpdated": "2025-01-02",
+    "whoShouldBuy": "Perfect for frequent travelers, wedding attendees, or professionals who need a fast, ironing-board-free way to freshen up their shirts, suits, and dresses.",
+    "buyingRecommendation": "One of the most reliable handheld steamers under Rs. 4,000. Practical and exceptionally easy to use.",
+    "faqs": [
+      {
+        "q": "Can I use it on wool or heavy winter coats?",
+        "a": "Yes! The package includes a clip-on brush accessory that penetrates thick wool fibers and removes lint and hair during steam sweeps."
+      }
+    ],
+    "isFeatured": false,
+    "isTrending": false,
+    "isTopDeal": true,
+    "isBestSeller": false,
+    "isEditorChoice": false,
+    "isNewArrival": false,
+    "badges": ["Top Deal", "Budget Pick"]
+  },
+  {
+    "id": "fs-01",
+    "brand": "Jafferjees",
+    "model": "Classic-Wallet",
+    "category": "Fashion",
+    "name": "Jafferjees Classic Minimalist Genuine Leather Wallet",
+    "image": "https://images.unsplash.com/photo-1627124118317-4e35998e9406?q=80&w=600&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1627124118317-4e35998e9406?q=80&w=600&auto=format&fit=crop"
+    ],
+    "currentPrice": 5499,
+    "oldPrice": 7500,
+    "discount": 26,
+    "rating": 4.9,
+    "reviewsCount": 84,
+    "shortDescription": "Premium, hand-crafted original grain genuine leather bi-fold slim wallet with RFID-blocking security slots.",
+    "longDescription": "From Pakistan's legendary luxury leather house Jafferjees, this classic bi-fold wallet represents unmatched sophistication and durability. Hand-crafted from top-grain aniline genuine calf leather, it features a slim, minimalist profile that fits comfortably in your front pocket. Lined with highly advanced, built-in RFID-blocking weave technology to protect your credit cards and IDs from digital theft.",
+    "features": [
+      "Hand-crafted from 100% premium top-grain genuine calf leather",
+      "Integrated military-grade RFID-blocking safety barrier lining",
+      "Sleek bi-fold design with 6 card slots, a transparent ID window, and dual bill sleeves",
+      "Precision dual-stitched seams ensure decades of fray-free wear",
+      "Presented in a premium Jafferjees signature gift box packaging"
+    ],
+    "specifications": {
+      "Brand": "Jafferjees",
+      "Model": "Classic-Wallet",
+      "Material": "100% Genuine Top-Grain Calf Leather",
+      "Form Factor": "Slim Bi-Fold Layout",
+      "Security": "RFID Blocking Technology",
+      "Slots Count": "6 Card Slots + 1 ID Window + 2 Bill Sleeves",
+      "Color": "Classic Mahogany Brown"
+    },
+    "pros": [
+      "Top-tier genuine leather develops a gorgeous patina over time",
+      "RFID protection prevents wireless electronic pickpocketing",
+      "Extremely slim profile prevents pocket bulge"
+    ],
+    "cons": [
+      "Leather is sensitive to water and scratches initially",
+      "Tight card slots require a week to stretch and ease"
+    ],
+    "darazUrl": "https://www.daraz.pk",
+    "availability": "In Stock",
+    "lastUpdated": "2025-01-03",
+    "whoShouldBuy": "Perfect as an elegant gift, or for gentlemen seeking a premium, durable, and secure genuine leather wallet to organize bills and cards classily.",
+    "buyingRecommendation": "At under Rs. 6,000, Jafferjees offers genuine heritage craftsmanship. Far superior to generic mass-produced synthetic wallets.",
+    "faqs": [
+      {
+        "q": "Is this real genuine leather or PU/artificial leather?",
+        "a": "It is crafted from 100% authentic, premium top-grain animal leather. You can feel the original organic grain and smell the authentic leather scent."
+      }
+    ],
+    "isFeatured": false,
+    "isTrending": true,
+    "isTopDeal": false,
     "isBestSeller": false,
     "isEditorChoice": true,
     "isNewArrival": false,
     "badges": ["Editor's Choice", "Premium Pick"]
   },
   {
-    "id": "ca-03",
-    "brand": "Ugreen",
-    "model": "CM511",
-    "category": "Computer Accessories",
-    "name": "Ugreen Multi-Port 7-in-1 USB-C Hub Adapter",
-    "image": "https://images.unsplash.com/photo-1547082299-de196ea013d6?q=80&w=600&auto=format&fit=crop",
+    "id": "fs-02",
+    "brand": "Hawkers",
+    "model": "Retro-Polar",
+    "category": "Fashion",
+    "name": "Hawkers Retro Polarized Unisex Sunglasses",
+    "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=600&auto=format&fit=crop",
     "images": [
-      "https://images.unsplash.com/photo-1547082299-de196ea013d6?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1587829741301-dc798b83add3?q=80&w=600&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=600&auto=format&fit=crop"
     ],
-    "currentPrice": 5499,
-    "oldPrice": 8500,
-    "discount": 35,
-    "rating": 4.8,
-    "reviewsCount": 118,
-    "shortDescription": "Stunning aluminum 7-in-1 hub with 4K HDMI, 100W Power Delivery, SD/TF Reader, and 2 USB 3.0 ports.",
-    "longDescription": "Expand the functionality of your thin modern laptop using the Ugreen 7-in-1 Type-C hub. Finished in standard space gray aluminum, it incorporates a stunning 4K HDMI output for screens, a USB-C Power Delivery port supporting up to 100W, twin USB 3.0 SuperSpeed hubs, and a card reader, making it the perfect desktop companion.",
+    "currentPrice": 4150,
+    "oldPrice": 6000,
+    "discount": 30,
+    "rating": 4.7,
+    "reviewsCount": 134,
+    "shortDescription": "Classic retro-style polarized sunglasses featuring high-grade UV400 protective lenses and durable TR90 polymer frames.",
+    "longDescription": "The Hawkers Retro Polarized Sunglasses combine a timeless vintage aesthetic with advanced optical protection. Featuring high-definition polarized lenses that eliminate blinding sun glare, they provide vivid color contrast and exceptional visual clarity. The lightweight, flexible TR90 polymer frame ensures all-day wearing comfort and extreme shatterproof durability.",
     "features": [
-      "7 ports expansion (HDMI, 100W PD charger, SD, TF reader, 2 x USB 3.0, 1 x USB-C)",
-      "Supports beautiful 4K high-resolution HDMI video feeds",
-      "Sleek aerospace-grade aluminum casing keeps temperatures low",
-      "Blazing fast 5 Gbps data transfer speeds via USB 3.0",
-      "Compatible with Macbook, iPad, Dell XPS, and other type-c devices"
+      "High-grade Category 3 polarized lenses filter out harsh water and road glare",
+      "100% UV400 protection shields eyes from damaging UVA and UVB rays",
+      "Constructed with ultra-flexible, lightweight and durable TR90 frame polymer",
+      "Unisex timeless classic design fits a wide variety of face shapes",
+      "Includes a premium microfiber protective pouch and cleaning cloth"
     ],
     "specifications": {
-      "Brand": "Ugreen",
-      "Model": "CM511",
-      "Video Output": "HDMI up to 4K @ 30Hz",
-      "Power Delivery Port": "Up to 100W pass-through charging",
-      "Card Slots": "SD + Micro SD (TF) Readers",
-      "USB Ports": "2 x USB-A 3.0 (up to 5 Gbps)",
-      "Material": "Anodized Space Gray Aluminum Alloy"
+      "Brand": "Hawkers",
+      "Model": "Retro-Polar",
+      "Lens Technology": "HD Polarized, Anti-Glare Coating",
+      "UV Protection": "100% UV400 Protection",
+      "Frame Material": "TR90 Flexible Polymer",
+      "Fit": "Medium Unisex Fit",
+      "Weight": "24 grams"
     },
     "pros": [
-      "Sleek aluminum chassis dissipates heat efficiently",
-      "100W power delivery is high enough to charge top-tier laptops while hubbing",
-      "Both card reader slots can be read and written simultaneously",
-      "Zero driver installations required; pure plug-and-play"
+      "Polarized lenses offer outstanding visual clarity while driving or at the beach",
+      "TR90 material makes the frame virtually indestructible under normal use",
+      "Extremely light, putting no painful pressure on your nose bridge"
     ],
     "cons": [
-      "HDMI is limited to 30Hz at 4K resolution (requires 1080p for full 60Hz)",
-      "Builds up mild heat during long, high-load transfers"
+      "Polarized filter can make smartphone screens look slightly rainbow-colored at certain angles",
+      "No hard travel storage box included"
     ],
-    "darazUrl": "https://www.daraz.pk/products/ugreen-hub-7-in-1-i4283921.html",
+    "darazUrl": "https://www.daraz.pk",
     "availability": "In Stock",
-    "lastUpdated": "2024-10-21",
-    "whoShouldBuy": "An essential accessory for lightweight laptop (MacBook Air/Pro, Dell XPS) owners who need to connect external screens, SD cards, or traditional flash drives.",
-    "buyingRecommendation": "Ugreen makes the most stable hubs with stable multi-port chip controllers. Highly recommended over cheap non-branded adapters.",
+    "lastUpdated": "2025-01-01",
+    "whoShouldBuy": "An essential stylish accessory for drivers, beach travelers, and outdoor enthusiasts looking for high-end optical glare protection on a budget.",
+    "buyingRecommendation": "One of the best-looking and most durable polarized glasses available under Rs. 4,500. A true summer essential.",
     "faqs": [
       {
-        "q": "Can I read SD and micro SD cards at the same time?",
-        "a": "Yes, both readers operate simultaneously on dedicated separate high-speed channel buses."
+        "q": "What does UV400 mean?",
+        "a": "UV400 indicates that the lenses block all light rays with wavelengths up to 400 nanometers, which covers all harmful UVA and UVB radiation."
       }
     ],
     "isFeatured": false,
@@ -1019,6 +730,128 @@
     "isBestSeller": false,
     "isEditorChoice": false,
     "isNewArrival": true,
-    "badges": ["Trending", "New", "Premium Pick"]
+    "badges": ["New", "Trending", "Budget Pick"]
+  },
+  {
+    "id": "ps-01",
+    "brand": "Catit",
+    "model": "Flower-Fountain",
+    "category": "Pet Supplies",
+    "name": "Catit Flower Automatic Pet Water Fountain",
+    "image": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=600&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=600&auto=format&fit=crop"
+    ],
+    "currentPrice": 4890,
+    "oldPrice": 6999,
+    "discount": 30,
+    "rating": 4.8,
+    "reviewsCount": 142,
+    "shortDescription": "3L automatic drinking fountain with triple-action water softening filter, promoting hydration for cats and small dogs.",
+    "longDescription": "The Catit Flower Automatic Pet Water Fountain is a veterinary-recommended hydration solution designed to keep cats and small dogs healthy. Moving water attracts pets to drink more frequently, helping to prevent painful urinary tract infections and kidney issues. Features three adjustable water flow settings (gentle flow, bubbling top, or calm streams) and a highly efficient, multi-stage water softening filter.",
+    "features": [
+      "Generous 3L water reservoir requires less frequent refilling",
+      "Triple-action filter purifies tap water, removing calcium, magnesium, and hair",
+      "Low-voltage, energy-efficient and whisper-quiet water pump motor",
+      "Three beautiful, adjustable water flow settings to entice picky pets",
+      "BPA-free premium polymer body is exceptionally simple to wash"
+    ],
+    "specifications": {
+      "Brand": "Catit",
+      "Model": "Flower-Fountain",
+      "Capacity": "3 Liters",
+      "Filter System": "Triple Action Carbon-Resin Filter",
+      "Power": "Low Voltage USB Pump",
+      "Material": "BPA-Free Durable Polymer",
+      "Flow Modes": "3 Adjustable Streams"
+    },
+    "pros": [
+      "Moving water encourages pets to drink significantly more water",
+      "Filter removes hairs, dust, and minerals effectively",
+      "Whisper-quiet pump doesn't scare sensitive cats or dogs"
+    ],
+    "cons": [
+      "Requires changing the carbon filter every 3-4 weeks for maximum hygiene",
+      "Needs a nearby power socket to plug in the USB pump"
+    ],
+    "darazUrl": "https://www.daraz.pk",
+    "availability": "In Stock",
+    "lastUpdated": "2025-01-08",
+    "whoShouldBuy": "Essential wellness pet care item for cat and small dog owners who work long hours and want their pets to always have access to clean, flowing, oxygenated water.",
+    "buyingRecommendation": "Top-tier pet hydration accessory. Highly recommended to maintain your pet's kidney and urinary health.",
+    "faqs": [
+      {
+        "q": "How often should I clean the fountain pump?",
+        "a": "We recommend taking the pump apart and rinsing it under warm water once every 2 weeks to prevent hair and slime buildup from clogging the motor."
+      }
+    ],
+    "isFeatured": true,
+    "isTrending": true,
+    "isTopDeal": false,
+    "isBestSeller": true,
+    "isEditorChoice": false,
+    "isNewArrival": false,
+    "badges": ["Best Seller", "Trending", "Budget Pick"]
+  },
+  {
+    "id": "ps-02",
+    "brand": "Furminator",
+    "model": "DeShed-Brush",
+    "category": "Pet Supplies",
+    "name": "Furminator Professional Deshedding Grooming Brush",
+    "image": "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?q=80&w=600&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?q=80&w=600&auto=format&fit=crop"
+    ],
+    "currentPrice": 2850,
+    "oldPrice": 4200,
+    "discount": 32,
+    "rating": 4.9,
+    "reviewsCount": 215,
+    "shortDescription": "Ergonomic undercoat deshedding grooming brush tool with FURejector button, reducing loose pet hair shedding up to 90%.",
+    "longDescription": "The Furminator Professional Deshedding Brush is the gold standard for pet grooming. Built with a high-precision stainless steel edge, it safely reaches deep under your pet's topcoat to gently remove loose undercoat hair and dander without cutting the delicate topcoat or scraping their skin. Features the patented FURejector button to clear hair from the brush head instantly.",
+    "features": [
+      "Stainless steel deshedding edge reaches deep through topcoat safely",
+      "FURejector button cleans and releases loose hair from the brush head instantly",
+      "Ergonomic, non-slip rubber handle fits comfortably in your hand",
+      "Reduces loose hair shedding up to 90% when used weekly",
+      "Curved edge conforms to your pet's natural build and body shape"
+    ],
+    "specifications": {
+      "Brand": "Furminator",
+      "Model": "DeShed-Brush",
+      "Blade Material": "High-Grade Stainless Steel",
+      "Grip": "Ergonomic Non-Slip Rubber",
+      "Hair Ejection": "FURejector Quick-Release Button",
+      "Suitable For": "Cats & Dogs (Short/Long Hair options)",
+      "Edge Width": "2.65 inches (Medium)"
+    },
+    "pros": [
+      "Reduces loose pet hair on sofas, clothes, and rugs dramatically",
+      "FURejector button makes cleaning the brush incredibly fast",
+      "Gently massages pet skin, promoting natural oil production"
+    ],
+    "cons": [
+      "Should not be used on pets with sensitive skin or thin single coats",
+      "Requires gentle pressure to avoid scraping skin"
+    ],
+    "darazUrl": "https://www.daraz.pk",
+    "availability": "In Stock",
+    "lastUpdated": "2025-01-05",
+    "whoShouldBuy": "Highly recommended for pet owners dealing with excessive cat or dog hair shedding on furniture, clothes, and carpets.",
+    "buyingRecommendation": "At under Rs. 3,000, it pays for itself by saving you countless hours of vacuuming loose pet hairs. Excellent grooming upgrade.",
+    "faqs": [
+      {
+        "q": "How often should I use the Furminator brush on my pet?",
+        "a": "We recommend using the deshedding tool 1 to 2 times a week for 10 to 20 minutes per session, especially during heavy spring/summer shedding seasons."
+      }
+    ],
+    "isFeatured": false,
+    "isTrending": false,
+    "isTopDeal": false,
+    "isBestSeller": false,
+    "isEditorChoice": true,
+    "isNewArrival": false,
+    "badges": ["Editor's Choice", "Budget Pick"]
   }
 ]

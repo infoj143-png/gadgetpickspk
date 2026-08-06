@@ -11,33 +11,33 @@ export default function Compare() {
   // Determine which products to compare based on the slug/type parameter
   let matchedProducts = [];
   let title = "Product Comparison";
-  let description = "Compare premium tech products side-by-side to make the best purchasing choice.";
+  let description = "Compare premium home and lifestyle products side-by-side to make the best purchasing choice.";
   let badge = "Expert Comparison";
 
-  if (type === 'lenovo-vs-jbl-earbuds') {
-    // Compare Lenovo LP40 vs JBL Wave 100
-    matchedProducts = productsData.filter((p) => p.id === 'eb-04' || p.id === 'eb-05');
-    title = "Lenovo ThinkPlus LP40 vs JBL Wave 100 Earbuds";
-    description = "A deep head-to-head matchup between the budget dynamic Lenovo and premium sound signature JBL Wave 100.";
-    badge = "Brand Battle";
-  } else if (type === 'jbl-vs-soundcore') {
-    // Compare JBL Tune 510BT vs Soundcore Life Q20 / R50i vs Wave 100
-    matchedProducts = productsData.filter((p) => p.id === 'hp-04' || p.id === 'hp-05');
-    title = "JBL Tune 510BT vs Anker Soundcore Life Q20";
-    description = "Comparing two legendary wireless headsets: JBL’s Pure Bass powerhouse versus Soundcore’s Hybrid ANC master.";
-    badge = "Headphone Battle";
-  } else if (type === 'best-earbuds-under-5000') {
-    // Compare Earbuds under 5000: Anker R50i (4650), QCY T13 (3850), Lenovo LP40 (3200), JBL Wave 100 (4900)
-    matchedProducts = productsData.filter((p) => p.category === 'Earbuds' && p.currentPrice <= 5000);
-    title = "Best True Wireless Earbuds Under Rs. 5,000";
-    description = "Comprehensive lineup of top-performing budget wireless earbuds available in Pakistan under 5,000 PKR.";
-    badge = "Budget Picks";
-  } else if (type === 'best-headphones-under-10000') {
-    // Compare Headphones under 10000: Baseus H1i (8850), Sennheiser HD 206 (6999), JBL Tune 510BT (9499)
-    matchedProducts = productsData.filter((p) => p.category === 'Headphones' && p.currentPrice <= 10000);
-    title = "Best Over-Ear & On-Ear Headphones Under Rs. 10,000";
-    description = "Premium acoustic performance headsets under 10,000 PKR curated for students, gamers, and audiophiles.";
-    badge = "Best Value";
+  if (type === 'slique-blender-vs-hot-pot') {
+    // Compare Slique Portable Blender vs Crown Electric Hot Pot
+    matchedProducts = productsData.filter((p) => p.id === 'kd-01' || p.id === 'kd-02');
+    title = "Slique Portable Blender vs Crown Electric Hot Pot";
+    description = "Comparing the cordless portable Slique USB blender with the desktop Crown Multi-Functional electric hot pot steamer.";
+    badge = "Kitchen Battle";
+  } else if (type === 'vacuum-cleaner-vs-steam-iron') {
+    // Compare Xiaomi Deerma Vacuum vs Sokany Steam Iron
+    matchedProducts = productsData.filter((p) => p.id === 'lc-01' || p.id === 'lc-02');
+    title = "Xiaomi Deerma Vacuum vs Sokany Handheld Steam Iron";
+    description = "A deep comparison between Deerma’s cordless cyclonic stick vacuum and Sokany’s rapid-heating garment steamer.";
+    badge = "Cleaning Battle";
+  } else if (type === 'best-home-gadgets-under-5000') {
+    // Compare Home & Living under 5000: PureAire Humidifier (2999), Lumina Sunset Lamp (1850)
+    matchedProducts = productsData.filter((p) => p.category === 'Home & Living' && p.currentPrice <= 5000);
+    title = "Best Home & Living Gadgets Under Rs. 5,000";
+    description = "Sleek and aesthetic premium home decorations, sunset lamps, and humidifiers under 5,000 PKR.";
+    badge = "Budget Home";
+  } else if (type === 'best-kitchen-tools-under-5000') {
+    // Compare Kitchen under 5000: Slique Blender (3450), Crown Hot Pot (4899)
+    matchedProducts = productsData.filter((p) => p.category === 'Kitchen & Dining' && p.currentPrice <= 5000);
+    title = "Best Kitchen & Dining Tools Under Rs. 5,000";
+    description = "Highly practical, versatile kitchen utilities, mini cookers, and portable blenders under 5,000 PKR.";
+    badge = "Budget Kitchen";
   }
 
   useSEO({
@@ -84,7 +84,7 @@ export default function Compare() {
             <Scale className="text-orange-500" size={28} />
             {title}
           </h1>
-          <p className="text-sm text-slate-500 leading-relaxed max-w-3xl">
+          <p className="text-sm text-slate-500 leading-relaxed max-w-3xl font-semibold">
             {description} All compared prices are scanned automatically. Read through detailed specifications and expert highlights to make a verified purchase.
           </p>
         </div>

@@ -2,32 +2,34 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  ShoppingBag,
+  UtensilsCrossed,
+  Home as HomeIcon,
+  Luggage,
+  Bed,
+  Sparkles,
+  Shirt,
+  Heart,
+  Search,
   ChevronRight,
   ChevronLeft,
-  Search,
-  ShieldCheck,
-  Truck,
-  Headphones,
-  TrendingUp,
-  Sparkles,
-  Percent,
-  Smartphone,
-  Monitor,
-  Star,
   Flame,
+  Star,
+  Percent,
+  CheckCircle,
+  Clock,
   ArrowRight,
   ChevronDown,
   ChevronUp,
+  ShieldCheck,
+  Truck,
+  HeartHandshake,
   Tag,
-  CheckCircle,
-  ThumbsUp,
-  Clock,
-  Heart,
   Eye,
-  Briefcase,
-  AlertCircle,
-  HelpCircle
+  Mail,
+  Zap,
+  HelpCircle,
+  ThumbsUp,
+  Award
 } from 'lucide-react';
 import useSEO from '../hooks/useSEO';
 import productsData from '../data/products.json';
@@ -35,14 +37,29 @@ import ProductCard from '../components/ProductCard';
 import { injectJSONLD, removeJSONLD, getOrganizationSchema, getWebsiteSchema, getFAQSchema } from '../utils/schemas';
 
 export default function Home() {
-  // Inject Organization, Website & FAQ JSON-LD Schemas
+  const navigate = useNavigate();
+  const [searchQuery, setSearchQuery] = useState('');
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [newsletterEmail, setNewsletterEmail] = useState('');
+  const [newsletterSubscribed, setNewsletterSubscribed] = useState(false);
+  const [recentlyViewed, setRecentlyViewed] = useState([]);
+  const [openFaq, setOpenFaq] = useState(null);
+
+  // SEO Setup
+  useSEO({
+    title: 'GadgetPicksPK - Premium Home & Lifestyle Recommendations in Pakistan',
+    description: 'Find verified, top-rated products for Kitchen, Home & Living, Travel, Bedding, Cleaning, Fashion, and Pet Supplies on Daraz with expert reviews.',
+    canonical: '/'
+  });
+
+  // Inject Schemas
   useEffect(() => {
     const orgSchema = getOrganizationSchema();
     const webSchema = getWebsiteSchema();
     injectJSONLD('org-schema', orgSchema);
     injectJSONLD('web-schema', webSchema);
 
-    const faqSchema = getFAQSchema(faqs);
+    const faqSchema = getFAQSchema(homeFaqs);
     injectJSONLD('home-faq-schema', faqSchema);
 
     return () => {
@@ -52,58 +69,38 @@ export default function Home() {
     };
   }, []);
 
-  useSEO({
-    title: 'Premium Gadgets & Accessories Recommendations in Pakistan',
-    description: 'Expert hand-picked reviews, specs, and price-tracked links for the finest Earbuds, Headphones, Mobile and Computer Accessories in Pakistan on Daraz.',
-    canonical: '/'
-  });
-
-  const navigate = useNavigate();
-  const [searchQuery, setSearchQuery] = useState('');
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [newsletterEmail, setNewsletterEmail] = useState('');
-  const [newsletterSubscribed, setNewsletterSubscribed] = useState(false);
-  const [recentlyViewed, setRecentlyViewed] = useState([]);
-
-  // Load recently viewed from localStorage
+  // Load recently viewed
   useEffect(() => {
     const list = JSON.parse(localStorage.getItem('recentlyViewed') || '[]');
     const hydrated = list.map(id => productsData.find(p => p.id === id)).filter(Boolean);
     setRecentlyViewed(hydrated);
   }, []);
 
-  // FAQ state
-  const [openFaq, setOpenFaq] = useState(null);
-
-  const toggleFaq = (idx) => {
-    setOpenFaq(openFaq === idx ? null : idx);
-  };
-
-  // Home Hero Slider Data
+  // Hero Slider Data
   const slides = [
     {
-      title: "Elevate Your Sound Experience",
-      subtitle: "Discover high-fidelity Earbuds & Headphones verified by experts.",
-      badge: "Sound Collection",
-      image: "https://images.unsplash.com/photo-1546435770-a3e426bf472b?q=80&w=1200&auto=format&fit=crop",
-      cta: "Explore Audio",
-      link: "/products?category=Earbuds"
+      title: "Smart Kitchen & Cozy Dining",
+      subtitle: "Simplify your culinary lifestyle with premium, verified blenders, steamers, and gadgets.",
+      badge: "Kitchen & Dining",
+      image: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=1200&auto=format&fit=crop",
+      cta: "Explore Kitchen Deals",
+      link: "/products?category=Kitchen%20%26%20Dining"
     },
     {
-      title: "Maximize Mobile Productivity",
-      subtitle: "Top-tier premium chargers, cables, and power banks for absolute convenience.",
-      badge: "Power Up",
-      image: "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?q=80&w=1200&auto=format&fit=crop",
-      cta: "Shop Accessories",
-      link: "/products?category=Mobile%20Accessories"
+      title: "Elevate Your Home Aesthetics",
+      subtitle: "Discover high-quality humidifiers, sunset lamps, and ambient lighting verified by lifestyle experts.",
+      badge: "Home & Living",
+      image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1200&auto=format&fit=crop",
+      cta: "Upgrade Your Space",
+      link: "/products?category=Home%20%26%20Living"
     },
     {
-      title: "Streamline Your Workspace",
-      subtitle: "High-end mechanical keyboards, mice, and hubs to enhance workflow.",
-      badge: "Office Tech",
-      image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?q=80&w=1200&auto=format&fit=crop",
-      cta: "Discover Gear",
-      link: "/products?category=Computer%20Accessories"
+      title: "Travel & Tech Organizers",
+      subtitle: "Secure anti-theft backpacks and shockproof organizer bags ready for your next adventure.",
+      badge: "Bags & Travel",
+      image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=1200&auto=format&fit=crop",
+      cta: "Explore Travel Bags",
+      link: "/products?category=Bags%20%26%20Travel"
     }
   ];
 
@@ -129,87 +126,6 @@ export default function Home() {
     }
   };
 
-  // --- Dynamic Sections Generation ---
-  // 1. 🔥 Trending on Daraz
-  const trendingOnDaraz = productsData.filter(p => p.isTrending).slice(0, 4);
-
-  // 2. 💰 Biggest Discounts
-  const biggestDiscounts = [...productsData]
-    .sort((a, b) => b.discount - a.discount)
-    .slice(0, 4);
-
-  // 3. ⭐ Editor's Choice
-  const editorsChoice = productsData.filter(p => p.isEditorChoice || p.badges?.includes("Editor's Choice")).slice(0, 4);
-
-  // 4. 🏆 Best Sellers
-  const bestSellers = productsData.filter(p => p.isBestSeller || p.badges?.includes("Best Seller")).slice(0, 4);
-
-  // 5. 🆕 New Arrivals
-  const newArrivals = productsData.filter(p => p.isNewArrival || p.badges?.includes("New")).slice(0, 4);
-
-  // 6. 💸 Budget Picks (Price <= Rs. 5,000 or custom tag)
-  const budgetPicks = productsData
-    .filter((p) => p.currentPrice <= 5000 || p.badges?.includes("Budget Pick"))
-    .sort((a, b) => b.rating - a.rating)
-    .slice(0, 4);
-
-  // 7. 👑 Premium Picks (Price > Rs. 5,000 or custom tag)
-  const premiumPicks = productsData
-    .filter((p) => p.currentPrice > 5000 || p.badges?.includes("Premium Pick"))
-    .sort((a, b) => b.rating - a.rating)
-    .slice(0, 4);
-
-  // Main 4 categories
-  const categories = [
-    {
-      name: 'Earbuds',
-      icon: <Sparkles className="text-orange-500" size={24} />,
-      desc: 'True Wireless Stereo, ANC & deep bass buds',
-      image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?q=80&w=300&auto=format&fit=crop"
-    },
-    {
-      name: 'Headphones',
-      icon: <Headphones className="text-orange-500" size={24} />,
-      desc: 'Over-ear and on-ear comfortable headsets',
-      image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=300&auto=format&fit=crop"
-    },
-    {
-      name: 'Mobile Accessories',
-      icon: <Smartphone className="text-orange-500" size={24} />,
-      desc: 'Fast chargers, durable cables & power banks',
-      image: "https://images.unsplash.com/photo-1620283085439-39620a1e21c4?q=80&w=300&auto=format&fit=crop"
-    },
-    {
-      name: 'Computer Accessories',
-      icon: <Monitor className="text-orange-500" size={24} />,
-      desc: 'Ergonomic mice, mechanical keyboards & USB hubs',
-      image: "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?q=80&w=300&auto=format&fit=crop"
-    }
-  ];
-
-  const faqs = [
-    {
-      q: "Does GadgetPicksPK sell products directly?",
-      a: "No, GadgetPicksPK is a premium curational and review-based recommendation engine. We hand-pick top accessories available on Daraz PK, review their specs, pros, and cons, and provide you with authentic affiliate links to purchase them directly from verified sellers."
-    },
-    {
-      q: "Are the prices listed here 100% accurate?",
-      a: "While we do our best to run daily updates on pricing, Daraz PK sellers may change their prices, stock levels, or active coupons at any time. We recommend checking the direct Daraz listing to confirm the current live price."
-    },
-    {
-      q: "How do you select your products?",
-      a: "We choose products based on five key pillars: average buyer ratings (usually 4.5+ stars), high reviews count, seller reliability indexes, robust structural quality (such as braided cables or aluminum alloys), and excellent value-for-money propositions."
-    },
-    {
-      q: "Are there any hidden costs when clicking your affiliate links?",
-      a: "Absolutely not. Clicking our links costs you nothing extra. We receive a tiny commission from Daraz for directing verified buyers, which supports our testing and continuous updates."
-    },
-    {
-      q: "What are the core category options allowed?",
-      a: "In order to maintain strict, high-quality editorial focus, we only recommendation items under four categories: Earbuds, Headphones, Mobile Accessories, and Computer Accessories."
-    }
-  ];
-
   const handleNewsletterSubmit = (e) => {
     e.preventDefault();
     if (newsletterEmail.trim()) {
@@ -217,6 +133,115 @@ export default function Home() {
       setNewsletterEmail('');
     }
   };
+
+  const toggleFaq = (idx) => {
+    setOpenFaq(openFaq === idx ? null : idx);
+  };
+
+  // Seven Main Categories
+  const sevenCategories = [
+    {
+      name: 'Kitchen & Dining',
+      icon: <UtensilsCrossed className="text-orange-500" size={24} />,
+      desc: 'Smart blenders, electric steamers, premium non-stick pots & tools.',
+      count: '15+ Products',
+      image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=400&auto=format&fit=crop',
+      link: '/products?category=Kitchen%20%26%20Dining'
+    },
+    {
+      name: 'Home & Living',
+      icon: <HomeIcon className="text-orange-500" size={24} />,
+      desc: 'Ultrasonic humidifiers, mood-setting lamps & home comfort items.',
+      count: '20+ Products',
+      image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=400&auto=format&fit=crop',
+      link: '/products?category=Home%20%26%20Living'
+    },
+    {
+      name: 'Bags & Travel',
+      icon: <Luggage className="text-orange-500" size={24} />,
+      desc: 'TSA-safe backpacks, tech pouches, and travel organizers.',
+      count: '12+ Products',
+      image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=400&auto=format&fit=crop',
+      link: '/products?category=Bags%20%26%20Travel'
+    },
+    {
+      name: 'Bedding & Bath',
+      icon: <Bed className="text-orange-500" size={24} />,
+      desc: 'Orthopedic memory foam pillows, satin sheets & soft towels.',
+      count: '18+ Products',
+      image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=400&auto=format&fit=crop',
+      link: '/products?category=Bedding%20%26%20Bath'
+    },
+    {
+      name: 'Laundry & Cleaning',
+      icon: <Sparkles className="text-orange-500" size={24} />,
+      desc: 'Handheld cordless stick vacuums, steamers & scrubbers.',
+      count: '10+ Products',
+      image: 'https://images.unsplash.com/photo-1558317374-067fb5f30001?q=80&w=400&auto=format&fit=crop',
+      link: '/products?category=Laundry%20%26%20Cleaning'
+    },
+    {
+      name: 'Fashion',
+      icon: <Shirt className="text-orange-500" size={24} />,
+      desc: 'Minimalist genuine leather wallets, sunglasses & unisex bags.',
+      count: '24+ Products',
+      image: 'https://images.unsplash.com/photo-1479064555552-3ef4979f8908?q=80&w=400&auto=format&fit=crop',
+      link: '/products?category=Fashion'
+    },
+    {
+      name: 'Pet Supplies',
+      icon: <Heart className="text-orange-500" size={24} />,
+      desc: 'Automatic cat water fountains, grooming brushes & healthy pet gear.',
+      count: '14+ Products',
+      image: 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=400&auto=format&fit=crop',
+      link: '/products?category=Pet%20Supplies'
+    }
+  ];
+
+  // Dynamic Product Queries
+  // 1. 🔥 Trending Products
+  const trendingProducts = productsData.filter(p => p.isTrending).slice(0, 4);
+
+  // 2. 🏆 Best Selling Products
+  const bestSellers = productsData.filter(p => p.isBestSeller).slice(0, 4);
+
+  // 3. ⭐ Top Rated Products
+  const topRated = [...productsData].sort((a, b) => b.rating - a.rating).slice(0, 4);
+
+  // 4. 💰 Featured Deals (Biggest discount)
+  const featuredDeals = [...productsData].sort((a, b) => b.discount - a.discount).slice(0, 4);
+
+  // 5. 🎯 Today's Picks
+  const todaysPicks = productsData.slice(0, 4);
+
+  // 6. 💸 Budget Picks (Price <= 5000)
+  const budgetPicks = productsData.filter(p => p.currentPrice <= 5000).slice(0, 4);
+
+  // 7. 🆕 Recently Added
+  const recentlyAdded = productsData.filter(p => p.isNewArrival).slice(0, 4);
+
+  const homeFaqs = [
+    {
+      q: "Does GadgetPicksPK sell products directly?",
+      a: "No, GadgetPicksPK is a premium curational and review-based recommendation engine. We hand-pick top lifestyle, travel, and home products available on Daraz PK, review their specs, pros, and cons, and provide you with authentic affiliate links to purchase them directly from verified sellers."
+    },
+    {
+      q: "Are the prices listed here 100% accurate?",
+      a: "While we do our best to run daily updates on pricing, Daraz PK sellers may change their prices, stock levels, or active coupons at any time. We recommend checking the direct Daraz listing to confirm the current live price."
+    },
+    {
+      q: "How do you select your products?",
+      a: "We choose products based on five key pillars: average buyer ratings (usually 4.5+ stars), high reviews count, seller reliability indexes, robust structural quality (such as genuine leather or BPA-free polymers), and excellent value-for-money propositions."
+    },
+    {
+      q: "Are there any hidden costs when clicking your affiliate links?",
+      a: "Absolutely not. Clicking our links costs you nothing extra. We receive a tiny commission from Daraz for directing verified buyers, which supports our testing and continuous updates."
+    },
+    {
+      q: "What categories does GadgetPicksPK focus on?",
+      a: "In line with our high-quality lifestyle focus, we recommend products strictly under seven main categories: Kitchen & Dining, Home & Living, Bags & Travel, Bedding & Bath, Laundry & Cleaning, Fashion, and Pet Supplies."
+    }
+  ];
 
   return (
     <div className="space-y-16 pb-16">
@@ -237,7 +262,7 @@ export default function Home() {
               <img
                 src={slides[currentSlide].image}
                 alt={slides[currentSlide].title}
-                className="w-full h-full object-cover object-center opacity-65"
+                className="w-full h-full object-cover object-center opacity-60"
               />
             </motion.div>
           </AnimatePresence>
@@ -245,8 +270,8 @@ export default function Home() {
 
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-xl text-left text-white space-y-4">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-orange-500/25 text-orange-400 border border-orange-500/30 backdrop-blur-sm">
-              <Sparkles size={12} />
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-orange-500/20 text-orange-400 border border-orange-500/30 backdrop-blur-sm">
+              <Sparkles size={12} className="text-orange-500 animate-pulse" />
               {slides[currentSlide].badge}
             </span>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight">
@@ -296,17 +321,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Quick Search Overlay */}
+      {/* Interactive Search Bar Section */}
       <div className="max-w-4xl mx-auto px-4 -mt-12 relative z-30">
-        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-4 sm:p-6 flex flex-col md:flex-row gap-4 items-center">
+        <div className="bg-white rounded-2xl shadow-xl border border-slate-150 p-4 sm:p-6 flex flex-col md:flex-row gap-4 items-center">
           <div className="text-center md:text-left flex-shrink-0">
             <h3 className="font-extrabold text-slate-800 text-base">Quick Search</h3>
-            <p className="text-xs text-slate-500">Find exactly what you want instantly</p>
+            <p className="text-xs text-slate-500">Find products, brands, or models instantly</p>
           </div>
           <form onSubmit={handleSearchSubmit} className="w-full flex-1 relative flex items-center">
             <input
               type="text"
-              placeholder="Search by brand name, model, specifications..."
+              placeholder="Search e.g., Xiaomi Deerma, Catit, Slique, wallet..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-4 pr-12 py-3 bg-slate-50 border border-slate-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 rounded-xl text-sm font-semibold outline-none transition-all placeholder:text-slate-400"
@@ -322,59 +347,67 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Trust & Transparency Banner */}
+      {/* Affiliate Disclosure Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-slate-100 border border-slate-200/80 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-semibold text-slate-600">
+        <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-semibold text-slate-600">
           <div className="flex items-center gap-2">
             <ShieldCheck className="text-orange-500 flex-shrink-0" size={18} />
             <p>
-              <strong>Affiliate Notice:</strong> We are supported by reader commissions. When you buy through our outbound links, we may earn a small referral commission at absolutely no extra cost to you.
+              <strong>Affiliate Disclosure:</strong> GadgetPicksPK is supported by readers. When you buy through our outbound affiliate links, we may earn a small referral commission at absolutely no extra cost to you.
             </p>
           </div>
           <div className="flex items-center gap-1.5 bg-orange-100/60 border border-orange-200 px-3 py-1 rounded-full text-orange-800 text-[10px] font-bold whitespace-nowrap">
-            Last Updated: 2024-10-25
+            Updated Daily
           </div>
         </div>
       </div>
 
-      {/* Category Divisions */}
+      {/* Seven Main Categories Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-lg mx-auto mb-10">
           <span className="text-xs font-extrabold text-orange-500 uppercase tracking-widest bg-orange-50 px-3 py-1 rounded-full">
-            Top Categories
+            Main Categories
           </span>
           <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-2">
-            Browse Our Main Divisions
+            Explore Seven Main Categories
           </h2>
           <p className="text-slate-500 text-xs sm:text-sm mt-1">
-            Carefully curated product listings to narrow down your next high-tech upgrade.
+            Carefully curated product catalogs supporting the new core lifestyle identity of GadgetPicksPK.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {categories.map((cat) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {sevenCategories.map((cat, idx) => (
             <div
-              key={cat.name}
-              onClick={() => navigate(`/products?category=${encodeURIComponent(cat.name)}`)}
-              className="bg-white rounded-2xl p-5 border border-slate-200/60 shadow-sm hover:shadow-lg hover:border-orange-200 transition-all cursor-pointer group text-center relative overflow-hidden"
+              key={idx}
+              onClick={() => navigate(cat.link)}
+              className="bg-white rounded-2xl border border-slate-200/60 shadow-sm hover:shadow-lg hover:border-orange-200 transition-all cursor-pointer group text-center relative overflow-hidden flex flex-col justify-between"
             >
               <div className="absolute top-0 left-0 w-full h-1 bg-orange-500" />
-              <div className="w-20 h-20 mx-auto rounded-full overflow-hidden bg-slate-100 mb-4 border border-slate-200 group-hover:scale-105 transition-transform duration-300">
-                <img
-                  src={cat.image}
-                  alt={cat.name}
-                  className="w-full h-full object-cover object-center"
-                  loading="lazy"
-                />
+              <div className="p-5 flex-1 flex flex-col items-center">
+                <div className="w-20 h-20 rounded-full overflow-hidden bg-slate-100 mb-4 border border-slate-200 group-hover:scale-105 transition-transform duration-300">
+                  <img
+                    src={cat.image}
+                    alt={cat.name}
+                    className="w-full h-full object-cover object-center"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="w-10 h-10 rounded-xl bg-orange-50 text-orange-500 flex items-center justify-center mb-3">
+                  {cat.icon}
+                </div>
+                <h3 className="font-extrabold text-slate-800 text-base group-hover:text-orange-500 transition-colors">
+                  {cat.name}
+                </h3>
+                <p className="text-slate-500 text-xs mt-1 font-medium px-2 line-clamp-2">
+                  {cat.desc}
+                </p>
+                <span className="text-[10px] font-bold text-orange-600 bg-orange-50 border border-orange-100 px-2 py-0.5 rounded-full mt-3">
+                  {cat.count}
+                </span>
               </div>
-              <h3 className="font-extrabold text-slate-800 text-base group-hover:text-orange-500 transition-colors">
-                {cat.name}
-              </h3>
-              <p className="text-slate-500 text-xs mt-1 font-medium px-4 line-clamp-2">
-                {cat.desc}
-              </p>
-              <div className="mt-4 inline-flex items-center gap-1 text-xs font-bold text-orange-500 group-hover:underline">
-                View Recommendations
+              <div className="bg-slate-50 border-t border-slate-100 p-3.5 flex items-center justify-center gap-1 text-xs font-bold text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-all">
+                Browse Products
                 <ChevronRight size={14} />
               </div>
             </div>
@@ -382,20 +415,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 1. 🔥 Trending on Daraz Section */}
-      {trendingOnDaraz.length > 0 && (
+      {/* Trending Products Section */}
+      {trendingProducts.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-end justify-between mb-6">
             <div>
               <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-orange-600 uppercase tracking-widest bg-orange-50 px-2.5 py-1 rounded border border-orange-100">
-                <Flame size={12} className="text-orange-500 animate-pulse" /> Popular on Marketplace
+                <Flame size={12} className="text-orange-500 animate-pulse" /> Popular Choices
               </span>
               <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-1">
-                Trending on Daraz
+                Trending Products
               </h2>
             </div>
             <Link
-              to="/products?tag=trending"
+              to="/products?tag=Trending"
               className="group flex items-center gap-1.5 font-bold text-sm text-orange-500 hover:text-orange-600 transition-colors"
             >
               See All Trending
@@ -403,89 +436,31 @@ export default function Home() {
             </Link>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {trendingOnDaraz.map((product) => (
+            {trendingProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
         </section>
       )}
 
-      {/* 2. 💰 Biggest Discounts Section */}
-      {biggestDiscounts.length > 0 && (
-        <section className="bg-slate-100/50 py-12 border-y border-slate-200/50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-end justify-between mb-8">
-              <div>
-                <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-orange-600 uppercase tracking-widest bg-orange-50 px-2.5 py-1 rounded border border-orange-100">
-                  <Percent size={12} className="text-orange-500" /> Mega Savings
-                </span>
-                <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-1">
-                  Biggest Discounts
-                </h2>
-              </div>
-              <Link
-                to="/products?tag=deals"
-                className="group flex items-center gap-1.5 font-bold text-sm text-orange-500 hover:text-orange-600 transition-colors"
-              >
-                See All Discounts
-                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {biggestDiscounts.map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* 3. ⭐ Editor's Choice Section */}
-      {editorsChoice.length > 0 && (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-end justify-between mb-6">
-            <div>
-              <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-orange-600 uppercase tracking-widest bg-orange-50 px-2.5 py-1 rounded border border-orange-100">
-                <Sparkles size={12} className="text-orange-500" /> Expert Verified Reviews
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-1">
-                Editor's Choice
-              </h2>
-            </div>
-            <Link
-              to="/products"
-              className="group flex items-center gap-1.5 font-bold text-sm text-orange-500 hover:text-orange-600 transition-colors"
-            >
-              Browse Catalog
-              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {editorsChoice.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* 4. 🏆 Best Sellers Section */}
+      {/* Best Selling Products Section */}
       {bestSellers.length > 0 && (
         <section className="bg-slate-100/50 py-12 border-y border-slate-200/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-end justify-between mb-8">
               <div>
                 <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-orange-600 uppercase tracking-widest bg-orange-50 px-2.5 py-1 rounded border border-orange-100">
-                  <Star size={12} fill="currentColor" className="text-orange-500" /> Rated 4.5+ Stars
+                  <Award size={12} className="text-orange-500" /> Top Sales volume
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-1">
-                  Best Sellers
+                  Best Selling Products
                 </h2>
               </div>
               <Link
                 to="/products"
                 className="group flex items-center gap-1.5 font-bold text-sm text-orange-500 hover:text-orange-600 transition-colors"
               >
-                See All
+                See All Catalog
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
@@ -498,52 +473,110 @@ export default function Home() {
         </section>
       )}
 
-      {/* 5. 🆕 New Arrivals Section */}
-      {newArrivals.length > 0 && (
+      {/* Top Rated Products Section */}
+      {topRated.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-end justify-between mb-6">
             <div>
               <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-orange-600 uppercase tracking-widest bg-orange-50 px-2.5 py-1 rounded border border-orange-100">
-                <Clock size={12} className="text-orange-500" /> New Additions
+                <Star size={12} fill="currentColor" className="text-orange-500" /> Rated 4.5+ Stars
               </span>
               <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-1">
-                New Arrivals
+                Top Rated Products
               </h2>
             </div>
             <Link
               to="/products"
               className="group flex items-center gap-1.5 font-bold text-sm text-orange-500 hover:text-orange-600 transition-colors"
             >
-              Browse All
+              Browse Top Rated
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {newArrivals.map((product) => (
+            {topRated.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
         </section>
       )}
 
-      {/* 6. 💸 Budget Picks Section */}
+      {/* Featured Deals Section */}
+      {featuredDeals.length > 0 && (
+        <section className="bg-slate-100/50 py-12 border-y border-slate-200/50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-end justify-between mb-8">
+              <div>
+                <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-orange-600 uppercase tracking-widest bg-orange-50 px-2.5 py-1 rounded border border-orange-100">
+                  <Percent size={12} className="text-orange-500" /> Special Markdowns
+                </span>
+                <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-1">
+                  Featured Deals
+                </h2>
+              </div>
+              <Link
+                to="/products?tag=Deals"
+                className="group flex items-center gap-1.5 font-bold text-sm text-orange-500 hover:text-orange-600 transition-colors"
+              >
+                View Hot Deals
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {featuredDeals.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Today's Picks Section */}
+      {todaysPicks.length > 0 && (
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-end justify-between mb-6">
+            <div>
+              <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-orange-600 uppercase tracking-widest bg-orange-50 px-2.5 py-1 rounded border border-orange-100">
+                <Zap size={12} className="text-orange-500 animate-pulse" /> Handpicked Daily
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-1">
+                Today's Picks
+              </h2>
+            </div>
+            <Link
+              to="/products"
+              className="group flex items-center gap-1.5 font-bold text-sm text-orange-500 hover:text-orange-600 transition-colors"
+            >
+              Explore Today
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {todaysPicks.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Budget Picks Section */}
       {budgetPicks.length > 0 && (
         <section className="bg-slate-100/50 py-12 border-y border-slate-200/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-end justify-between mb-8">
               <div>
                 <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-orange-600 uppercase tracking-widest bg-orange-50 px-2.5 py-1 rounded border border-orange-100">
-                  <Percent size={12} className="text-orange-500" /> Under Rs. 5,000
+                  <Tag size={12} className="text-orange-500" /> Maximum Value
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-1">
-                  Budget Picks
+                  Budget Picks (Under Rs. 5,000)
                 </h2>
               </div>
               <Link
-                to="/compare/best-earbuds-under-5000"
+                to="/products"
                 className="group flex items-center gap-1.5 font-bold text-sm text-orange-500 hover:text-orange-600 transition-colors"
               >
-                Compare Budget Picks
+                View Value Picks
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
@@ -556,28 +589,28 @@ export default function Home() {
         </section>
       )}
 
-      {/* 7. 👑 Premium Picks Section */}
-      {premiumPicks.length > 0 && (
+      {/* Recently Added Section */}
+      {recentlyAdded.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-end justify-between mb-6">
             <div>
               <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-orange-600 uppercase tracking-widest bg-orange-50 px-2.5 py-1 rounded border border-orange-100">
-                <Sparkles size={12} className="text-orange-500" /> Elite Collection
+                <Clock size={12} className="text-orange-500" /> Brand New Additions
               </span>
               <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-1">
-                Premium Picks
+                Recently Added
               </h2>
             </div>
             <Link
-              to="/products"
+              to="/products?tag=Featured"
               className="group flex items-center gap-1.5 font-bold text-sm text-orange-500 hover:text-orange-600 transition-colors"
             >
-              Explore Premium
+              Browse Latest
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {premiumPicks.map((product) => (
+            {recentlyAdded.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
@@ -590,7 +623,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center gap-2 mb-6 text-slate-800">
               <Eye className="text-orange-500" size={20} />
-              <h2 className="text-xl sm:text-2xl font-black">Recently Viewed Products</h2>
+              <h2 className="text-xl sm:text-2xl font-black">Recently Viewed</h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {recentlyViewed.map((product) => (
@@ -601,7 +634,7 @@ export default function Home() {
         </section>
       )}
 
-      {/* 8. Why Choose GadgetPicksPK Section */}
+      {/* Why Trust GadgetPicksPK Section */}
       <section className="bg-slate-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-xl mx-auto mb-12">
@@ -609,7 +642,7 @@ export default function Home() {
               Our Core Principles
             </span>
             <h2 className="text-3xl font-black mt-2">
-              Why Choose GadgetPicksPK?
+              Why Trust GadgetPicksPK?
             </h2>
             <p className="text-slate-400 text-xs sm:text-sm mt-1">
               We stand apart by offering highly researched, consumer-first reviews rather than hard-selling.
@@ -629,7 +662,7 @@ export default function Home() {
 
             <div className="bg-slate-800/50 rounded-2xl p-6 border border-slate-800 text-center space-y-3">
               <div className="w-12 h-12 rounded-xl bg-orange-500/15 text-orange-500 flex items-center justify-center mx-auto mb-2">
-                <Percent size={26} />
+                <HeartHandshake size={26} />
               </div>
               <h3 className="text-lg font-extrabold text-white">Verified Discount Codes</h3>
               <p className="text-slate-400 text-xs sm:text-sm leading-relaxed font-semibold">
@@ -650,7 +683,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 9. FAQ Section */}
+      {/* FAQ Preview Section */}
       <section className="max-w-4xl mx-auto px-4">
         <div className="text-center max-w-lg mx-auto mb-10">
           <span className="text-xs font-extrabold text-orange-500 uppercase tracking-widest bg-orange-50 px-3 py-1 rounded-full">
@@ -665,7 +698,7 @@ export default function Home() {
         </div>
 
         <div className="space-y-4">
-          {faqs.map((faq, idx) => (
+          {homeFaqs.map((faq, idx) => (
             <div
               key={idx}
               className="bg-white rounded-2xl border border-slate-200/80 shadow-xs overflow-hidden transition-all duration-300"
@@ -701,7 +734,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Newsletter */}
+      {/* Newsletter Section */}
       <section className="max-w-5xl mx-auto px-4">
         <div className="bg-gradient-to-br from-orange-50 to-orange-100/50 border border-orange-200/60 rounded-3xl p-8 md:p-12 text-center relative overflow-hidden">
           <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/5 rounded-full -mr-16 -mt-16" />
@@ -709,13 +742,13 @@ export default function Home() {
 
           <div className="relative z-10 max-w-xl mx-auto space-y-4">
             <span className="inline-block px-3 py-1 rounded-full text-xs font-extrabold text-orange-600 bg-orange-100/60 border border-orange-200">
-              Never Miss A Markdown
+              Never Miss A Deal
             </span>
             <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
-              Tech Updates Directly In Your Inbox
+              Get Curated Deals in Your Inbox
             </h2>
             <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
-              Sign up for our newsletter to receive weekly alerts for massive coupon drops and top rated gadget deals in Pakistan.
+              Sign up for our newsletter to receive weekly alerts for massive coupon drops, markdown deals, and hot reviews in Pakistan.
             </p>
 
             <AnimatePresence mode="wait">
@@ -751,7 +784,7 @@ export default function Home() {
                   className="bg-white/80 border border-emerald-200 p-4 rounded-xl max-w-sm mx-auto text-emerald-800 text-xs font-semibold flex items-center justify-center gap-2"
                 >
                   <CheckCircle className="text-emerald-500" size={18} />
-                  Thank you! You have successfully subscribed.
+                  Thank you! You have successfully subscribed to GadgetPicksPK.
                 </motion.div>
               )}
             </AnimatePresence>

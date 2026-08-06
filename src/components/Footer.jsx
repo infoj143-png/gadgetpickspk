@@ -7,10 +7,10 @@ export default function Footer() {
 
   const quickLinks = [
     { label: 'All Recommendations', href: '/products' },
-    { label: 'Lenovo vs JBL Earbuds', href: '/compare/lenovo-vs-jbl-earbuds' },
-    { label: 'JBL vs Soundcore', href: '/compare/jbl-vs-soundcore' },
-    { label: 'Earbuds Under 5k', href: '/compare/best-earbuds-under-5000' },
-    { label: 'Headphones Under 10k', href: '/compare/best-headphones-under-10000' }
+    { label: 'Blender vs Hot Pot', href: '/compare/slique-blender-vs-hot-pot' },
+    { label: 'Vacuum vs Steam Iron', href: '/compare/vacuum-cleaner-vs-steam-iron' },
+    { label: 'Home Gadgets Under 5k', href: '/compare/best-home-gadgets-under-5000' },
+    { label: 'Kitchen Tools Under 5k', href: '/compare/best-kitchen-tools-under-5000' }
   ];
 
   const supportLinks = [
@@ -40,10 +40,10 @@ export default function Footer() {
                 GadgetPicks<span className="text-orange-500">PK</span>
               </span>
             </div>
-            <p className="text-slate-400 text-sm leading-relaxed">
-              Pakistan's premier premium gadget curating catalog. We source, inspect, and link only highly rated, genuine computer & mobile accessories from Daraz for tech enthusiasts.
+            <p className="text-slate-400 text-sm leading-relaxed font-medium">
+              Pakistan's premier premium lifestyle, kitchen, & home accessories curating catalog. We source, inspect, and link only highly rated, genuine products from Daraz for household enthusiasts.
             </p>
-            <div className="flex items-center gap-2 text-xs bg-slate-800 p-3 rounded-lg text-slate-400 border border-slate-700">
+            <div className="flex items-center gap-2 text-xs bg-slate-800 p-3 rounded-lg text-slate-400 border border-slate-700 font-semibold">
               <ShieldAlert size={20} className="text-orange-500 flex-shrink-0" />
               <span>We may earn an affiliate commission when you buy through our links. No extra charge to you.</span>
             </div>
@@ -54,7 +54,7 @@ export default function Footer() {
             <h4 className="text-white font-extrabold text-sm uppercase tracking-wider mb-5 pb-1 border-b border-slate-800 inline-block">
               Quick Navigation
             </h4>
-            <ul className="space-y-3 text-sm">
+            <ul className="space-y-3 text-sm font-semibold">
               {quickLinks.map((link) => (
                 <li key={link.label}>
                   <Link
@@ -74,7 +74,7 @@ export default function Footer() {
             <h4 className="text-white font-extrabold text-sm uppercase tracking-wider mb-5 pb-1 border-b border-slate-800 inline-block">
               Trust & Support
             </h4>
-            <ul className="space-y-3 text-sm">
+            <ul className="space-y-3 text-sm font-semibold">
               {supportLinks.map((link) => (
                 <li key={link.label}>
                   <Link
@@ -94,7 +94,7 @@ export default function Footer() {
             <h4 className="text-white font-extrabold text-sm uppercase tracking-wider mb-5 pb-1 border-b border-slate-800 inline-block">
               Reach Out
             </h4>
-            <ul className="space-y-4 text-sm text-slate-400">
+            <ul className="space-y-4 text-sm text-slate-400 font-semibold">
               <li className="flex gap-2">
                 <MapPin size={18} className="text-orange-500 flex-shrink-0" />
                 <span>Karachi, Pakistan</span>
@@ -114,7 +114,7 @@ export default function Footer() {
         </div>
 
         {/* Separator */}
-        <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+        <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500 font-semibold">
           <div>
             &copy; {currentYear} <span className="text-slate-400">GadgetPicksPK</span>. All Rights Reserved. Made for Pakistan with ❤️.
           </div>
