@@ -867,5 +867,324 @@
     "isEditorChoice": true,
     "isNewArrival": false,
     "badges": ["Editor's Choice", "Budget Pick"]
+  },
+  {
+    "id": "hl-03",
+    "brand": "Slique",
+    "model": "Bathroom-Shelf-S1",
+    "category": "Home & Living",
+    "subCategory": "Bathroom Shelves",
+    "name": "Slique Heavy-Duty Adhesive Corner Bathroom Organizer Shelf",
+    "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=600&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=600&auto=format&fit=crop"
+    ],
+    "currentPrice": 1650,
+    "oldPrice": 2499,
+    "discount": 34,
+    "rating": 4.8,
+    "reviewsCount": 182,
+    "soldCount": "650+",
+    "shortDescription": "Rustproof stainless steel corner bathroom shelf with strong non-marking adhesive pads, ideal for tidy storage of shampoo bottles and soaps.",
+    "longDescription": "The Slique Heavy-Duty Adhesive Corner Bathroom Organizer Shelf is the perfect rustproof storage solution for modern bathrooms. Made from premium-grade SUS304 stainless steel with a black powder coating, it is designed to withstand humid bathroom environments without corroding. It features extra-strong, transparent adhesive pads that mount securely to tiled walls without drilling. Offers a generous weight capacity of up to 10kg.",
+    "features": [
+      "Made of SUS304 stainless steel, 100% rustproof and corrosion-resistant",
+      "No-drilling installation with ultra-strong non-marking adhesive pads",
+      "90-degree corner design maximizes space in shower areas",
+      "Open grid design allows maximum drainage and ventilation, keeping toiletries clean",
+      "Holds up to 10kg of heavy shampoo bottles, soaps, and body washes"
+    ],
+    "specifications": {
+      "Brand": "Slique",
+      "Model": "Bathroom-Shelf-S1",
+      "Material": "SUS304 Stainless Steel",
+      "Color": "Matte Black",
+      "Installation Type": "Adhesive Wall Mount (No-Drill)",
+      "Max Load Capacity": "10 kg",
+      "Dimensions": "26.5 x 26.5 x 6 cm"
+    },
+    "pros": [
+      "Strong adhesive holds heavy weight securely",
+      "Water drains rapidly to prevent soap scum buildup",
+      "Sleek matte black finish matches modern bathroom themes"
+    ],
+    "cons": [
+      "Not suitable for rough, painted, or wallpapered walls",
+      "Adhesive pads are single-use and cannot be repositioned"
+    ],
+    "darazUrl": "https://www.daraz.pk",
+    "availability": "In Stock",
+    "lastUpdated": "2025-01-14",
+    "whoShouldBuy": "Perfect for renters and homeowners looking to add wall storage to their shower or kitchen without drilling holes into premium tiles.",
+    "buyingRecommendation": "Excellent build quality and incredible adhesive strength. An absolute essential for compact bathrooms.",
+    "faqs": [
+      {
+        "q": "Can I remove the adhesive pads without damaging my bathroom tiles?",
+        "a": "Yes! Use a hair dryer to heat the adhesive pad for 2-3 minutes to soften it, then gently peel it off without leaving residue."
+      },
+      {
+        "q": "How long should I wait after installing the adhesive before placing items?",
+        "a": "We recommend waiting 24 hours to let the adhesive bond completely with the wall surface before loading any products."
+      }
+    ],
+    "isFeatured": true,
+    "isTrending": true,
+    "isTopDeal": false,
+    "isBestSeller": true,
+    "isEditorChoice": false,
+    "isNewArrival": false,
+    "badges": ["Best Seller", "Trending", "Budget Pick"]
+  },
+  {
+    "id": "hl-04",
+    "brand": "PureAire",
+    "model": "Dispenser-T1",
+    "category": "Home & Living",
+    "subCategory": "Toothpaste Dispensers",
+    "name": "PureAire Automatic Hands-Free Toothpaste Dispenser & Holder",
+    "image": "https://images.unsplash.com/photo-1559599141-3e04555e7a41?q=80&w=600&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1559599141-3e04555e7a41?q=80&w=600&auto=format&fit=crop"
+    ],
+    "currentPrice": 999,
+    "oldPrice": 1500,
+    "discount": 33,
+    "rating": 4.7,
+    "reviewsCount": 240,
+    "soldCount": "1.2k+",
+    "shortDescription": "Wall-mounted hands-free automatic toothpaste squeezer with integrated dustproof slots for up to 5 toothbrushes, perfect for family hygiene.",
+    "longDescription": "The PureAire Automatic Hands-Free Toothpaste Dispenser is designed to provide hygiene, organization, and efficiency to your family's morning routine. It features a smart vacuum squeezer pump that dispenses the perfect amount of toothpaste every time with a simple push, preventing mess and waste. Included is a dustproof toothbrush holder slot holding up to 5 toothbrushes securely.",
+    "features": [
+      "Hands-free vacuum pump dispenses toothpaste with zero waste",
+      "Integrated toothbrush holder stores up to 5 toothbrushes in dustproof slots",
+      "Easy wall mount installation using heavy-duty double-sided sticky tape",
+      "Detachable parts for extremely easy and fast cleaning",
+      "Crafted from premium BPA-free food-grade plastic material"
+    ],
+    "specifications": {
+      "Brand": "PureAire",
+      "Model": "Dispenser-T1",
+      "Material": "BPA-Free Food-Grade ABS Plastic",
+      "Capacity": "1 Toothpaste + 5 Toothbrush Slots",
+      "Dispensing Method": "Mechanical Vacuum Squeeze",
+      "Installation Type": "Wall-Mounted Adhesive",
+      "Weight": "180g"
+    },
+    "pros": [
+      "Prevents toothpaste waste by squeezing to the very last drop",
+      "Keeps toothbrushes clean, dry, and dustproof",
+      "Super fun and easy for kids to use independently"
+    ],
+    "cons": [
+      "Initially requires pushing the pump 5-8 times to expel trapped air",
+      "Fits standard screw-top toothpaste tubes only"
+    ],
+    "darazUrl": "https://www.daraz.pk",
+    "availability": "In Stock",
+    "lastUpdated": "2025-01-14",
+    "whoShouldBuy": "Highly recommended for families with kids who want to encourage fun brushing habits and keep bathroom counters completely free of toothpaste clutter.",
+    "buyingRecommendation": "Extremely budget-friendly. It organizes your counter and cuts down toothpaste waste completely.",
+    "faqs": [
+      {
+        "q": "How do you clean the toothpaste dispenser?",
+        "a": "The entire dispenser is modular. You can easily pull the front cover and the silicone pump out to rinse with warm water once a week."
+      }
+    ],
+    "isFeatured": false,
+    "isTrending": true,
+    "isTopDeal": true,
+    "isBestSeller": false,
+    "isEditorChoice": true,
+    "isNewArrival": true,
+    "badges": ["Trending", "Budget Pick"]
+  },
+  {
+    "id": "hl-05",
+    "brand": "Lumina",
+    "model": "Lock-R1",
+    "category": "Home & Living",
+    "subCategory": "Refrigerator Locks",
+    "name": "Lumina Heavy-Duty Smart Safety Refrigerator & Cabinet Lock",
+    "image": "https://images.unsplash.com/photo-1584622781564-1d987f7333c1?q=80&w=600&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1584622781564-1d987f7333c1?q=80&w=600&auto=format&fit=crop"
+    ],
+    "currentPrice": 750,
+    "oldPrice": 1200,
+    "discount": 37,
+    "rating": 4.6,
+    "reviewsCount": 118,
+    "soldCount": "980+",
+    "shortDescription": "Baby-proofing refrigerator lock with strong 3M adhesive and a robust locking mechanism to prevent toddlers or pets from opening fridge doors.",
+    "longDescription": "The Lumina Heavy-Duty Smart Safety Refrigerator Lock is designed to secure refrigerators, freezers, cabinets, and drawers from curious toddlers and pets. Utilizing industry-standard 3M VHB adhesive pads, this lock attaches securely without scratching surfaces or requiring tools. The smart dual-button lock mechanism is easy for adults to operate with one hand, but impossible for infants.",
+    "features": [
+      "Heavy-duty 3M VHB adhesive pads hold secure under heavy pulling force",
+      "Double-button locking system prevents child opening while allowing one-handed adult access",
+      "Multi-purpose lock works on refrigerators, single door cupboards, and drawers",
+      "Constructed from highly durable, impact-resistant ABS material",
+      "No screws or drilling required, completely preserving appliance aesthetics"
+    ],
+    "specifications": {
+      "Brand": "Lumina",
+      "Model": "Lock-R1",
+      "Material": "Impact-Resistant ABS Polymer",
+      "Adhesive Type": "Genuine 3M VHB",
+      "Color": "Classic White",
+      "Lock Style": "Dual-Button Pinch Release",
+      "Dimensions": "11.5 x 5.5 x 1.5 cm"
+    },
+    "pros": [
+      "Adhesive bonds securely and handles repeated daily tugging",
+      "Very simple installation process taking under 2 minutes",
+      "Clean white aesthetic blends seamlessly into kitchen appliances"
+    ],
+    "cons": [
+      "Needs 24 hours of curing time for adhesive to reach maximum grip strength",
+      "Double-door French refrigerators require buying two locks for complete security"
+    ],
+    "darazUrl": "https://www.daraz.pk",
+    "availability": "In Stock",
+    "lastUpdated": "2025-01-14",
+    "whoShouldBuy": "Perfect for new parents childproofing their homes and pet owners looking to stop clever cats or dogs from raiding refrigerators and kitchen cabinets.",
+    "buyingRecommendation": "Excellent cheap safety investment. Highly durable and childproof.",
+    "faqs": [
+      {
+        "q": "Will this lock leave residue on my stainless steel refrigerator?",
+        "a": "No. When removing, simply heat the adhesive pad with a hair dryer and pull slowly. Any minor residue can be wiped clean with soapy water or rubbing alcohol."
+      }
+    ],
+    "isFeatured": false,
+    "isTrending": false,
+    "isTopDeal": false,
+    "isBestSeller": true,
+    "isEditorChoice": false,
+    "isNewArrival": false,
+    "badges": ["Best Seller", "Budget Pick"]
+  },
+  {
+    "id": "hl-06",
+    "brand": "BANGE",
+    "model": "Organizer-H1",
+    "category": "Home & Living",
+    "subCategory": "Home Organizers",
+    "name": "BANGE Professional Desktop Multi-Slot Stationery & Cable Organizer",
+    "image": "https://images.unsplash.com/photo-1593085512500-5d55148d6f0d?q=80&w=600&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1593085512500-5d55148d6f0d?q=80&w=600&auto=format&fit=crop"
+    ],
+    "currentPrice": 2450,
+    "oldPrice": 3500,
+    "discount": 30,
+    "rating": 4.9,
+    "reviewsCount": 94,
+    "soldCount": "420+",
+    "shortDescription": "Sleek wooden-accented desk organizer box with multiple compartments for cosmetics, stationery, remote controllers, and smart cable management.",
+    "longDescription": "The BANGE Professional Desktop Multi-Slot Organizer offers a modern, elegant layout to clear clutter from desks, side tables, and vanity counters. Combining clean white structural ABS polymer with natural, sustainably sourced bamboo dividers, it blends beautifully into any minimalist home or office environment. Includes deep partitions for remote controls, cosmetics, and pens.",
+    "features": [
+      "Premium construction matching durable ABS body with natural bamboo wood divider",
+      "Multiple modular divider slots allow custom interior space layouts",
+      "Deep compartments prevent tall items like rulers, remotes, or brushes from tipping",
+      "Integrated side cable slots organize charging cables neat and tidy",
+      "Non-slip bottom padding protects your premium tabletop surfaces from scratches"
+    ],
+    "specifications": {
+      "Brand": "BANGE",
+      "Model": "Organizer-H1",
+      "Body Material": "Premium ABS Polymer",
+      "Divider Material": "100% Sustainable Natural Bamboo",
+      "Color Options": "Minimalist Matte White",
+      "Compartments Count": "5 Modular Slots",
+      "Dimensions": "18 x 14.3 x 9.5 cm"
+    },
+    "pros": [
+      "Sleek Scandinavian aesthetic elevates desk design instantly",
+      "Adjustable wooden slots make storage fully customizable",
+      "Extremely robust and sturdy, easy to clean"
+    ],
+    "cons": [
+      "Bamboo divider can warp slightly if soaked in standing water",
+      "Limited depth isn't suitable for storing massive documents"
+    ],
+    "darazUrl": "https://www.daraz.pk",
+    "availability": "In Stock",
+    "lastUpdated": "2025-01-14",
+    "whoShouldBuy": "An exceptional storage option for students, remote workers, makeup artists, and tidy-home lovers looking to sweep clutter off their workspace gracefully.",
+    "buyingRecommendation": "Excellent premium build and clean modern look. One of the best desktop tidiers on Daraz PK.",
+    "faqs": [
+      {
+        "q": "Can the bamboo dividers be completely removed?",
+        "a": "Yes! The bamboo partitions are sliding pieces, so you can lift them out entirely to store wider items like notebooks or small tablets."
+      }
+    ],
+    "isFeatured": true,
+    "isTrending": true,
+    "isTopDeal": false,
+    "isBestSeller": false,
+    "isEditorChoice": true,
+    "isNewArrival": false,
+    "badges": ["Trending", "Editor's Choice", "Premium Pick"]
+  },
+  {
+    "id": "hl-07",
+    "brand": "SilkNest",
+    "model": "Box-B1",
+    "category": "Home & Living",
+    "subCategory": "Storage Boxes",
+    "name": "SilkNest Collapsible Fabric Wardrobe Organizer Storage Box",
+    "image": "https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=600&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=600&auto=format&fit=crop"
+    ],
+    "currentPrice": 1850,
+    "oldPrice": 2800,
+    "discount": 34,
+    "rating": 4.8,
+    "reviewsCount": 156,
+    "soldCount": "720+",
+    "shortDescription": "Heavy-duty canvas storage bin with dual faux leather reinforced handles and metal support frames, perfect for folded clothes, blankets, and toys.",
+    "longDescription": "The SilkNest Collapsible Fabric Wardrobe Organizer Storage Box is the ultimate solution to decluttering your closets and shelves. Constructed from thick, high-density cationic fabric and reinforced with steel wire support structures, this box retains its sturdy shape even when empty. Outfitted with elegant faux leather handles for convenient drawer-style pulls.",
+    "features": [
+      "Thick cationic fabric exterior with breathable, moisture-proof interior lining",
+      "Built-in steel frame support retains shape and allows boxes to be stacked",
+      "Fully collapsible design folds down flat under 2cm thick when not in use",
+      "Reinforced vegan faux leather handles on both sides for heavy-duty pulling",
+      "Neutral grey-beige canvas color fits all modern wardrobe styles"
+    ],
+    "specifications": {
+      "Brand": "SilkNest",
+      "Model": "Box-B1",
+      "Material": "Cationic Canvas Fabric + Steel Frame Support",
+      "Handles": "Dual Vegan Faux Leather",
+      "Volume": "24 Liters",
+      "Load Capacity": "Up to 15 kg",
+      "Dimensions": "40 x 30 x 20 cm (Medium)"
+    },
+    "pros": [
+      "Heavy wire frame keeps it rigid and allows stacking on wardrobe shelves",
+      "Folds completely flat for storage inside drawers",
+      "Lightweight yet very solid and spacious"
+    ],
+    "cons": [
+      "Fabric is not completely waterproof",
+      "Cannot be machine washed (spot cleaning with damp cloth only is recommended)"
+    ],
+    "darazUrl": "https://www.daraz.pk",
+    "availability": "In Stock",
+    "lastUpdated": "2025-01-14",
+    "whoShouldBuy": "Perfect for bedroom closet organization, living room toy bin storage, or stacking seasonal winter clothes and blankets dustproof.",
+    "buyingRecommendation": "Extremely solid and stacks beautifully. For under Rs. 2,000, it makes wardrobe organization look incredibly high-end.",
+    "faqs": [
+      {
+        "q": "Are these boxes stackable?",
+        "a": "Yes! Because of the solid internal metal frame, these boxes can easily support being stacked 3-4 layers high without collapsing or crushing items underneath."
+      }
+    ],
+    "isFeatured": false,
+    "isTrending": true,
+    "isTopDeal": false,
+    "isBestSeller": false,
+    "isEditorChoice": false,
+    "isNewArrival": true,
+    "badges": ["Trending", "New"]
   }
 ]
