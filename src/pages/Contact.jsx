@@ -172,7 +172,8 @@ export default function Contact() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                onSubmit={handleSubmit}
+                action="https://formsubmit.co/infome.daraz@gmail.com"
+                method="POST"
                 className="space-y-5"
                 noValidate
               >
