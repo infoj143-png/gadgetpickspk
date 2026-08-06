@@ -1,16 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { Search, Menu, X, ArrowUpRight, HelpCircle, ShieldCheck, Mail, Percent, Flame, Layers, Scale } from 'lucide-react';
+import { Search, Menu, X, ArrowUpRight, HelpCircle, ShieldCheck, Mail, Percent, Flame, Layers, Scale, Sparkles, Star, BookOpen } from 'lucide-react';
+import productsData from '../data/products.json';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [suggestions, setSuggestions] = useState([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
 
   const navigate = useNavigate();
   const location = useLocation();
   const dropdownRef = useRef(null);
+  const searchContainerRef = useRef(null);
 
   // Monitor scroll for premium blur effect
   useEffect(() => {
@@ -31,18 +35,42 @@ export default function Header() {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setIsCategoryDropdownOpen(false);
       }
+      if (searchContainerRef.current && !searchContainerRef.current.contains(event.target)) {
+        setShowSuggestions(false);
+      }
     }
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Close mobile menu on route change
+  // Close mobile menu and suggestion box on route change
   useEffect(() => {
     setIsMobileMenuOpen(false);
+    setShowSuggestions(false);
   }, [location]);
+
+  // Handle instant search suggestions as user types
+  useEffect(() => {
+    if (searchQuery.trim().length >= 2) {
+      const query = searchQuery.toLowerCase().trim();
+      const filtered = productsData
+        .filter(
+          p => p.name.toLowerCase().includes(query) ||
+               p.brand.toLowerCase().includes(query) ||
+               p.category.toLowerCase().includes(query)
+        )
+        .slice(0, 5);
+      setSuggestions(filtered);
+      setShowSuggestions(true);
+    } else {
+      setSuggestions([]);
+      setShowSuggestions(false);
+    }
+  }, [searchQuery]);
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
+    setShowSuggestions(false);
     if (searchQuery.trim()) {
       navigate(`/products?search=${encodeURIComponent(searchQuery.trim())}`);
     } else {
@@ -69,17 +97,29 @@ export default function Header() {
     { label: 'Best Headphones Under 10k', path: '/compare/best-headphones-under-10000' }
   ];
 
+  const buyingGuides = [
+    { label: 'Best Wireless Earbuds in Pakistan', path: '/guides/best-wireless-earbuds-in-pakistan' },
+    { label: 'Best Headphones in Pakistan', path: '/guides/best-headphones-in-pakistan' },
+    { label: 'Best Mobile Accessories', path: '/guides/best-mobile-accessories' },
+    { label: 'Best Computer Accessories', path: '/guides/best-computer-accessories' }
+  ];
+
   const [isCompareDropdownOpen, setIsCompareDropdownOpen] = useState(false);
+  const [isGuidesDropdownOpen, setIsGuidesDropdownOpen] = useState(false);
   const compareDropdownRef = useRef(null);
+  const guidesDropdownRef = useRef(null);
 
   useEffect(() => {
-    function handleClickOutsideCompare(event) {
+    function handleClickOutsideDropdowns(event) {
       if (compareDropdownRef.current && !compareDropdownRef.current.contains(event.target)) {
         setIsCompareDropdownOpen(false);
       }
+      if (guidesDropdownRef.current && !guidesDropdownRef.current.contains(event.target)) {
+        setIsGuidesDropdownOpen(false);
+      }
     }
-    document.addEventListener('mousedown', handleClickOutsideCompare);
-    return () => document.removeEventListener('mousedown', handleClickOutsideCompare);
+    document.addEventListener('mousedown', handleClickOutsideDropdowns);
+    return () => document.removeEventListener('mousedown', handleClickOutsideDropdowns);
   }, []);
 
   return (
@@ -158,22 +198,61 @@ export default function Header() {
             </div>
 
             {/* Search Input Box */}
-            <form onSubmit={handleSearchSubmit} className="flex-1 relative flex items-center">
-              <input
-                type="text"
-                placeholder="Search verified gadgets (e.g. Anker, Sony, power bank)..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-4 pr-12 py-2 bg-slate-50 border border-slate-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 rounded-lg text-sm outline-none transition-all placeholder:text-slate-400"
-              />
-              <button
-                type="submit"
-                className="absolute right-1 p-1.5 bg-orange-500 text-white rounded-md hover:bg-orange-600 transition-colors"
-                aria-label="Search"
-              >
-                <Search size={16} />
-              </button>
-            </form>
+            <div className="flex-1 relative" ref={searchContainerRef}>
+              <form onSubmit={handleSearchSubmit} className="flex items-center">
+                <input
+                  type="text"
+                  placeholder="Search verified gadgets (e.g. Anker, Sony, power bank)..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onFocus={() => searchQuery.trim().length >= 2 && setShowSuggestions(true)}
+                  className="w-full pl-4 pr-12 py-2 bg-slate-50 border border-slate-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 rounded-lg text-sm outline-none transition-all placeholder:text-slate-400"
+                />
+                <button
+                  type="submit"
+                  className="absolute right-1 p-1.5 bg-orange-500 text-white rounded-md hover:bg-orange-600 transition-colors"
+                  aria-label="Search"
+                >
+                  <Search size={16} />
+                </button>
+              </form>
+
+              {/* Instant Search Suggestions Box */}
+              {showSuggestions && suggestions.length > 0 && (
+                <div className="absolute left-0 right-0 mt-2 bg-white rounded-xl shadow-xl border border-slate-150 py-2 z-55 divide-y divide-slate-100">
+                  {suggestions.map((p) => (
+                    <Link
+                      key={p.id}
+                      to={`/products/${p.id}`}
+                      onClick={() => setShowSuggestions(false)}
+                      className="flex items-center gap-3 px-4 py-3 hover:bg-orange-50/50 transition-all text-slate-800"
+                    >
+                      <img
+                        src={p.image}
+                        alt={p.name}
+                        className="w-10 h-10 object-cover rounded-lg border border-slate-100"
+                      />
+                      <div className="flex-1 min-w-0">
+                        <h4 className="text-xs font-bold text-slate-900 truncate">{p.name}</h4>
+                        <div className="flex items-center gap-2 mt-0.5">
+                          <span className="text-[10px] text-orange-500 font-black tracking-wider uppercase bg-orange-50 px-1.5 py-0.5 rounded">
+                            {p.category}
+                          </span>
+                          <span className="text-[10px] font-bold text-slate-400">
+                            {p.brand}
+                          </span>
+                        </div>
+                      </div>
+                      <div className="text-right flex-shrink-0">
+                        <span className="text-xs font-black text-slate-900">
+                          Rs. {p.currentPrice.toLocaleString()}
+                        </span>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Right Navigation Actions */}
@@ -206,6 +285,31 @@ export default function Header() {
                       className="block px-4 py-2.5 hover:bg-orange-50 text-slate-700 hover:text-orange-600 font-medium text-xs transition-colors"
                     >
                       {comp.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Buying Guides Dropdown */}
+            <div className="relative" ref={guidesDropdownRef}>
+              <button
+                onClick={() => setIsGuidesDropdownOpen(!isGuidesDropdownOpen)}
+                className="text-slate-600 hover:text-orange-500 font-semibold text-sm flex items-center gap-1 transition-colors outline-none cursor-pointer"
+              >
+                <BookOpen size={15} className="text-orange-500" />
+                Buying Guides
+              </button>
+              {isGuidesDropdownOpen && (
+                <div className="absolute right-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-slate-100 py-2 z-50">
+                  {buyingGuides.map((guide) => (
+                    <Link
+                      key={guide.path}
+                      to={guide.path}
+                      onClick={() => setIsGuidesDropdownOpen(false)}
+                      className="block px-4 py-2.5 hover:bg-orange-50 text-slate-700 hover:text-orange-600 font-medium text-xs transition-colors"
+                    >
+                      {guide.label}
                     </Link>
                   ))}
                 </div>
@@ -276,6 +380,24 @@ export default function Header() {
                       className="text-left px-3 py-2 bg-slate-50 hover:bg-orange-50 text-slate-700 hover:text-orange-600 font-semibold text-xs rounded-lg transition-colors block"
                     >
                       {comp.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              <div className="h-px bg-slate-100"></div>
+
+              <div>
+                <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Buying Guides</h4>
+                <div className="grid grid-cols-2 gap-2">
+                  {buyingGuides.map((guide) => (
+                    <Link
+                      key={guide.path}
+                      to={guide.path}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="text-left px-3 py-2 bg-slate-50 hover:bg-orange-50 text-slate-700 hover:text-orange-600 font-semibold text-xs rounded-lg transition-colors block"
+                    >
+                      {guide.label}
                     </Link>
                   ))}
                 </div>

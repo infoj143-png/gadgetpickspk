@@ -22,6 +22,20 @@ export function getOrganizationSchema() {
   };
 }
 
+export function getWebsiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "GadgetPicksPK",
+    "url": "https://gadgetpickspk.vercel.app",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://gadgetpickspk.vercel.app/products?search={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  };
+}
+
 export function getBreadcrumbSchema(items) {
   return {
     "@context": "https://schema.org",
@@ -36,6 +50,35 @@ export function getBreadcrumbSchema(items) {
 }
 
 export function getProductSchema(product) {
+  const reviews = product.faqs ? product.faqs.map((faq, index) => ({
+    "@type": "Review",
+    "reviewAspect": faq.q,
+    "reviewBody": faq.a,
+    "author": {
+      "@type": "Person",
+      "name": "GadgetPicksPK Editorial Board"
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": product.rating,
+      "bestRating": "5"
+    }
+  })) : [
+    {
+      "@type": "Review",
+      "reviewBody": product.shortDescription,
+      "author": {
+        "@type": "Person",
+        "name": "GadgetPicksPK Editorial"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": product.rating,
+        "bestRating": "5"
+      }
+    }
+  ];
+
   return {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -60,7 +103,23 @@ export function getProductSchema(product) {
       "@type": "AggregateRating",
       "ratingValue": product.rating,
       "reviewCount": product.reviewsCount || 10
-    }
+    },
+    "review": reviews
+  };
+}
+
+export function getFAQSchema(faqs) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
   };
 }
 

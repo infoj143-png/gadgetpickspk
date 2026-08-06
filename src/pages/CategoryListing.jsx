@@ -150,6 +150,9 @@ export default function CategoryListing() {
       if (sortBy === 'discount-desc') {
         return b.discount - a.discount;
       }
+      if (sortBy === 'newest') {
+        return new Date(b.lastUpdated) - new Date(a.lastUpdated);
+      }
       if (sortBy === 'popularity') {
         // Sort by review density / volume
         return b.reviewsCount - a.reviewsCount;
@@ -352,11 +355,12 @@ export default function CategoryListing() {
               onChange={(e) => setSortBy(e.target.value)}
               className="w-full bg-slate-50 border border-slate-200 focus:border-orange-500 rounded-xl text-xs font-extrabold p-2.5 outline-none transition-colors"
             >
+              <option value="rating-desc">Highest Rating First</option>
               <option value="popularity">Popularity (Most Reviewed)</option>
               <option value="price-asc">Price: Lowest to Highest</option>
               <option value="price-desc">Price: Highest to Lowest</option>
-              <option value="rating-desc">Highest Rating First</option>
               <option value="discount-desc">Biggest Discount First</option>
+              <option value="newest">Sort by Newest</option>
             </select>
           </div>
         </aside>

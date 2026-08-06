@@ -18,7 +18,9 @@ import {
   HelpCircle,
   Copy,
   Check,
-  Heart
+  Heart,
+  Eye,
+  FileText
 } from 'lucide-react';
 import useSEO from '../hooks/useSEO';
 import productsData from '../data/products.json';
@@ -47,6 +49,15 @@ export default function ProductDetail() {
         setActiveImage(item.images[0]);
       } else {
         setActiveImage(item.image);
+      }
+
+      // Add to recently viewed list inside localStorage
+      try {
+        const stored = JSON.parse(localStorage.getItem('recentlyViewed') || '[]');
+        const updated = [item.id, ...stored.filter(x => x !== item.id)].slice(0, 4);
+        localStorage.setItem('recentlyViewed', JSON.stringify(updated));
+      } catch (e) {
+        console.error("Local storage lookup failed", e);
       }
     } else {
       setProduct(null);
@@ -97,6 +108,20 @@ export default function ProductDetail() {
       .filter((p) => p.category === product.category && p.id !== product.id && p.brand !== product.brand)
       .slice(0, 4);
   }, [product]);
+
+  // Dynamic Related Categories
+  const relatedCategories = useMemo(() => {
+    const allCats = ['Earbuds', 'Headphones', 'Mobile Accessories', 'Computer Accessories'];
+    return product ? allCats.filter(c => c !== product.category) : [];
+  }, [product]);
+
+  // Popular Articles / Guides linked naturally
+  const popularGuides = [
+    { label: 'Best Wireless Earbuds in Pakistan', slug: 'best-wireless-earbuds-in-pakistan' },
+    { label: 'Best Headphones in Pakistan', slug: 'best-headphones-in-pakistan' },
+    { label: 'Best Mobile Accessories in Pakistan', slug: 'best-mobile-accessories' },
+    { label: 'Best Computer Accessories', slug: 'best-computer-accessories' }
+  ];
 
   const handleShare = () => {
     const absoluteProductUrl = window.location.href;
@@ -154,7 +179,7 @@ export default function ProductDetail() {
   const galleryImages = product.images && product.images.length > 0 ? product.images : [product.image];
 
   return (
-    <div className="bg-slate-50 py-8">
+    <div className="bg-slate-50 py-8 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Breadcrumb Section */}
@@ -302,11 +327,11 @@ export default function ProductDetail() {
                   href={product.darazUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-grow inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-orange-500 hover:bg-orange-600 text-white font-extrabold text-sm rounded-xl shadow-lg shadow-orange-500/20 transition-all hover:translate-y-[-1px] cursor-pointer"
+                  className="flex-grow inline-flex items-center justify-center gap-2 px-6 py-4 bg-orange-500 hover:bg-orange-600 text-white font-black text-sm sm:text-base rounded-xl shadow-lg shadow-orange-500/20 transition-all hover:translate-y-[-1px] cursor-pointer"
                 >
-                  <ShoppingBag size={18} />
+                  <ShoppingBag size={20} />
                   View on Daraz PK
-                  <ArrowUpRight size={16} />
+                  <ArrowUpRight size={18} />
                 </a>
 
                 {/* Share Page Link */}
@@ -428,7 +453,7 @@ export default function ProductDetail() {
             <div className="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 space-y-5 border border-slate-850">
               <div className="space-y-2">
                 <h4 className="text-xs font-extrabold text-orange-400 uppercase tracking-widest">
-                  Who Should Buy It?
+                  Who Should Buy?
                 </h4>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-semibold">
                   {product.whoShouldBuy || 'Tech consumers looking for top quality features.'}
@@ -480,13 +505,55 @@ export default function ProductDetail() {
           </div>
         )}
 
+        {/* Related Categories and Popular Articles SEO Block */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          {/* Related Categories */}
+          <div className="bg-white rounded-3xl border border-slate-200/60 shadow-sm p-6 space-y-4">
+            <h3 className="font-black text-slate-900 text-base flex items-center gap-2 border-b border-slate-100 pb-2">
+              <Layers size={18} className="text-orange-500" />
+              Related Categories
+            </h3>
+            <div className="flex flex-wrap gap-2.5">
+              {relatedCategories.map((cat, idx) => (
+                <Link
+                  key={idx}
+                  to={`/products?category=${encodeURIComponent(cat)}`}
+                  className="px-4 py-2 bg-slate-50 border border-slate-200 hover:border-orange-300 hover:bg-orange-50 text-slate-700 hover:text-orange-600 rounded-xl text-xs font-bold transition-all"
+                >
+                  {cat}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Popular Articles */}
+          <div className="bg-white rounded-3xl border border-slate-200/60 shadow-sm p-6 space-y-4">
+            <h3 className="font-black text-slate-900 text-base flex items-center gap-2 border-b border-slate-100 pb-2">
+              <FileText size={18} className="text-orange-500" />
+              Popular Articles & Guides
+            </h3>
+            <div className="flex flex-col gap-2">
+              {popularGuides.map((guide, idx) => (
+                <Link
+                  key={idx}
+                  to={`/guides/${guide.slug}`}
+                  className="text-xs sm:text-sm font-extrabold text-slate-700 hover:text-orange-500 flex items-center gap-1 hover:underline transition-colors"
+                >
+                  <ChevronRight size={14} className="text-orange-500" />
+                  {guide.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+
         {/* Related Products Recommendations */}
         {relatedProducts.length > 0 && (
           <section className="space-y-6 mb-12">
             <div className="border-b border-slate-200 pb-3">
               <h2 className="text-xl font-black text-slate-900 flex items-center gap-2">
                 <Layers size={20} className="text-orange-500" />
-                More {product.category} Recommendations
+                Related Products
               </h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -503,7 +570,7 @@ export default function ProductDetail() {
             <div className="border-b border-slate-200 pb-3">
               <h2 className="text-xl font-black text-slate-900 flex items-center gap-2">
                 <Layers size={20} className="text-orange-500" />
-                Similar Alternatives To Consider
+                Similar Products
               </h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -514,6 +581,23 @@ export default function ProductDetail() {
           </section>
         )}
 
+      </div>
+
+      {/* Sticky Mobile CTA Action Bar */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 p-4 shadow-xl flex items-center justify-between gap-4 animate-slideUp">
+        <div className="flex flex-col min-w-0">
+          <span className="text-[10px] font-bold text-slate-400 truncate uppercase tracking-widest">{product.brand}</span>
+          <span className="text-sm font-black text-slate-900 leading-tight truncate">{formatCurrency(product.currentPrice)}</span>
+        </div>
+        <a
+          href={product.darazUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex-grow max-w-[200px] inline-flex items-center justify-center gap-1.5 px-4 py-2.5 bg-orange-500 hover:bg-orange-600 text-white font-extrabold text-xs rounded-xl shadow-md cursor-pointer"
+        >
+          View on Daraz
+          <ArrowUpRight size={14} />
+        </a>
       </div>
     </div>
   );
