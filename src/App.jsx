@@ -19,6 +19,8 @@ const Home = lazy(() => import('./pages/Home'));
 const CategoryListing = lazy(() => import('./pages/CategoryListing'));
 const ProductDetail = lazy(() => import('./pages/ProductDetail'));
 const Compare = lazy(() => import('./pages/Compare'));
+const BuyingGuide = lazy(() => import('./pages/BuyingGuide'));
+
 const Contact = lazy(() => import('./pages/Contact'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const AffiliateDisclosure = lazy(() => import('./pages/AffiliateDisclosure'));
@@ -54,6 +56,7 @@ export default function App() {
             <Route path="/products" element={<CategoryListing />} />
             <Route path="/products/:id" element={<ProductDetail />} />
             <Route path="/compare/:type" element={<Compare />} />
+            <Route path="/guides/:categorySlug" element={<BuyingGuide />} />
 
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />

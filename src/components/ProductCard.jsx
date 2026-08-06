@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Star, Share2, ArrowUpRight, Copy, Check, Sparkles } from 'lucide-react';
+import { Star, Share2, ArrowUpRight, Copy, Check, Sparkles, Tag, Flame, ShieldAlert, Award } from 'lucide-react';
 import ImageLazy from './ImageLazy';
 
 export default function ProductCard({ product }) {
@@ -49,6 +49,33 @@ export default function ProductCard({ product }) {
     }).format(val);
   };
 
+  // Generate dynamic badges style configuration
+  const getBadgeStyle = (badge) => {
+    const lowerBadge = badge.toLowerCase();
+    if (lowerBadge.includes('best seller')) {
+      return 'bg-amber-500 text-white';
+    }
+    if (lowerBadge.includes('trending')) {
+      return 'bg-rose-500 text-white';
+    }
+    if (lowerBadge.includes("editor's choice")) {
+      return 'bg-indigo-600 text-white';
+    }
+    if (lowerBadge.includes('new')) {
+      return 'bg-emerald-500 text-white';
+    }
+    if (lowerBadge.includes('budget pick')) {
+      return 'bg-blue-500 text-white';
+    }
+    if (lowerBadge.includes('premium pick')) {
+      return 'bg-violet-600 text-white';
+    }
+    if (lowerBadge.includes('top rated')) {
+      return 'bg-yellow-500 text-slate-900';
+    }
+    return 'bg-slate-700 text-white';
+  };
+
   return (
     <div
       onClick={() => navigate(`/products/${product.id}`)}
@@ -65,14 +92,22 @@ export default function ProductCard({ product }) {
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
           />
 
-          {/* Tag Badges */}
+          {/* Dynamic Badges List from JSON database */}
           <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-10">
             {product.discount > 0 && (
               <span className="bg-orange-500 text-white text-[10px] font-black tracking-wider px-2 py-1 rounded-lg uppercase shadow-sm">
                 -{product.discount}% OFF
               </span>
             )}
-            {product.isFeatured && (
+            {product.badges && product.badges.map((badge, idx) => (
+              <span
+                key={idx}
+                className={`text-[10px] font-black tracking-wider px-2 py-1 rounded-lg uppercase shadow-sm flex items-center gap-1 ${getBadgeStyle(badge)}`}
+              >
+                {badge}
+              </span>
+            ))}
+            {!product.badges && product.isFeatured && (
               <span className="bg-slate-900 text-white text-[10px] font-black tracking-wider px-2 py-1 rounded-lg uppercase shadow-sm flex items-center gap-1">
                 <Sparkles size={10} className="text-orange-400" />
                 Featured

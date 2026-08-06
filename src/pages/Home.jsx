@@ -24,6 +24,7 @@ import {
   ThumbsUp,
   Clock,
   Heart,
+  Eye,
   Briefcase,
   AlertCircle,
   HelpCircle
@@ -31,15 +32,23 @@ import {
 import useSEO from '../hooks/useSEO';
 import productsData from '../data/products.json';
 import ProductCard from '../components/ProductCard';
-import { injectJSONLD, removeJSONLD, getOrganizationSchema } from '../utils/schemas';
+import { injectJSONLD, removeJSONLD, getOrganizationSchema, getWebsiteSchema, getFAQSchema } from '../utils/schemas';
 
 export default function Home() {
-  // Inject Organization JSON-LD Schema
+  // Inject Organization, Website & FAQ JSON-LD Schemas
   useEffect(() => {
     const orgSchema = getOrganizationSchema();
+    const webSchema = getWebsiteSchema();
     injectJSONLD('org-schema', orgSchema);
+    injectJSONLD('web-schema', webSchema);
+
+    const faqSchema = getFAQSchema(faqs);
+    injectJSONLD('home-faq-schema', faqSchema);
+
     return () => {
       removeJSONLD('org-schema');
+      removeJSONLD('web-schema');
+      removeJSONLD('home-faq-schema');
     };
   }, []);
 
@@ -54,6 +63,14 @@ export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [newsletterEmail, setNewsletterEmail] = useState('');
   const [newsletterSubscribed, setNewsletterSubscribed] = useState(false);
+  const [recentlyViewed, setRecentlyViewed] = useState([]);
+
+  // Load recently viewed from localStorage
+  useEffect(() => {
+    const list = JSON.parse(localStorage.getItem('recentlyViewed') || '[]');
+    const hydrated = list.map(id => productsData.find(p => p.id === id)).filter(Boolean);
+    setRecentlyViewed(hydrated);
+  }, []);
 
   // FAQ state
   const [openFaq, setOpenFaq] = useState(null);
@@ -112,30 +129,33 @@ export default function Home() {
     }
   };
 
-  // 1. Today's Best Deals (Products sorted by discount desc or specific top deals)
-  const bestDeals = [...productsData]
+  // --- Dynamic Sections Generation ---
+  // 1. 🔥 Trending on Daraz
+  const trendingOnDaraz = productsData.filter(p => p.isTrending).slice(0, 4);
+
+  // 2. 💰 Biggest Discounts
+  const biggestDiscounts = [...productsData]
     .sort((a, b) => b.discount - a.discount)
     .slice(0, 4);
 
-  // 2. Top Rated Products (Rating >= 4.8)
-  const topRated = [...productsData]
-    .sort((a, b) => b.rating - a.rating)
-    .slice(0, 4);
+  // 3. ⭐ Editor's Choice
+  const editorsChoice = productsData.filter(p => p.isEditorChoice || p.badges?.includes("Editor's Choice")).slice(0, 4);
 
-  // 3. Recently Added Products (Based on lastUpdated date string desc)
-  const recentlyAdded = [...productsData]
-    .sort((a, b) => new Date(b.lastUpdated) - new Date(a.lastUpdated))
-    .slice(0, 4);
+  // 4. 🏆 Best Sellers
+  const bestSellers = productsData.filter(p => p.isBestSeller || p.badges?.includes("Best Seller")).slice(0, 4);
 
-  // 4. Budget Picks (Price <= Rs. 5,000)
+  // 5. 🆕 New Arrivals
+  const newArrivals = productsData.filter(p => p.isNewArrival || p.badges?.includes("New")).slice(0, 4);
+
+  // 6. 💸 Budget Picks (Price <= Rs. 5,000 or custom tag)
   const budgetPicks = productsData
-    .filter((p) => p.currentPrice <= 5000)
+    .filter((p) => p.currentPrice <= 5000 || p.badges?.includes("Budget Pick"))
     .sort((a, b) => b.rating - a.rating)
     .slice(0, 4);
 
-  // 5. Premium Picks (Price > Rs. 5,000)
+  // 7. 👑 Premium Picks (Price > Rs. 5,000 or custom tag)
   const premiumPicks = productsData
-    .filter((p) => p.currentPrice > 5000)
+    .filter((p) => p.currentPrice > 5000 || p.badges?.includes("Premium Pick"))
     .sort((a, b) => b.rating - a.rating)
     .slice(0, 4);
 
@@ -362,141 +382,226 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 1. Today's Best Deals Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-end justify-between mb-6">
-          <div>
-            <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-orange-600 uppercase tracking-widest bg-orange-50 px-2.5 py-1 rounded border border-orange-100">
-              <Tag size={12} className="text-orange-500" /> Price Markdowns
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-1">
-              Today's Best Deals
-            </h2>
-          </div>
-          <Link
-            to="/products?tag=deals"
-            className="group flex items-center gap-1.5 font-bold text-sm text-orange-500 hover:text-orange-600 transition-colors"
-          >
-            See All Deals
-            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-          </Link>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {bestDeals.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-      </section>
-
-      {/* 2. Top Rated Products Section */}
-      <section className="bg-slate-100/50 py-12 border-y border-slate-200/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-end justify-between mb-8">
+      {/* 1. 🔥 Trending on Daraz Section */}
+      {trendingOnDaraz.length > 0 && (
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-end justify-between mb-6">
             <div>
               <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-orange-600 uppercase tracking-widest bg-orange-50 px-2.5 py-1 rounded border border-orange-100">
-                <Star size={12} fill="currentColor" className="text-orange-500" /> Rated 4.7+ Stars
+                <Flame size={12} className="text-orange-500 animate-pulse" /> Popular on Marketplace
               </span>
               <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-1">
-                Top Rated Products
+                Trending on Daraz
+              </h2>
+            </div>
+            <Link
+              to="/products?tag=trending"
+              className="group flex items-center gap-1.5 font-bold text-sm text-orange-500 hover:text-orange-600 transition-colors"
+            >
+              See All Trending
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {trendingOnDaraz.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* 2. 💰 Biggest Discounts Section */}
+      {biggestDiscounts.length > 0 && (
+        <section className="bg-slate-100/50 py-12 border-y border-slate-200/50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-end justify-between mb-8">
+              <div>
+                <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-orange-600 uppercase tracking-widest bg-orange-50 px-2.5 py-1 rounded border border-orange-100">
+                  <Percent size={12} className="text-orange-500" /> Mega Savings
+                </span>
+                <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-1">
+                  Biggest Discounts
+                </h2>
+              </div>
+              <Link
+                to="/products?tag=deals"
+                className="group flex items-center gap-1.5 font-bold text-sm text-orange-500 hover:text-orange-600 transition-colors"
+              >
+                See All Discounts
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {biggestDiscounts.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* 3. ⭐ Editor's Choice Section */}
+      {editorsChoice.length > 0 && (
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-end justify-between mb-6">
+            <div>
+              <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-orange-600 uppercase tracking-widest bg-orange-50 px-2.5 py-1 rounded border border-orange-100">
+                <Sparkles size={12} className="text-orange-500" /> Expert Verified Reviews
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-1">
+                Editor's Choice
               </h2>
             </div>
             <Link
               to="/products"
               className="group flex items-center gap-1.5 font-bold text-sm text-orange-500 hover:text-orange-600 transition-colors"
             >
-              See All Reviews
+              Browse Catalog
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {topRated.map((product) => (
+            {editorsChoice.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
-      {/* 3. Recently Added Products Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-end justify-between mb-6">
-          <div>
-            <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-orange-600 uppercase tracking-widest bg-orange-50 px-2.5 py-1 rounded border border-orange-100">
-              <Clock size={12} className="text-orange-500" /> Fresh Additions
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-1">
-              Recently Added Products
-            </h2>
+      {/* 4. 🏆 Best Sellers Section */}
+      {bestSellers.length > 0 && (
+        <section className="bg-slate-100/50 py-12 border-y border-slate-200/50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-end justify-between mb-8">
+              <div>
+                <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-orange-600 uppercase tracking-widest bg-orange-50 px-2.5 py-1 rounded border border-orange-100">
+                  <Star size={12} fill="currentColor" className="text-orange-500" /> Rated 4.5+ Stars
+                </span>
+                <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-1">
+                  Best Sellers
+                </h2>
+              </div>
+              <Link
+                to="/products"
+                className="group flex items-center gap-1.5 font-bold text-sm text-orange-500 hover:text-orange-600 transition-colors"
+              >
+                See All
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {bestSellers.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
           </div>
-          <Link
-            to="/products"
-            className="group flex items-center gap-1.5 font-bold text-sm text-orange-500 hover:text-orange-600 transition-colors"
-          >
-            Browse Full Catalog
-            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-          </Link>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {recentlyAdded.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-      </section>
+        </section>
+      )}
 
-      {/* 4. Budget Picks Section */}
-      <section className="bg-slate-100/50 py-12 border-y border-slate-200/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-end justify-between mb-8">
+      {/* 5. 🆕 New Arrivals Section */}
+      {newArrivals.length > 0 && (
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-end justify-between mb-6">
             <div>
               <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-orange-600 uppercase tracking-widest bg-orange-50 px-2.5 py-1 rounded border border-orange-100">
-                <Percent size={12} className="text-orange-500" /> Under Rs. 5,000
+                <Clock size={12} className="text-orange-500" /> New Additions
               </span>
               <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-1">
-                Budget Picks
+                New Arrivals
               </h2>
             </div>
             <Link
-              to="/compare/best-earbuds-under-5000"
+              to="/products"
               className="group flex items-center gap-1.5 font-bold text-sm text-orange-500 hover:text-orange-600 transition-colors"
             >
-              Compare Budget Picks
+              Browse All
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {budgetPicks.map((product) => (
+            {newArrivals.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
-      {/* 5. Premium Picks Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-end justify-between mb-6">
-          <div>
-            <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-orange-600 uppercase tracking-widest bg-orange-50 px-2.5 py-1 rounded border border-orange-100">
-              <Sparkles size={12} className="text-orange-500" /> Over Rs. 5,000
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-1">
-              Premium Picks
-            </h2>
+      {/* 6. 💸 Budget Picks Section */}
+      {budgetPicks.length > 0 && (
+        <section className="bg-slate-100/50 py-12 border-y border-slate-200/50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-end justify-between mb-8">
+              <div>
+                <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-orange-600 uppercase tracking-widest bg-orange-50 px-2.5 py-1 rounded border border-orange-100">
+                  <Percent size={12} className="text-orange-500" /> Under Rs. 5,000
+                </span>
+                <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-1">
+                  Budget Picks
+                </h2>
+              </div>
+              <Link
+                to="/compare/best-earbuds-under-5000"
+                className="group flex items-center gap-1.5 font-bold text-sm text-orange-500 hover:text-orange-600 transition-colors"
+              >
+                Compare Budget Picks
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {budgetPicks.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
           </div>
-          <Link
-            to="/products"
-            className="group flex items-center gap-1.5 font-bold text-sm text-orange-500 hover:text-orange-600 transition-colors"
-          >
-            Explore Premium Gear
-            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-          </Link>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {premiumPicks.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-      </section>
+        </section>
+      )}
 
-      {/* 6. Why Choose GadgetPicksPK Section */}
+      {/* 7. 👑 Premium Picks Section */}
+      {premiumPicks.length > 0 && (
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-end justify-between mb-6">
+            <div>
+              <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-orange-600 uppercase tracking-widest bg-orange-50 px-2.5 py-1 rounded border border-orange-100">
+                <Sparkles size={12} className="text-orange-500" /> Elite Collection
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-1">
+                Premium Picks
+              </h2>
+            </div>
+            <Link
+              to="/products"
+              className="group flex items-center gap-1.5 font-bold text-sm text-orange-500 hover:text-orange-600 transition-colors"
+            >
+              Explore Premium
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {premiumPicks.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Recently Viewed Products Section */}
+      {recentlyViewed.length > 0 && (
+        <section className="bg-orange-50/40 py-12 border-y border-orange-100/60">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center gap-2 mb-6 text-slate-800">
+              <Eye className="text-orange-500" size={20} />
+              <h2 className="text-xl sm:text-2xl font-black">Recently Viewed Products</h2>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {recentlyViewed.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* 8. Why Choose GadgetPicksPK Section */}
       <section className="bg-slate-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-xl mx-auto mb-12">
@@ -545,7 +650,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. FAQ Section */}
+      {/* 9. FAQ Section */}
       <section className="max-w-4xl mx-auto px-4">
         <div className="text-center max-w-lg mx-auto mb-10">
           <span className="text-xs font-extrabold text-orange-500 uppercase tracking-widest bg-orange-50 px-3 py-1 rounded-full">

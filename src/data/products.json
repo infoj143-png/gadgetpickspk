@@ -61,7 +61,11 @@
     ],
     "isFeatured": true,
     "isTrending": true,
-    "isTopDeal": true
+    "isTopDeal": true,
+    "isBestSeller": true,
+    "isEditorChoice": true,
+    "isNewArrival": false,
+    "badges": ["Trending", "Best Seller", "Editor's Choice", "Budget Pick"]
   },
   {
     "id": "eb-02",
@@ -121,7 +125,11 @@
     ],
     "isFeatured": false,
     "isTrending": true,
-    "isTopDeal": true
+    "isTopDeal": true,
+    "isBestSeller": false,
+    "isEditorChoice": true,
+    "isNewArrival": true,
+    "badges": ["Trending", "Editor's Choice", "New", "Premium Pick"]
   },
   {
     "id": "eb-03",
@@ -181,7 +189,11 @@
     ],
     "isFeatured": true,
     "isTrending": false,
-    "isTopDeal": false
+    "isTopDeal": false,
+    "isBestSeller": true,
+    "isEditorChoice": false,
+    "isNewArrival": false,
+    "badges": ["Best Seller", "Budget Pick", "Top Rated"]
   },
   {
     "id": "eb-04",
@@ -240,7 +252,11 @@
     ],
     "isFeatured": false,
     "isTrending": true,
-    "isTopDeal": false
+    "isTopDeal": false,
+    "isBestSeller": false,
+    "isEditorChoice": false,
+    "isNewArrival": true,
+    "badges": ["Trending", "New", "Budget Pick"]
   },
   {
     "id": "eb-05",
@@ -299,7 +315,11 @@
     ],
     "isFeatured": true,
     "isTrending": true,
-    "isTopDeal": true
+    "isTopDeal": true,
+    "isBestSeller": true,
+    "isEditorChoice": false,
+    "isNewArrival": false,
+    "badges": ["Trending", "Best Seller", "Budget Pick"]
   },
   {
     "id": "hp-01",
@@ -359,7 +379,11 @@
     ],
     "isFeatured": true,
     "isTrending": true,
-    "isTopDeal": true
+    "isTopDeal": true,
+    "isBestSeller": true,
+    "isEditorChoice": true,
+    "isNewArrival": false,
+    "badges": ["Trending", "Best Seller", "Editor's Choice", "Premium Pick", "Top Rated"]
   },
   {
     "id": "hp-02",
@@ -419,7 +443,11 @@
     ],
     "isFeatured": true,
     "isTrending": true,
-    "isTopDeal": false
+    "isTopDeal": false,
+    "isBestSeller": false,
+    "isEditorChoice": true,
+    "isNewArrival": false,
+    "badges": ["Trending", "Editor's Choice", "Premium Pick"]
   },
   {
     "id": "hp-03",
@@ -479,7 +507,11 @@
     ],
     "isFeatured": false,
     "isTrending": false,
-    "isTopDeal": false
+    "isTopDeal": false,
+    "isBestSeller": false,
+    "isEditorChoice": false,
+    "isNewArrival": false,
+    "badges": ["Premium Pick"]
   },
   {
     "id": "hp-04",
@@ -538,7 +570,11 @@
     ],
     "isFeatured": true,
     "isTrending": true,
-    "isTopDeal": false
+    "isTopDeal": false,
+    "isBestSeller": true,
+    "isEditorChoice": false,
+    "isNewArrival": false,
+    "badges": ["Trending", "Best Seller", "Premium Pick"]
   },
   {
     "id": "hp-05",
@@ -597,7 +633,11 @@
     ],
     "isFeatured": true,
     "isTrending": true,
-    "isTopDeal": true
+    "isTopDeal": true,
+    "isBestSeller": false,
+    "isEditorChoice": true,
+    "isNewArrival": false,
+    "badges": ["Trending", "Editor's Choice", "Premium Pick"]
   },
   {
     "id": "ma-01",
@@ -656,7 +696,11 @@
     ],
     "isFeatured": true,
     "isTrending": true,
-    "isTopDeal": true
+    "isTopDeal": true,
+    "isBestSeller": true,
+    "isEditorChoice": true,
+    "isNewArrival": false,
+    "badges": ["Trending", "Best Seller", "Editor's Choice", "Budget Pick"]
   },
   {
     "id": "ma-02",
@@ -715,7 +759,11 @@
     ],
     "isFeatured": true,
     "isTrending": false,
-    "isTopDeal": false
+    "isTopDeal": false,
+    "isBestSeller": true,
+    "isEditorChoice": false,
+    "isNewArrival": false,
+    "badges": ["Best Seller", "Budget Pick", "Top Rated"]
   },
   {
     "id": "ma-03",
@@ -775,7 +823,11 @@
     ],
     "isFeatured": false,
     "isTrending": true,
-    "isTopDeal": true
+    "isTopDeal": true,
+    "isBestSeller": false,
+    "isEditorChoice": false,
+    "isNewArrival": true,
+    "badges": ["Trending", "New", "Budget Pick"]
   },
   {
     "id": "ca-01",
@@ -835,7 +887,11 @@
     ],
     "isFeatured": true,
     "isTrending": true,
-    "isTopDeal": false
+    "isTopDeal": false,
+    "isBestSeller": true,
+    "isEditorChoice": true,
+    "isNewArrival": false,
+    "badges": ["Trending", "Best Seller", "Editor's Choice", "Premium Pick", "Top Rated"]
   },
   {
     "id": "ca-02",
@@ -895,7 +951,11 @@
     ],
     "isFeatured": true,
     "isTrending": false,
-    "isTopDeal": true
+    "isTopDeal": true,
+    "isBestSeller": false,
+    "isEditorChoice": true,
+    "isNewArrival": false,
+    "badges": ["Editor's Choice", "Premium Pick"]
   },
   {
     "id": "ca-03",
@@ -955,6 +1015,10 @@
     ],
     "isFeatured": false,
     "isTrending": true,
-    "isTopDeal": false
+    "isTopDeal": false,
+    "isBestSeller": false,
+    "isEditorChoice": false,
+    "isNewArrival": true,
+    "badges": ["Trending", "New", "Premium Pick"]
   }
 ]
