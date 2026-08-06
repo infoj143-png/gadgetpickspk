@@ -54,7 +54,7 @@ export default function CategoryListing() {
   }, [searchParams]);
 
   // Categories list
-  const categories = ['All', 'Earbuds', 'Headphones', 'Mobile Accessories', 'Computer Accessories'];
+  const categories = ['All', 'Kitchen & Dining', 'Home & Living', 'Bags & Travel', 'Bedding & Bath', 'Laundry & Cleaning', 'Fashion', 'Pet Supplies'];
   const tags = ['All', 'Featured', 'Trending', 'Deals'];
 
   // Dynamically extract all unique brands from products database

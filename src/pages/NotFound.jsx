@@ -8,7 +8,7 @@ export default function NotFound() {
 
   useSEO({
     title: '404 - Page Not Found | GadgetPicksPK',
-    description: 'The requested page could not be found. Navigate back to active earbuds, headphones and computer accessories recommendations.',
+    description: 'The requested page could not be found. Navigate back to active home and lifestyle accessories recommendations.',
     canonical: '/404'
   });
 
@@ -38,30 +38,30 @@ export default function NotFound() {
       {/* Structured Category redirects */}
       <div className="bg-white p-5 rounded-2xl border border-slate-200/60 shadow-sm space-y-3 max-w-md mx-auto">
         <h4 className="text-xs font-extrabold uppercase tracking-widest text-slate-400">Explore Active Categories</h4>
-        <div className="grid grid-cols-2 gap-2 text-xs font-bold">
+        <div className="grid grid-cols-2 gap-2 text-xs font-bold font-semibold">
           <Link
-            to="/products?category=Earbuds"
+            to="/products?category=Kitchen%20%26%20Dining"
             className="p-2.5 bg-slate-50 hover:bg-orange-50 text-slate-700 hover:text-orange-600 rounded-xl transition-all border border-slate-100"
           >
-            Earbuds Picks
+            Kitchen & Dining
           </Link>
           <Link
-            to="/products?category=Headphones"
+            to="/products?category=Home%20%26%20Living"
             className="p-2.5 bg-slate-50 hover:bg-orange-50 text-slate-700 hover:text-orange-600 rounded-xl transition-all border border-slate-100"
           >
-            Headphones
+            Home & Living
           </Link>
           <Link
-            to="/products?category=Mobile%20Accessories"
+            to="/products?category=Bags%20%26%20Travel"
             className="p-2.5 bg-slate-50 hover:bg-orange-50 text-slate-700 hover:text-orange-600 rounded-xl transition-all border border-slate-100"
           >
-            Mobile Accs
+            Bags & Travel
           </Link>
           <Link
-            to="/products?category=Computer%20Accessories"
+            to="/products?category=Pet%20Supplies"
             className="p-2.5 bg-slate-50 hover:bg-orange-50 text-slate-700 hover:text-orange-600 rounded-xl transition-all border border-slate-100"
           >
-            Computer Accs
+            Pet Supplies
           </Link>
         </div>
       </div>

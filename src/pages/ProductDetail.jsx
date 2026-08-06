@@ -111,16 +111,16 @@ export default function ProductDetail() {
 
   // Dynamic Related Categories
   const relatedCategories = useMemo(() => {
-    const allCats = ['Earbuds', 'Headphones', 'Mobile Accessories', 'Computer Accessories'];
+    const allCats = ['Kitchen & Dining', 'Home & Living', 'Bags & Travel', 'Bedding & Bath', 'Laundry & Cleaning', 'Fashion', 'Pet Supplies'];
     return product ? allCats.filter(c => c !== product.category) : [];
   }, [product]);
 
   // Popular Articles / Guides linked naturally
   const popularGuides = [
-    { label: 'Best Wireless Earbuds in Pakistan', slug: 'best-wireless-earbuds-in-pakistan' },
-    { label: 'Best Headphones in Pakistan', slug: 'best-headphones-in-pakistan' },
-    { label: 'Best Mobile Accessories in Pakistan', slug: 'best-mobile-accessories' },
-    { label: 'Best Computer Accessories', slug: 'best-computer-accessories' }
+    { label: 'Best Kitchen & Dining Gadgets', slug: 'best-kitchen-and-dining-gadgets' },
+    { label: 'Best Home & Living Accessories', slug: 'best-home-and-living-accessories' },
+    { label: 'Best Bags & Travel Essentials', slug: 'best-bags-and-travel-essentials' },
+    { label: 'Best Bedding & Bath Comforts', slug: 'best-bedding-and-bath-comforts' }
   ];
 
   const handleShare = () => {
