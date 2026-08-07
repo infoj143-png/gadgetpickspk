@@ -22,7 +22,13 @@ import {
   Smile,
   Lock,
   LayoutGrid,
-  Box
+  Box,
+  Briefcase,
+  Compass,
+  Folder,
+  CreditCard,
+  Luggage,
+  Backpack
 } from 'lucide-react';
 import useSEO from '../hooks/useSEO';
 import productsData from '../data/products.json';
@@ -70,6 +76,11 @@ export default function CategoryDetail() {
     return list.length > 0 ? list : categoryProducts;
   }, [categoryProducts]);
 
+  // Query Budget Picks Products
+  const budgetProducts = useMemo(() => {
+    return categoryProducts.filter(p => p.badges?.some(b => b.toLowerCase().includes('budget pick')) || p.currentPrice <= 5000);
+  }, [categoryProducts]);
+
   // Home & Living Subcategory Shelves config
   const homeLivingSubCategories = useMemo(() => [
     {
@@ -101,6 +112,52 @@ export default function CategoryDetail() {
       slug: 'storage-boxes',
       desc: 'Durable collapsible canvas fabric bins with steel supports for structured wardrobe storage.',
       icon: <Box size={16} />
+    }
+  ], []);
+
+  // Bags & Travel Subcategory Shelves config
+  const bagsTravelSubCategories = useMemo(() => [
+    {
+      name: "Women's Handbags",
+      slug: "womens-handbags",
+      desc: "Premium, elegant top-handle handbag sets and purses matching style with high utility.",
+      icon: <ShoppingBag size={16} />
+    },
+    {
+      name: "Tote Bags",
+      slug: "tote-bags",
+      desc: "Eco-friendly, high-density spacious canvas and structured tote bags perfect for commuting, groceries, and travel.",
+      icon: <Briefcase size={16} />
+    },
+    {
+      name: "Crossbody Bags",
+      slug: "crossbody-bags",
+      desc: "Ergonomic single-shoulder sling crossbody chest bags with hidden anti-theft pockets and USB charging.",
+      icon: <Compass size={16} />
+    },
+    {
+      name: "Shoulder Bags",
+      slug: "shoulder-bags",
+      desc: "Timeless vintage canvas and structured leather multi-pocket shoulder messenger bags.",
+      icon: <Folder size={16} />
+    },
+    {
+      name: "Wallets",
+      slug: "wallets",
+      desc: "Premium hand-crafted genuine leather and multi-slot RFID-blocking bifold wallets.",
+      icon: <CreditCard size={16} />
+    },
+    {
+      name: "Travel Bags",
+      slug: "travel-bags",
+      desc: "Indestructible hardshell TSA spinner carry-on suitcases and heavy-duty duffel travel bags.",
+      icon: <Luggage size={16} />
+    },
+    {
+      name: "Backpacks",
+      slug: "backpacks",
+      desc: "Premium TSA-approved anti-theft laptop backpacks and ultra-light casual daypacks.",
+      icon: <Backpack size={16} />
     }
   ], []);
 
@@ -258,6 +315,97 @@ export default function CategoryDetail() {
               {trendingProducts.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
+            </div>
+          </section>
+        )}
+
+        {/* Budget Picks Section */}
+        {budgetProducts.length > 0 && (
+          <section className="space-y-6">
+            <div className="border-b border-slate-200 dark:border-slate-800 pb-3 flex items-center gap-2">
+              <Award className="text-orange-500" size={22} />
+              <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white tracking-tight">
+                Budget Picks ({categoryMeta.name} Under Rs. 5,000)
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {budgetProducts.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Bags & Travel Specialist Subcategories */}
+        {categorySlug === 'bags-travel' && (
+          <section className="space-y-12 pt-4">
+            <div className="border-b border-slate-200 dark:border-slate-800 pb-4">
+              <span className="text-xs font-black uppercase tracking-widest text-orange-500 bg-orange-500/10 px-3 py-1 rounded-full border border-orange-500/20">
+                Specialist Shelves
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight mt-2">
+                Bags & Travel Specialized Collections
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-semibold">
+                Explore premium, secure, and ergonomic travel organizers, bags, and backpacks curated for commuters.
+              </p>
+
+              {/* Scrollable Subcategory Jump Links */}
+              <div className="flex flex-wrap gap-2 mt-4">
+                {bagsTravelSubCategories.map((sub) => (
+                  <a
+                    key={sub.slug}
+                    href={`#${sub.slug}`}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-orange-500 dark:hover:border-orange-500 rounded-xl text-xs font-bold text-slate-750 dark:text-slate-300 hover:text-orange-500 dark:hover:text-orange-400 transition-all shadow-xs"
+                  >
+                    {sub.icon}
+                    {sub.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Subcategory Shelves Grid */}
+            <div className="space-y-12">
+              {bagsTravelSubCategories.map((sub) => {
+                const subProducts = categoryProducts.filter(
+                  (p) => p.subCategory?.toLowerCase() === sub.name.toLowerCase()
+                );
+                if (subProducts.length === 0) return null;
+
+                return (
+                  <div
+                    key={sub.slug}
+                    id={sub.slug}
+                    className="scroll-mt-20 bg-white dark:bg-slate-900/40 rounded-3xl border border-slate-200/60 dark:border-slate-800/80 p-6 sm:p-8 space-y-6 shadow-xs transition-all duration-300"
+                  >
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-150 dark:border-slate-800/60 pb-4">
+                      <div className="space-y-1">
+                        <div className="flex items-center gap-2">
+                          <div className="p-2 bg-orange-100 dark:bg-orange-950/40 text-orange-600 dark:text-orange-400 rounded-xl">
+                            {sub.icon}
+                          </div>
+                          <h3 className="text-lg sm:text-xl font-black text-slate-900 dark:text-white tracking-tight">
+                            {sub.name} Collection
+                          </h3>
+                        </div>
+                        <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-semibold max-w-2xl">
+                          {sub.desc}
+                        </p>
+                      </div>
+                      <span className="self-start sm:self-center text-[11px] font-extrabold text-orange-600 dark:text-orange-400 bg-orange-50 dark:bg-orange-950/30 border border-orange-100 dark:border-orange-900/50 px-2.5 py-1 rounded-full">
+                        {subProducts.length} {subProducts.length === 1 ? 'Product' : 'Products'} Verified
+                      </span>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                      {subProducts.map((product) => (
+                        <ProductCard key={product.id} product={product} />
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </section>
         )}

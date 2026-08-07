@@ -63,7 +63,12 @@
     "isBestSeller": true,
     "isEditorChoice": true,
     "isNewArrival": false,
-    "badges": ["Trending", "Best Seller", "Editor's Choice", "Budget Pick"]
+    "badges": [
+      "Trending",
+      "Best Seller",
+      "Editor's Choice",
+      "Budget Pick"
+    ]
   },
   {
     "id": "kd-02",
@@ -82,7 +87,7 @@
     "reviewsCount": 112,
     "soldCount": "480+",
     "shortDescription": "1.5L multi-functional electric pot with premium non-stick inner surface and steam rack, perfect for ramen, hot pot, frying, and steaming.",
-    "longDescription": "The Crown HP-300 Electric Hot Pot is the ultimate desktop cooking appliance. With its dual-power settings (220W & 600W), you can easily adjust power levels for boiling, simmering, sautéing, or steaming. It includes a food-grade stainless steel steam rack, allowing you to cook soup and steam dumplings or vegetables simultaneously. Designed with a double-walled safety design to prevent accidental burns.",
+    "longDescription": "The Crown HP-300 Electric Hot Pot is the ultimate desktop cooking appliance. With its dual-power settings (220W & 600W), you can easily adjust power levels for boiling, simmering, saut\u00e9ing, or steaming. It includes a food-grade stainless steel steam rack, allowing you to cook soup and steam dumplings or vegetables simultaneously. Designed with a double-walled safety design to prevent accidental burns.",
     "features": [
       "Versatile 1.5L capacity with dual heating control switches",
       "Teflon-free premium non-stick cooking liner for effortless cleaning",
@@ -100,7 +105,7 @@
       "Safe Shutoff": "Yes, dry-boil safety cut-off"
     },
     "pros": [
-      "Extremely multi-functional: boils, steams, sautés, and fries",
+      "Extremely multi-functional: boils, steams, saut\u00e9s, and fries",
       "Compact size is incredibly space-saving for hostels or offices",
       "Non-stick layer makes cleanup extremely simple"
     ],
@@ -116,7 +121,7 @@
     "faqs": [
       {
         "q": "Can I fry eggs or onions in this hot pot?",
-        "a": "Yes! The premium non-stick liner makes it highly suitable for shallow frying, scrambled eggs, and sautéing onions."
+        "a": "Yes! The premium non-stick liner makes it highly suitable for shallow frying, scrambled eggs, and saut\u00e9ing onions."
       }
     ],
     "isFeatured": false,
@@ -125,7 +130,11 @@
     "isBestSeller": false,
     "isEditorChoice": true,
     "isNewArrival": true,
-    "badges": ["Trending", "Editor's Choice", "New"]
+    "badges": [
+      "Trending",
+      "Editor's Choice",
+      "New"
+    ]
   },
   {
     "id": "hl-01",
@@ -187,7 +196,10 @@
     "isBestSeller": true,
     "isEditorChoice": false,
     "isNewArrival": false,
-    "badges": ["Best Seller", "Budget Pick"]
+    "badges": [
+      "Best Seller",
+      "Budget Pick"
+    ]
   },
   {
     "id": "hl-02",
@@ -249,7 +261,11 @@
     "isBestSeller": false,
     "isEditorChoice": false,
     "isNewArrival": true,
-    "badges": ["New", "Budget Pick", "Trending"]
+    "badges": [
+      "New",
+      "Budget Pick",
+      "Trending"
+    ]
   },
   {
     "id": "bt-01",
@@ -311,7 +327,12 @@
     "isBestSeller": false,
     "isEditorChoice": true,
     "isNewArrival": false,
-    "badges": ["Trending", "Editor's Choice", "Premium Pick"]
+    "badges": [
+      "Trending",
+      "Editor's Choice",
+      "Premium Pick"
+    ],
+    "subCategory": "Backpacks"
   },
   {
     "id": "bt-02",
@@ -372,7 +393,11 @@
     "isBestSeller": true,
     "isEditorChoice": false,
     "isNewArrival": false,
-    "badges": ["Best Seller", "Budget Pick"]
+    "badges": [
+      "Best Seller",
+      "Budget Pick"
+    ],
+    "subCategory": "Travel Bags"
   },
   {
     "id": "bb-01",
@@ -433,7 +458,10 @@
     "isBestSeller": false,
     "isEditorChoice": true,
     "isNewArrival": false,
-    "badges": ["Editor's Choice", "Budget Pick"]
+    "badges": [
+      "Editor's Choice",
+      "Budget Pick"
+    ]
   },
   {
     "id": "bb-02",
@@ -494,7 +522,11 @@
     "isBestSeller": false,
     "isEditorChoice": false,
     "isNewArrival": true,
-    "badges": ["Trending", "Budget Pick", "New"]
+    "badges": [
+      "Trending",
+      "Budget Pick",
+      "New"
+    ]
   },
   {
     "id": "lc-01",
@@ -556,7 +588,11 @@
     "isBestSeller": true,
     "isEditorChoice": true,
     "isNewArrival": false,
-    "badges": ["Best Seller", "Trending", "Premium Pick"]
+    "badges": [
+      "Best Seller",
+      "Trending",
+      "Premium Pick"
+    ]
   },
   {
     "id": "lc-02",
@@ -618,7 +654,10 @@
     "isBestSeller": false,
     "isEditorChoice": false,
     "isNewArrival": false,
-    "badges": ["Top Deal", "Budget Pick"]
+    "badges": [
+      "Top Deal",
+      "Budget Pick"
+    ]
   },
   {
     "id": "fs-01",
@@ -680,7 +719,10 @@
     "isBestSeller": false,
     "isEditorChoice": true,
     "isNewArrival": false,
-    "badges": ["Editor's Choice", "Premium Pick"]
+    "badges": [
+      "Editor's Choice",
+      "Premium Pick"
+    ]
   },
   {
     "id": "fs-02",
@@ -742,7 +784,11 @@
     "isBestSeller": false,
     "isEditorChoice": false,
     "isNewArrival": true,
-    "badges": ["New", "Trending", "Budget Pick"]
+    "badges": [
+      "New",
+      "Trending",
+      "Budget Pick"
+    ]
   },
   {
     "id": "ps-01",
@@ -804,7 +850,11 @@
     "isBestSeller": true,
     "isEditorChoice": false,
     "isNewArrival": false,
-    "badges": ["Best Seller", "Trending", "Budget Pick"]
+    "badges": [
+      "Best Seller",
+      "Trending",
+      "Budget Pick"
+    ]
   },
   {
     "id": "ps-02",
@@ -866,7 +916,10 @@
     "isBestSeller": false,
     "isEditorChoice": true,
     "isNewArrival": false,
-    "badges": ["Editor's Choice", "Budget Pick"]
+    "badges": [
+      "Editor's Choice",
+      "Budget Pick"
+    ]
   },
   {
     "id": "hl-03",
@@ -933,7 +986,11 @@
     "isBestSeller": true,
     "isEditorChoice": false,
     "isNewArrival": false,
-    "badges": ["Best Seller", "Trending", "Budget Pick"]
+    "badges": [
+      "Best Seller",
+      "Trending",
+      "Budget Pick"
+    ]
   },
   {
     "id": "hl-04",
@@ -996,7 +1053,10 @@
     "isBestSeller": false,
     "isEditorChoice": true,
     "isNewArrival": true,
-    "badges": ["Trending", "Budget Pick"]
+    "badges": [
+      "Trending",
+      "Budget Pick"
+    ]
   },
   {
     "id": "hl-05",
@@ -1059,7 +1119,10 @@
     "isBestSeller": true,
     "isEditorChoice": false,
     "isNewArrival": false,
-    "badges": ["Best Seller", "Budget Pick"]
+    "badges": [
+      "Best Seller",
+      "Budget Pick"
+    ]
   },
   {
     "id": "hl-06",
@@ -1122,7 +1185,11 @@
     "isBestSeller": false,
     "isEditorChoice": true,
     "isNewArrival": false,
-    "badges": ["Trending", "Editor's Choice", "Premium Pick"]
+    "badges": [
+      "Trending",
+      "Editor's Choice",
+      "Premium Pick"
+    ]
   },
   {
     "id": "hl-07",
@@ -1185,6 +1252,474 @@
     "isBestSeller": false,
     "isEditorChoice": false,
     "isNewArrival": true,
-    "badges": ["Trending", "New"]
+    "badges": [
+      "Trending",
+      "New"
+    ]
+  },
+  {
+    "id": "bt-03",
+    "brand": "Louis Will",
+    "model": "Handbag-W1",
+    "category": "Bags & Travel",
+    "subCategory": "Women's Handbags",
+    "name": "Louis Will Elegant Women PU Leather Top-Handle Handbag Set",
+    "image": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=600&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=600&auto=format&fit=crop"
+    ],
+    "currentPrice": 4250,
+    "oldPrice": 6500,
+    "discount": 34,
+    "rating": 4.8,
+    "reviewsCount": 168,
+    "soldCount": "520+",
+    "shortDescription": "Sleek, premium PU leather top-handle handbag set with matching crossbody purse and card holder, perfect for work, weddings, and formal outings.",
+    "longDescription": "The Louis Will Elegant Handbag Set is a 3-piece designer set crafted with scratch-proof, premium water-resistant PU leather and reinforced gold-tone metal hardware. Specially configured for modern Pakistani women, it combines a structured top-handle handbag, a compact chain crossbody sling, and a matching cardholder. Ideal for commuting, university, or formal evening occasions.",
+    "features": [
+      "Crafted with water-resistant, durable premium PU leather with soft polyester lining",
+      "Sturdy top handles and adjustable, detachable leather-and-chain shoulder strap",
+      "Main compartments secure with high-density zip closures and metallic turnlocks",
+      "Includes 3 pieces: Top-handle handbag, Crossbody clutch, and multi-slot Card Holder",
+      "Bottom metal rivets protect the base of the bag from dust and surface scratching"
+    ],
+    "specifications": {
+      "Brand": "Louis Will",
+      "Model": "Handbag-W1",
+      "Material": "Premium PU Leather",
+      "Lining": "Durable Soft Polyester",
+      "Closure Type": "Smooth Zipper & Metal Turnlock",
+      "Included Pieces": "3 Pieces (Handbag, Crossbody, Card Holder)",
+      "Dimensions": "32 x 22 x 12 cm"
+    },
+    "pros": [
+      "Complete matching 3-piece set offers incredible value",
+      "Rigid bottom rivets keep the bag standing upright cleanly",
+      "Spacious enough to store cosmetics, phones, wallets, and standard iPads"
+    ],
+    "cons": [
+      "PU leather lacks the distinct organic aroma of real animal leather",
+      "Zippers require gentle initial pulls to ease"
+    ],
+    "darazUrl": "https://www.daraz.pk",
+    "availability": "In Stock",
+    "lastUpdated": "2025-01-14",
+    "whoShouldBuy": "An elegant, affordable choice for office professionals, university students, and wedding guests looking for stylish, matching accessories.",
+    "buyingRecommendation": "Excellent style and utility bundle. One of the best-looking budget handbags under Rs. 4,500.",
+    "faqs": [
+      {
+        "q": "Can the main handbag fit an iPad?",
+        "a": "Yes! The main handbag accommodates iPads, e-readers, cosmetics, umbrellas, and other daily necessities easily."
+      }
+    ],
+    "isFeatured": true,
+    "isTrending": true,
+    "isTopDeal": false,
+    "isBestSeller": true,
+    "isEditorChoice": false,
+    "isNewArrival": false,
+    "badges": [
+      "Trending",
+      "Budget Pick"
+    ]
+  },
+  {
+    "id": "bt-04",
+    "brand": "Miniso",
+    "model": "Canvas-Tote-M1",
+    "category": "Bags & Travel",
+    "subCategory": "Tote Bags",
+    "name": "Miniso Minimalist Aesthetic Canvas Tote Bag",
+    "image": "https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=600&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=600&auto=format&fit=crop"
+    ],
+    "currentPrice": 1450,
+    "oldPrice": 2200,
+    "discount": 34,
+    "rating": 4.7,
+    "reviewsCount": 310,
+    "soldCount": "1.4k+",
+    "shortDescription": "Eco-friendly high-density canvas tote bag with extra spacious main compartment and interior zipper pockets, ideal for groceries, books, and beach trips.",
+    "longDescription": "The Miniso Minimalist Canvas Tote Bag combines everyday sustainability with casual Scandinavian aesthetic design. Made of 100% thick, heavy-duty organic canvas, it features extra-wide comfortable shoulder straps and a robust main zipper to protect your items. It contains discrete inner slots to keep small accessories like lip balms and keys organized.",
+    "features": [
+      "Crafted with 12oz thick high-density organic canvas fabric",
+      "Wide, reinforced dual shoulder straps prevent shoulder fatigue",
+      "Heavy-duty main zipper prevents items from spilling out",
+      "Interior zippered quick-access pocket for secure card and phone storage",
+      "Machine-washable design is easy to maintain and keep clean"
+    ],
+    "specifications": {
+      "Brand": "Miniso",
+      "Model": "Canvas-Tote-M1",
+      "Material": "12oz Organic Canvas",
+      "Strap Drop": "28 cm",
+      "Closure": "Main Zip Closure",
+      "Volume": "14 Liters",
+      "Dimensions": "38 x 35 x 10 cm"
+    },
+    "pros": [
+      "Extremely lightweight and folds flat for simple storage",
+      "Eco-friendly organic canvas material replaces single-use plastics",
+      "Pairs beautifully with casual streetwear and everyday university outfits"
+    ],
+    "cons": [
+      "Lacks padded protective compartments for fragile laptops",
+      "Subject to minor shrinking if washed in hot water"
+    ],
+    "darazUrl": "https://www.daraz.pk",
+    "availability": "In Stock",
+    "lastUpdated": "2025-01-14",
+    "whoShouldBuy": "Perfect for university students, eco-friendly shoppers, and beachgoers who need a reliable, high-capacity, and chic casual bag.",
+    "buyingRecommendation": "At around Rs. 1,500, this is the most durable and stylish canvas tote you can buy in Pakistan. Incredible cost-performance ratio.",
+    "faqs": [
+      {
+        "q": "Can it fit standard A4 size notebooks and books?",
+        "a": "Yes! It can easily fit multiple A4 notebooks, textbooks, tablets, and even a compact lunch box."
+      }
+    ],
+    "isFeatured": false,
+    "isTrending": false,
+    "isTopDeal": true,
+    "isBestSeller": true,
+    "isEditorChoice": false,
+    "isNewArrival": false,
+    "badges": [
+      "Best Seller",
+      "Budget Pick"
+    ]
+  },
+  {
+    "id": "bt-05",
+    "brand": "Tigernu",
+    "model": "Chest-Bag-T1",
+    "category": "Bags & Travel",
+    "subCategory": "Crossbody Bags",
+    "name": "Tigernu Ergonomic Anti-Theft Sling Crossbody Chest Bag",
+    "image": "https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?q=80&w=600&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?q=80&w=600&auto=format&fit=crop"
+    ],
+    "currentPrice": 3150,
+    "oldPrice": 4800,
+    "discount": 34,
+    "rating": 4.9,
+    "reviewsCount": 145,
+    "soldCount": "680+",
+    "shortDescription": "Sleek, scratch-proof water-resistant chest sling bag with hidden anti-theft pockets, USB charging port, and multi-layered interior compartment.",
+    "longDescription": "The Tigernu Crossbody Sling Chest Bag is built for dynamic city commuters and travelers. Featuring an ergonomic single-shoulder sling design, it can be worn comfortably across the chest or back. Built with waterproof Oxford fabric, dual-patented explosion-proof zippers, and an external USB port, it keeps your tech and wallet secure and charged during daily commutes.",
+    "features": [
+      "Made of scratch-resistant, water-resistant high-density Oxford cloth",
+      "Hidden anti-theft back zipper pocket prevents pickpocketing in crowded areas",
+      "Built-in external USB 3.0 port for easy charging on the go",
+      "Reversible padded strap allows left- or right-shoulder wear",
+      "Padded interior sleeve fits tablets and Kindle devices up to 9.7 inches"
+    ],
+    "specifications": {
+      "Brand": "Tigernu",
+      "Model": "Chest-Bag-T1",
+      "Material": "Waterproof Oxford Fabric",
+      "Zippers": "Patented Dual-Layer Explosion-Proof",
+      "Charging Support": "External USB charging",
+      "Weight": "350g",
+      "Dimensions": "32 x 20 x 8 cm"
+    },
+    "pros": [
+      "Ultra-lightweight sling feels incredibly comfortable to wear all day",
+      "Anti-theft rear pocket is completely invisible when worn",
+      "Sleek and sporty aesthetic matches active lifestyle gear"
+    ],
+    "cons": [
+      "Not designed to fit larger laptops or bulky jackets",
+      "Internal USB cable requires you to supply your own power bank"
+    ],
+    "darazUrl": "https://www.daraz.pk",
+    "availability": "In Stock",
+    "lastUpdated": "2025-01-14",
+    "whoShouldBuy": "An exceptional choice for motorcycle riders, daily public transport commuters, and hikers who want to keep their pockets empty and their valuables completely safe.",
+    "buyingRecommendation": "One of the most durable and functional crossbody slings on the market under Rs. 3,500. Highly recommended for daily travel.",
+    "faqs": [
+      {
+        "q": "Is the sling strap adjustable?",
+        "a": "Yes! The heavy-duty nylon shoulder strap is fully adjustable, and the bottom clips let you switch it from left to right side with ease."
+      }
+    ],
+    "isFeatured": true,
+    "isTrending": true,
+    "isTopDeal": false,
+    "isBestSeller": false,
+    "isEditorChoice": true,
+    "isNewArrival": false,
+    "badges": [
+      "Trending",
+      "Editor's Choice"
+    ]
+  },
+  {
+    "id": "bt-06",
+    "brand": "Vintage",
+    "model": "Canvas-Shoulder-S1",
+    "category": "Bags & Travel",
+    "subCategory": "Shoulder Bags",
+    "name": "Vintage Casual Multi-Pocket Canvas Shoulder Messenger Bag",
+    "image": "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=600&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=600&auto=format&fit=crop"
+    ],
+    "currentPrice": 2650,
+    "oldPrice": 3999,
+    "discount": 33,
+    "rating": 4.6,
+    "reviewsCount": 92,
+    "soldCount": "380+",
+    "shortDescription": "Durable washing-treated vintage canvas shoulder bag with 8 utility pockets and adjustable wide strap, excellent for rugged outdoor and university use.",
+    "longDescription": "The Vintage Casual Multi-Pocket Canvas Shoulder Messenger Bag is designed for those who appreciate rugged utility and a timeless, retro style. Made of heavy-duty, wash-softened cotton canvas with solid brass details, it features 8 distinct zippered and open pockets to organize notebooks, cameras, keys, tablets, and water bottles effortlessly.",
+    "features": [
+      "Made of heavy-duty wash-treated organic cotton canvas with genuine leather trim",
+      "Includes 8 multi-purpose pockets: 3 front zip pockets, 1 back zip pocket, and 4 inside slots",
+      "Wide adjustable shoulder strap with thick shoulder pad to prevent neck strain",
+      "Classic flapover design with heavy-duty metal snaps and buckle detailing",
+      "Large main compartment easily accommodates tablets and cameras up to 10 inches"
+    ],
+    "specifications": {
+      "Brand": "Vintage",
+      "Model": "Canvas-Shoulder-S1",
+      "Material": "Heavy-Duty Cotton Canvas",
+      "Hardware": "Corrosion-resistant Antique Brass",
+      "Pocket Count": "8 Pockets",
+      "Strap Width": "5 cm",
+      "Dimensions": "28 x 22 x 10 cm"
+    },
+    "pros": [
+      "Thick, high-density canvas handles rough daily scrapes and drops easily",
+      "Tons of pockets make organizing tiny tools and dongles satisfying",
+      "Unisex vintage military styling ages beautifully"
+    ],
+    "cons": [
+      "Canvas material is not 100% waterproof (heavy rain can seep through)",
+      "Buckles require a bit more effort than quick magnetic snaps"
+    ],
+    "darazUrl": "https://www.daraz.pk",
+    "availability": "In Stock",
+    "lastUpdated": "2025-01-14",
+    "whoShouldBuy": "Perfect for photographers, outdoor travelers, students, and workers who need a rugged, multi-pocket carrying companion.",
+    "buyingRecommendation": "Excellent choice for under Rs. 3,000. It offers outstanding durability and classic vintage utility.",
+    "faqs": [
+      {
+        "q": "Is this shoulder bag waterproof?",
+        "a": "It is water-repellent against light mist, but because it is cotton canvas, we recommend treating it with waterproofing spray for heavy rainy days."
+      }
+    ],
+    "isFeatured": false,
+    "isTrending": false,
+    "isTopDeal": false,
+    "isBestSeller": false,
+    "isEditorChoice": false,
+    "isNewArrival": true,
+    "badges": [
+      "Budget Pick",
+      "New"
+    ]
+  },
+  {
+    "id": "bt-07",
+    "brand": "Baellerry",
+    "model": "Wallet-B1",
+    "category": "Bags & Travel",
+    "subCategory": "Wallets",
+    "name": "Baellerry Luxury Men's Leather Multi-Slot Card Wallet & Clutch",
+    "image": "https://images.unsplash.com/photo-1627124118317-4e35998e9406?q=80&w=600&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1627124118317-4e35998e9406?q=80&w=600&auto=format&fit=crop"
+    ],
+    "currentPrice": 1950,
+    "oldPrice": 3000,
+    "discount": 35,
+    "rating": 4.7,
+    "reviewsCount": 420,
+    "soldCount": "2.1k+",
+    "shortDescription": "Modern premium PU leather bifold wallet with 12 card slots, dual photo windows, zippered coin pouch, and metallic secure button clip.",
+    "longDescription": "The Baellerry Luxury Multi-Slot Leather Wallet represents class and utility. Made of premium, scratch-proof vegan leather and featuring a secure metal button closure, it is designed to store multiple credit cards, cash bills, coins, and identification papers in a well-organized layout. Features an ultra-slim bifold profile that doesn't bulge your pocket.",
+    "features": [
+      "Crafted with durable, textured vegan PU leather with heavy duty lining",
+      "Features 12 specialized card slots, 2 bill pockets, and 2 transparent ID windows",
+      "Includes a zippered middle pouch for coins, keys, or memory cards",
+      "Metallic snap button clip prevents wallet from opening accidentally",
+      "RFID blocking security helps prevent digital card scanning theft"
+    ],
+    "specifications": {
+      "Brand": "Baellerry",
+      "Model": "Wallet-B1",
+      "Material": "Premium Textured PU Leather",
+      "Card Slots": "12 Slots",
+      "ID Windows": "2 Slots",
+      "Coin Pocket": "1 Zippered Pocket",
+      "Dimensions": "12 x 9.5 x 2 cm"
+    },
+    "pros": [
+      "Holds a huge amount of cards and cash without getting overly bulky",
+      "Built-in RFID shielding keeps wireless hackers away",
+      "Classy textured leather finish looks extremely expensive"
+    ],
+    "cons": [
+      "Slightly wider than ultra-minimalist metal card protectors",
+      "Snap button clip requires a brief breaking-in period"
+    ],
+    "darazUrl": "https://www.daraz.pk",
+    "availability": "In Stock",
+    "lastUpdated": "2025-01-14",
+    "whoShouldBuy": "Highly recommended for individuals with multiple debit/credit/membership cards who want a classy and secure way to carry them.",
+    "buyingRecommendation": "One of the most practical wallets under Rs. 2,000. Exceptional premium bifold capacity.",
+    "faqs": [
+      {
+        "q": "Does it have a compartment for coins?",
+        "a": "Yes! It features a central zippered compartment that safely stores coins, keys, SIM cards, or emergency cash."
+      }
+    ],
+    "isFeatured": false,
+    "isTrending": true,
+    "isTopDeal": false,
+    "isBestSeller": true,
+    "isEditorChoice": false,
+    "isNewArrival": false,
+    "badges": [
+      "Best Seller",
+      "Budget Pick"
+    ]
+  },
+  {
+    "id": "bt-08",
+    "brand": "90Fun",
+    "model": "Suitcase-20",
+    "category": "Bags & Travel",
+    "subCategory": "Travel Bags",
+    "name": "90Fun 20-inch Premium Hardshell TSA Spinner Suitcase",
+    "image": "https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?q=80&w=600&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?q=80&w=600&auto=format&fit=crop"
+    ],
+    "currentPrice": 15499,
+    "oldPrice": 22000,
+    "discount": 29,
+    "rating": 4.9,
+    "reviewsCount": 78,
+    "soldCount": "190+",
+    "shortDescription": "Extremely robust 3-layer German Covestro polycarbonate hardshell carry-on suitcase with silent 360-degree spinner wheels and TSA lock.",
+    "longDescription": "The 90Fun 20-inch Premium Hardshell Suitcase is a traveler's ultimate companion. Constructed with durable three-layer German Covestro polycarbonate, this luggage absorbs heavy impacts without denting or cracking. Outfitted with ultra-quiet 360-degree spinner wheels, an ergonomic thick aluminum trolley handle, and a TSA-approved combination lock to make security checks hassle-free.",
+    "features": [
+      "German Covestro 3-layer PC hardshell is virtually indestructible and highly scratch-resistant",
+      "Whisper-quiet TPE material 360-degree double spinner wheels for smooth rolling",
+      "TSA-approved built-in combination lock protects personal possessions",
+      "4-stage adjustable sturdy aluminum alloy telescoping trolley bar",
+      "Fully lined interior with zippered divider and mesh organization pockets"
+    ],
+    "specifications": {
+      "Brand": "90Fun",
+      "Model": "Suitcase-20",
+      "Shell Material": "3-layer German Covestro Polycarbonate",
+      "Size": "20 inches (Carry-on approved)",
+      "Lock": "TSA Combination Lock",
+      "Wheels": "4 Double-spinner wheels",
+      "Volume": "38 Liters",
+      "Dimensions": "55 x 37.5 x 22.5 cm"
+    },
+    "pros": [
+      "Polycarbonate shell is incredibly lightweight yet refuses to dent",
+      "Double wheels roll completely silent and buttery smooth on bumpy sidewalks",
+      "Fits perfectly inside airplane overhead cabins"
+    ],
+    "cons": [
+      "Premium price point",
+      "Light grey finish is prone to showing minor rubber marks from airport conveyor belts"
+    ],
+    "darazUrl": "https://www.daraz.pk",
+    "availability": "In Stock",
+    "lastUpdated": "2025-01-14",
+    "whoShouldBuy": "An exceptional travel bag choice for frequent flyers, business travelers, and vacationers who want durable luggage that will last for years.",
+    "buyingRecommendation": "A true premium upgrade. 90Fun is manufactured by the Xiaomi ecological chain and offers build quality comparable to Rs. 40,000 international brands at a third of the cost.",
+    "faqs": [
+      {
+        "q": "Is this suitcase cabin-size approved?",
+        "a": "Yes! At 20 inches, it is standard cabin-carry-on approved for all major domestic and international airlines including PIA, Emirates, and AirSial."
+      }
+    ],
+    "isFeatured": true,
+    "isTrending": true,
+    "isTopDeal": false,
+    "isBestSeller": false,
+    "isHeaderPick": true,
+    "isEditorChoice": true,
+    "isNewArrival": false,
+    "badges": [
+      "Trending",
+      "Editor's Choice",
+      "Premium Pick"
+    ]
+  },
+  {
+    "id": "bt-09",
+    "brand": "Xiaomi",
+    "model": "Lightweight-10L",
+    "category": "Bags & Travel",
+    "subCategory": "Backpacks",
+    "name": "Xiaomi Minimalist 10L Casual Lightweight Waterproof Urban Backpack",
+    "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=600&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=600&auto=format&fit=crop"
+    ],
+    "currentPrice": 1550,
+    "oldPrice": 2500,
+    "discount": 38,
+    "rating": 4.8,
+    "reviewsCount": 880,
+    "soldCount": "4.5k+",
+    "shortDescription": "Water-repellent, ultra-lightweight 10L casual backpack with spacious main compartment, ideal for tablets, umbrellas, water bottles, and daily essentials.",
+    "longDescription": "The Xiaomi Minimalist 10L Casual Backpack is the epitome of simple urban utility. Weighing only 165g, it is incredibly light and is crafted from premium water-repellent polyester fabric. Perfect for school, short travels, or daily errands, it easily houses a tablet, water bottle, sunglasses, power bank, and keys. It comes in clean, stylish colors.",
+    "features": [
+      "Ultra-lightweight design weighing only 165g to reduce carrying fatigue",
+      "Level 4 water-repellent polyester fabric protects items from sudden rain splashes",
+      "Spacious 10L capacity with a padded inner pocket for tablets up to 10 inches",
+      "EPE cotton-padded shoulder straps provide surprisingly soft and comfortable wear",
+      "Dual handy side pockets for quick bottle and umbrella storage"
+    ],
+    "specifications": {
+      "Brand": "Xiaomi",
+      "Model": "Lightweight-10L",
+      "Capacity": "10 Liters",
+      "Material": "100% Water-repellent Polyester",
+      "Weight": "165g",
+      "Strap Padding": "EPE Cotton",
+      "Dimensions": "34 x 22.5 x 13 cm"
+    },
+    "pros": [
+      "Incredibly lightweight and folds flat inside suitcases as an extra bag",
+      "Water-repellent fabric keeps light rain from soaking electronics",
+      "Amazing range of bright, clean modern colors"
+    ],
+    "cons": [
+      "Too small for large 15.6-inch laptops",
+      "Lacks heavy structural back support for massive textbooks"
+    ],
+    "darazUrl": "https://www.daraz.pk",
+    "availability": "In Stock",
+    "lastUpdated": "2025-01-14",
+    "whoShouldBuy": "An amazing budget backpack for children, university students who only carry tablets, or travelers looking for a lightweight, stylish daypack.",
+    "buyingRecommendation": "An absolute steal under Rs. 2,000. It is beautifully built, durable, and highly practical.",
+    "faqs": [
+      {
+        "q": "Can it fit a 14-inch laptop?",
+        "a": "No, it is designed for smaller electronics and can comfortably fit tablets or iPads up to 10 inches."
+      }
+    ],
+    "isFeatured": false,
+    "isTrending": false,
+    "isTopDeal": true,
+    "isBestSeller": true,
+    "isEditorChoice": false,
+    "isNewArrival": false,
+    "badges": [
+      "Best Seller",
+      "Budget Pick"
+    ]
   }
 ]
