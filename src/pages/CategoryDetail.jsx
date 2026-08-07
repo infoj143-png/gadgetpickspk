@@ -28,7 +28,8 @@ import {
   Folder,
   CreditCard,
   Luggage,
-  Backpack
+  Backpack,
+  Bed
 } from 'lucide-react';
 import useSEO from '../hooks/useSEO';
 import productsData from '../data/products.json';
@@ -39,6 +40,58 @@ import { injectJSONLD, removeJSONLD, getCategorySchema, getBreadcrumbSchema, get
 export default function CategoryDetail() {
   const { categorySlug } = useParams();
   const [openFaq, setOpenFaq] = useState(null);
+  const [activeConcern, setActiveConcern] = useState('neck-stiffness');
+
+  // Sleep & Bath Health Solver concerns list
+  const sleepBathSolverConcerns = useMemo(() => [
+    {
+      id: 'neck-stiffness',
+      title: 'Morning Neck Stiffness',
+      problem: 'Waking up with persistent neck, shoulder, or spinal soreness and stiffness.',
+      solutionName: 'Ergonomic Cervical Orthopedic Pillows',
+      solutionDesc: 'Opt for 100% slow-rebound memory foam contoured pillows. Standard down or flat cotton pillows allow your neck to collapse. A contoured cervical design aligns your head, neck, and spine perfectly throughout the night.',
+      keySpecs: ['100% Slow-Rebound Memory Foam', 'Contour dual-height (7cm & 10cm)', 'Removable zippered breathable cover'],
+      iconName: 'Bed'
+    },
+    {
+      id: 'hair-frizz',
+      title: 'Hair Frizz & Skin Friction',
+      problem: 'Morning bedhead, frizzy tangled curls, split ends, and facial sleep wrinkles.',
+      solutionName: 'Mulberry Satin Friction-Free Pillowcases',
+      solutionDesc: 'Switch from rough cotton sheets to high-grade cooling satin. Satin reduces face and hair friction by up to 45%, preventing hair breakage, lock moisture depletion, and sleep lines.',
+      keySpecs: ['Premium high-grade satin microfiber', 'Envelope closure button-free design', 'Naturally hypoallergenic and cooling'],
+      iconName: 'Smile'
+    },
+    {
+      id: 'bathroom-clutter',
+      title: 'Cluttered Shower Corners',
+      problem: 'Shampoo, conditioner, and body wash bottles cluttered around bathtub rims or floor.',
+      solutionName: 'SUS304 Rustproof Corner Adhesive Shelves',
+      solutionDesc: 'Use heavy-duty adhesive wall shelves to exploit unused 90-degree corner wall space. No-drill adhesive pads can support up to 10kg without damaging premium tiled walls.',
+      keySpecs: ['Premium SUS304 Stainless Steel', 'Drill-free transparent heavy-duty adhesive', 'Open-grid drainage for zero soap scum build'],
+      iconName: 'LayoutGrid'
+    },
+    {
+      id: 'brush-hygiene',
+      title: 'Messy Toothpaste & Brushes',
+      problem: 'Wasted toothpaste squeezed messily, and wet toothbrushes exposed to open bathroom dust.',
+      solutionName: 'Automatic Vacuum Squeezers & Holders',
+      solutionDesc: 'Install hands-free mechanical toothpaste dispensers paired with covered slots. A smart vacuum pump squeezes out exactly the right amount with zero manual mess or waste.',
+      keySpecs: ['Hands-free vacuum pump mechanism', 'Dustproof covered slots for 5 toothbrushes', 'BPA-free modular detachable components'],
+      iconName: 'CheckCircle'
+    }
+  ], []);
+
+  // Helper to render solver icons dynamically
+  const renderSolverIcon = (iconName) => {
+    switch (iconName) {
+      case 'Bed': return <Bed size={18} />;
+      case 'Smile': return <Smile size={18} />;
+      case 'LayoutGrid': return <LayoutGrid size={18} />;
+      case 'CheckCircle': return <CheckCircle size={18} />;
+      default: return <Bed size={18} />;
+    }
+  };
 
   // Find category metadata from slug
   const categoryMeta = useMemo(() => {
@@ -112,6 +165,70 @@ export default function CategoryDetail() {
       slug: 'storage-boxes',
       desc: 'Durable collapsible canvas fabric bins with steel supports for structured wardrobe storage.',
       icon: <Box size={16} />
+    }
+  ], []);
+
+  // Bedding & Bath Subcategory Shelves config
+  const beddingBathSubCategories = useMemo(() => [
+    {
+      name: 'Fitted Bedsheets',
+      slug: 'fitted-bedsheets',
+      desc: 'Snug-fitting, elastic-bordered bedsheets that stay perfectly secure on your mattress without bunching or slipping.',
+      icon: <Bed size={16} />
+    },
+    {
+      name: 'Bedsheet Sets',
+      slug: 'bedsheet-sets',
+      desc: 'Coordinated matching bedsheet and pillowcase collections designed to bring effortless elegance to your bedroom.',
+      icon: <Layers size={16} />
+    },
+    {
+      name: 'Bedding Sets',
+      slug: 'bedding-sets',
+      desc: 'Complete all-in-one bedroom packages featuring premium sheets, pillow covers, and matching duvets or comforters.',
+      icon: <Sparkles size={16} />
+    },
+    {
+      name: 'Mattress Covers',
+      slug: 'mattress-covers',
+      desc: 'Premium waterproof and dust-mite resistant protectors to prolong the lifespan of your mattress.',
+      icon: <Lock size={16} />
+    },
+    {
+      name: 'Pillow Covers',
+      slug: 'pillow-covers',
+      desc: 'Friction-free, luxurious cooling pillowcases to protect your skin and prevent morning hair frizz.',
+      icon: <Smile size={16} />
+    },
+    {
+      name: 'Bathroom Shelves',
+      slug: 'bathroom-shelves',
+      desc: 'Heavy-duty, rustproof adhesive shelves and corner organizers to neatly declutter your shower items.',
+      icon: <LayoutGrid size={16} />
+    },
+    {
+      name: 'Bathroom Organizers',
+      slug: 'bathroom-organizers',
+      desc: 'Smart space-saving racks, trays, and caddies for organized countertop and under-sink storage.',
+      icon: <Box size={16} />
+    },
+    {
+      name: 'Toothpaste Dispensers',
+      slug: 'toothpaste-dispensers',
+      desc: 'Hands-free automatic vacuum squeezers designed for clean, waste-free family bathroom hygiene.',
+      icon: <CheckCircle size={16} />
+    },
+    {
+      name: 'Toothbrush Holders',
+      slug: 'toothbrush-holders',
+      desc: 'Dustproof, wall-mounted holders that keep your family\'s toothbrushes safe, dry, and sterile.',
+      icon: <Bath size={16} />
+    },
+    {
+      name: 'Bathroom Accessories',
+      slug: 'bathroom-accessories',
+      desc: 'Coordinated bath sets, soap dispensers, and matching utilities that elevate your bathroom aesthetics.',
+      icon: <Award size={16} />
     }
   ], []);
 
@@ -484,6 +601,183 @@ export default function CategoryDetail() {
           </section>
         )}
 
+        {/* Bedding & Bath Specialist Subcategories */}
+        {categorySlug === 'bedding-bath' && (
+          <section className="space-y-12 pt-4">
+            <div className="border-b border-slate-200 dark:border-slate-800 pb-4">
+              <span className="text-xs font-black uppercase tracking-widest text-orange-500 bg-orange-500/10 px-3 py-1 rounded-full border border-orange-500/20">
+                Specialist Shelves
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight mt-2">
+                Bedding & Bath Specialized Collections
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-semibold">
+                Explore premium, sleep-enhancing bedding lines and smart, space-saving bathroom accessories.
+              </p>
+
+              {/* Scrollable Subcategory Jump Links */}
+              <div className="flex flex-wrap gap-2 mt-4">
+                {beddingBathSubCategories.map((sub) => (
+                  <a
+                    key={sub.slug}
+                    href={`#${sub.slug}`}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-orange-500 dark:hover:border-orange-500 rounded-xl text-xs font-bold text-slate-750 dark:text-slate-300 hover:text-orange-500 dark:hover:text-orange-400 transition-all shadow-xs"
+                  >
+                    {sub.icon}
+                    {sub.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Subcategory Shelves Grid */}
+            <div className="space-y-12">
+              {beddingBathSubCategories.map((sub) => {
+                const subProducts = categoryProducts.filter(
+                  (p) => p.subCategory?.toLowerCase() === sub.name.toLowerCase()
+                );
+                if (subProducts.length === 0) return null;
+
+                return (
+                  <div
+                    key={sub.slug}
+                    id={sub.slug}
+                    className="scroll-mt-20 bg-white dark:bg-slate-900/40 rounded-3xl border border-slate-200/60 dark:border-slate-800/80 p-6 sm:p-8 space-y-6 shadow-xs transition-all duration-300"
+                  >
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-150 dark:border-slate-800/60 pb-4">
+                      <div className="space-y-1">
+                        <div className="flex items-center gap-2">
+                          <div className="p-2 bg-orange-100 dark:bg-orange-950/40 text-orange-600 dark:text-orange-400 rounded-xl">
+                            {sub.icon}
+                          </div>
+                          <h3 className="text-lg sm:text-xl font-black text-slate-900 dark:text-white tracking-tight">
+                            {sub.name} Collection
+                          </h3>
+                        </div>
+                        <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-semibold max-w-2xl">
+                          {sub.desc}
+                        </p>
+                      </div>
+                      <span className="self-start sm:self-center text-[11px] font-extrabold text-orange-600 dark:text-orange-400 bg-orange-50 dark:bg-orange-950/30 border border-orange-100 dark:border-orange-900/50 px-2.5 py-1 rounded-full">
+                        {subProducts.length} {subProducts.length === 1 ? 'Product' : 'Products'} Verified
+                      </span>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                      {subProducts.map((product) => (
+                        <ProductCard key={product.id} product={product} />
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+        )}
+
+        {/* Sleep & Bath Health Solver Section (Only for bedding-bath category) */}
+        {categorySlug === 'bedding-bath' && (
+          <section className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800 p-6 sm:p-10 shadow-sm transition-all duration-300 space-y-8">
+            <div className="border-b border-slate-100 dark:border-slate-800 pb-4">
+              <span className="text-xs font-black uppercase tracking-widest text-orange-500 bg-orange-500/10 px-3 py-1 rounded-full border border-orange-500/20">
+                Interactive Advisor
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight mt-2">
+                Sleep & Bath Health Recommendation Solver
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-semibold">
+                Struggling with waking up sore, frizzy hair, or bathroom clutter? Select your core issue below to instantly discover the expert-recommended product type and parameters.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              {/* Left Column: Concerns Selector */}
+              <div className="lg:col-span-5 space-y-3">
+                {sleepBathSolverConcerns.map((concern) => {
+                  const isActive = activeConcern === concern.id;
+                  return (
+                    <button
+                      key={concern.id}
+                      onClick={() => setActiveConcern(concern.id)}
+                      className={`w-full text-left p-4 rounded-2xl border transition-all duration-300 flex items-center gap-4 group ${
+                        isActive
+                          ? 'bg-orange-500 border-orange-500 text-white shadow-md shadow-orange-500/10'
+                          : 'bg-slate-50 dark:bg-slate-950 border-slate-200/60 dark:border-slate-850 text-slate-700 dark:text-slate-300 hover:border-orange-500'
+                      }`}
+                    >
+                      <div className={`p-2.5 rounded-xl transition-colors ${
+                        isActive
+                          ? 'bg-white/20 text-white'
+                          : 'bg-orange-50 dark:bg-orange-950/40 text-orange-600 dark:text-orange-400 group-hover:bg-orange-100'
+                      }`}>
+                        {renderSolverIcon(concern.iconName)}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-extrabold text-sm sm:text-base leading-tight">
+                          {concern.title}
+                        </h3>
+                        <p className={`text-xs mt-0.5 font-semibold line-clamp-1 ${
+                          isActive ? 'text-orange-100' : 'text-slate-400 dark:text-slate-500'
+                        }`}>
+                          {concern.problem}
+                        </p>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Right Column: Expert Solution Card */}
+              <div className="lg:col-span-7 bg-slate-50 dark:bg-slate-950/50 rounded-2xl border border-slate-200/60 dark:border-slate-850 p-6 sm:p-8 space-y-6">
+                {(() => {
+                  const selected = sleepBathSolverConcerns.find(c => c.id === activeConcern) || sleepBathSolverConcerns[0];
+                  return (
+                    <div className="space-y-6">
+                      <div>
+                        <span className="text-[10px] font-black uppercase tracking-wider text-orange-600 dark:text-orange-400 bg-orange-100 dark:bg-orange-950/40 px-2.5 py-1 rounded-full">
+                          Expert Recommendation
+                        </span>
+                        <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mt-3">
+                          {selected.solutionName}
+                        </h3>
+                        <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-semibold mt-1.5 leading-relaxed">
+                          <strong className="text-slate-700 dark:text-slate-300 font-bold block mb-1">
+                            The Underlying Problem:
+                          </strong>
+                          {selected.problem}
+                        </p>
+                      </div>
+
+                      <div className="space-y-3">
+                        <strong className="text-xs sm:text-sm text-slate-800 dark:text-white font-extrabold block">
+                          Why It Works & How It Helps:
+                        </strong>
+                        <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-semibold leading-relaxed">
+                          {selected.solutionDesc}
+                        </p>
+                      </div>
+
+                      <div className="space-y-3 pt-2">
+                        <strong className="text-xs sm:text-sm text-slate-800 dark:text-white font-extrabold block">
+                          Critical Specs to Check on Daraz:
+                        </strong>
+                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-semibold text-slate-600 dark:text-slate-400">
+                          {selected.keySpecs.map((spec, i) => (
+                            <li key={i} className="flex items-center gap-2">
+                              <CheckCircle size={14} className="text-orange-500 flex-shrink-0" />
+                              <span>{spec}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  );
+                })()}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Buying Guide Checklist Section */}
         {categoryMeta.buyingGuide && (
           <section className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800 p-6 sm:p-10 shadow-sm transition-colors duration-300 space-y-6">
@@ -573,6 +867,40 @@ export default function CategoryDetail() {
                   {cat.name}
                 </Link>
               ))}
+            </div>
+          </section>
+        )}
+
+        {/* Final Affiliate CTA Block (Only for bedding-bath category) */}
+        {categorySlug === 'bedding-bath' && (
+          <section className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-orange-600 to-orange-500 text-white p-8 sm:p-12 shadow-lg border border-orange-400/20">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-2xl -mr-16 -mt-16" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-black/5 rounded-full blur-2xl -ml-16 -mb-16" />
+
+            <div className="relative z-10 max-w-3xl space-y-6">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-white/20 text-white border border-white/20 backdrop-blur-xs">
+                <ShoppingBag size={10} /> Verified Affiliate Selection
+              </span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight leading-none">
+                Ready to Upgrade Your Bedding & Bath Comforts?
+              </h2>
+              <p className="text-xs sm:text-sm md:text-base text-orange-50 font-medium leading-relaxed max-w-2xl">
+                Don't settle for restless sleep or a cluttered space. Get the absolute best prices on certified Fitted Bedsheets, Orthopedic Cervical Pillows, and smart Bathroom accessories directly on Daraz with our hand-picked affiliate recommendations.
+              </p>
+              <div className="flex flex-wrap gap-4 pt-2">
+                <Link
+                  to="/products?category=Bedding%20%26%20Bath"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-white hover:bg-orange-50 text-orange-600 font-extrabold text-xs sm:text-sm rounded-xl shadow-md hover:shadow-lg transition-all"
+                >
+                  Browse Bedding & Bath Catalog <ArrowUpRight size={16} />
+                </Link>
+                <Link
+                  to="/"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-orange-700/30 hover:bg-orange-700/50 text-white font-extrabold text-xs sm:text-sm rounded-xl border border-white/20 backdrop-blur-xs transition-all"
+                >
+                  Return to Homepage
+                </Link>
+              </div>
             </div>
           </section>
         )}
