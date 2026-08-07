@@ -51,6 +51,8 @@ export default function CategoryDetail() {
       setActiveConcern('pet-hair');
     } else if (categorySlug === 'fashion') {
       setActiveConcern('size-material');
+    } else if (categorySlug === 'pet-supplies') {
+      setActiveConcern('pet-hydration');
     }
   }, [categorySlug]);
 
@@ -479,6 +481,44 @@ export default function CategoryDetail() {
     }
   ], []);
 
+  // Pet Supplies Subcategory Shelves config
+  const petSuppliesSubCategories = useMemo(() => [
+    {
+      name: 'Cat Supplies',
+      slug: 'cat-supplies',
+      desc: 'Smart hydration systems and essential care items curated specifically to keep your feline companions active and healthy.',
+      icon: <Smile size={16} />
+    },
+    {
+      name: 'Pet Grooming',
+      slug: 'pet-grooming',
+      desc: 'Professional-grade deshedding brushes and undercoat grooming tools to manage shedding and keep coats shiny.',
+      icon: <Award size={16} />
+    }
+  ], []);
+
+  // Pet Supplies Solver concerns list
+  const petSuppliesSolverConcerns = useMemo(() => [
+    {
+      id: 'pet-hydration',
+      title: 'Inadequate Pet Hydration',
+      problem: 'Cats and dogs refusing to drink static, stale water from traditional bowls, leading to severe dehydration, urinary tract infections, and kidney issues.',
+      solutionName: 'Automatic Flowing Water Fountains',
+      solutionDesc: 'Switch to a vet-recommended automatic pet drinking water fountain with a triple-action filter (like Catit). Flowing water mimics natural freshwater streams and appeals directly to a pet\'s instincts, enticing them to drink significantly more water and support their kidneys.',
+      keySpecs: ['3L large reservoir capacity', 'Triple-action carbon-resin filter', 'Whisper-quiet low-voltage pump'],
+      iconName: 'Smile'
+    },
+    {
+      id: 'pet-shedding',
+      title: 'Excessive Pet Hair & Shedding',
+      problem: 'Dealing with constant loose pet hair, undercoat dander, and shedding on carpets, sofas, and clothes, causing allergy flare-ups.',
+      solutionName: 'Professional Undercoat Deshedding Brushes',
+      solutionDesc: 'Use a professional-grade undercoat deshedding brush (like the Furminator) once or twice weekly. It gently penetrates the topcoat to remove up to 90% of loose undercoat hair before it falls on your furniture, with a quick-release ejector button to clear hair instantly.',
+      keySpecs: ['High-grade stainless steel edges', 'FURejector quick-release button', 'Ergonomic non-slip rubber grip'],
+      iconName: 'Award'
+    }
+  ], []);
+
   // Get Related Categories
   const relatedCategories = useMemo(() => {
     return categoriesData.filter((cat) => cat.slug !== categorySlug);
@@ -599,6 +639,80 @@ export default function CategoryDetail() {
               {featuredProducts.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
+            </div>
+          </section>
+        )}
+
+        {/* Pet Supplies Specialist Subcategories */}
+        {categorySlug === 'pet-supplies' && (
+          <section className="space-y-12 pt-4">
+            <div className="border-b border-slate-200 dark:border-slate-800 pb-4">
+              <span className="text-xs font-black uppercase tracking-widest text-orange-500 bg-orange-500/10 px-3 py-1 rounded-full border border-orange-500/20">
+                Specialist Shelves
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight mt-2">
+                Pet Supplies Specialized Collections
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-semibold">
+                Explore specialized, high-quality, and safe grooming, feeding, and wellness supplies curated for your pets.
+              </p>
+
+              {/* Scrollable Subcategory Jump Links */}
+              <div className="flex flex-wrap gap-2 mt-4">
+                {petSuppliesSubCategories.map((sub) => (
+                  <a
+                    key={sub.slug}
+                    href={`#${sub.slug}`}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-orange-500 dark:hover:border-orange-500 rounded-xl text-xs font-bold text-slate-750 dark:text-slate-300 hover:text-orange-500 dark:hover:text-orange-400 transition-all shadow-xs"
+                  >
+                    {sub.icon}
+                    {sub.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Subcategory Shelves Grid */}
+            <div className="space-y-12">
+              {petSuppliesSubCategories.map((sub) => {
+                const subProducts = categoryProducts.filter(
+                  (p) => p.subCategory?.toLowerCase() === sub.name.toLowerCase()
+                );
+                if (subProducts.length === 0) return null;
+
+                return (
+                  <div
+                    key={sub.slug}
+                    id={sub.slug}
+                    className="scroll-mt-20 bg-white dark:bg-slate-900/40 rounded-3xl border border-slate-200/60 dark:border-slate-800/80 p-6 sm:p-8 space-y-6 shadow-xs transition-all duration-300"
+                  >
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-150 dark:border-slate-800/60 pb-4">
+                      <div className="space-y-1">
+                        <div className="flex items-center gap-2">
+                          <div className="p-2 bg-orange-100 dark:bg-orange-950/40 text-orange-600 dark:text-orange-400 rounded-xl">
+                            {sub.icon}
+                          </div>
+                          <h3 className="text-lg sm:text-xl font-black text-slate-900 dark:text-white tracking-tight">
+                            {sub.name} Collection
+                          </h3>
+                        </div>
+                        <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-semibold max-w-2xl">
+                          {sub.desc}
+                        </p>
+                      </div>
+                      <span className="self-start sm:self-center text-[11px] font-extrabold text-orange-600 dark:text-orange-400 bg-orange-50 dark:bg-orange-950/30 border border-orange-100 dark:border-orange-900/50 px-2.5 py-1 rounded-full">
+                        {subProducts.length} {subProducts.length === 1 ? 'Product' : 'Products'} Verified
+                      </span>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                      {subProducts.map((product) => (
+                        <ProductCard key={product.id} product={product} />
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </section>
         )}
@@ -1367,6 +1481,109 @@ export default function CategoryDetail() {
           </section>
         )}
 
+        {/* Pet Supplies Wellness & Hydration Solver Section (Only for pet-supplies category) */}
+        {categorySlug === 'pet-supplies' && (
+          <section className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800 p-6 sm:p-10 shadow-sm transition-all duration-300 space-y-8">
+            <div className="border-b border-slate-100 dark:border-slate-800 pb-4">
+              <span className="text-xs font-black uppercase tracking-widest text-orange-500 bg-orange-500/10 px-3 py-1 rounded-full border border-orange-500/20">
+                Interactive Advisor
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight mt-2">
+                Pet-Care Wellness & Hydration Advisor
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-semibold">
+                Struggling with nervous pets who won't drink enough water, or excessive hair shedding on your furniture? Select your core pet care challenge below to instantly unlock our expert-recommended solution and key specifications.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              {/* Left Column: Concerns Selector */}
+              <div className="lg:col-span-5 space-y-3">
+                {petSuppliesSolverConcerns.map((concern) => {
+                  const isActive = activeConcern === concern.id;
+                  return (
+                    <button
+                      key={concern.id}
+                      onClick={() => setActiveConcern(concern.id)}
+                      className={`w-full text-left p-4 rounded-2xl border transition-all duration-300 flex items-center gap-4 group ${
+                        isActive
+                          ? 'bg-orange-500 border-orange-500 text-white shadow-md shadow-orange-500/10'
+                          : 'bg-slate-50 dark:bg-slate-950 border-slate-200/60 dark:border-slate-850 text-slate-750 dark:text-slate-300 hover:border-orange-500'
+                      }`}
+                    >
+                      <div className={`p-2.5 rounded-xl transition-colors ${
+                        isActive
+                          ? 'bg-white/20 text-white'
+                          : 'bg-orange-50 dark:bg-orange-950/40 text-orange-600 dark:text-orange-400 group-hover:bg-orange-100'
+                      }`}>
+                        {renderSolverIcon(concern.iconName)}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-extrabold text-sm sm:text-base leading-tight">
+                          {concern.title}
+                        </h3>
+                        <p className={`text-xs mt-0.5 font-semibold line-clamp-1 ${
+                          isActive ? 'text-orange-100' : 'text-slate-400 dark:text-slate-500'
+                        }`}>
+                          {concern.problem}
+                        </p>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Right Column: Expert Solution Card */}
+              <div className="lg:col-span-7 bg-slate-50 dark:bg-slate-950/50 rounded-2xl border border-slate-200/60 dark:border-slate-850 p-6 sm:p-8 space-y-6">
+                {(() => {
+                  const selected = petSuppliesSolverConcerns.find(c => c.id === activeConcern) || petSuppliesSolverConcerns[0];
+                  return (
+                    <div className="space-y-6">
+                      <div>
+                        <span className="text-[10px] font-black uppercase tracking-wider text-orange-600 dark:text-orange-400 bg-orange-100 dark:bg-orange-950/40 px-2.5 py-1 rounded-full">
+                          Expert Recommendation
+                        </span>
+                        <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mt-3">
+                          {selected.solutionName}
+                        </h3>
+                        <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-semibold mt-1.5 leading-relaxed">
+                          <strong className="text-slate-700 dark:text-slate-300 font-bold block mb-1">
+                            The Underlying Problem:
+                          </strong>
+                          {selected.problem}
+                        </p>
+                      </div>
+
+                      <div className="space-y-3">
+                        <strong className="text-xs sm:text-sm text-slate-800 dark:text-white font-extrabold block">
+                          Why It Works & How It Helps:
+                        </strong>
+                        <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-semibold leading-relaxed">
+                          {selected.solutionDesc}
+                        </p>
+                      </div>
+
+                      <div className="space-y-3 pt-2">
+                        <strong className="text-xs sm:text-sm text-slate-800 dark:text-white font-extrabold block">
+                          Critical Specs to Check on Daraz:
+                        </strong>
+                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-semibold text-slate-600 dark:text-slate-400">
+                          {selected.keySpecs.map((spec, i) => (
+                            <li key={i} className="flex items-center gap-2">
+                              <CheckCircle size={14} className="text-orange-500 flex-shrink-0" />
+                              <span>{spec}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  );
+                })()}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Buying Guide Checklist Section */}
         {categoryMeta.buyingGuide && (
           <section className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800 p-6 sm:p-10 shadow-sm transition-colors duration-300 space-y-6">
@@ -1516,6 +1733,40 @@ export default function CategoryDetail() {
                   className="inline-flex items-center gap-2 px-6 py-3.5 bg-white hover:bg-orange-50 text-orange-600 font-extrabold text-xs sm:text-sm rounded-xl shadow-md hover:shadow-lg transition-all"
                 >
                   Browse Bedding & Bath Catalog <ArrowUpRight size={16} />
+                </Link>
+                <Link
+                  to="/"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-orange-700/30 hover:bg-orange-700/50 text-white font-extrabold text-xs sm:text-sm rounded-xl border border-white/20 backdrop-blur-xs transition-all"
+                >
+                  Return to Homepage
+                </Link>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Final Affiliate CTA Block (Only for pet-supplies category) */}
+        {categorySlug === 'pet-supplies' && (
+          <section className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-orange-600 to-orange-500 text-white p-8 sm:p-12 shadow-lg border border-orange-400/20">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-2xl -mr-16 -mt-16" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-black/5 rounded-full blur-2xl -ml-16 -mb-16" />
+
+            <div className="relative z-10 max-w-3xl space-y-6">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-white/20 text-white border border-white/20 backdrop-blur-xs">
+                <ShoppingBag size={10} /> Verified Affiliate Selection
+              </span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight leading-none">
+                Ready to Give Your Beloved Pets the Care They Deserve?
+              </h2>
+              <p className="text-xs sm:text-sm md:text-base text-orange-50 font-medium leading-relaxed max-w-2xl">
+                Enhance your pet's health and wellness today. Invest in a vet-recommended automatic flower water fountain to boost hydration, and a professional undercoat deshedding brush to eliminate loose hair and dander. Grab the best verified deals on Daraz PK using our direct affiliate links.
+              </p>
+              <div className="flex flex-wrap gap-4 pt-2">
+                <Link
+                  to="/products?category=Pet%20Supplies"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-white hover:bg-orange-50 text-orange-600 font-extrabold text-xs sm:text-sm rounded-xl shadow-md hover:shadow-lg transition-all"
+                >
+                  Browse Pet Supplies Catalog <ArrowUpRight size={16} />
                 </Link>
                 <Link
                   to="/"
