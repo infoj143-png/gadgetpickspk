@@ -29,7 +29,9 @@ import {
   CreditCard,
   Luggage,
   Backpack,
-  Bed
+  Bed,
+  Trash2,
+  Shirt
 } from 'lucide-react';
 import useSEO from '../hooks/useSEO';
 import productsData from '../data/products.json';
@@ -40,7 +42,55 @@ import { injectJSONLD, removeJSONLD, getCategorySchema, getBreadcrumbSchema, get
 export default function CategoryDetail() {
   const { categorySlug } = useParams();
   const [openFaq, setOpenFaq] = useState(null);
-  const [activeConcern, setActiveConcern] = useState('neck-stiffness');
+  const [activeConcern, setActiveConcern] = useState('');
+
+  useEffect(() => {
+    if (categorySlug === 'bedding-bath') {
+      setActiveConcern('neck-stiffness');
+    } else if (categorySlug === 'laundry-cleaning') {
+      setActiveConcern('pet-hair');
+    }
+  }, [categorySlug]);
+
+  // Laundry & Cleaning Efficiency Solver concerns list
+  const laundryCleaningSolverConcerns = useMemo(() => [
+    {
+      id: 'pet-hair',
+      title: 'Pet Hair & Allergen Dust',
+      problem: 'Struggling with loose pet dander, microscopic allergens, and static dust clinging to sofa fabrics and car seats.',
+      solutionName: 'Xiaomi Deerma Cordless Handheld Stick Vacuums',
+      solutionDesc: 'Choose a lightweight cordless vacuum with 8000Pa+ cyclonic suction and a multi-stage HEPA filter. Avoid heavy, corded vacuums for quick touchups. A modular cordless layout allows you to easily reach crevices, ceiling corners, and car interiors.',
+      keySpecs: ['8000Pa Powerful Cyclonic Suction', 'Multi-stage Washable HEPA Filter', 'Lightweight Modular Body (<1.8kg)'],
+      iconName: 'Trash2'
+    },
+    {
+      id: 'rapid-dewrinkling',
+      title: 'Time-Consuming Wrinkle Removal',
+      problem: 'Wasting precious minutes setting up heavy ironing boards and risking burning delicate silks or linens during morning rushes.',
+      solutionName: 'Sokany Portable Handheld Garment Steamers',
+      solutionDesc: 'Invest in a high-wattage (1500W+) fast-heating portable fabric steamer. It removes tough wrinkles instantly using thick, continuous steam without direct metal-to-fabric contact, making it 100% safe for all delicate clothes.',
+      keySpecs: ['1500W High Power Fast Heating', 'Continuous Steam Flow (Up to 20g/min)', 'Detachable Leak-Proof Water Tank'],
+      iconName: 'Shirt'
+    },
+    {
+      id: 'high-ceiling-dust',
+      title: 'Hard-to-Reach Fan & Ceiling Dust',
+      problem: 'Risking injury climbing chairs or ladders to clean dusty ceiling fans and high cobwebs, resulting in dust falling everywhere.',
+      solutionName: 'Extendable Microfiber Electrostatic Dusters',
+      solutionDesc: 'Use an extendable, flexible microfiber duster head. Microfiber strands generate natural electrostatic charge when swept, trapping dust particles magnetically instead of scattering them into the air.',
+      keySpecs: ['Telescopic pole extendable up to 100+ inches', '360-degree bendable high-density head', 'Washable and reusable microfiber sleeve'],
+      iconName: 'LayoutGrid'
+    },
+    {
+      id: 'floor-strain',
+      title: 'Post-Mopping Back & Joint Strain',
+      problem: 'Physical exhaust, hand-wringing dirty water, and severe lower back strain from traditional flat floor mopping.',
+      solutionName: '360° Stainless Steel Rotary Spin Mop Systems',
+      solutionDesc: 'Switch to a dual-chamber spin mop bucket set. The mechanical foot pedal or hand-press handle spins the mop head at high speeds, centrifugal-drying the microfiber mop safely without requiring any hand-wringing or deep bending.',
+      keySpecs: ['360° rotating head with thick microfiber', 'Stainless steel spin basket & sturdy bucket', 'Telescopic adjustable lock handle'],
+      iconName: 'Bath'
+    }
+  ], []);
 
   // Sleep & Bath Health Solver concerns list
   const sleepBathSolverConcerns = useMemo(() => [
@@ -89,6 +139,9 @@ export default function CategoryDetail() {
       case 'Smile': return <Smile size={18} />;
       case 'LayoutGrid': return <LayoutGrid size={18} />;
       case 'CheckCircle': return <CheckCircle size={18} />;
+      case 'Trash2': return <Trash2 size={18} />;
+      case 'Shirt': return <Shirt size={18} />;
+      case 'Bath': return <Bath size={18} />;
       default: return <Bed size={18} />;
     }
   };
@@ -133,6 +186,52 @@ export default function CategoryDetail() {
   const budgetProducts = useMemo(() => {
     return categoryProducts.filter(p => p.badges?.some(b => b.toLowerCase().includes('budget pick')) || p.currentPrice <= 5000);
   }, [categoryProducts]);
+
+  // Laundry & Cleaning Subcategory Shelves config
+  const laundryCleaningSubCategories = useMemo(() => [
+    {
+      name: 'Vacuum Cleaners',
+      slug: 'vacuum-cleaners',
+      desc: 'Lightweight cordless handheld and stick vacuum cleaners featuring cyclonic suction and HEPA filtration.',
+      icon: <Layers size={16} />
+    },
+    {
+      name: 'Garment Steamers',
+      slug: 'garment-steamers',
+      desc: 'High-powered portable handheld fabric steamers and rapid-heating garment irons for effortless de-wrinkling.',
+      icon: <Shirt size={16} />
+    },
+    {
+      name: 'Spin Mops',
+      slug: 'spin-mops',
+      desc: '360-degree rotating stainless steel spin mops and dual-chamber bucket systems for dry and wet floor cleaning.',
+      icon: <Trash2 size={16} />
+    },
+    {
+      name: 'Microfiber Dusters',
+      slug: 'microfiber-dusters',
+      desc: 'Extendable, bendable electrostatic dusters designed to safely sweep high ceilings, fans, and delicate furniture.',
+      icon: <LayoutGrid size={16} />
+    },
+    {
+      name: 'Laundry Organizers',
+      slug: 'laundry-organizers',
+      desc: 'Collapsible, heavy-duty fabric laundry baskets, dirty clothes hampers, and sorting bins.',
+      icon: <Box size={16} />
+    },
+    {
+      name: 'Clothes Drying Racks',
+      slug: 'clothes-drying-racks',
+      desc: 'Space-saving foldable stainless steel clothing racks for indoor and outdoor laundry air drying.',
+      icon: <Award size={16} />
+    },
+    {
+      name: 'Cleaning Tools',
+      slug: 'cleaning-tools',
+      desc: 'Multi-purpose scrub brushes, squeegees, window sweepers, and specialized bathroom floor scrubbers.',
+      icon: <CheckCircle size={16} />
+    }
+  ], []);
 
   // Home & Living Subcategory Shelves config
   const homeLivingSubCategories = useMemo(() => [
@@ -453,6 +552,80 @@ export default function CategoryDetail() {
           </section>
         )}
 
+        {/* Laundry & Cleaning Specialist Subcategories */}
+        {categorySlug === 'laundry-cleaning' && (
+          <section className="space-y-12 pt-4">
+            <div className="border-b border-slate-200 dark:border-slate-800 pb-4">
+              <span className="text-xs font-black uppercase tracking-widest text-orange-500 bg-orange-500/10 px-3 py-1 rounded-full border border-orange-500/20">
+                Specialist Shelves
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight mt-2">
+                Laundry & Cleaning Specialized Collections
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-semibold">
+                Explore high-efficiency vacuums, portable garment steamers, and ergonomic cleaning tools curated for smart homes.
+              </p>
+
+              {/* Scrollable Subcategory Jump Links */}
+              <div className="flex flex-wrap gap-2 mt-4">
+                {laundryCleaningSubCategories.map((sub) => (
+                  <a
+                    key={sub.slug}
+                    href={`#${sub.slug}`}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-orange-500 dark:hover:border-orange-500 rounded-xl text-xs font-bold text-slate-750 dark:text-slate-300 hover:text-orange-500 dark:hover:text-orange-400 transition-all shadow-xs"
+                  >
+                    {sub.icon}
+                    {sub.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Subcategory Shelves Grid */}
+            <div className="space-y-12">
+              {laundryCleaningSubCategories.map((sub) => {
+                const subProducts = categoryProducts.filter(
+                  (p) => p.subCategory?.toLowerCase() === sub.name.toLowerCase()
+                );
+                if (subProducts.length === 0) return null;
+
+                return (
+                  <div
+                    key={sub.slug}
+                    id={sub.slug}
+                    className="scroll-mt-20 bg-white dark:bg-slate-900/40 rounded-3xl border border-slate-200/60 dark:border-slate-800/80 p-6 sm:p-8 space-y-6 shadow-xs transition-all duration-300"
+                  >
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-150 dark:border-slate-800/60 pb-4">
+                      <div className="space-y-1">
+                        <div className="flex items-center gap-2">
+                          <div className="p-2 bg-orange-100 dark:bg-orange-950/40 text-orange-600 dark:text-orange-400 rounded-xl">
+                            {sub.icon}
+                          </div>
+                          <h3 className="text-lg sm:text-xl font-black text-slate-900 dark:text-white tracking-tight">
+                            {sub.name} Collection
+                          </h3>
+                        </div>
+                        <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-semibold max-w-2xl">
+                          {sub.desc}
+                        </p>
+                      </div>
+                      <span className="self-start sm:self-center text-[11px] font-extrabold text-orange-600 dark:text-orange-400 bg-orange-50 dark:bg-orange-950/30 border border-orange-100 dark:border-orange-900/50 px-2.5 py-1 rounded-full">
+                        {subProducts.length} {subProducts.length === 1 ? 'Product' : 'Products'} Verified
+                      </span>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                      {subProducts.map((product) => (
+                        <ProductCard key={product.id} product={product} />
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+        )}
+
         {/* Bags & Travel Specialist Subcategories */}
         {categorySlug === 'bags-travel' && (
           <section className="space-y-12 pt-4">
@@ -675,6 +848,109 @@ export default function CategoryDetail() {
           </section>
         )}
 
+        {/* Laundry & Cleaning Efficiency Solver Section (Only for laundry-cleaning category) */}
+        {categorySlug === 'laundry-cleaning' && (
+          <section className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800 p-6 sm:p-10 shadow-sm transition-all duration-300 space-y-8">
+            <div className="border-b border-slate-100 dark:border-slate-800 pb-4">
+              <span className="text-xs font-black uppercase tracking-widest text-orange-500 bg-orange-500/10 px-3 py-1 rounded-full border border-orange-500/20">
+                Interactive Advisor
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight mt-2">
+                Laundry & Cleaning Efficiency Solver
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-semibold">
+                Struggling with pet hair, morning laundry rushes, high cobwebs, or severe mopping back strain? Select your core cleaning issue below to instantly discover the expert-recommended tool parameters and direct solutions.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              {/* Left Column: Concerns Selector */}
+              <div className="lg:col-span-5 space-y-3">
+                {laundryCleaningSolverConcerns.map((concern) => {
+                  const isActive = activeConcern === concern.id;
+                  return (
+                    <button
+                      key={concern.id}
+                      onClick={() => setActiveConcern(concern.id)}
+                      className={`w-full text-left p-4 rounded-2xl border transition-all duration-300 flex items-center gap-4 group ${
+                        isActive
+                          ? 'bg-orange-500 border-orange-500 text-white shadow-md shadow-orange-500/10'
+                          : 'bg-slate-50 dark:bg-slate-950 border-slate-200/60 dark:border-slate-850 text-slate-700 dark:text-slate-300 hover:border-orange-500'
+                      }`}
+                    >
+                      <div className={`p-2.5 rounded-xl transition-colors ${
+                        isActive
+                          ? 'bg-white/20 text-white'
+                          : 'bg-orange-50 dark:bg-orange-950/40 text-orange-600 dark:text-orange-400 group-hover:bg-orange-100'
+                      }`}>
+                        {renderSolverIcon(concern.iconName)}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-extrabold text-sm sm:text-base leading-tight">
+                          {concern.title}
+                        </h3>
+                        <p className={`text-xs mt-0.5 font-semibold line-clamp-1 ${
+                          isActive ? 'text-orange-100' : 'text-slate-400 dark:text-slate-500'
+                        }`}>
+                          {concern.problem}
+                        </p>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Right Column: Expert Solution Card */}
+              <div className="lg:col-span-7 bg-slate-50 dark:bg-slate-950/50 rounded-2xl border border-slate-200/60 dark:border-slate-850 p-6 sm:p-8 space-y-6">
+                {(() => {
+                  const selected = laundryCleaningSolverConcerns.find(c => c.id === activeConcern) || laundryCleaningSolverConcerns[0];
+                  return (
+                    <div className="space-y-6">
+                      <div>
+                        <span className="text-[10px] font-black uppercase tracking-wider text-orange-600 dark:text-orange-400 bg-orange-100 dark:bg-orange-950/40 px-2.5 py-1 rounded-full">
+                          Expert Recommendation
+                        </span>
+                        <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mt-3">
+                          {selected.solutionName}
+                        </h3>
+                        <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-semibold mt-1.5 leading-relaxed">
+                          <strong className="text-slate-700 dark:text-slate-300 font-bold block mb-1">
+                            The Underlying Problem:
+                          </strong>
+                          {selected.problem}
+                        </p>
+                      </div>
+
+                      <div className="space-y-3">
+                        <strong className="text-xs sm:text-sm text-slate-800 dark:text-white font-extrabold block">
+                          Why It Works & How It Helps:
+                        </strong>
+                        <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-semibold leading-relaxed">
+                          {selected.solutionDesc}
+                        </p>
+                      </div>
+
+                      <div className="space-y-3 pt-2">
+                        <strong className="text-xs sm:text-sm text-slate-800 dark:text-white font-extrabold block">
+                          Critical Specs to Check on Daraz:
+                        </strong>
+                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-semibold text-slate-600 dark:text-slate-400">
+                          {selected.keySpecs.map((spec, i) => (
+                            <li key={i} className="flex items-center gap-2">
+                              <CheckCircle size={14} className="text-orange-500 flex-shrink-0" />
+                              <span>{spec}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  );
+                })()}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Sleep & Bath Health Solver Section (Only for bedding-bath category) */}
         {categorySlug === 'bedding-bath' && (
           <section className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800 p-6 sm:p-10 shadow-sm transition-all duration-300 space-y-8">
@@ -867,6 +1143,40 @@ export default function CategoryDetail() {
                   {cat.name}
                 </Link>
               ))}
+            </div>
+          </section>
+        )}
+
+        {/* Final Affiliate CTA Block (Only for laundry-cleaning category) */}
+        {categorySlug === 'laundry-cleaning' && (
+          <section className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-orange-600 to-orange-500 text-white p-8 sm:p-12 shadow-lg border border-orange-400/20 animate-fadeIn">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-2xl -mr-16 -mt-16" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-black/5 rounded-full blur-2xl -ml-16 -mb-16" />
+
+            <div className="relative z-10 max-w-3xl space-y-6">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-white/20 text-white border border-white/20 backdrop-blur-xs">
+                <ShoppingBag size={10} /> Verified Affiliate Selection
+              </span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight leading-none">
+                Ready to Upgrade to High-Efficiency Cleaning Gadgets?
+              </h2>
+              <p className="text-xs sm:text-sm md:text-base text-orange-50 font-medium leading-relaxed max-w-2xl">
+                Keep your home clean and hygienic with minimal physical effort. Secure the absolute best deals on lightweight Cordless Vacuums, rapid Garment Steamers, and ergonomic Spin Mops on Daraz PK using our verified expert recommendations.
+              </p>
+              <div className="flex flex-wrap gap-4 pt-2">
+                <Link
+                  to="/products?category=Laundry%20%26%20Cleaning"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-white hover:bg-orange-50 text-orange-600 font-extrabold text-xs sm:text-sm rounded-xl shadow-md hover:shadow-lg transition-all"
+                >
+                  Browse Laundry & Cleaning Catalog <ArrowUpRight size={16} />
+                </Link>
+                <Link
+                  to="/"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-orange-700/30 hover:bg-orange-700/50 text-white font-extrabold text-xs sm:text-sm rounded-xl border border-white/20 backdrop-blur-xs transition-all"
+                >
+                  Return to Homepage
+                </Link>
+              </div>
             </div>
           </section>
         )}
