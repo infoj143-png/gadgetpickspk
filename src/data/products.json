@@ -4,6 +4,7 @@
     "brand": "Slique",
     "model": "USB-Blender",
     "category": "Kitchen & Dining",
+    "subCategory": "Portable Blenders",
     "name": "Slique Portable Electric USB Smoothie Juice Blender",
     "image": "https://images.unsplash.com/photo-1578643463396-0997cb5328c1?q=80&w=600&auto=format&fit=crop",
     "images": [
@@ -75,6 +76,7 @@
     "brand": "Crown",
     "model": "HP-300",
     "category": "Kitchen & Dining",
+    "subCategory": "Electric Hot Pots",
     "name": "Crown Multi-Functional Electric Hot Pot & Steamer",
     "image": "https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=600&auto=format&fit=crop",
     "images": [
