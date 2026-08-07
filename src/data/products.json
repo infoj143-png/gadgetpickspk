@@ -668,6 +668,7 @@
     "brand": "Jafferjees",
     "model": "Classic-Wallet",
     "category": "Fashion",
+    "subCategory": "Fashion Accessories",
     "name": "Jafferjees Classic Minimalist Genuine Leather Wallet",
     "image": "https://images.unsplash.com/photo-1627124118317-4e35998e9406?q=80&w=600&auto=format&fit=crop",
     "images": [
@@ -733,6 +734,7 @@
     "brand": "Hawkers",
     "model": "Retro-Polar",
     "category": "Fashion",
+    "subCategory": "Fashion Accessories",
     "name": "Hawkers Retro Polarized Unisex Sunglasses",
     "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=600&auto=format&fit=crop",
     "images": [
@@ -792,6 +794,535 @@
       "New",
       "Trending",
       "Budget Pick"
+    ]
+  },
+  {
+    "id": "fs-03",
+    "brand": "Limelight",
+    "model": "Lawn-Kurti-25",
+    "category": "Fashion",
+    "subCategory": "Women's Fashion",
+    "name": "Limelight Women's Embroidered Premium Lawn Kurti",
+    "image": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=600&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=600&auto=format&fit=crop"
+    ],
+    "currentPrice": 2950,
+    "oldPrice": 3690,
+    "discount": 20,
+    "rating": 4.8,
+    "reviewsCount": 180,
+    "soldCount": "920+",
+    "shortDescription": "Elegant hand-embroidered premium lawn cotton kurti featuring intricate floral motifs and breathable fabric for summer comfort.",
+    "longDescription": "The Limelight Premium Embroidered Lawn Kurti is crafted from superior-grade, lightweight lawn cotton. It features delicate, high-precision hand-embroidery along the neckline and sleeves, making it a perfect choice for both casual gatherings and festive events. Highly breathable, pre-shrunk, and dynamic in color retention, it represents the epitome of modern eastern styling for Pakistani women.",
+    "features": [
+      "100% premium grade breathable cotton lawn fabric",
+      "Exquisite floral hand-embroidery details with tilla borders",
+      "Pre-shrunk to prevent size shrinkage after subsequent washes",
+      "Vibrant organic dye resists fading or bleeding under hot sun",
+      "Elegant relaxed straight-cut fit for optimal air circulation"
+    ],
+    "specifications": {
+      "Brand": "Limelight",
+      "Model": "Lawn-Kurti-25",
+      "Fabric Type": "Premium Cambric Lawn Cotton",
+      "Fit Type": "Straight Fit",
+      "Stitch Type": "Stitched / Ready to Wear",
+      "Style": "Traditional Eastern Kurti",
+      "Care Instructions": "Hand wash or gentle machine wash cold"
+    },
+    "pros": [
+      "Incredibly lightweight and cool, perfect for high-humidity summers",
+      "Beautifully styled embroidery looks expensive",
+      "Maintains soft texture and bright colors after washing"
+    ],
+    "cons": [
+      "No matching trousers or dupatta included (kurti only)",
+      "Requires iron touchup after washing to remove minor creasing"
+    ],
+    "darazUrl": "https://www.daraz.pk",
+    "availability": "In Stock",
+    "lastUpdated": "2025-01-14",
+    "whoShouldBuy": "Perfect for Pakistani women, university students, and working professionals looking for comfortable, elegant, and ready-to-wear embroidered lawn kurtis.",
+    "buyingRecommendation": "An absolute steal under Rs. 3,000. It matches the high quality of premium designer wear at a fraction of the cost.",
+    "faqs": [
+      {
+        "q": "Does the color bleed or fade when washed?",
+        "a": "No, Limelight lawn uses premium organic reactive dyes that lock color into cotton fibers securely. We recommend washing in cold water."
+      }
+    ],
+    "isFeatured": true,
+    "isTrending": false,
+    "isTopDeal": false,
+    "isBestSeller": false,
+    "isEditorChoice": false,
+    "isNewArrival": true,
+    "badges": [
+      "New",
+      "Trending"
+    ]
+  },
+  {
+    "id": "fs-04",
+    "brand": "Outfitters",
+    "model": "Linen-Shirt-OF",
+    "category": "Fashion",
+    "subCategory": "Men's Fashion",
+    "name": "Outfitters Men's Premium Slim-Fit Button-Down Linen Shirt",
+    "image": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=600&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=600&auto=format&fit=crop"
+    ],
+    "currentPrice": 3490,
+    "oldPrice": 4500,
+    "discount": 22,
+    "rating": 4.7,
+    "reviewsCount": 145,
+    "soldCount": "650+",
+    "shortDescription": "Ultra-breathable premium flax linen casual shirt, ideal for stylish semi-formal summer wear in Pakistan.",
+    "longDescription": "The Outfitters Slim-Fit Button-Down Linen Shirt blends high-end comfort with crisp, modern sophistication. Made with organic linen-cotton fibers, it maximizes air ventilation while minimizing the heavy creasing common to pure linen. It features a premium spread collar, adjustable button cuffs, and a curved hem, making it perfect for tucking or wearing loose.",
+    "features": [
+      "Crafted with 55% premium organic flax linen and 45% soft cotton",
+      "Tailored slim-fit silhouette with high-precision double-stitched side seams",
+      "Classic spread collar with built-in soft stays to prevent curling",
+      "Extremely light fabric weight yields cooling sweat-wicking behavior",
+      "Versatile curved hem adapts beautifully to both casual and semi-formal styles"
+    ],
+    "specifications": {
+      "Brand": "Outfitters",
+      "Model": "Linen-Shirt-OF",
+      "Material": "55% Flax Linen / 45% Long-Staple Cotton",
+      "Fit": "Tailored Slim Fit",
+      "Collar": "Spread Collar",
+      "Sleeve Type": "Long Sleeves with Dual-Button Cuffs",
+      "Closure Type": "High-Quality Pearlized Button Down"
+    },
+    "pros": [
+      "Flax-cotton blend decreases harsh wrinkles dramatically compared to 100% linen",
+      "Very breathable, keeping you dry during hot outdoor events",
+      "Sleek minimalist style fits jeans, chinos, or linen trousers"
+    ],
+    "cons": [
+      "Fit is relatively snug; we recommend sizing up if you prefer loose wear",
+      "Requires dry ironing for a completely crisp flat look"
+    ],
+    "darazUrl": "https://www.daraz.pk",
+    "availability": "In Stock",
+    "lastUpdated": "2025-01-14",
+    "whoShouldBuy": "Ideal for fashion-conscious men seeking a stylish, light-weight, and sophisticated shirt for university, smart-casual dinners, or office commutes.",
+    "buyingRecommendation": "Excellent build quality and fabric blend under Rs. 3,500. A summer staple for every man's wardrobe.",
+    "faqs": [
+      {
+        "q": "Does this shirt shrink after wash?",
+        "a": "Because of the linen-cotton blend, it may shrink by up to 1-2% on the first wash. Wash with cold water and air-dry flat to preserve length."
+      }
+    ],
+    "isFeatured": true,
+    "isTrending": false,
+    "isTopDeal": false,
+    "isBestSeller": false,
+    "isEditorChoice": false,
+    "isNewArrival": true,
+    "badges": [
+      "New"
+    ]
+  },
+  {
+    "id": "fs-05",
+    "brand": "Zellbury",
+    "model": "ZB-Coord-09",
+    "category": "Fashion",
+    "subCategory": "Co-ord Sets",
+    "name": "Zellbury Women's Premium Printed Cotton Co-ord Set",
+    "image": "https://images.unsplash.com/photo-1608231387042-66d1773070a5?q=80&w=600&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1608231387042-66d1773070a5?q=80&w=600&auto=format&fit=crop"
+    ],
+    "currentPrice": 3990,
+    "oldPrice": 5320,
+    "discount": 25,
+    "rating": 4.9,
+    "reviewsCount": 210,
+    "soldCount": "1.1k+",
+    "shortDescription": "Chic printed 2-piece matching shirt and trouser co-ord set, crafted from 100% breathable cambric cotton for ultimate casual elegance.",
+    "longDescription": "The Zellbury Premium Printed Co-ord Set is the ultimate expression of effortless contemporary fashion. Comprising a relaxed-fit matching printed shirt and straight-leg trousers, this 2-piece outfit is tailored from premium 100% cambric cotton. Engineered for ultimate daily comfort, it features vibrant geometric print patterns, an elegant band collar, and a soft, smooth texture that is highly suitable for casual wear.",
+    "features": [
+      "Set includes 2 matching pieces: Regular-fit Shirt and Straight Trousers",
+      "Crafted with 100% high-grade, breathable cambric cotton fabric",
+      "Dynamic high-definition reactive print patterns resist color fading",
+      "Features an elegant band collar neckline and secure button placket",
+      "Trouser is outfitted with a comfortable, durable elasticated waistband"
+    ],
+    "specifications": {
+      "Brand": "Zellbury",
+      "Model": "ZB-Coord-09",
+      "Material": "100% Premium Cambric Cotton",
+      "Components": "2-Piece (Printed Shirt & Printed Trouser)",
+      "Neckline": "Band Collar with Button Placket",
+      "Fit": "Relaxed Regular Fit",
+      "Season": "Spring / Summer Curation"
+    },
+    "pros": [
+      "No-hassle matching outfit provides an instant premium style look",
+      "Highly breathable, smooth, and lightweight on the skin",
+      "Vibrant artistic print design gets outstanding compliments"
+    ],
+    "cons": [
+      "Relaxed regular fit can look baggy if incorrect size is purchased",
+      "Dupatta is not included in this co-ord set"
+    ],
+    "darazUrl": "https://www.daraz.pk",
+    "availability": "In Stock",
+    "lastUpdated": "2025-01-14",
+    "whoShouldBuy": "Perfect for Pakistani women and university students wanting a stylish, comfortable, and trendy matching western-eastern fusion co-ord set for everyday casual outings.",
+    "buyingRecommendation": "At under Rs. 4,000, this is one of the highest-rated 2-piece cotton sets on the market. Outstanding daily style return on investment.",
+    "faqs": [
+      {
+        "q": "What is cambric cotton?",
+        "a": "Cambric cotton is a high-density, smooth-woven cotton fabric that is exceptionally light yet opaque, ensuring premium coverage and cooling comfort during hot summers."
+      }
+    ],
+    "isFeatured": true,
+    "isTrending": true,
+    "isTopDeal": false,
+    "isBestSeller": true,
+    "isEditorChoice": true,
+    "isNewArrival": false,
+    "badges": [
+      "Trending",
+      "Best Seller",
+      "Editor's Choice"
+    ]
+  },
+  {
+    "id": "fs-06",
+    "brand": "Outfitters",
+    "model": "Cargo-OF-45",
+    "category": "Fashion",
+    "subCategory": "Cargo Pants",
+    "name": "Outfitters Men's Relaxed Fit Multi-Pocket Cotton Cargo Pants",
+    "image": "https://images.unsplash.com/photo-1517423568366-8b83523034fd?q=80&w=600&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1517423568366-8b83523034fd?q=80&w=600&auto=format&fit=crop"
+    ],
+    "currentPrice": 4290,
+    "oldPrice": 5999,
+    "discount": 28,
+    "rating": 4.8,
+    "reviewsCount": 132,
+    "soldCount": "480+",
+    "shortDescription": "Heavy-duty 100% cotton twill cargo trousers with 6 utility pockets and reinforced knee stitching for active street style.",
+    "longDescription": "The Outfitters Relaxed Fit Cotton Cargo Pants are engineered for urban utility and exceptional rugged wear. Constructed from heavy-duty 100% cotton twill fabric, they handle scrapes and stress with ease. These trousers are equipped with six spacious pockets (2 hand pockets, 2 side cargo flap pockets, and 2 rear pockets) with snap button closures to keep keys, phones, and wallets secure.",
+    "features": [
+      "Forged with ultra-durable 100% cotton twill fabric",
+      "6-pocket tactical design: 2 slash pockets, 2 side button cargos, 2 back pockets",
+      "Reinforced knee paneling and double-stitched stress seams prevent tearing",
+      "Premium original metal zipper fly with a sturdy heavy-duty belt loop waistband",
+      "Tapered ankle openings pair beautifully with boots or retro sneakers"
+    ],
+    "specifications": {
+      "Brand": "Outfitters",
+      "Model": "Cargo-OF-45",
+      "Material": "100% Heavy-Duty Cotton Twill",
+      "Fit": "Relaxed Tapered Fit",
+      "Closure": "Heavy-Duty YKK Zipper & Metal Button",
+      "Pocket Count": "6 Functional Pockets",
+      "Weight": "450 grams"
+    },
+    "pros": [
+      "Heavy-duty cotton twill fabric is virtually indestructible and resists abrasion",
+      "Tons of storage options with deep secure flap pockets",
+      "Extremely comfortable, allowing full range of movement"
+    ],
+    "cons": [
+      "Fabric is relatively thick, which may feel warm during peak heat summer afternoons",
+      "First wash requires separate cleaning to avoid lint accumulation"
+    ],
+    "darazUrl": "https://www.daraz.pk",
+    "availability": "In Stock",
+    "lastUpdated": "2025-01-14",
+    "whoShouldBuy": "An exceptional street-style option for young men, travelers, photographers, and outdoor enthusiasts who need durable, spacious, and cool trousers.",
+    "buyingRecommendation": "Excellent rugged build quality. For under Rs. 4,500, these cargo pants offer premium durability comparable to international activewear brands.",
+    "faqs": [
+      {
+        "q": "Are these cargo pants stretchable?",
+        "a": "No, these are made of 100% pure heavy cotton twill for maximum durability and shape retention. They feature a relaxed, ergonomic cut to ensure comfort without needing synthetic elastane."
+      }
+    ],
+    "isFeatured": true,
+    "isTrending": false,
+    "isTopDeal": false,
+    "isBestSeller": true,
+    "isEditorChoice": true,
+    "isNewArrival": false,
+    "badges": [
+      "Editor's Choice",
+      "Premium Pick"
+    ]
+  },
+  {
+    "id": "fs-07",
+    "brand": "Elo",
+    "model": "Elo-Crew-T",
+    "category": "Fashion",
+    "subCategory": "T-Shirts",
+    "name": "Elo Men's Premium Lightweight Combed Cotton Crewneck T-Shirt",
+    "image": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=600&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=600&auto=format&fit=crop"
+    ],
+    "currentPrice": 1150,
+    "oldPrice": 1799,
+    "discount": 35,
+    "rating": 4.7,
+    "reviewsCount": 340,
+    "soldCount": "2.4k+",
+    "shortDescription": "Ultra-soft 180 GSM combed cotton crewneck t-shirt with active sweat-wicking breathability, perfect for summer daily casual wear.",
+    "longDescription": "The Elo Premium Combed Cotton Crewneck T-Shirt represents the gold standard of casual basics in Pakistan. Made with ultra-soft 180 GSM combed cotton fabric, it offers a silky-smooth surface texture and superior skin breathability. Outfitted with a shape-retaining ribbed knit collar and double-needle hemmed sleeves, it retains its fit wash after wash without stretching out.",
+    "features": [
+      "Knit with 100% ultra-soft combed cotton fibers (180 GSM)",
+      "Ribbed knit crewneck collar reinforced with shoulder-to-shoulder taping",
+      "Seamless tubular body construction reduces skin chafing and irritation",
+      "Highly breathable, sweat-wicking knit structure ensures summer comfort",
+      "Environmentally safe organic reactive dyes resist fading and bleeding"
+    ],
+    "specifications": {
+      "Brand": "Elo",
+      "Model": "Elo-Crew-T",
+      "Material": "100% Premium Combed Cotton",
+      "Knit Density": "180 GSM Lightweight Knit",
+      "Neck Style": "Reinforced Crewneck",
+      "Sleeve": "Short Sleeves with Double-Needle Stitching",
+      "Fit": "Modern Regular Fit"
+    },
+    "pros": [
+      "Extremely soft combed cotton feels amazing on the skin",
+      "Ribbed collar stays flat and doesn't bacon-stretch after machine washing",
+      "Incredible budget value for a premium everyday basic"
+    ],
+    "cons": [
+      "Knit fabric is light, so white shirts can be slightly semi-sheer",
+      "May undergo minor (1%) natural cotton shrinkage on first hot dryer run"
+    ],
+    "darazUrl": "https://www.daraz.pk",
+    "availability": "In Stock",
+    "lastUpdated": "2025-01-14",
+    "whoShouldBuy": "An essential budget basic for men who need high-quality, breathable, and durable plain cotton T-shirts for daily summer casual wear.",
+    "buyingRecommendation": "An absolute bargain under Rs. 1,200. At this price point, the comfort and shape retention are completely unmatched in Pakistan.",
+    "faqs": [
+      {
+        "q": "What is combed cotton?",
+        "a": "Combed cotton is treated with fine brushes to discard short, weak fibers and impurities before spinning. This leaves only long, strong, and exceptionally soft cotton strands, producing a much smoother, stronger, and more durable T-shirt fabric."
+      }
+    ],
+    "isFeatured": false,
+    "isTrending": true,
+    "isTopDeal": false,
+    "isBestSeller": false,
+    "isEditorChoice": false,
+    "isNewArrival": false,
+    "badges": [
+      "Trending",
+      "Budget Pick"
+    ]
+  },
+  {
+    "id": "fs-08",
+    "brand": "Limelight",
+    "model": "Solid-Pant-LL",
+    "category": "Fashion",
+    "subCategory": "Casual Wear",
+    "name": "Limelight Women's Casual Cotton Solid Straight Trousers",
+    "image": "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=600&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=600&auto=format&fit=crop"
+    ],
+    "currentPrice": 1890,
+    "oldPrice": 2250,
+    "discount": 15,
+    "rating": 4.6,
+    "reviewsCount": 98,
+    "soldCount": "410+",
+    "shortDescription": "Versatile straight-leg casual cotton trousers with elasticated waistband for ultimate comfort and daily elegance.",
+    "longDescription": "The Limelight Casual Cotton Solid Straight Trousers are designed to be the most versatile addition to your eastern or western wardrobe. Made from high-density, breathable cambric cotton fabric, they feature a clean straight-leg cut that pairs perfectly with kurtis, shirts, or short tunics. An elasticated waistband and relaxed hip fit ensure all-day comfort for daily errands.",
+    "features": [
+      "Made of high-density breathable premium cambric cotton",
+      "Minimalist, elegant solid-colored straight-leg pants design",
+      "Integrated elasticized waistband ensures a snug, flexible fit",
+      "Pre-shrunk and double-hemmed bottoms prevent fraying",
+      "Two deep, discrete side slash pockets for phone and key storage"
+    ],
+    "specifications": {
+      "Brand": "Limelight",
+      "Model": "Solid-Pant-LL",
+      "Material": "100% Cambric Cotton Fabric",
+      "Fit": "Straight Leg Regular Fit",
+      "Waistband": "Full Elasticated Waistband",
+      "Stitching": "Ready to Wear (Stitched)",
+      "Pockets": "2 Side Slash Pockets"
+    },
+    "pros": [
+      "Pairs effortlessly with virtually any eastern kurti or casual tee",
+      "Elastic waistband handles weight fluctuations and prevents waist pinch",
+      "Discrete side pockets are incredibly practical for phone carrying"
+    ],
+    "cons": [
+      "Cambric cotton fabric has no stretch, requiring accurate hip measurement checks",
+      "Needs moderate ironing after wash to stay crisp"
+    ],
+    "darazUrl": "https://www.daraz.pk",
+    "availability": "In Stock",
+    "lastUpdated": "2025-01-14",
+    "whoShouldBuy": "Perfect for women who need comfortable, versatile, and high-quality straight black/white cotton trousers for daily casual coordinates.",
+    "buyingRecommendation": "Extremely budget-friendly. A robust, comfortable basic pant that lasts years without color fading.",
+    "faqs": [
+      {
+        "q": "Are these trousers transparent or see-through?",
+        "a": "No, these trousers are crafted from premium 100% cambric cotton which is woven tightly to be completely opaque, providing excellent coverage and peace of mind."
+      }
+    ],
+    "isFeatured": false,
+    "isTrending": false,
+    "isTopDeal": false,
+    "isBestSeller": false,
+    "isEditorChoice": false,
+    "isNewArrival": false,
+    "badges": [
+      "Budget Pick"
+    ]
+  },
+  {
+    "id": "fs-09",
+    "brand": "Stylo",
+    "model": "Summer-Sandal-ST",
+    "category": "Fashion",
+    "subCategory": "Sandals",
+    "name": "Stylo Women's Soft-Padded Ergonomic Casual Flat Sandals",
+    "image": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=600&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=600&auto=format&fit=crop"
+    ],
+    "currentPrice": 2450,
+    "oldPrice": 3060,
+    "discount": 20,
+    "rating": 4.8,
+    "reviewsCount": 165,
+    "soldCount": "890+",
+    "shortDescription": "Comfortable open-toe flat sandals with premium memory-foam padded footbeds and non-slip rubber outer soles.",
+    "longDescription": "The Stylo Soft-Padded Casual Flat Sandals are designed to deliver ultimate relief and walking comfort during hot summer months. Combining Stylo's premium aesthetic with orthotic comfort, they feature a high-density memory foam padded footbed wrapped in ultra-soft synthetic vegan leather. Outfitted with durable non-slip patterned rubber soles to prevent slips on slick floors.",
+    "features": [
+      "Extra-cushioned high-density memory foam footbed absorbs walking shocks",
+      "Premium, scratch-proof synthetic vegan leather straps with soft inner lining",
+      "Ergonomic open-toe design prevents toe pinching or sweat friction",
+      "Textured non-slip natural rubber outer sole provides strong grip",
+      "Slip-on layout allows exceptionally fast and easy daily wear"
+    ],
+    "specifications": {
+      "Brand": "Stylo",
+      "Model": "Summer-Sandal-ST",
+      "Footwear Type": "Casual Flat Slip-On Sandals",
+      "Footbed Cushioning": "Padded Memory Foam Layer",
+      "Sole Material": "Non-Slip Flexible Rubber",
+      "Upper Material": "Premium Vegan PU Leather",
+      "Heel Height": "Flat (0.5 inches)"
+    },
+    "pros": [
+      "Extra-cushioned high-density memory foam footbed absorbs walking shocks",
+      "Premium, scratch-proof synthetic vegan leather straps with soft inner lining",
+      "Ergonomic open-toe design prevents toe pinching or sweat friction",
+      "Textured non-slip natural rubber outer sole provides strong grip",
+      "Slip-on layout allows exceptionally fast and easy daily wear"
+    ],
+    "cons": [
+      "Vegan leather strap can feel snug on exceptionally wide feet initially",
+      "Not designed to be worn in running water or heavy rain showers"
+    ],
+    "darazUrl": "https://www.daraz.pk",
+    "availability": "In Stock",
+    "lastUpdated": "2025-01-14",
+    "whoShouldBuy": "Perfect for busy mothers, university students, and office workers seeking stylish, comfortable, and pain-free flat sandals for everyday summer walks.",
+    "buyingRecommendation": "Excellent comfort-focused summer utility. Stylo combines beautiful minimalist styling with premium sole cushioning under Rs. 2,500.",
+    "faqs": [
+      {
+        "q": "How long does the memory foam padding retain its bounce?",
+        "a": "Stylo uses high-density closed-cell foam that resists flattening, maintaining comfortable rebound support even after months of daily heavy wear."
+      }
+    ],
+    "isFeatured": false,
+    "isTrending": false,
+    "isTopDeal": false,
+    "isBestSeller": false,
+    "isEditorChoice": false,
+    "isNewArrival": false,
+    "badges": [
+      "Budget Pick"
+    ]
+  },
+  {
+    "id": "fs-10",
+    "brand": "Walkeaze",
+    "model": "Peshawari-Classic-WE",
+    "category": "Fashion",
+    "subCategory": "Peshawari Chappal",
+    "name": "Walkeaze Men's Premium Hand-Stitched Genuine Leather Peshawari Chappal",
+    "image": "https://images.unsplash.com/photo-1603487226258-4148e16198f1?q=80&w=600&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1603487226258-4148e16198f1?q=80&w=600&auto=format&fit=crop"
+    ],
+    "currentPrice": 3890,
+    "oldPrice": 4999,
+    "discount": 22,
+    "rating": 4.9,
+    "reviewsCount": 150,
+    "soldCount": "780+",
+    "shortDescription": "Classic heritage Peshawari Chappal hand-crafted from 100% genuine cow leather with durable tyre sole padding.",
+    "longDescription": "The Walkeaze Hand-Stitched Peshawari Chappal represents the height of cultural elegance and traditional footwear craftsmanship. Proudly hand-crafted in Pakistan by master artisans, it uses 100% premium top-grain genuine cow leather for the upper straps and insoles. Outfitted with a durable, non-slip recycled tyre rubber sole and adjustable buckle heel strap for a highly secure, custom fit.",
+    "features": [
+      "100% authentic premium top-grain genuine cow leather upper and lining",
+      "Hand-crafted and hand-stitched with heavy-duty rot-proof nylon threads",
+      "Premium, comfortable leather insole develops custom foot mold over time",
+      "Extremely durable recycled tyre rubber sole absorbs shock and resists slips",
+      "Adjustable steel buckle heel strap ensures a perfect snug fit"
+    ],
+    "specifications": {
+      "Brand": "Walkeaze",
+      "Model": "Peshawari-Classic-WE",
+      "Leather Type": "100% Authentic Cow Leather (Top-Grain)",
+      "Sole Material": "Recycled Tyre Rubber Sole",
+      "Stitching": "Hand-stitched Traditional Finish",
+      "Adjustability": "Adjustable buckle strap closure",
+      "Weight": "380 grams per shoe"
+    },
+    "pros": [
+      "Premium leather matures beautifully, developing an elegant deep patina over time",
+      "Recycled tyre rubber sole is virtually indestructible and slip-resistant",
+      "Timeless heritage style matches perfectly with Shalwar Kameez on Eid or weddings"
+    ],
+    "cons": [
+      "Slightly firm initially; leather needs 3-4 days of wear to fully soften and conform",
+      "Slightly heavier than standard athletic slippers"
+    ],
+    "darazUrl": "https://www.daraz.pk",
+    "availability": "In Stock",
+    "lastUpdated": "2025-01-14",
+    "whoShouldBuy": "An essential stylish footwear choice for gentlemen, groom parties, and cultural enthusiasts who value authentic hand-crafted leather Peshawari Chappals with high sole longevity.",
+    "buyingRecommendation": "Excellent heritage choice under Rs. 4,000. It offers authentic top-grain leather build quality that easily matches products twice its price.",
+    "faqs": [
+      {
+        "q": "Will the buckle rust or break over time?",
+        "a": "No, Walkeaze uses premium stainless steel buckles with a chrome-plated anti-rust coating to ensure they remain fully shiny and functional for years."
+      }
+    ],
+    "isFeatured": false,
+    "isTrending": true,
+    "isTopDeal": false,
+    "isBestSeller": true,
+    "isEditorChoice": true,
+    "isNewArrival": false,
+    "badges": [
+      "Trending",
+      "Best Seller",
+      "Editor's Choice"
     ]
   },
   {

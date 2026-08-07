@@ -49,8 +49,50 @@ export default function CategoryDetail() {
       setActiveConcern('neck-stiffness');
     } else if (categorySlug === 'laundry-cleaning') {
       setActiveConcern('pet-hair');
+    } else if (categorySlug === 'fashion') {
+      setActiveConcern('size-material');
     }
   }, [categorySlug]);
+
+  // Fashion & Fit Advisor concerns list
+  const fashionSolverConcerns = useMemo(() => [
+    {
+      id: 'size-material',
+      title: 'Size & Fabric Integrity',
+      problem: 'Shopping online for clothes only to receive incorrect sizes, tight sleeves, or cheap synthetic polyesters that trap sweat.',
+      solutionName: 'Size-Verification and Premium Cotton/Linen Fabrics',
+      solutionDesc: 'Never buy clothing using just S/M/L tags. Measure your chest & waist in inches, compare with the size chart, and select natural organic fabrics. Opt for 100% combed cotton, cambric lawn, or flax linen which provide excellent breathability and comfort in Pakistan\'s warm climate.',
+      keySpecs: ['Compare precise chest & length measurements', 'Prioritize 100% Combed Cotton & Flax Linen', 'Verify pre-shrunk fabrics to prevent wash shrinkage'],
+      iconName: 'Shirt'
+    },
+    {
+      id: 'budget-styling',
+      title: 'Cost-Effective Premium Styling',
+      problem: 'Overspending on low-quality fast fashion that loses color, shape, and stitching strength after just 2-3 wash cycles.',
+      solutionName: 'Real Leather & High-Density Twill Basics',
+      solutionDesc: 'Choose high-quality core pieces that offer strong value-retention and longevity. Items like Outfitters double-stitched cotton cargo pants, Stylo padded memory foam sandals, or hand-crafted Jafferjees leather wallets look elegant and last for years.',
+      keySpecs: ['100% original top-grain animal leather', 'Reinforced double-stitched twill seams', 'High-density knit fabric structure (180 GSM+)'],
+      iconName: 'CreditCard'
+    },
+    {
+      id: 'casual-use',
+      title: 'Everyday Versatile Casual Wear',
+      problem: 'Finding outfits that feel incredibly comfortable for lounging at home yet look stylish and polished for unexpected outings.',
+      solutionName: 'Matching Co-ord Sets & Combed Cotton Tees',
+      solutionDesc: 'Match relaxed-fit graphic tees or matching printed 2-piece Co-ord sets (like Zellbury and Elo). Co-ord sets provide a highly structured, trendy look with zero styling effort, while pure combed cotton keeps you cool and sweat-free.',
+      keySpecs: ['Matching 2-piece coordinated design', 'Relaxed, non-constricting regular cuts', 'Elasticated adjustable pant waistbands'],
+      iconName: 'Smile'
+    },
+    {
+      id: 'heritage-footwear',
+      title: 'Uncomfortable Footwear & Sore Feet',
+      problem: 'Sore heels, painful sole blisters, and rapid wear-and-tear from cheap synthetic flip-flops or low-grade formal shoes.',
+      solutionName: 'Hand-Stitched Peshawari Chappals & Padded Sandals',
+      solutionDesc: 'Switch to hand-crafted genuine leather Peshawari Chappals with durable recycled tyre rubber soles, or Stylo soft-padded memory foam sandals. They provide unmatched heel cushion, adapt to your foot contour, and offer timeless style.',
+      keySpecs: ['100% Premium Genuine cow/goat leather', 'Indestructible non-slip recycled tyre sole', 'High-density padded memory foam footbed'],
+      iconName: 'Award'
+    }
+  ], []);
 
   // Laundry & Cleaning Efficiency Solver concerns list
   const laundryCleaningSolverConcerns = useMemo(() => [
@@ -142,6 +184,8 @@ export default function CategoryDetail() {
       case 'Trash2': return <Trash2 size={18} />;
       case 'Shirt': return <Shirt size={18} />;
       case 'Bath': return <Bath size={18} />;
+      case 'CreditCard': return <CreditCard size={18} />;
+      case 'Award': return <Award size={18} />;
       default: return <Bed size={18} />;
     }
   };
@@ -377,6 +421,64 @@ export default function CategoryDetail() {
     }
   ], []);
 
+  // Fashion Subcategory Shelves config
+  const fashionSubCategories = useMemo(() => [
+    {
+      name: "Women's Fashion",
+      slug: "womens-fashion",
+      desc: "Premium matching women's co-ord sets, lawn prints, and trending everyday casual outfits.",
+      icon: <Shirt size={16} />
+    },
+    {
+      name: "Men's Fashion",
+      slug: "mens-fashion",
+      desc: "Classic and modern men's shirts, cargo pants, and comfortable casual wear.",
+      icon: <Shirt size={16} />
+    },
+    {
+      name: "Co-ord Sets",
+      slug: "co-ord-sets",
+      desc: "Coordinated matching top-and-bottom clothing sets for effortless, stylish casual wear.",
+      icon: <Layers size={16} />
+    },
+    {
+      name: "Cargo Pants",
+      slug: "cargo-pants",
+      desc: "Heavy-duty multi-pocket cotton cargo pants built for urban utility and rugged comfort.",
+      icon: <SlidersHorizontal size={16} />
+    },
+    {
+      name: "T-Shirts",
+      slug: "t-shirts",
+      desc: "Breathable 100% cotton crewneck and graphic T-shirts for everyday styling.",
+      icon: <Shirt size={16} />
+    },
+    {
+      name: "Casual Wear",
+      slug: "casual-wear",
+      desc: "Relaxed daily-wear outfits, casual trousers, and lightweight breathable fabrics.",
+      icon: <Smile size={16} />
+    },
+    {
+      name: "Sandals",
+      slug: "sandals",
+      desc: "Ergonomic flat summer sandals and open-toe footwear designed for all-day walking comfort.",
+      icon: <Award size={16} />
+    },
+    {
+      name: "Peshawari Chappal",
+      slug: "peshawari-chappal",
+      desc: "Hand-crafted genuine leather Peshawari Chappals with durable tire soles for heritage elegance.",
+      icon: <Sparkles size={16} />
+    },
+    {
+      name: "Fashion Accessories",
+      slug: "fashion-accessories",
+      desc: "Timeless style additions, genuine leather wallets, and UV-protective polarized sunglasses.",
+      icon: <ShoppingBag size={16} />
+    }
+  ], []);
+
   // Get Related Categories
   const relatedCategories = useMemo(() => {
     return categoriesData.filter((cat) => cat.slug !== categorySlug);
@@ -497,6 +599,143 @@ export default function CategoryDetail() {
               {featuredProducts.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
+            </div>
+          </section>
+        )}
+
+        {/* Final Affiliate CTA Block (Only for fashion category) */}
+        {categorySlug === 'fashion' && (
+          <section className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-orange-600 to-orange-500 text-white p-8 sm:p-12 shadow-lg border border-orange-400/20">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-2xl -mr-16 -mt-16" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-black/5 rounded-full blur-2xl -ml-16 -mb-16" />
+
+            <div className="relative z-10 max-w-3xl space-y-6">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-white/20 text-white border border-white/20 backdrop-blur-xs">
+                <ShoppingBag size={10} /> Verified Affiliate Selection
+              </span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight leading-none">
+                Ready to Upgrade to Premium, Comfortable Fashion?
+              </h2>
+              <p className="text-xs sm:text-sm md:text-base text-orange-50 font-medium leading-relaxed max-w-2xl">
+                Elevate your style with high-quality cambric cotton co-ord sets, premium flax linen shirts, rugged cotton cargo pants, and timeless hand-crafted leather footwear. Secure the absolute best deals on Daraz PK using our verified affiliate recommendations.
+              </p>
+              <div className="flex flex-wrap gap-4 pt-2">
+                <Link
+                  to="/products?category=Fashion"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-white hover:bg-orange-50 text-orange-600 font-extrabold text-xs sm:text-sm rounded-xl shadow-md hover:shadow-lg transition-all"
+                >
+                  Browse Fashion Catalog <ArrowUpRight size={16} />
+                </Link>
+                <Link
+                  to="/"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-orange-700/30 hover:bg-orange-700/50 text-white font-extrabold text-xs sm:text-sm rounded-xl border border-white/20 backdrop-blur-xs transition-all"
+                >
+                  Return to Homepage
+                </Link>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Fashion & Fit Advisor Section (Only for fashion category) */}
+        {categorySlug === 'fashion' && (
+          <section className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800 p-6 sm:p-10 shadow-sm transition-all duration-300 space-y-8">
+            <div className="border-b border-slate-100 dark:border-slate-800 pb-4">
+              <span className="text-xs font-black uppercase tracking-widest text-orange-500 bg-orange-500/10 px-3 py-1 rounded-full border border-orange-500/20">
+                Interactive Advisor
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight mt-2">
+                Fashion & Fit Recommendation Advisor
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-semibold">
+                Struggling with online clothes sizing, choosing breathable fabrics, styling on a budget, or sore feet? Select your style issue below to instantly unlock the expert-recommended solution and parameters.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              {/* Left Column: Concerns Selector */}
+              <div className="lg:col-span-5 space-y-3">
+                {fashionSolverConcerns.map((concern) => {
+                  const isActive = activeConcern === concern.id;
+                  return (
+                    <button
+                      key={concern.id}
+                      onClick={() => setActiveConcern(concern.id)}
+                      className={`w-full text-left p-4 rounded-2xl border transition-all duration-300 flex items-center gap-4 group ${
+                        isActive
+                          ? 'bg-orange-500 border-orange-500 text-white shadow-md shadow-orange-500/10'
+                          : 'bg-slate-50 dark:bg-slate-950 border-slate-200/60 dark:border-slate-850 text-slate-700 dark:text-slate-300 hover:border-orange-500'
+                      }`}
+                    >
+                      <div className={`p-2.5 rounded-xl transition-colors ${
+                        isActive
+                          ? 'bg-white/20 text-white'
+                          : 'bg-orange-50 dark:bg-orange-950/40 text-orange-600 dark:text-orange-400 group-hover:bg-orange-100'
+                      }`}>
+                        {renderSolverIcon(concern.iconName)}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-extrabold text-sm sm:text-base leading-tight">
+                          {concern.title}
+                        </h3>
+                        <p className={`text-xs mt-0.5 font-semibold line-clamp-1 ${
+                          isActive ? 'text-orange-100' : 'text-slate-400 dark:text-slate-500'
+                        }`}>
+                          {concern.problem}
+                        </p>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Right Column: Expert Solution Card */}
+              <div className="lg:col-span-7 bg-slate-50 dark:bg-slate-950/50 rounded-2xl border border-slate-200/60 dark:border-slate-850 p-6 sm:p-8 space-y-6">
+                {(() => {
+                  const selected = fashionSolverConcerns.find(c => c.id === activeConcern) || fashionSolverConcerns[0];
+                  return (
+                    <div className="space-y-6">
+                      <div>
+                        <span className="text-[10px] font-black uppercase tracking-wider text-orange-600 dark:text-orange-400 bg-orange-100 dark:bg-orange-950/40 px-2.5 py-1 rounded-full">
+                          Expert Recommendation
+                        </span>
+                        <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mt-3">
+                          {selected.solutionName}
+                        </h3>
+                        <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-semibold mt-1.5 leading-relaxed">
+                          <strong className="text-slate-700 dark:text-slate-300 font-bold block mb-1">
+                            The Underlying Problem:
+                          </strong>
+                          {selected.problem}
+                        </p>
+                      </div>
+
+                      <div className="space-y-3">
+                        <strong className="text-xs sm:text-sm text-slate-800 dark:text-white font-extrabold block">
+                          Why It Works & How It Helps:
+                        </strong>
+                        <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-semibold leading-relaxed">
+                          {selected.solutionDesc}
+                        </p>
+                      </div>
+
+                      <div className="space-y-3 pt-2">
+                        <strong className="text-xs sm:text-sm text-slate-800 dark:text-white font-extrabold block">
+                          Critical Specs to Check on Daraz:
+                        </strong>
+                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-semibold text-slate-600 dark:text-slate-400">
+                          {selected.keySpecs.map((spec, i) => (
+                            <li key={i} className="flex items-center gap-2">
+                              <CheckCircle size={14} className="text-orange-500 flex-shrink-0" />
+                              <span>{spec}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  );
+                })()}
+              </div>
             </div>
           </section>
         )}
@@ -658,6 +897,80 @@ export default function CategoryDetail() {
             {/* Subcategory Shelves Grid */}
             <div className="space-y-12">
               {bagsTravelSubCategories.map((sub) => {
+                const subProducts = categoryProducts.filter(
+                  (p) => p.subCategory?.toLowerCase() === sub.name.toLowerCase()
+                );
+                if (subProducts.length === 0) return null;
+
+                return (
+                  <div
+                    key={sub.slug}
+                    id={sub.slug}
+                    className="scroll-mt-20 bg-white dark:bg-slate-900/40 rounded-3xl border border-slate-200/60 dark:border-slate-800/80 p-6 sm:p-8 space-y-6 shadow-xs transition-all duration-300"
+                  >
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-150 dark:border-slate-800/60 pb-4">
+                      <div className="space-y-1">
+                        <div className="flex items-center gap-2">
+                          <div className="p-2 bg-orange-100 dark:bg-orange-950/40 text-orange-600 dark:text-orange-400 rounded-xl">
+                            {sub.icon}
+                          </div>
+                          <h3 className="text-lg sm:text-xl font-black text-slate-900 dark:text-white tracking-tight">
+                            {sub.name} Collection
+                          </h3>
+                        </div>
+                        <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-semibold max-w-2xl">
+                          {sub.desc}
+                        </p>
+                      </div>
+                      <span className="self-start sm:self-center text-[11px] font-extrabold text-orange-600 dark:text-orange-400 bg-orange-50 dark:bg-orange-950/30 border border-orange-100 dark:border-orange-900/50 px-2.5 py-1 rounded-full">
+                        {subProducts.length} {subProducts.length === 1 ? 'Product' : 'Products'} Verified
+                      </span>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                      {subProducts.map((product) => (
+                        <ProductCard key={product.id} product={product} />
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+        )}
+
+        {/* Fashion Specialist Subcategories */}
+        {categorySlug === 'fashion' && (
+          <section className="space-y-12 pt-4">
+            <div className="border-b border-slate-200 dark:border-slate-800 pb-4">
+              <span className="text-xs font-black uppercase tracking-widest text-orange-500 bg-orange-500/10 px-3 py-1 rounded-full border border-orange-500/20">
+                Specialist Shelves
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight mt-2">
+                Fashion Specialized Collections
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-semibold">
+                Explore hand-crafted eastern heritage wear, co-ord sets, cargo pants, premium basic tees, and style accessories.
+              </p>
+
+              {/* Scrollable Subcategory Jump Links */}
+              <div className="flex flex-wrap gap-2 mt-4">
+                {fashionSubCategories.map((sub) => (
+                  <a
+                    key={sub.slug}
+                    href={`#${sub.slug}`}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-orange-500 dark:hover:border-orange-500 rounded-xl text-xs font-bold text-slate-750 dark:text-slate-300 hover:text-orange-500 dark:hover:text-orange-400 transition-all shadow-xs"
+                  >
+                    {sub.icon}
+                    {sub.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Subcategory Shelves Grid */}
+            <div className="space-y-12">
+              {fashionSubCategories.map((sub) => {
                 const subProducts = categoryProducts.filter(
                   (p) => p.subCategory?.toLowerCase() === sub.name.toLowerCase()
                 );
