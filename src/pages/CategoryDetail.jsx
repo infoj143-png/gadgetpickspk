@@ -55,6 +55,10 @@ export default function CategoryDetail() {
       setActiveConcern('pet-hydration');
     } else if (categorySlug === 'kitchen-dining') {
       setActiveConcern('portable-blending');
+    } else if (categorySlug === 'home-living') {
+      setActiveConcern('home-moisture');
+    } else if (categorySlug === 'bags-travel') {
+      setActiveConcern('commuter-security');
     }
   }, [categorySlug]);
 
@@ -252,6 +256,86 @@ export default function CategoryDetail() {
     }
   ], []);
 
+  // Home & Living Solver concerns list
+  const homeLivingSolverConcerns = useMemo(() => [
+    {
+      id: 'home-moisture',
+      title: 'Dry Indoor Air & Allergy Irritation',
+      problem: 'Dry, static-filled indoor environments from air conditioning and heating causing dry skin, sinus irritation, and poor sleep.',
+      solutionName: 'Ultrasonic Cool Mist Humidification & Aromatherapy',
+      solutionDesc: 'Introduce balanced moisture with a whisper-quiet ultrasonic humidifier (like PureAire). Paired with dynamic 7-color LED lights, it fills the room with clean, comforting cool mist and aromatherapy options to soothe sinuses and enhance sleep quality.',
+      keySpecs: ['Whisper-quiet decibel levels (<28 dB)', 'Intelligent waterless auto shut-off sensor', 'Generous water reservoir (500ml+)'],
+      iconName: 'Sparkles'
+    },
+    {
+      id: 'bedroom-lighting',
+      title: 'Dull Room Ambience & Poor Video Lighting',
+      problem: 'Flat, cold overhead lights making bedroom aesthetics feel uninviting and ruining warm photography or social stream backdrops.',
+      solutionName: 'High-Definition Crystal Lens Sunset Projector LED',
+      solutionDesc: 'Project a warm, natural golden halo using a premium optical crystal lens sunset lamp (like Lumina). Built with heavy-duty anodized aluminum joints, it rotates 180 degrees to easily shape beautiful warm gradients and cinematic mood lighting.',
+      keySpecs: ['Thick high-index optical crystal lens', 'Heavy-duty aluminum & solid iron base', 'Low power high-efficiency 10W LED bulb'],
+      iconName: 'Smile'
+    },
+    {
+      id: 'desk-clutter',
+      title: 'Messy Desktop Cables & Scattered Stationery',
+      problem: 'Messy workspaces with scattered pens, remote controls, cosmetics, and tangled charging cables causing stress and low productivity.',
+      solutionName: 'Scandinavian ABS & Natural Bamboo Organizer',
+      solutionDesc: 'De-clutter your desk elegantly with a modular storage box (like BANGE). Outfitted with deep, adjustable natural bamboo dividers and integrated side cable slots, it sweeps away surface clutter while protecting tables from scratches.',
+      keySpecs: ['Durable ABS body & sustainable bamboo dividers', 'Modular customizable slot configuration', 'Non-slip scratch-resistant bottom padding'],
+      iconName: 'LayoutGrid'
+    },
+    {
+      id: 'closet-organization',
+      title: 'Collapsing Closet Shelves & Messy Wardrobes',
+      problem: 'Piles of seasonal clothes, blankets, and towels collapsing on wardrobe shelves, attracting dust and creating clutter.',
+      solutionName: 'Collapsible Steel Frame Cationic Canvas Boxes',
+      solutionDesc: 'Organize closets with rigid, stackable fabric bins (like SilkNest). Featuring a solid internal steel support frame and reinforced dual faux-leather handles, they easily stack on shelves and collapse flat under 2cm when not in use.',
+      keySpecs: ['Thick cationic fabric & breathable interior', 'Internal metal support wire frame', 'Reinforced vegan faux-leather handles'],
+      iconName: 'CheckCircle'
+    }
+  ], []);
+
+  // Bags & Travel Solver concerns list
+  const bagsTravelSolverConcerns = useMemo(() => [
+    {
+      id: 'commuter-security',
+      title: 'TSA Security Concerns & Pickpocket Protection',
+      problem: 'Daily commutes to IT offices or university leaving expensive laptops, tablets, and personal credentials vulnerable to pickpockets or rain.',
+      solutionName: 'TSA-Approved Anti-Theft Waterproof Backpacks',
+      solutionDesc: 'Secure your high-end electronics with smart travel backpacks featuring integrated TSA combination locks and hidden pockets (like Mark Ryden). Built with high-density waterproof Oxford fabric and breathable honeycomb shoulder straps, they offer ultimate anti-theft security and postural support.',
+      keySpecs: ['TSA-approved 3-digit combination security locks', 'Scratch-proof, water-resistant high-density fabric', 'Built-in external USB/USB-C pass-through charging ports'],
+      iconName: 'Lock'
+    },
+    {
+      id: 'tech-organization',
+      title: 'Tangled Charger Cables & Scratched External SSDs',
+      problem: 'Delicate external solid-state drives, chargers, memory cards, and USB cords getting tangled and damaged inside deep bag pockets.',
+      solutionName: 'Impact-Resistant EVA Hardshell Tech Pouches',
+      solutionDesc: 'Protect your expensive travel tech with heavy-duty shock-absorbing EVA hardshell cases (like BANGE). Outfitted with multi-layer elastic loops, secure mesh partitions, and original YKK dual zippers, they keep accessories organized and safe.',
+      keySpecs: ['Heavy-duty shockproof EVA core with waterproof fabric', 'Original, smooth-gliding YKK dual zipper closure', 'Multiple elastic loops and structured mesh pockets'],
+      iconName: 'LayoutGrid'
+    },
+    {
+      id: 'luggage-mobility',
+      title: 'Bulky, Heavy Luggage & Fragile Spinner Wheels',
+      problem: 'Airport check-in and city transits disrupted by fragile suitcase wheels, heavy denting plastic shells, and poor internal organization.',
+      solutionName: 'German Polycarbonate TSA Spinner Carry-Ons',
+      solutionDesc: 'Upgrade to highly robust carry-on suitcases (like 90Fun). Engineered with 3-layer Covestro polycarbonate hardshells, silent 360-degree TPE double spinner wheels, and an adjustable aluminum alloy telescoping handle, they glide effortlessly while resisting heavy dents.',
+      keySpecs: ['German Covestro 3-layer indestructible PC shell', 'Whisper-quiet 360° TPE spinner dual wheels', 'Adjustable aluminum telescoping trolley bar'],
+      iconName: 'Award'
+    },
+    {
+      id: 'sling-mobility',
+      title: 'Heavy Pockets & Vulnerable Commutes',
+      problem: 'Lugging bulky keys, phones, and wallets in jeans pockets during motorcycle rides or public transit commutes, creating discomfort and theft risks.',
+      solutionName: 'Ergonomic Anti-Theft Sling Crossbody Chest Bags',
+      solutionDesc: 'Lighten your pockets safely with ergonomic, single-shoulder sling chest bags (like Tigernu). Crafted with scratch-proof water-resistant fabric, hidden anti-theft rear zippers, and a reversible padded strap, they keep your hands completely free and tech secure.',
+      keySpecs: ['Scratch-resistant water-resistant high-density fabric', 'Hidden rear anti-theft zipper secure pocket', 'Reversible padded strap with external USB charging'],
+      iconName: 'Compass'
+    }
+  ], []);
+
   // Helper to render solver icons dynamically
   const renderSolverIcon = (iconName) => {
     switch (iconName) {
@@ -265,6 +349,8 @@ export default function CategoryDetail() {
       case 'CreditCard': return <CreditCard size={18} />;
       case 'Award': return <Award size={18} />;
       case 'Sparkles': return <Sparkles size={18} />;
+      case 'Lock': return <Lock size={18} />;
+      case 'Compass': return <Compass size={18} />;
       default: return <Bed size={18} />;
     }
   };
@@ -749,6 +835,280 @@ export default function CategoryDetail() {
                 >
                   Return to Homepage
                 </Link>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Final Affiliate CTA Block (Only for home-living category) */}
+        {categorySlug === 'home-living' && (
+          <section className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-orange-600 to-orange-500 text-white p-8 sm:p-12 shadow-lg border border-orange-400/20">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-2xl -mr-16 -mt-16" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-black/5 rounded-full blur-2xl -ml-16 -mb-16" />
+
+            <div className="relative z-10 max-w-3xl space-y-6">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-white/20 text-white border border-white/20 backdrop-blur-xs">
+                <ShoppingBag size={10} /> Verified Affiliate Selection
+              </span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight leading-none">
+                Ready to Elevate Your Home & Living Ambience?
+              </h2>
+              <p className="text-xs sm:text-sm md:text-base text-orange-50 font-medium leading-relaxed max-w-2xl">
+                Add beautiful, relaxing mist to dry air, project cinematic warm halos in your bedroom, and clear table clutter. Secure the best verified deals on ultrasonic humidifiers, sunset projection lamps, and minimalist organizers on Daraz PK.
+              </p>
+              <div className="flex flex-wrap gap-4 pt-2">
+                <Link
+                  to="/products?category=Home%20%26%20Living"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-white hover:bg-orange-50 text-orange-600 font-extrabold text-xs sm:text-sm rounded-xl shadow-md hover:shadow-lg transition-all"
+                >
+                  Browse Home & Living Catalog <ArrowUpRight size={16} />
+                </Link>
+                <Link
+                  to="/"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-orange-700/30 hover:bg-orange-700/50 text-white font-extrabold text-xs sm:text-sm rounded-xl border border-white/20 backdrop-blur-xs transition-all"
+                >
+                  Return to Homepage
+                </Link>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Home & Living Interactive Advisor Section */}
+        {categorySlug === 'home-living' && (
+          <section className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800 p-6 sm:p-10 shadow-sm transition-all duration-300 space-y-8">
+            <div className="border-b border-slate-100 dark:border-slate-800 pb-4">
+              <span className="text-xs font-black uppercase tracking-widest text-orange-500 bg-orange-500/10 px-3 py-1 rounded-full border border-orange-500/20">
+                Interactive Advisor
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight mt-2">
+                Home & Living Ambience & Organization Solver
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-semibold">
+                Struggling with dry indoor air, dull lighting, cluttered desks, or messy wardrobes? Select your lifestyle issue below to instantly unlock our expert-recommended product solutions and key check parameters.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              {/* Left Column: Concerns Selector */}
+              <div className="lg:col-span-5 space-y-3">
+                {homeLivingSolverConcerns.map((concern) => {
+                  const isActive = activeConcern === concern.id;
+                  return (
+                    <button
+                      key={concern.id}
+                      onClick={() => setActiveConcern(concern.id)}
+                      className={`w-full text-left p-4 rounded-2xl border transition-all duration-300 flex items-center gap-4 group ${
+                        isActive
+                          ? 'bg-orange-500 border-orange-500 text-white shadow-md shadow-orange-500/10'
+                          : 'bg-slate-50 dark:bg-slate-950 border-slate-200/60 dark:border-slate-850 text-slate-705 dark:text-slate-300 hover:border-orange-500'
+                      }`}
+                    >
+                      <div className={`p-2.5 rounded-xl transition-colors ${
+                        isActive
+                          ? 'bg-white/20 text-white'
+                          : 'bg-orange-50 dark:bg-orange-950/40 text-orange-600 dark:text-orange-400 group-hover:bg-orange-100'
+                      }`}>
+                        {renderSolverIcon(concern.iconName)}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-extrabold text-sm sm:text-base leading-tight">
+                          {concern.title}
+                        </h3>
+                        <p className={`text-xs mt-0.5 font-semibold line-clamp-1 ${
+                          isActive ? 'text-orange-100' : 'text-slate-400 dark:text-slate-500'
+                        }`}>
+                          {concern.problem}
+                        </p>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Right Column: Expert Solution Card */}
+              <div className="lg:col-span-7 bg-slate-50 dark:bg-slate-950/50 rounded-2xl border border-slate-200/60 dark:border-slate-850 p-6 sm:p-8 space-y-6">
+                {(() => {
+                  const selected = homeLivingSolverConcerns.find(c => c.id === activeConcern) || homeLivingSolverConcerns[0];
+                  return (
+                    <div className="space-y-6">
+                      <div>
+                        <span className="text-[10px] font-black uppercase tracking-wider text-orange-600 dark:text-orange-400 bg-orange-100 dark:bg-orange-950/40 px-2.5 py-1 rounded-full">
+                          Expert Recommendation
+                        </span>
+                        <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mt-3">
+                          {selected.solutionName}
+                        </h3>
+                        <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-semibold mt-1.5 leading-relaxed">
+                          <strong className="text-slate-700 dark:text-slate-300 font-bold block mb-1">
+                            The Underlying Problem:
+                          </strong>
+                          {selected.problem}
+                        </p>
+                      </div>
+
+                      <div className="space-y-3">
+                        <strong className="text-xs sm:text-sm text-slate-800 dark:text-white font-extrabold block">
+                          Why It Works & How It Helps:
+                        </strong>
+                        <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-semibold leading-relaxed">
+                          {selected.solutionDesc}
+                        </p>
+                      </div>
+
+                      <div className="space-y-3 pt-2">
+                        <strong className="text-xs sm:text-sm text-slate-800 dark:text-white font-extrabold block">
+                          Critical Specs to Check on Daraz:
+                        </strong>
+                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-semibold text-slate-600 dark:text-slate-400">
+                          {selected.keySpecs.map((spec, i) => (
+                            <li key={i} className="flex items-center gap-2">
+                              <CheckCircle size={14} className="text-orange-500 flex-shrink-0" />
+                              <span>{spec}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  );
+                })()}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Final Affiliate CTA Block (Only for bags-travel category) */}
+        {categorySlug === 'bags-travel' && (
+          <section className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-orange-600 to-orange-500 text-white p-8 sm:p-12 shadow-lg border border-orange-400/20">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-2xl -mr-16 -mt-16" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-black/5 rounded-full blur-2xl -ml-16 -mb-16" />
+
+            <div className="relative z-10 max-w-3xl space-y-6">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-white/20 text-white border border-white/20 backdrop-blur-xs">
+                <ShoppingBag size={10} /> Verified Affiliate Selection
+              </span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight leading-none">
+                Ready to Upgrade to Secure, Premium Travel Gear?
+              </h2>
+              <p className="text-xs sm:text-sm md:text-base text-orange-50 font-medium leading-relaxed max-w-2xl">
+                Protect your high-end laptop, organize messy cords, and glide smoothly through airport transits with durable, TSA-approved carrying solutions. Secure the absolute best deals on smart anti-theft backpacks, hardshell organizers, and spinner suitcases on Daraz PK.
+              </p>
+              <div className="flex flex-wrap gap-4 pt-2">
+                <Link
+                  to="/products?category=Bags%20%26%20Travel"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-white hover:bg-orange-50 text-orange-600 font-extrabold text-xs sm:text-sm rounded-xl shadow-md hover:shadow-lg transition-all"
+                >
+                  Browse Bags & Travel Catalog <ArrowUpRight size={16} />
+                </Link>
+                <Link
+                  to="/"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-orange-700/30 hover:bg-orange-700/50 text-white font-extrabold text-xs sm:text-sm rounded-xl border border-white/20 backdrop-blur-xs transition-all"
+                >
+                  Return to Homepage
+                </Link>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Bags & Travel Interactive Advisor Section */}
+        {categorySlug === 'bags-travel' && (
+          <section className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800 p-6 sm:p-10 shadow-sm transition-all duration-300 space-y-8">
+            <div className="border-b border-slate-100 dark:border-slate-800 pb-4">
+              <span className="text-xs font-black uppercase tracking-widest text-orange-500 bg-orange-500/10 px-3 py-1 rounded-full border border-orange-500/20">
+                Interactive Advisor
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight mt-2">
+                Bags & Travel Commute Security & Organization Solver
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-semibold">
+                Struggling with laptop safety, tangled electronic cords, bulky pockets, or heavy suitcases? Select your core travel issue below to instantly discover our expert-recommended carry solutions and parameters.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              {/* Left Column: Concerns Selector */}
+              <div className="lg:col-span-5 space-y-3">
+                {bagsTravelSolverConcerns.map((concern) => {
+                  const isActive = activeConcern === concern.id;
+                  return (
+                    <button
+                      key={concern.id}
+                      onClick={() => setActiveConcern(concern.id)}
+                      className={`w-full text-left p-4 rounded-2xl border transition-all duration-300 flex items-center gap-4 group ${
+                        isActive
+                          ? 'bg-orange-500 border-orange-500 text-white shadow-md shadow-orange-500/10'
+                          : 'bg-slate-50 dark:bg-slate-950 border-slate-200/60 dark:border-slate-850 text-slate-705 dark:text-slate-300 hover:border-orange-500'
+                      }`}
+                    >
+                      <div className={`p-2.5 rounded-xl transition-colors ${
+                        isActive
+                          ? 'bg-white/20 text-white'
+                          : 'bg-orange-50 dark:bg-orange-950/40 text-orange-600 dark:text-orange-400 group-hover:bg-orange-100'
+                      }`}>
+                        {renderSolverIcon(concern.iconName)}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-extrabold text-sm sm:text-base leading-tight">
+                          {concern.title}
+                        </h3>
+                        <p className={`text-xs mt-0.5 font-semibold line-clamp-1 ${
+                          isActive ? 'text-orange-100' : 'text-slate-400 dark:text-slate-500'
+                        }`}>
+                          {concern.problem}
+                        </p>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Right Column: Expert Solution Card */}
+              <div className="lg:col-span-7 bg-slate-50 dark:bg-slate-950/50 rounded-2xl border border-slate-200/60 dark:border-slate-850 p-6 sm:p-8 space-y-6">
+                {(() => {
+                  const selected = bagsTravelSolverConcerns.find(c => c.id === activeConcern) || bagsTravelSolverConcerns[0];
+                  return (
+                    <div className="space-y-6">
+                      <div>
+                        <span className="text-[10px] font-black uppercase tracking-wider text-orange-600 dark:text-orange-400 bg-orange-100 dark:bg-orange-950/40 px-2.5 py-1 rounded-full">
+                          Expert Recommendation
+                        </span>
+                        <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mt-3">
+                          {selected.solutionName}
+                        </h3>
+                        <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-semibold mt-1.5 leading-relaxed">
+                          <strong className="text-slate-700 dark:text-slate-300 font-bold block mb-1">
+                            The Underlying Problem:
+                          </strong>
+                          {selected.problem}
+                        </p>
+                      </div>
+
+                      <div className="space-y-3">
+                        <strong className="text-xs sm:text-sm text-slate-800 dark:text-white font-extrabold block">
+                          Why It Works & How It Helps:
+                        </strong>
+                        <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-semibold leading-relaxed">
+                          {selected.solutionDesc}
+                        </p>
+                      </div>
+
+                      <div className="space-y-3 pt-2">
+                        <strong className="text-xs sm:text-sm text-slate-800 dark:text-white font-extrabold block">
+                          Critical Specs to Check on Daraz:
+                        </strong>
+                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-semibold text-slate-600 dark:text-slate-400">
+                          {selected.keySpecs.map((spec, i) => (
+                            <li key={i} className="flex items-center gap-2">
+                              <CheckCircle size={14} className="text-orange-500 flex-shrink-0" />
+                              <span>{spec}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  );
+                })()}
               </div>
             </div>
           </section>
