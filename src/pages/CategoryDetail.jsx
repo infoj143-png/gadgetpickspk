@@ -810,8 +810,12 @@ export default function CategoryDetail() {
             <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent z-10" />
             <img
               src={categoryMeta.heroImage}
-              alt={categoryMeta.name}
+              alt={`Best premium ${categoryMeta.name} products and verified lifestyle accessories in Pakistan - GadgetPicksPK`}
               className="w-full h-full object-cover object-center opacity-50"
+              width="1200"
+              height="514"
+              loading="eager"
+              fetchPriority="high"
             />
           </div>
 

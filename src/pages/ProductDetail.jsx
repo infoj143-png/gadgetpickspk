@@ -222,6 +222,10 @@ export default function ProductDetail() {
                 src={activeImage || product.image}
                 alt={descriptiveAlt}
                 className="w-full h-full object-cover"
+                width="600"
+                height="600"
+                loading="eager"
+                fetchPriority="high"
               />
 
               {/* Discount Badge */}
@@ -253,6 +257,9 @@ export default function ProductDetail() {
                       src={imgUrl}
                       alt={`${productName} gallery thumbnail ${idx + 1}`}
                       className="w-full h-full object-cover"
+                      width="80"
+                      height="80"
+                      loading="lazy"
                     />
                   </button>
                 ))}

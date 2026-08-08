@@ -236,8 +236,11 @@ export default function Header() {
                     >
                       <img
                         src={p.image}
-                        alt={p.name}
+                        alt={`${p.brand} ${p.model} - ${p.name} suggestion thumbnail`}
                         className="w-10 h-10 object-cover rounded-lg border border-slate-100 dark:border-slate-700"
+                        width="40"
+                        height="40"
+                        loading="lazy"
                       />
                       <div className="flex-1 min-w-0">
                         <h4 className="text-xs font-bold text-slate-900 dark:text-white truncate">{p.name}</h4>
