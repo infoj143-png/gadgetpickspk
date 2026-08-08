@@ -17,32 +17,35 @@ export default function Compare() {
   if (type === 'slique-blender-vs-hot-pot') {
     // Compare Slique Portable Blender vs Crown Electric Hot Pot
     matchedProducts = productsData.filter((p) => p.id === 'kd-01' || p.id === 'kd-02');
-    title = "Slique Portable Blender vs Crown Electric Hot Pot";
-    description = "Comparing the cordless portable Slique USB blender with the desktop Crown Multi-Functional electric hot pot steamer.";
+    title = "Slique Portable Blender vs Crown Electric Hot Pot Comparison in Pakistan";
+    description = `Looking for the best versatile kitchen appliances? Read our head-to-head comparison between the cordless, rechargeable <a href="/products/kd-01" class="text-orange-500 hover:underline font-extrabold">Slique Portable Smoothie Blender</a> and the multi-functional desktop <a href="/products/kd-02" class="text-orange-500 hover:underline font-extrabold">Crown Electric Hot Pot & Steamer</a>. Discover which one fits your hostel or small kitchen by consulting our complete <a href="/category/kitchen-dining" class="text-orange-500 hover:underline font-extrabold">Kitchen & Dining catalog</a> or reading the expert <a href="/guides/best-kitchen-and-dining-gadgets" class="text-orange-500 hover:underline font-extrabold">Best Kitchen & Dining Gadgets Buying Guide</a>.`;
     badge = "Kitchen Battle";
   } else if (type === 'vacuum-cleaner-vs-steam-iron') {
     // Compare Xiaomi Deerma Vacuum vs Sokany Steam Iron
     matchedProducts = productsData.filter((p) => p.id === 'lc-01' || p.id === 'lc-02');
-    title = "Xiaomi Deerma Vacuum vs Sokany Handheld Steam Iron";
-    description = "A deep comparison between Deerma’s cordless cyclonic stick vacuum and Sokany’s rapid-heating garment steamer.";
+    title = "Xiaomi Deerma Vacuum vs Sokany Handheld Steam Iron — Pakistan Home Maintenance Battle";
+    description = `Trying to decide between a smart vacuum and a rapid garment steamer? We present a side-by-side comparison between the lightweight, modular <a href="/products/lc-01" class="text-orange-500 hover:underline font-extrabold">Xiaomi Deerma Cordless Stick Vacuum</a> and the rapid-heating <a href="/products/lc-02" class="text-orange-500 hover:underline font-extrabold">Sokany Portable Garment Steamer</a>. Check out further high-efficiency cleaning solutions in <a href="/category/laundry-cleaning" class="text-orange-500 hover:underline font-extrabold">our Laundry & Cleaning catalog</a>.`;
     badge = "Cleaning Battle";
   } else if (type === 'best-home-gadgets-under-5000') {
     // Compare Home & Living under 5000: PureAire Humidifier (2999), Lumina Sunset Lamp (1850)
     matchedProducts = productsData.filter((p) => p.category === 'Home & Living' && p.currentPrice <= 5000);
-    title = "Best Home & Living Gadgets Under Rs. 5,000";
-    description = "Sleek and aesthetic premium home decorations, sunset lamps, and humidifiers under 5,000 PKR.";
+    title = "Best Home & Living Gadgets Under Rs. 5,000 in Pakistan — Budget Decor Guide";
+    description = `Wanting to elevate your bedroom or living room aesthetic on a strict budget? Compare top-performing, affordable devices under Rs. 5,000, including the relaxing <a href="/products/hl-01" class="text-orange-500 hover:underline font-extrabold">PureAire Ultrasonic Cool Mist Humidifier</a> and the photographic <a href="/products/hl-02" class="text-orange-500 hover:underline font-extrabold">Lumina Sunset Projector LED Lamp</a>. Check our comprehensive <a href="/guides/best-home-and-living-accessories" class="text-orange-500 hover:underline font-extrabold">Best Home & Living Accessories Buying Guide</a> or browse more options in <a href="/category/home-living" class="text-orange-500 hover:underline font-extrabold">our Home & Living catalog</a>.`;
     badge = "Budget Home";
   } else if (type === 'best-kitchen-tools-under-5000') {
     // Compare Kitchen under 5000: Slique Blender (3450), Crown Hot Pot (4899)
     matchedProducts = productsData.filter((p) => p.category === 'Kitchen & Dining' && p.currentPrice <= 5000);
-    title = "Best Kitchen & Dining Tools Under Rs. 5,000";
-    description = "Highly practical, versatile kitchen utilities, mini cookers, and portable blenders under 5,000 PKR.";
+    title = "Best Kitchen & Dining Tools Under Rs. 5,000 in Pakistan — Budget Culinary Guide";
+    description = `Searching for high-value smart kitchen appliances that won't break the bank? Compare our top recommendations under Rs. 5,000, featuring the rechargeable, ice-crushing <a href="/products/kd-01" class="text-orange-500 hover:underline font-extrabold">Slique Portable Smoothie Blender</a> and the double-walled <a href="/products/kd-02" class="text-orange-500 hover:underline font-extrabold">Crown Electric Hot Pot Steamer</a>. Check our dedicated <a href="/guides/best-kitchen-and-dining-gadgets" class="text-orange-500 hover:underline font-extrabold">Best Kitchen & Dining Gadgets Buying Guide</a> or browse other budget gadgets in <a href="/category/kitchen-dining" class="text-orange-500 hover:underline font-extrabold">our Kitchen & Dining catalog</a>.`;
     badge = "Budget Kitchen";
   }
 
+  // Create a plain text description for the meta tags to avoid raw HTML rendering in SEO descriptions
+  const plainMetaDescription = description.replace(/<[^>]*>/g, '');
+
   useSEO({
     title: `${title} - GadgetPicksPK Comparison`,
-    description: description,
+    description: plainMetaDescription,
     canonical: `/compare/${type}`
   });
 
@@ -84,9 +87,10 @@ export default function Compare() {
             <Scale className="text-orange-500" size={28} />
             {title}
           </h1>
-          <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-3xl font-semibold">
-            {description} All compared prices are scanned automatically. Read through detailed specifications and expert highlights to make a verified purchase.
-          </p>
+          <p
+            className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-3xl font-semibold"
+            dangerouslySetInnerHTML={{ __html: description + " All compared prices are scanned automatically. Read through detailed specifications and expert highlights to make a verified purchase." }}
+          />
         </div>
 
         {/* Dynamic Table Card */}
