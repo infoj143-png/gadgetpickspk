@@ -46,7 +46,8 @@ export default function Compare() {
   useSEO({
     title: `${title} - GadgetPicksPK Comparison`,
     description: plainMetaDescription,
-    canonical: `/compare/${type}`
+    canonical: `/compare/${type}`,
+    noindex: matchedProducts.length === 0
   });
 
   if (matchedProducts.length === 0) {
