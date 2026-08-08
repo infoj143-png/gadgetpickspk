@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Star, ShoppingBag, ArrowUpRight, Scale, ThumbsUp, ThumbsDown, ShieldCheck } from 'lucide-react';
+import ImageLazy from './ImageLazy';
 
 /**
  * Reusable component to render direct dynamic product comparisons.
@@ -43,10 +44,13 @@ export default function ComparisonTable({ products, title, description, badge })
           >
             <div className="space-y-4">
               <div className="aspect-square rounded-xl overflow-hidden bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800">
-                <img
+                <ImageLazy
                   src={p.image}
-                  alt={p.name}
+                  alt={`${p.brand} ${p.model} - ${p.name} comparison image`}
                   className="w-full h-full object-cover"
+                  width="300"
+                  height="300"
+                  loading="lazy"
                 />
               </div>
 

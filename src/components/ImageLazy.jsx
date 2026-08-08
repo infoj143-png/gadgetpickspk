@@ -3,11 +3,16 @@ import React, { useState, useEffect } from 'react';
 /**
  * Reusable ImageLazy component for high-performance lazy loading with fallback skeletons.
  */
-export default function ImageLazy({ src, alt, className = '' }) {
-  const [isLoaded, setIsLoaded] = useState(false);
+export default function ImageLazy({ src, alt, className = '', width, height, ...props }) {
+  const [isLoaded, setIsLoaded] = useState(props.loading === 'eager');
   const [error, setError] = useState(false);
 
   useEffect(() => {
+    if (props.loading === 'eager') {
+      setIsLoaded(true);
+      return;
+    }
+
     setIsLoaded(false);
     setError(false);
 
@@ -24,7 +29,7 @@ export default function ImageLazy({ src, alt, className = '' }) {
     img.onerror = () => {
       setError(true);
     };
-  }, [src]);
+  }, [src, props.loading]);
 
   return (
     <div className={`relative overflow-hidden bg-slate-100 ${className}`}>
@@ -41,6 +46,10 @@ export default function ImageLazy({ src, alt, className = '' }) {
         <img
           src={src}
           alt={alt}
+          width={width}
+          height={height}
+          loading={props.loading || "lazy"}
+          {...props}
           className={`w-full h-full object-cover transition-all duration-700 ease-out ${
             isLoaded ? 'opacity-100 scale-100 blur-0' : 'opacity-0 scale-95 blur-md'
           }`}

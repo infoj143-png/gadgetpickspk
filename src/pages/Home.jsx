@@ -261,8 +261,12 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/85 to-transparent z-10" />
               <img
                 src={slides[currentSlide].image}
-                alt={slides[currentSlide].title}
+                alt={`${slides[currentSlide].title} - Premium Lifestyle Curation by GadgetPicksPK`}
                 className="w-full h-full object-cover object-center opacity-60"
+                width="1200"
+                height="540"
+                loading="eager"
+                fetchPriority="high"
               />
             </motion.div>
           </AnimatePresence>
@@ -388,8 +392,10 @@ export default function Home() {
                 <div className="w-20 h-20 rounded-full overflow-hidden bg-slate-100 dark:bg-slate-950 mb-4 border border-slate-200 dark:border-slate-800 group-hover:scale-105 transition-transform duration-300">
                   <img
                     src={cat.image}
-                    alt={cat.name}
+                    alt={`Discover the best ${cat.name} products and premium lifestyle accessories in Pakistan - GadgetPicksPK`}
                     className="w-full h-full object-cover object-center"
+                    width="80"
+                    height="80"
                     loading="lazy"
                   />
                 </div>

@@ -112,6 +112,9 @@ export default function ProductCard({ product }) {
             src={productImage}
             alt={descriptiveAlt}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+            width="400"
+            height="400"
+            loading="lazy"
           />
 
           {/* Dynamic Badges List from JSON database */}
