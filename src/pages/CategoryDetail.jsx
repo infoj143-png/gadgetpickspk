@@ -39,6 +39,58 @@ import categoriesData from '../data/categories.json';
 import ProductCard from '../components/ProductCard';
 import { injectJSONLD, removeJSONLD, getCategorySchema, getBreadcrumbSchema, getFAQSchema } from '../utils/schemas';
 
+const searchIntentInsights = {
+  'kitchen-dining': {
+    title: 'Buying Guide & Search Insights: Best Kitchen Gadgets in Pakistan',
+    whatToLookFor: 'Prioritize raw material certifications like BPA-free food-grade plastics (PCTG) for portable blenders and Teflon-free premium non-stick inner liners for electric hot pots to ensure optimal health safety.',
+    suitableFor: 'Perfect for university hostel students, daily gym enthusiasts, busy office professionals, and couples living in studio apartments requiring space-saving culinary tools.',
+    buyingConsiderations: 'Choose multi-functional models with dual-heat adjustments (220W/600W) to prevent electrical burnouts, and Type-C rechargeable setups with high-capacity 2000mAh batteries to easily bypass load shedding interruptions.',
+    relatedDiscovery: 'Compare the <a href="/compare/slique-blender-vs-hot-pot" class="text-orange-500 hover:underline font-extrabold">Slique Portable Blender vs Crown Electric Hot Pot</a> side-by-side or explore our comprehensive <a href="/guides/best-kitchen-and-dining-gadgets" class="text-orange-500 hover:underline font-extrabold">Best Kitchen & Dining Gadgets Buying Guide</a>.'
+  },
+  'home-living': {
+    title: 'Buying Guide & Search Insights: Top Home & Living Accessories in Pakistan',
+    whatToLookFor: 'Look for whisper-quiet ultrasonic operation frequencies (<28 dB), waterless auto-shutoff sensors, and heavy anodized metal joints on ambient projection lamps to protect your investment.',
+    suitableFor: 'Ideal for content creators seeking natural studio photography backdrops, families looking to introduce healthy humidity to air-conditioned rooms, and minimalism enthusiasts.',
+    buyingConsiderations: 'Insist on high-index thick optical crystal lenses for projector lights to ensure clear, high-definition warm halos, and check adhesive weight capacities (up to 10kg) for drill-free bathroom storage.',
+    relatedDiscovery: 'Compare budget decorations with the <a href="/compare/best-home-gadgets-under-5000" class="text-orange-500 hover:underline font-extrabold">Best Home & Living Gadgets Under Rs. 5,000</a> or browse our expert-written <a href="/guides/best-home-and-living-accessories" class="text-orange-500 hover:underline font-extrabold">Best Home & Living Accessories Buying Guide</a>.'
+  },
+  'bags-travel': {
+    title: 'Buying Guide & Search Insights: Premium Bags & Travel Gear in Pakistan',
+    whatToLookFor: 'Look for scratch-proof and high-density waterproof Oxford fabrics, TSA-approved 3-digit combination locks, and impact-resistant EVA hardshell organizer cores.',
+    suitableFor: 'Extremely suitable for daily tech-carrying IT professionals, university commuters, motorcycle riders, and frequent flyers seeking carrying security.',
+    buyingConsiderations: 'Always check laptop compartment padding specifications (supporting up to 15.6 inches), and look for breathable honeycomb shoulder pads to distribute posture load evenly.',
+    relatedDiscovery: 'Consult the detailed <a href="/guides/best-bags-and-travel-essentials" class="text-orange-500 hover:underline font-extrabold">Best Bags & Travel Essentials Buying Guide</a> or inspect the premium <a href="/products/bt-01" class="text-orange-500 hover:underline font-extrabold">Mark Ryden Anti-Theft Waterproof Laptop Backpack review</a>.'
+  },
+  'bedding-bath': {
+    title: 'Buying Guide & Search Insights: Best Bedding & Bath Comforts in Pakistan',
+    whatToLookFor: 'Search for 100% premium slow-rebound contouring orthopedic memory foam and smooth, friction-free mulberry satin fabrics.',
+    suitableFor: 'Designed specifically for side and back sleepers suffering from chronic morning neck stiffness, and individuals seeking to prevent hair frizz, split ends, and facial sleep creases.',
+    buyingConsiderations: 'Prioritize hypoallergenic, dust-mite-resistant seals for sensitive skin, and verify zippered removable outer fabric covers for simple machine-washable upkeep.',
+    relatedDiscovery: 'Examine our <a href="/guides/best-bedding-and-bath-comforts" class="text-orange-500 hover:underline font-extrabold">Best Bedding & Bath Comforts Buying Guide</a> or read the expert-tested <a href="/products/bb-01" class="text-orange-500 hover:underline font-extrabold">RestEasy Ergonomic Orthopedic Pillow review</a>.'
+  },
+  'laundry-cleaning': {
+    title: 'Buying Guide & Search Insights: Best Laundry & Smart Cleaning Tools in Pakistan',
+    whatToLookFor: 'Focus on 8000Pa+ cyclonic motor suction ratings, multi-stage HEPA filtration columns, and high-wattage (1500W+) rapid heating steamer elements.',
+    suitableFor: 'Pet parents looking to eliminate dander hair from furniture, and busy professionals seeking a quick, ironing-board-free way to de-wrinkle delicate fabrics are highly suited to these tools.',
+    buyingConsiderations: 'Choose lightweight modular vacuum frames (<1.8kg) to reduce physical wrist strain, and select stainless steel spin baskets with dual-chamber mopping buckets.',
+    relatedDiscovery: 'Read the detailed <a href="/compare/vacuum-cleaner-vs-steam-iron" class="text-orange-500 hover:underline font-extrabold">Xiaomi Deerma Vacuum vs Sokany Handheld Steam Iron comparison</a> or browse our budget-friendly <a href="/products" class="text-orange-500 hover:underline font-extrabold">Products Recommendations Catalog</a>.'
+  },
+  'fashion': {
+    title: 'Buying Guide & Search Insights: Premium Online Fashion & Trends in Pakistan',
+    whatToLookFor: 'Prioritize 100% organic combed cotton, cambric lawn fabric weights (minimum 180 GSM), and hand-crafted top-grain genuine calf leather.',
+    suitableFor: 'Ideal for trend-aware buyers seeking western-eastern fusion casual wear, and gentlemen investing in highly durable heritage leather footwear.',
+    buyingConsiderations: 'Always double-check precise brand size charts in inches (do not rely on generic M/L labels), and verify slip-resistant dual-layer recycled tyre rubber outsoles.',
+    relatedDiscovery: 'Explore our budget collection of <a href="/compare/best-kitchen-tools-under-5000" class="text-orange-500 hover:underline font-extrabold">Best Kitchen & Dining Tools Under Rs. 5,000</a> or view the <a href="/products/fs-10" class="text-orange-500 hover:underline font-extrabold">Walkeaze Hand-Stitched Leather Peshawari Chappal details</a>.'
+  },
+  'pet-supplies': {
+    title: 'Buying Guide & Search Insights: Best Pet Supplies & Smart Grooming in Pakistan',
+    whatToLookFor: 'Choose non-toxic, BPA-free raw polymers, multi-stage carbon softening filter cartridges, and safety-edged stainless steel deshedding brushes.',
+    suitableFor: 'Highly recommended for cat and dog parents experiencing static water rejection, and households struggling to manage pet undercoat shedding on carpets and rugs.',
+    buyingConsiderations: 'Insist on whisper-quiet low-voltage pump motors (<30 dB) to avoid scaring nervous pets, and check for quick-release hair ejector buttons on grooming brushes.',
+    relatedDiscovery: 'Filter high-value items in the <a href="/products?category=Pet%20Supplies" class="text-orange-500 hover:underline font-extrabold">Pet Supplies Products Recommendations Catalog</a> or inspect the veterinary-approved <a href="/products/ps-01" class="text-orange-500 hover:underline font-extrabold">Catit Flower Automatic Pet Water Fountain review</a>.'
+  }
+};
+
 export default function CategoryDetail() {
   const { categorySlug } = useParams();
   const [openFaq, setOpenFaq] = useState(null);
@@ -788,6 +840,66 @@ export default function CategoryDetail() {
             </p>
           </div>
         </section>
+
+        {/* Search-Intent Insights Section */}
+        {searchIntentInsights[categorySlug] && (
+          <section className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800 p-6 sm:p-10 shadow-sm transition-colors duration-300 space-y-6">
+            <div className="border-b border-slate-100 dark:border-slate-800 pb-4">
+              <span className="text-xs font-black uppercase tracking-widest text-orange-500 bg-orange-500/10 px-3 py-1 rounded-full border border-orange-500/20">
+                Search-Intent Insights
+              </span>
+              <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white tracking-tight mt-2">
+                {searchIntentInsights[categorySlug].title}
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* What to look for */}
+              <div className="space-y-2">
+                <h3 className="font-extrabold text-slate-800 dark:text-white text-sm sm:text-base flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-orange-500"></span>
+                  What to Look For
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-semibold leading-relaxed">
+                  {searchIntentInsights[categorySlug].whatToLookFor}
+                </p>
+              </div>
+
+              {/* Who the products are suitable for */}
+              <div className="space-y-2">
+                <h3 className="font-extrabold text-slate-800 dark:text-white text-sm sm:text-base flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-orange-500"></span>
+                  Who Are These Products Suitable For?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-semibold leading-relaxed">
+                  {searchIntentInsights[categorySlug].suitableFor}
+                </p>
+              </div>
+
+              {/* Important buying considerations */}
+              <div className="space-y-2">
+                <h3 className="font-extrabold text-slate-800 dark:text-white text-sm sm:text-base flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-orange-500"></span>
+                  Important Buying Considerations
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-semibold leading-relaxed">
+                  {searchIntentInsights[categorySlug].buyingConsiderations}
+                </p>
+              </div>
+
+              {/* Related product/category discovery */}
+              <div className="space-y-2">
+                <h3 className="font-extrabold text-slate-800 dark:text-white text-sm sm:text-base flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-orange-500"></span>
+                  Related Product & Category Discovery
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-semibold leading-relaxed"
+                   dangerouslySetInnerHTML={{ __html: searchIntentInsights[categorySlug].relatedDiscovery }}>
+                </p>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Featured Products Section */}
         {featuredProducts.length > 0 && (

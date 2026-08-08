@@ -11,9 +11,9 @@ export default function BuyingGuide() {
   // Map category slugs to full category titles and guide content
   const guides = {
     'best-kitchen-and-dining-gadgets': {
-      title: 'Best Kitchen & Dining Gadgets (Buying Guide)',
+      title: 'Best Kitchen & Dining Gadgets in Pakistan — Expert Buying Guide',
       category: 'Kitchen & Dining',
-      intro: 'Equipping your kitchen with smart, space-saving gadgets can elevate your cooking game. From cordless portable USB blenders to versatile multi-functional desktop electric hot pots, this guide details the best products selected for their durability, convenience, and superior buyer reviews.',
+      intro: 'Searching for the best kitchen and dining gadgets in Pakistan to streamline your home? Equipping your space with smart tools can elevate your cooking game. In this expert buying guide, we analyze top-performing appliances, including the highly rated <a href="/products/kd-01" class="text-orange-500 hover:underline font-extrabold">Slique Portable Smoothie Blender</a> and the highly versatile <a href="/products/kd-02" class="text-orange-500 hover:underline font-extrabold">Crown Multi-Functional Electric Hot Pot</a>. For a more detailed breakdown, you can read our head-to-head <a href="/compare/slique-blender-vs-hot-pot" class="text-orange-500 hover:underline font-extrabold">Slique Blender vs Crown Hot Pot comparison</a> or explore the full range of options in <a href="/category/kitchen-dining" class="text-orange-500 hover:underline font-extrabold">our Kitchen & Dining catalog</a>.',
       keyFactors: [
         { name: 'Power and Efficiency', desc: 'Ensure motor ratings (e.g., 150W for blenders) are strong enough to process ingredients quickly.' },
         { name: 'Material and Food Safety', desc: 'Always prioritize BPA-free food-grade polymers (like PCTG) and Teflon-free non-stick coatings.' },
@@ -26,9 +26,9 @@ export default function BuyingGuide() {
       ]
     },
     'best-home-and-living-accessories': {
-      title: 'Best Home & Living Accessories (Buying Guide)',
+      title: 'Top-Rated Home & Living Accessories in Pakistan — Comfort & Aesthetics Guide',
       category: 'Home & Living',
-      intro: 'Creating a cozy, aesthetically pleasing atmosphere inside your home plays a crucial role in relaxation. This guide highlights the absolute finest ultrasonic humidifiers and atmospheric projector lamps curated for modern Pakistani bedrooms and living rooms.',
+      intro: 'Looking to create a cozy, aesthetically pleasing retreat inside your bedroom or living room? Finding the right accessories plays a crucial role in daily relaxation and wellness. This curated guide analyzes top climate and decor tools in Pakistan, highlighting the whisper-quiet <a href="/products/hl-01" class="text-orange-500 hover:underline font-extrabold">PureAire Ultrasonic Cool Mist Humidifier</a> and the cinematic <a href="/products/hl-02" class="text-orange-500 hover:underline font-extrabold">Lumina Sunset Projector LED Lamp</a>. Compare affordable interior accents in our <a href="/compare/best-home-gadgets-under-5000" class="text-orange-500 hover:underline font-extrabold">Best Home Gadgets Under Rs. 5,000 comparison</a> or browse more decor solutions in <a href="/category/home-living" class="text-orange-500 hover:underline font-extrabold">our Home & Living catalog</a>.',
       keyFactors: [
         { name: 'Ultrasonic Atomization', desc: 'Silent ultrasonic technology (<28 dB) ensures high mist dispersion without disturbing your sleep or work.' },
         { name: 'Lens Clarity', desc: 'For projection lamps, thick optical crystal lenses generate much deeper and high-definition colored light halos.' },
@@ -41,9 +41,9 @@ export default function BuyingGuide() {
       ]
     },
     'best-bags-and-travel-essentials': {
-      title: 'Best Bags & Travel Essentials (Buying Guide)',
+      title: 'Best Bags & Travel Essentials in Pakistan — Security & Commuter Guide',
       category: 'Bags & Travel',
-      intro: 'Protect your costly tech gear and travel hassle-free with anti-theft smart backpacks and heavy-duty EVA hardshell organizer pouches. Select the perfect storage accessories built to withstand demanding business trips and rugged vacations.',
+      intro: 'Do you need to protect your costly laptop, tablet, and travel gear during daily commutes in Pakistan? Choosing secure storage accessories can prevent pickpockets and safeguard electronics from unexpected rain showers. In this guide, we evaluate the premium <a href="/products/bt-01" class="text-orange-500 hover:underline font-extrabold">Mark Ryden Waterproof Laptop Backpack</a> and the shockproof <a href="/products/bt-02" class="text-orange-500 hover:underline font-extrabold">BANGE Professional Tech Organizer Pouch</a>. View more durable carrying options in <a href="/category/bags-travel" class="text-orange-500 hover:underline font-extrabold">our Bags & Travel catalog</a>.',
       keyFactors: [
         { name: 'Anti-Theft Features', desc: 'Look for TSA-approved combination locks and hidden back pockets to secure laptops and credit cards.' },
         { name: 'Hardshell Protection', desc: 'Shock-resistant EVA hardshell pouches protect delicate external SSDs, chargers, and power banks from high drops.' },
@@ -56,9 +56,9 @@ export default function BuyingGuide() {
       ]
     },
     'best-bedding-and-bath-comforts': {
-      title: 'Best Bedding & Bath Comforts (Buying Guide)',
+      title: 'Best Bedding & Bath Comforts in Pakistan — Sleep Orthopedics Guide',
       category: 'Bedding & Bath',
-      intro: 'Achieve deep, restorative sleep by choosing orthopedic memory foam cervical supports and friction-free satin pillowcases. We compare and review top bedding enhancements to maximize your sleeping posture and overall wellness.',
+      intro: 'Struggling with morning neck stiffness, frizzy tangled hair, or a disorganized bathroom vanity? Investing in orthopedic sleeping posture and high-quality linens can maximize your daily wellness and rest quality. This guide breaks down essential bedding items, highlighting the contouring <a href="/products/bb-01" class="text-orange-500 hover:underline font-extrabold">RestEasy Ergonomic Orthopedic Pillow</a> and the smooth <a href="/products/bb-02" class="text-orange-500 hover:underline font-extrabold">SilkNest Luxury Satin Pillowcase Pair</a>. Find further accessories in <a href="/category/bedding-bath" class="text-orange-500 hover:underline font-extrabold">our Bedding & Bath catalog</a>.',
       keyFactors: [
         { name: 'Slow-Rebound Memory Foam', desc: 'Cervical contour pillows conform to the natural curvature of your neck, releasing muscle tension.' },
         { name: 'Hypoallergenic Properties', desc: 'Ensure covers are breathable, dust-mite resistant, and machine washable for maximum cleanliness.' },
@@ -128,9 +128,7 @@ export default function BuyingGuide() {
           <h1 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white leading-tight">
             {guide.title}
           </h1>
-          <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed font-semibold">
-            {guide.intro}
-          </p>
+          <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed font-semibold" dangerouslySetInnerHTML={{ __html: guide.intro }} />
         </div>
 
         {/* Key Decision Factors */}
