@@ -85,9 +85,10 @@ export default function ProductDetail() {
   }, [product]);
 
   useSEO({
-    title: product ? `${product.brand} ${product.model} Review & Specifications` : 'Loading...',
+    title: product ? `${product.brand} ${product.model} Review & Specifications` : (loading ? 'Loading...' : 'Product Not Found'),
     description: product ? `${product.name} specs, key features, pros, cons, expert recommendation, and buying options in Pakistan.` : 'Product details.',
-    canonical: `/products/${id}`
+    canonical: `/products/${id}`,
+    noindex: !loading && !product
   });
 
   // Dynamic Related Products: same category, different ID

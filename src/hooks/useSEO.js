@@ -8,8 +8,9 @@ import { useEffect } from 'react';
  * @param {string} [seoOptions.canonical] - Optional canonical URL path.
  * @param {string} [seoOptions.ogImage] - Optional image URL for social previews.
  * @param {string} [seoOptions.ogType] - Optional Open Graph type (default: 'website').
+ * @param {boolean} [seoOptions.noindex] - Optional robots noindex flag (default: false).
  */
-export function useSEO({ title, description, canonical, ogImage, ogType = 'website' }) {
+export function useSEO({ title, description, canonical, ogImage, ogType = 'website', noindex = false }) {
   useEffect(() => {
     // 1. Set Page Title
     const formattedTitle = title.includes('GadgetPicksPK')
@@ -49,9 +50,14 @@ export function useSEO({ title, description, canonical, ogImage, ogType = 'websi
     updateMetaTag('name', 'twitter:card', 'summary_large_image');
 
     // 6. Set Canonical Link Tag
-    const absoluteCanonicalUrl = canonical
+    let absoluteCanonicalUrl = canonical
       ? `https://gadgetpickspk.vercel.app${canonical.startsWith('/') ? canonical : `/${canonical}`}`
       : 'https://gadgetpickspk.vercel.app';
+
+    // Normalize canonical URLs: strip trailing slashes (except for the root domain itself)
+    if (absoluteCanonicalUrl.endsWith('/') && absoluteCanonicalUrl !== 'https://gadgetpickspk.vercel.app/') {
+      absoluteCanonicalUrl = absoluteCanonicalUrl.slice(0, -1);
+    }
 
     let linkTag = document.querySelector('link[rel="canonical"]');
     if (!linkTag) {
@@ -61,7 +67,14 @@ export function useSEO({ title, description, canonical, ogImage, ogType = 'websi
     }
     linkTag.setAttribute('href', absoluteCanonicalUrl);
 
+    // 7. Manage Robots Tag for Noindex/Index (to avoid state leakage during SPA transitions)
+    if (noindex) {
+      updateMetaTag('name', 'robots', 'noindex, follow');
+    } else {
+      updateMetaTag('name', 'robots', 'index, follow');
+    }
+
     // Optional Cleanup (Optional, but let's keep metadata on page transitions)
-  }, [title, description, canonical, ogImage, ogType]);
+  }, [title, description, canonical, ogImage, ogType, noindex]);
 }
 export default useSEO;

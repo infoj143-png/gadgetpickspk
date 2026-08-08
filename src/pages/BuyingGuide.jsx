@@ -77,7 +77,8 @@ export default function BuyingGuide() {
   useSEO({
     title: guide ? guide.title : 'Premium Buying Guides',
     description: guide ? guide.intro : 'Expert product curation and dynamic comparisons.',
-    canonical: `/guides/${categorySlug}`
+    canonical: `/guides/${categorySlug}`,
+    noindex: !guide
   });
 
   // Filter products matching this guide's category
