@@ -9,10 +9,6 @@ export function getOrganizationSchema() {
     "name": "GadgetPicksPK",
     "url": "https://gadgetpickspk.vercel.app",
     "logo": "https://gadgetpickspk.vercel.app/favicon.svg",
-    "sameAs": [
-      "https://github.com",
-      "https://twitter.com"
-    ],
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "customer support",
@@ -50,20 +46,7 @@ export function getBreadcrumbSchema(items) {
 }
 
 export function getProductSchema(product) {
-  const reviews = product.faqs ? product.faqs.map((faq, index) => ({
-    "@type": "Review",
-    "reviewAspect": faq.q,
-    "reviewBody": faq.a,
-    "author": {
-      "@type": "Person",
-      "name": "GadgetPicksPK Editorial Board"
-    },
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": product.rating,
-      "bestRating": "5"
-    }
-  })) : [
+  const reviews = [
     {
       "@type": "Review",
       "reviewBody": product.shortDescription,
