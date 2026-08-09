@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import {
   ChevronRight,
   AlertTriangle,
@@ -93,6 +93,7 @@ const searchIntentInsights = {
 
 export default function CategoryDetail() {
   const { categorySlug } = useParams();
+  const navigate = useNavigate();
   const [openFaq, setOpenFaq] = useState(null);
   const [activeConcern, setActiveConcern] = useState('');
 
@@ -899,6 +900,13 @@ export default function CategoryDetail() {
                   Related Product & Category Discovery
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-semibold leading-relaxed"
+                   onClick={(e) => {
+                     const target = e.target.closest('a');
+                     if (target && target.getAttribute('href')?.startsWith('/')) {
+                       e.preventDefault();
+                       navigate(target.getAttribute('href'));
+                     }
+                   }}
                    dangerouslySetInnerHTML={{ __html: searchIntentInsights[categorySlug].relatedDiscovery }}>
                 </p>
               </div>

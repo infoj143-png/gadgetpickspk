@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ChevronRight, Sparkles, AlertTriangle, ArrowLeft, ArrowUpRight, HelpCircle, Layers, ThumbsUp } from 'lucide-react';
 import useSEO from '../hooks/useSEO';
 import productsData from '../data/products.json';
@@ -7,6 +7,7 @@ import ProductCard from '../components/ProductCard';
 
 export default function BuyingGuide() {
   const { categorySlug } = useParams();
+  const navigate = useNavigate();
 
   // Map category slugs to full category titles and guide content
   const guides = {
@@ -129,7 +130,17 @@ export default function BuyingGuide() {
           <h1 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white leading-tight">
             {guide.title}
           </h1>
-          <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed font-semibold" dangerouslySetInnerHTML={{ __html: guide.intro }} />
+          <p
+            className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed font-semibold"
+            onClick={(e) => {
+              const target = e.target.closest('a');
+              if (target && target.getAttribute('href')?.startsWith('/')) {
+                e.preventDefault();
+                navigate(target.getAttribute('href'));
+              }
+            }}
+            dangerouslySetInnerHTML={{ __html: guide.intro }}
+          />
         </div>
 
         {/* Key Decision Factors */}

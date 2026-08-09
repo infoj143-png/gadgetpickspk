@@ -131,7 +131,7 @@ export default function ProductCard({ product }) {
       onKeyDown={handleKeyDown}
       tabIndex="0"
       role="link"
-      className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/60 dark:border-slate-800 shadow-sm hover:shadow-xl hover:border-orange-300 dark:hover:border-orange-500/50 hover:-translate-y-1 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-orange-500 transition-all duration-300 cursor-pointer flex flex-col justify-between group overflow-hidden relative"
+      className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/60 dark:border-slate-800 shadow-sm hover:shadow-xl hover:border-orange-300 dark:hover:border-orange-500/50 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 transition-all duration-300 cursor-pointer flex flex-col justify-between group overflow-hidden relative"
       aria-label={`View detailed review and specifications for ${productName}`}
     >
       {/* Upper Interactive Area */}

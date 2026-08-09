@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import productsData from '../data/products.json';
 import ComparisonTable from '../components/ComparisonTable';
 import useSEO from '../hooks/useSEO';
@@ -7,6 +7,7 @@ import { ChevronRight, Scale, AlertTriangle, ShieldCheck } from 'lucide-react';
 
 export default function Compare() {
   const { type } = useParams();
+  const navigate = useNavigate();
 
   // Determine which products to compare based on the slug/type parameter
   let matchedProducts = [];
@@ -90,6 +91,13 @@ export default function Compare() {
           </h1>
           <p
             className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-3xl font-semibold"
+            onClick={(e) => {
+              const target = e.target.closest('a');
+              if (target && target.getAttribute('href')?.startsWith('/')) {
+                e.preventDefault();
+                navigate(target.getAttribute('href'));
+              }
+            }}
             dangerouslySetInnerHTML={{ __html: description + " All compared prices are scanned automatically. Read through detailed specifications and expert highlights to make a verified purchase." }}
           />
         </div>

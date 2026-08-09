@@ -17,6 +17,7 @@ export default function Header() {
   const location = useLocation();
   const dropdownRef = useRef(null);
   const searchContainerRef = useRef(null);
+  const searchContainerMobileRef = useRef(null);
 
   // Monitor scroll for premium blur effect
   useEffect(() => {
@@ -37,7 +38,10 @@ export default function Header() {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setIsCategoryDropdownOpen(false);
       }
-      if (searchContainerRef.current && !searchContainerRef.current.contains(event.target)) {
+      if (
+        searchContainerRef.current && !searchContainerRef.current.contains(event.target) &&
+        (!searchContainerMobileRef.current || !searchContainerMobileRef.current.contains(event.target))
+      ) {
         setShowSuggestions(false);
       }
     }
@@ -375,13 +379,14 @@ export default function Header() {
         </div>
 
         {/* Mobile Search Input (Visible only on smaller devices below LG) */}
-        <div className="mt-3 lg:hidden">
+        <div className="mt-3 lg:hidden relative" ref={searchContainerMobileRef}>
           <form onSubmit={handleSearchSubmit} className="relative flex items-center">
             <input
               type="text"
               placeholder="Search verified lifestyle products..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
+              onFocus={() => searchQuery.trim().length >= 2 && setShowSuggestions(true)}
               className="w-full pl-4 pr-12 py-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:border-orange-500 dark:focus:border-orange-500 focus:ring-2 focus:ring-orange-200 dark:focus:ring-orange-950 rounded-lg text-sm outline-none transition-all dark:text-white font-medium"
             />
             <button
@@ -392,6 +397,45 @@ export default function Header() {
               <Search size={16} />
             </button>
           </form>
+
+          {/* Instant Search Suggestions Box for Mobile */}
+          {showSuggestions && suggestions.length > 0 && (
+            <div className="absolute left-0 right-0 mt-2 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-150 dark:border-slate-700 py-2 z-55 divide-y divide-slate-100 dark:divide-slate-700">
+              {suggestions.map((p) => (
+                <Link
+                  key={p.id}
+                  to={`/products/${p.id}`}
+                  onClick={() => setShowSuggestions(false)}
+                  className="flex items-center gap-3 px-4 py-3 hover:bg-orange-50/50 dark:hover:bg-slate-700/50 transition-all text-slate-800 dark:text-slate-200"
+                >
+                  <img
+                    src={p.image}
+                    alt={`${p.brand} ${p.model} - ${p.name} suggestion thumbnail`}
+                    className="w-10 h-10 object-cover rounded-lg border border-slate-100 dark:border-slate-700"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                  <div className="flex-1 min-w-0">
+                    <h4 className="text-xs font-bold text-slate-900 dark:text-white truncate">{p.name}</h4>
+                    <div className="flex items-center gap-2 mt-0.5">
+                      <span className="text-[10px] text-orange-500 dark:text-orange-400 font-black tracking-wider uppercase bg-orange-50 dark:bg-orange-950/50 px-1.5 py-0.5 rounded">
+                        {p.category}
+                      </span>
+                      <span className="text-[10px] font-bold text-slate-400 dark:text-slate-500">
+                        {p.brand}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="text-right flex-shrink-0">
+                    <span className="text-xs font-black text-slate-900 dark:text-white">
+                      Rs. {p.currentPrice.toLocaleString()}
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 

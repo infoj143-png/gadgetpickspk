@@ -101,13 +101,27 @@ export default function ProductDetail() {
       .slice(0, 4);
   }, [product]);
 
-  // Dynamic Similar Alternatives: different brand or slightly different price tier, same category
+  // Dynamic Similar Alternatives: different brand or slightly different price tier, same category, excluding already shown related products, and backfilling with popular cross-category items to prevent duplicate rendering and aid discovery.
   const similarAlternatives = useMemo(() => {
     if (!product) return [];
-    return productsData
-      .filter((p) => p.category === product.category && p.id !== product.id && p.brand !== product.brand)
-      .slice(0, 4);
-  }, [product]);
+    const relatedIds = new Set(relatedProducts.map(p => p.id));
+
+    // 1. Get similar products in the same category (different brand) that aren't in related list
+    let list = productsData.filter(
+      (p) => p.category === product.category && p.id !== product.id && p.brand !== product.brand && !relatedIds.has(p.id)
+    );
+
+    // 2. If list has fewer than 4 items, backfill with top rated / trending items from other categories
+    if (list.length < 4) {
+      const remainingCount = 4 - list.length;
+      const backfillCandidates = productsData.filter(
+        (p) => p.category !== product.category && !relatedIds.has(p.id) && (p.isBestSeller || p.isTrending || p.rating >= 4.8)
+      );
+      list = [...list, ...backfillCandidates.slice(0, remainingCount)];
+    }
+
+    return list.slice(0, 4);
+  }, [product, relatedProducts]);
 
   // Dynamic Related Categories
   const relatedCategories = useMemo(() => {
@@ -296,7 +310,7 @@ export default function ProductDetail() {
                   <button
                     key={idx}
                     onClick={() => setActiveImage(imgUrl)}
-                    className={`w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden border-2 flex-shrink-0 transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-orange-500 ${
+                    className={`w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden border-2 flex-shrink-0 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 ${
                       activeImage === imgUrl ? 'border-orange-500 ring-2 ring-orange-200' : 'border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700'
                     }`}
                     aria-label={`Show gallery image ${idx + 1}`}
