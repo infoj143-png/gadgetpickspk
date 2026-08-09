@@ -416,7 +416,8 @@ export default function CategoryDetail() {
   useSEO({
     title: categoryMeta ? `${categoryMeta.title}` : 'Category Recommendations Catalog',
     description: categoryMeta ? categoryMeta.metaDescription : 'Explore top rated and expert recommended products.',
-    canonical: categoryMeta ? `/category/${categorySlug}` : '/products'
+    canonical: categoryMeta ? `/category/${categorySlug}` : '/products',
+    noindex: !categoryMeta
   });
 
   // Filter products for this specific category

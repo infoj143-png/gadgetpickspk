@@ -9,7 +9,8 @@ export default function NotFound() {
   useSEO({
     title: '404 - Page Not Found | GadgetPicksPK',
     description: 'The requested page could not be found. Navigate back to active home and lifestyle accessories recommendations.',
-    canonical: '/404'
+    canonical: '/404',
+    noindex: true
   });
 
   return (
