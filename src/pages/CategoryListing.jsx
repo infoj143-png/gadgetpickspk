@@ -24,6 +24,7 @@ export default function CategoryListing() {
 
   const [searchParams, setSearchParams] = useSearchParams();
   const [loading, setLoading] = useState(false);
+  const [isMobileFiltersOpen, setIsMobileFiltersOpen] = useState(false);
 
   // States
   const [searchQuery, setSearchQuery] = useState('');
@@ -192,22 +193,56 @@ export default function CategoryListing() {
         </p>
       </div>
 
+      {/* Mobile backdrop */}
+      {isMobileFiltersOpen && (
+        <div
+          onClick={() => setIsMobileFiltersOpen(false)}
+          className="lg:hidden fixed inset-0 bg-slate-950/60 backdrop-blur-xs z-45"
+        />
+      )}
+
+      {/* Mobile filter trigger button */}
+      <div className="lg:hidden mb-6">
+        <button
+          onClick={() => setIsMobileFiltersOpen(true)}
+          className="w-full flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-extrabold text-sm py-3 px-4 rounded-xl shadow-md transition-all active:scale-[0.98]"
+        >
+          <SlidersHorizontal size={16} />
+          Filter & Sort ({filteredProducts.length} Results)
+        </button>
+      </div>
+
       {/* Page Content Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
 
         {/* Left Side Filters Bar */}
-        <aside className="lg:col-span-1 space-y-6 bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200/60 dark:border-slate-800 shadow-sm self-start transition-colors">
+        <aside
+          className={`space-y-6 bg-white dark:bg-slate-900 p-6 border-slate-200/60 dark:border-slate-800 transition-all duration-300 self-start
+            ${isMobileFiltersOpen
+              ? 'fixed inset-y-0 left-0 z-50 w-80 max-w-[85vw] h-full overflow-y-auto block shadow-2xl rounded-r-3xl border-r'
+              : 'hidden'
+            } lg:block lg:col-span-1 lg:rounded-3xl lg:border lg:shadow-sm lg:relative lg:z-0 lg:w-auto lg:h-auto lg:max-w-none lg:translate-x-0`}
+        >
           <div className="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800">
             <h3 className="font-extrabold text-slate-900 dark:text-white flex items-center gap-2 text-base">
               <SlidersHorizontal size={18} className="text-orange-500" />
               Filter Tools
             </h3>
-            <button
-              onClick={handleResetFilters}
-              className="text-xs font-bold text-orange-500 dark:text-orange-400 hover:text-orange-600 dark:hover:text-orange-300 flex items-center gap-1 hover:underline cursor-pointer"
-            >
-              <RefreshCw size={12} /> Reset
-            </button>
+            <div className="flex items-center gap-3">
+              <button
+                onClick={handleResetFilters}
+                className="text-xs font-bold text-orange-500 dark:text-orange-400 hover:text-orange-600 dark:hover:text-orange-300 flex items-center gap-1 hover:underline cursor-pointer"
+              >
+                <RefreshCw size={12} /> Reset
+              </button>
+              <button
+                onClick={() => setIsMobileFiltersOpen(false)}
+                className="lg:hidden p-1 text-slate-400 hover:text-slate-600 dark:hover:text-white"
+                aria-label="Close filters"
+              >
+                <X size={18} />
+              </button>
+            </div>
           </div>
 
           {/* Search Sub-Filter */}
