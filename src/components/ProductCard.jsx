@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Star, Share2, ArrowUpRight, Copy, Check, Sparkles } from 'lucide-react';
+import { Star, Share2, ArrowUpRight, Copy, Check, Sparkles, ShieldCheck } from 'lucide-react';
 import ImageLazy from './ImageLazy';
+import { trackCTA } from '../utils/analytics';
 
 export default function ProductCard({ product }) {
   const navigate = useNavigate();
@@ -32,12 +33,26 @@ export default function ProductCard({ product }) {
 
     const absoluteProductUrl = `${window.location.origin}/products/${productId}`;
 
+    trackCTA('share_product_initiate', {
+      productId,
+      productName,
+      category: categoryName,
+      price: currentPrice
+    });
+
     // Attempt standard Navigator API
     if (navigator.share) {
       navigator.share({
         title: productName,
         text: `Check out the ${productName} on GadgetPicksPK!`,
         url: absoluteProductUrl,
+      }).then(() => {
+        trackCTA('share_product_success', {
+          productId,
+          productName,
+          category: categoryName,
+          method: 'navigator_share'
+        });
       }).catch(() => {
         // Fallback if browser cancelled
         setShowShareModal(true);
@@ -51,6 +66,12 @@ export default function ProductCard({ product }) {
     const absoluteProductUrl = `${window.location.origin}/products/${productId}`;
     navigator.clipboard.writeText(absoluteProductUrl);
     setCopied(true);
+    trackCTA('share_product_success', {
+      productId,
+      productName,
+      category: categoryName,
+      method: 'copy_clipboard'
+    });
     setTimeout(() => {
       setCopied(false);
       setShowShareModal(false);
@@ -97,10 +118,20 @@ export default function ProductCard({ product }) {
   // Generate highly descriptive alt text for images to satisfy SEO requirements
   const descriptiveAlt = `${brandName} ${modelName} - ${productName}`;
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      navigate(`/products/${productId}`);
+    }
+  };
+
   return (
     <article
       onClick={() => navigate(`/products/${productId}`)}
-      className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/60 dark:border-slate-800 shadow-sm hover:shadow-xl hover:border-orange-300 dark:hover:border-orange-500/50 hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col justify-between group overflow-hidden relative"
+      onKeyDown={handleKeyDown}
+      tabIndex="0"
+      role="link"
+      className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/60 dark:border-slate-800 shadow-sm hover:shadow-xl hover:border-orange-300 dark:hover:border-orange-500/50 hover:-translate-y-1 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-orange-500 transition-all duration-300 cursor-pointer flex flex-col justify-between group overflow-hidden relative"
       aria-label={`View detailed review and specifications for ${productName}`}
     >
       {/* Upper Interactive Area */}
@@ -199,6 +230,12 @@ export default function ProductCard({ product }) {
             )}
           </div>
 
+          {/* Trust Seal / Disclosure Badge */}
+          <div className="flex items-center gap-1 text-[10px] text-slate-400 dark:text-slate-500 font-bold bg-slate-50 dark:bg-slate-950/40 p-1.5 rounded-lg border border-slate-100 dark:border-slate-800">
+            <ShieldCheck size={12} className="text-emerald-500 flex-shrink-0" />
+            <span className="truncate">Verified Seller • Ad/Affiliate Link</span>
+          </div>
+
         </div>
       </div>
 
@@ -211,7 +248,16 @@ export default function ProductCard({ product }) {
             href={darazUrl}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={(e) => e.stopPropagation()}
+            onClick={(e) => {
+              e.stopPropagation();
+              trackCTA('click_cta_daraz_card', {
+                productId,
+                productName,
+                category: categoryName,
+                price: currentPrice,
+                targetUrl: darazUrl
+              });
+            }}
             className="flex-1 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 bg-orange-500 hover:bg-orange-600 dark:bg-orange-600 dark:hover:bg-orange-500 text-white text-xs font-extrabold rounded-xl shadow-md shadow-orange-500/10 transition-colors"
             aria-label={`Buy ${productName} on Daraz`}
           >

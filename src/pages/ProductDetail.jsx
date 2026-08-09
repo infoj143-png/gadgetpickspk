@@ -16,12 +16,14 @@ import {
   Clock,
   Sparkles,
   HelpCircle,
-  FileText
+  FileText,
+  Scale
 } from 'lucide-react';
 import useSEO from '../hooks/useSEO';
 import productsData from '../data/products.json';
 import ImageLazy from '../components/ImageLazy';
 import ProductCard from '../components/ProductCard';
+import { trackCTA } from '../utils/analytics';
 import { DetailPageSkeleton } from '../components/Skeleton';
 import { injectJSONLD, removeJSONLD, getProductSchema, getBreadcrumbSchema } from '../utils/schemas';
 
@@ -113,25 +115,70 @@ export default function ProductDetail() {
     return product ? allCats.filter(c => c !== product.category) : [];
   }, [product]);
 
-  // Popular Articles / Guides linked naturally
-  const popularGuides = [
-    { label: 'Best Kitchen & Dining Gadgets', slug: 'best-kitchen-and-dining-gadgets' },
-    { label: 'Best Home & Living Accessories', slug: 'best-home-and-living-accessories' },
-    { label: 'Best Bags & Travel Essentials', slug: 'best-bags-and-travel-essentials' },
-    { label: 'Best Bedding & Bath Comforts', slug: 'best-bedding-and-bath-comforts' }
-  ];
+  // Popular Articles / Guides linked naturally and filtered contextually
+  const popularGuides = useMemo(() => {
+    const defaultGuides = [
+      { label: 'Best Kitchen & Dining Gadgets', slug: 'best-kitchen-and-dining-gadgets', category: 'Kitchen & Dining' },
+      { label: 'Best Home & Living Accessories', slug: 'best-home-and-living-accessories', category: 'Home & Living' },
+      { label: 'Best Bags & Travel Essentials', slug: 'best-bags-and-travel-essentials', category: 'Bags & Travel' },
+      { label: 'Best Bedding & Bath Comforts', slug: 'best-bedding-and-bath-comforts', category: 'Bedding & Bath' }
+    ];
+
+    if (!product) return defaultGuides;
+
+    // Put category matched guide at top
+    return [
+      ...defaultGuides.filter(g => g.category === product.category),
+      ...defaultGuides.filter(g => g.category !== product.category)
+    ];
+  }, [product]);
+
+  // Dynamic Related Comparisons mapped contextually
+  const relatedComparisons = useMemo(() => {
+    const defaultComparisons = [
+      { label: 'Blender vs Hot Pot', slug: 'slique-blender-vs-hot-pot', category: 'Kitchen & Dining' },
+      { label: 'Vacuum vs Steam Iron', slug: 'vacuum-cleaner-vs-steam-iron', category: 'Laundry & Cleaning' },
+      { label: 'Home Gadgets Under 5k', slug: 'best-home-gadgets-under-5000', category: 'Home & Living' },
+      { label: 'Kitchen Tools Under 5k', slug: 'best-kitchen-tools-under-5000', category: 'Kitchen & Dining' }
+    ];
+
+    if (!product) return defaultComparisons.slice(0, 2);
+
+    return defaultComparisons.filter(c => c.category === product.category || product.category === 'Laundry & Cleaning' || product.category === 'Kitchen & Dining');
+  }, [product]);
 
   const handleShare = () => {
     const absoluteProductUrl = window.location.href;
+
+    trackCTA('share_product_initiate', {
+      productId: product?.id,
+      productName: product?.name,
+      category: product?.category,
+      price: product?.currentPrice
+    });
+
     if (navigator.share) {
       navigator.share({
         title: product?.name || 'Product Details',
         text: `Read the premium review of ${product?.name} on GadgetPicksPK!`,
         url: absoluteProductUrl
+      }).then(() => {
+        trackCTA('share_product_success', {
+          productId: product?.id,
+          productName: product?.name,
+          category: product?.category,
+          method: 'navigator_share'
+        });
       }).catch(() => {});
     } else {
       navigator.clipboard.writeText(absoluteProductUrl);
       setCopied(true);
+      trackCTA('share_product_success', {
+        productId: product?.id,
+        productName: product?.name,
+        category: product?.category,
+        method: 'copy_clipboard'
+      });
       setTimeout(() => setCopied(false), 2000);
     }
   };
@@ -201,7 +248,7 @@ export default function ProductDetail() {
   const descriptiveAlt = `${brandName} ${modelName} - ${productName}`;
 
   return (
-    <div className="bg-slate-50 dark:bg-slate-950 py-8 relative transition-colors">
+    <div className="bg-slate-50 dark:bg-slate-950 py-8 pb-24 md:pb-8 relative transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Breadcrumb Section */}
@@ -249,7 +296,7 @@ export default function ProductDetail() {
                   <button
                     key={idx}
                     onClick={() => setActiveImage(imgUrl)}
-                    className={`w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden border-2 flex-shrink-0 transition-all ${
+                    className={`w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden border-2 flex-shrink-0 transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-orange-500 ${
                       activeImage === imgUrl ? 'border-orange-500 ring-2 ring-orange-200' : 'border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700'
                     }`}
                     aria-label={`Show gallery image ${idx + 1}`}
@@ -373,6 +420,15 @@ export default function ProductDetail() {
                   href={darazUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => {
+                    trackCTA('click_cta_daraz_primary', {
+                      productId: product?.id,
+                      productName: product?.name,
+                      category: product?.category,
+                      price: product?.currentPrice,
+                      targetUrl: darazUrl
+                    });
+                  }}
                   className="flex-grow inline-flex items-center justify-center gap-2 px-6 py-4 bg-orange-500 hover:bg-orange-600 text-white font-black text-sm sm:text-base rounded-xl shadow-lg shadow-orange-500/20 transition-all hover:translate-y-[-1px] cursor-pointer"
                   aria-label={`Buy ${productName} on Daraz`}
                 >
@@ -390,6 +446,12 @@ export default function ProductDetail() {
                   <Share2 size={16} />
                   {copied ? 'Copied Link!' : 'Share Review'}
                 </button>
+              </div>
+
+              {/* Trust Signal / Disclosure Alert badge directly below CTA */}
+              <div className="flex items-center gap-2 bg-emerald-50/50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/40 p-2.5 rounded-xl text-emerald-800 dark:text-emerald-400 text-xs font-bold shadow-sm">
+                <ShieldCheck size={16} className="text-emerald-500 flex-shrink-0" />
+                <span>✓ Redirects to Daraz • Verified Seller • We may earn a commission</span>
               </div>
 
               {copied && (
@@ -533,7 +595,8 @@ export default function ProductDetail() {
                 <div key={idx} className="border border-slate-100 dark:border-slate-800 rounded-xl overflow-hidden">
                   <button
                     onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                    className="w-full text-left px-5 py-3.5 bg-slate-50/50 dark:bg-slate-950/20 hover:bg-orange-50/20 text-slate-800 dark:text-white font-extrabold text-xs sm:text-sm flex items-center justify-between outline-none transition-all"
+                    aria-expanded={openFaq === idx ? 'true' : 'false'}
+                    className="w-full text-left px-5 py-3.5 bg-slate-50/50 dark:bg-slate-950/20 hover:bg-orange-50/20 text-slate-800 dark:text-white font-extrabold text-xs sm:text-sm flex items-center justify-between outline-none focus-visible:ring-2 focus-visible:ring-orange-500 transition-all"
                   >
                     <span>{faq.q}</span>
                     <span className="text-orange-500 font-black">
@@ -554,7 +617,7 @@ export default function ProductDetail() {
         )}
 
         {/* Related Categories and Popular Articles SEO Block */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {/* Related Categories */}
           <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800 shadow-sm p-6 space-y-4 transition-colors">
             <h3 className="font-black text-slate-900 dark:text-white text-base flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-2">
@@ -594,6 +657,32 @@ export default function ProductDetail() {
                   {guide.label}
                 </Link>
               ))}
+            </div>
+          </div>
+
+          {/* Related Comparisons */}
+          <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800 shadow-sm p-6 space-y-4 transition-colors">
+            <h3 className="font-black text-slate-900 dark:text-white text-base flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-2">
+              <Scale size={18} className="text-orange-500" />
+              Related Comparisons
+            </h3>
+            <div className="flex flex-col gap-2">
+              {relatedComparisons.length > 0 ? (
+                relatedComparisons.map((comp, idx) => (
+                  <Link
+                    key={idx}
+                    to={`/compare/${comp.slug}`}
+                    className="text-xs sm:text-sm font-extrabold text-slate-700 dark:text-slate-300 hover:text-orange-500 dark:hover:text-orange-400 flex items-center gap-1 hover:underline transition-colors"
+                  >
+                    <ChevronRight size={14} className="text-orange-500" />
+                    {comp.label}
+                  </Link>
+                ))
+              ) : (
+                <p className="text-xs text-slate-400 dark:text-slate-500 font-semibold italic">
+                  No comparisons listed for this category yet.
+                </p>
+              )}
             </div>
           </div>
         </div>
@@ -644,6 +733,15 @@ export default function ProductDetail() {
           href={darazUrl}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => {
+            trackCTA('click_cta_daraz_sticky_mobile', {
+              productId: product?.id,
+              productName: product?.name,
+              category: product?.category,
+              price: product?.currentPrice,
+              targetUrl: darazUrl
+            });
+          }}
           className="flex-grow max-w-[200px] inline-flex items-center justify-center gap-1.5 px-4 py-2.5 bg-orange-500 hover:bg-orange-600 text-white font-extrabold text-xs rounded-xl shadow-md cursor-pointer"
           aria-label={`Buy ${productName} on Daraz`}
         >
