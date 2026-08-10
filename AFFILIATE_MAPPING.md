@@ -65,6 +65,7 @@ Below is the structured list of all 34 active products in the system. When real 
 | **fs-08** | Limelight Women's Casual Cotton Solid Straight Trousers | Limelight Solid-Pant-LL | `https://www.daraz.pk` | *To be replaced with Limelight Trousers Affiliate Link* |
 | **fs-09** | Stylo Women's Soft-Padded Ergonomic Casual Flat Sandals | Stylo Summer-Sandal-ST | `https://www.daraz.pk` | *To be replaced with Stylo Sandals Affiliate Link* |
 | **fs-10** | Walkeaze Men's Premium Hand-Stitched Genuine Leather Peshawari Chappal | Walkeaze Peshawari-Classic-WE | `https://www.daraz.pk` | *To be replaced with Walkeaze Chappal Affiliate Link* |
+| **fs-11** | Pack of 3 Cargo Pocket Trousers | SJ Cargo-Pocket | `https://s.daraz.pk/s.XhILY?cc` | *Active Affiliate Link Configured* |
 | **ps-01** | Catit Flower Automatic Pet Water Fountain | Catit Flower-Fountain | `https://www.daraz.pk` | *To be replaced with Catit Fountain Affiliate Link* |
 | **ps-02** | Furminator Professional Deshedding Grooming Brush | Furminator DeShed-Brush | `https://www.daraz.pk` | *To be replaced with Furminator Brush Affiliate Link* |
 | **hl-03** | Slique Heavy-Duty Adhesive Corner Bathroom Organizer Shelf | Slique Bathroom-Shelf-S1 | `https://www.daraz.pk` | *To be replaced with Slique Bathroom Shelf Affiliate Link* |
