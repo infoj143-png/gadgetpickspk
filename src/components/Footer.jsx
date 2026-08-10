@@ -101,8 +101,8 @@ export default function Footer() {
               </li>
               <li className="flex gap-2">
                 <Mail size={18} className="text-orange-500 flex-shrink-0" />
-                <a href="mailto:support@gadgetpickspk.com" className="hover:text-orange-500 dark:hover:text-orange-400 transition-colors">
-                  support@gadgetpickspk.com
+                <a href="mailto:infoj.j143@gmail.com" className="hover:text-orange-500 dark:hover:text-orange-400 transition-colors">
+                  infoj.j143@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-2 text-xs bg-slate-800/50 dark:bg-slate-900/50 p-2.5 rounded border border-slate-800 dark:border-slate-800">
