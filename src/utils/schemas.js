@@ -12,7 +12,7 @@ export function getOrganizationSchema() {
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "customer support",
-      "email": "support@gadgetpickspk.com",
+      "email": "infoj.j143@gmail.com",
       "areaServed": "PK"
     }
   };
