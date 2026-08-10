@@ -655,6 +655,12 @@ export default function CategoryDetail() {
       icon: <Shirt size={16} />
     },
     {
+      name: "Men’s Clothing / Trousers",
+      slug: "mens-clothing-trousers",
+      desc: "Premium men's clothing value packs, tactical cargo pocket trousers, and everyday utility wear.",
+      icon: <Shirt size={16} />
+    },
+    {
       name: "Co-ord Sets",
       slug: "co-ord-sets",
       desc: "Coordinated matching top-and-bottom clothing sets for effortless, stylish casual wear.",

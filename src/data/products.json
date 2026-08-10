@@ -2260,5 +2260,77 @@
       "Best Seller",
       "Budget Pick"
     ]
+  },
+  {
+    "id": "fs-11",
+    "brand": "SJ",
+    "model": "Cargo-Pocket",
+    "category": "Fashion",
+    "subCategory": "Men’s Clothing / Trousers",
+    "name": "Pack of 3 Cargo Pocket Trousers",
+    "image": "/product-image/assets/pack-of-3-cargo-pocket-trousers.jpg",
+    "images": [
+      "/product-image/assets/pack-of-3-cargo-pocket-trousers.jpg",
+      "/product-image/assets/pack-of-3-cargo-pocket-trousers-size-chart.jpg"
+    ],
+    "currentPrice": 2799,
+    "discount": 0,
+    "rating": 4.6,
+    "reviewsCount": 32,
+    "soldCount": "144",
+    "shortDescription": "Premium value pack of 3 cargo pocket trousers with tactical side storage and comfortable drawstring waistband.",
+    "longDescription": "The Pack of 3 Cargo Pocket Trousers offers exceptional daily utility and modern casual styling. Each pair of trousers is constructed from a lightweight, breathable, and durable fabric structure engineered to withstand daily wear while keeping you completely cool in Pakistani warm climates. Equipped with six functional pockets, including roomy side flap pockets to secure your phone, wallet, and keys. The design features a flexible elasticated waistband and adjustable drawstring closure to ensure a customized and supportive fit.",
+    "features": [
+      "Value pack of 3 cargo pocket trousers in classic, highly versatile colors",
+      "Crafted from premium, breathable, and lightweight fabric for optimal comfort",
+      "Tactical side cargo pockets with secure button-flap closures",
+      "Elasticated waistband with durable integrated drawstring adjustment",
+      "Relaxed regular fit designed for active street style, lounge, and travel"
+    ],
+    "specifications": {
+      "Brand": "SJ",
+      "Model": "Cargo-Pocket",
+      "Pack Count": "3 Trousers",
+      "Material": "Premium Breathable Fabric Blend",
+      "Waistband": "Elastic with Adjustable Drawstring",
+      "Pockets": "6 Pockets (Including 2 Side Cargo Flaps)",
+      "Colors Included": "Black, White, Slate Grey"
+    },
+    "pros": [
+      "Outstanding value with three classic trousers in one package",
+      "Tactical cargo pockets provide secure, spacious storage",
+      "Adjustable drawstring waistband ensures a comfortable fit"
+    ],
+    "cons": [
+      "Non-stretchable material (designed for classic structured drape)",
+      "Colors should be washed separately on the first laundry cycle"
+    ],
+    "darazUrl": "https://s.daraz.pk/s.XhILY?cc",
+    "availability": "In Stock",
+    "lastUpdated": "2025-01-14",
+    "whoShouldBuy": "Perfect for men, university students, and active commuters looking for comfortable, stylish, and high-utility multi-pocket trousers for casual wear on a budget.",
+    "buyingRecommendation": "At under Rs. 2,800 for three premium cargo trousers, this value pack is an absolute bargain with unbeatable daily utility.",
+    "faqs": [
+      {
+        "q": "What exact colors are included in this pack?",
+        "a": "The package includes three classic, easy-to-style colors: one pair in Jet Black, one in clean White, and one in modern Slate Grey."
+      },
+      {
+        "q": "Are these trousers machine washable?",
+        "a": "Yes, they are safe for standard machine washing. We recommend using a gentle cold cycle and washing them separately on the first wash to preserve fabric depth."
+      }
+    ],
+    "isFeatured": true,
+    "isTrending": true,
+    "isTopDeal": true,
+    "isBestSeller": true,
+    "isEditorChoice": true,
+    "isNewArrival": true,
+    "badges": [
+      "Trending",
+      "Best Seller",
+      "Editor's Choice",
+      "Budget Pick"
+    ]
   }
 ]
