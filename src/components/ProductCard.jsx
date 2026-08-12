@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { Star, Share2, ArrowUpRight, Copy, Check, Sparkles, ShieldCheck } from 'lucide-react';
 import ImageLazy from './ImageLazy';
 import { trackCTA } from '../utils/analytics';
@@ -209,9 +209,11 @@ export default function ProductCard({ product }) {
           </div>
 
           {/* Product Title */}
-          <h3 className="font-extrabold text-slate-900 dark:text-white text-sm group-hover:text-orange-500 dark:group-hover:text-orange-400 transition-colors line-clamp-2 min-h-[40px] leading-snug">
-            {productName}
-          </h3>
+          <Link to={`/products/${productId}`} onClick={(e) => e.stopPropagation()} className="block">
+            <h3 className="font-extrabold text-slate-900 dark:text-white text-sm group-hover:text-orange-500 dark:group-hover:text-orange-400 transition-colors line-clamp-2 min-h-[40px] leading-snug">
+              {productName}
+            </h3>
+          </Link>
 
           {/* Short description */}
           <p className="text-slate-500 dark:text-slate-400 text-xs line-clamp-2 leading-relaxed min-h-[32px]">

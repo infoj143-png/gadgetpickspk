@@ -80,7 +80,7 @@ const searchIntentInsights = {
     whatToLookFor: 'Prioritize 100% organic combed cotton, cambric lawn fabric weights (minimum 180 GSM), and hand-crafted top-grain genuine calf leather.',
     suitableFor: 'Ideal for trend-aware buyers seeking western-eastern fusion casual wear, and gentlemen investing in highly durable heritage leather footwear.',
     buyingConsiderations: 'Always double-check precise brand size charts in inches (do not rely on generic M/L labels), and verify slip-resistant dual-layer recycled tyre rubber outsoles.',
-    relatedDiscovery: 'Explore our budget collection of <a href="/compare/best-kitchen-tools-under-5000" class="text-orange-500 hover:underline font-extrabold">Best Kitchen & Dining Tools Under Rs. 5,000</a> or view the <a href="/products/fs-10" class="text-orange-500 hover:underline font-extrabold">Walkeaze Hand-Stitched Leather Peshawari Chappal details</a>.'
+    relatedDiscovery: 'Explore our budget collection of <a href="/compare/best-kitchen-tools-under-5000" class="text-orange-500 hover:underline font-extrabold">Best Kitchen & Dining Tools Under Rs. 5,000</a> or view the <a href="/products/fs-11" class="text-orange-500 hover:underline font-extrabold">Pack of 3 Cargo Pocket Trousers review</a>.'
   },
   'pet-supplies': {
     title: 'Buying Guide & Search Insights: Best Pet Supplies & Smart Grooming in Pakistan',
