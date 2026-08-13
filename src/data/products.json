@@ -2061,68 +2061,81 @@
     ]
   },
   {
-    "id": "bt-07",
-    "brand": "Baellerry",
-    "model": "Wallet-B1",
-    "category": "Bags & Travel",
-    "subCategory": "Wallets",
-    "name": "Baellerry Luxury Men's Leather Multi-Slot Card Wallet & Clutch",
-    "image": "https://images.unsplash.com/photo-1627124118317-4e35998e9406?q=80&w=600&auto=format&fit=crop",
+    "id": "fs-12",
+    "brand": "Premium",
+    "model": "Summer-Tracksuit",
+    "category": "Fashion",
+    "subCategory": "Men's Clothing / Tracksuits",
+    "name": "Men’s Premium Summer Tracksuit – T-Shirt & Trouser Set",
+    "image": "/product-image/assets/mens-premium-summer-tracksuit-charcoal.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1627124118317-4e35998e9406?q=80&w=600&auto=format&fit=crop"
+      "/product-image/assets/mens-premium-summer-tracksuit-charcoal.jpg",
+      "/product-image/assets/mens-premium-summer-tracksuit-black.jpg",
+      "/product-image/assets/mens-premium-summer-tracksuit-brown.jpg",
+      "/product-image/assets/mens-premium-summer-tracksuit-maroon.jpg",
+      "/product-image/assets/mens-premium-summer-tracksuit-blue.jpg",
+      "/product-image/assets/mens-premium-summer-tracksuit-variants.jpg",
+      "/product-image/assets/mens-premium-summer-tracksuit-details.jpg"
     ],
-    "currentPrice": 1950,
-    "oldPrice": 3000,
-    "discount": 35,
+    "currentPrice": 827.12,
+    "oldPrice": 3599,
+    "discount": 77,
     "rating": 4.7,
-    "reviewsCount": 420,
-    "soldCount": "2.1k+",
-    "shortDescription": "Modern premium PU leather bifold wallet with 12 card slots, dual photo windows, zippered coin pouch, and metallic secure button clip.",
-    "longDescription": "The Baellerry Luxury Multi-Slot Leather Wallet represents class and utility. Made of premium, scratch-proof vegan leather and featuring a secure metal button closure, it is designed to store multiple credit cards, cash bills, coins, and identification papers in a well-organized layout. Features an ultra-slim bifold profile that doesn't bulge your pocket.",
+    "reviewsCount": 114,
+    "soldCount": "680+",
+    "shortDescription": "Premium summer tracksuit for men featuring a comfortable T-shirt and trouser set with a stylish printed design. Suitable for casual wear, daily use and summer outings.",
+    "longDescription": "The Men’s Premium Summer Tracksuit is specifically designed for warm-weather comfort and modern urban style. This two-piece set includes a breathable regular-fit short-sleeve T-shirt and matching lightweight trousers with a stylish printed graphic detail. Crafted from a high-performance, sweat-wicking lightweight fabric blend, it ensures you remain perfectly cool and comfortable during casual outings, workouts, or loungewear sessions. Multiple color options allow you to choose the perfect style for men and boys.",
     "features": [
-      "Crafted with durable, textured vegan PU leather with heavy duty lining",
-      "Features 12 specialized card slots, 2 bill pockets, and 2 transparent ID windows",
-      "Includes a zippered middle pouch for coins, keys, or memory cards",
-      "Metallic snap button clip prevents wallet from opening accidentally",
-      "RFID blocking security helps prevent digital card scanning theft"
+      "T-Shirt + Trouser Set",
+      "Lightweight summer-style design",
+      "Stylish printed design",
+      "Multiple colors available including black, brown, maroon, and blue",
+      "Comfortable casual wear",
+      "Suitable for men and boys"
     ],
     "specifications": {
-      "Brand": "Baellerry",
-      "Model": "Wallet-B1",
-      "Material": "Premium Textured PU Leather",
-      "Card Slots": "12 Slots",
-      "ID Windows": "2 Slots",
-      "Coin Pocket": "1 Zippered Pocket",
-      "Dimensions": "12 x 9.5 x 2 cm"
+      "Brand": "Premium",
+      "Model": "Summer-Tracksuit",
+      "Package Includes": "T-Shirt + Trouser Set",
+      "Style": "Casual / Activewear",
+      "Available Colors": "Multiple (Charcoal, Black, Brown, Maroon, Blue)",
+      "Design": "Stylish Printed Graphic Layout",
+      "Ideal For": "Men and Boys"
     },
     "pros": [
-      "Holds a huge amount of cards and cash without getting overly bulky",
-      "Built-in RFID shielding keeps wireless hackers away",
-      "Classy textured leather finish looks extremely expensive"
+      "Incredibly lightweight summer fabric ensures great heat-ventilation",
+      "Stylish printed graphic adds a modern activewear look",
+      "Value-rich 2-piece package at an exceptionally budget-friendly price point"
     ],
     "cons": [
-      "Slightly wider than ultra-minimalist metal card protectors",
-      "Snap button clip requires a brief breaking-in period"
+      "Designed specifically for summer (not suited for cold winter wear)",
+      "Colors should be washed with cold water to preserve print longevity"
     ],
-    "darazUrl": "https://www.daraz.pk",
+    "darazUrl": "https://s.daraz.pk/s.X7oxX?cc",
     "availability": "In Stock",
     "lastUpdated": "2025-01-14",
-    "whoShouldBuy": "Highly recommended for individuals with multiple debit/credit/membership cards who want a classy and secure way to carry them.",
-    "buyingRecommendation": "One of the most practical wallets under Rs. 2,000. Exceptional premium bifold capacity.",
+    "whoShouldBuy": "Perfect for men, young boys, and athletic commuters seeking a lightweight, stylish, and highly comfortable T-shirt and trouser coordinate set for everyday casual hot-weather wear on an absolute budget.",
+    "buyingRecommendation": "At under Rs. 830 for a complete 2-piece tracksuit set, this is one of the highest-value fashion deals available. Outstanding everyday comfort return.",
     "faqs": [
       {
-        "q": "Does it have a compartment for coins?",
-        "a": "Yes! It features a central zippered compartment that safely stores coins, keys, SIM cards, or emergency cash."
+        "q": "What materials are used for this summer tracksuit?",
+        "a": "It is crafted from a lightweight, breathable polyester-cotton summer knit blend designed specifically to maximize airflow and dry quickly."
+      },
+      {
+        "q": "Are there multiple color variants available?",
+        "a": "Yes! It is available in multiple style-forward colors including Charcoal, Black, Brown, Maroon, and Blue, as shown in the product gallery."
       }
     ],
-    "isFeatured": false,
+    "isFeatured": true,
     "isTrending": true,
-    "isTopDeal": false,
+    "isTopDeal": true,
     "isBestSeller": true,
-    "isEditorChoice": false,
-    "isNewArrival": false,
+    "isEditorChoice": true,
+    "isNewArrival": true,
     "badges": [
+      "Trending",
       "Best Seller",
+      "Editor's Choice",
       "Budget Pick"
     ]
   },

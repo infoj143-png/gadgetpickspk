@@ -77,7 +77,7 @@ Below is the structured list of all 34 active products in the system. When real 
 | **bt-04** | Miniso Minimalist Aesthetic Canvas Tote Bag | Miniso Canvas-Tote-M1 | `https://www.daraz.pk` | *To be replaced with Miniso Tote Bag Affiliate Link* |
 | **bt-05** | Tigernu Ergonomic Anti-Theft Sling Crossbody Chest Bag | Tigernu Chest-Bag-T1 | `https://www.daraz.pk` | *To be replaced with Tigernu Chest Sling Affiliate Link* |
 | **bt-06** | Vintage Casual Multi-Pocket Canvas Shoulder Messenger Bag | Vintage Canvas-Shoulder-S1 | `https://www.daraz.pk` | *To be replaced with Vintage Canvas Bag Affiliate Link* |
-| **bt-07** | Baellerry Luxury Men's Leather Multi-Slot Card Wallet & Clutch | Baellerry Wallet-B1 | `https://www.daraz.pk` | *To be replaced with Baellerry Wallet Affiliate Link* |
+| **fs-12** | Men’s Premium Summer Tracksuit – T-Shirt & Trouser Set | Premium Summer-Tracksuit | `https://s.daraz.pk/s.X7oxX?cc` | *Active Affiliate Link Configured* |
 | **bt-08** | 90Fun 20-inch Premium Hardshell TSA Spinner Suitcase | 90Fun Suitcase-20 | `https://www.daraz.pk` | *To be replaced with 90Fun Carry-On Spinner Affiliate Link* |
 | **bt-09** | Xiaomi Minimalist 10L Casual Lightweight Waterproof Urban Backpack | Xiaomi Lightweight-10L | `https://www.daraz.pk` | *To be replaced with Xiaomi 10L Backpack Affiliate Link* |
 
