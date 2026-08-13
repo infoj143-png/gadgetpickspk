@@ -200,7 +200,19 @@ export default function Home() {
 
   // Dynamic Product Queries
   // 1. 🔥 Trending Products
-  const trendingProducts = productsData.filter(p => p.isTrending).slice(0, 4);
+  const product1 = productsData.find(p => p.name === "Men’s Premium Summer Tracksuit – T-Shirt & Trouser Set");
+  const product2 = productsData.find(p => p.name === "Pack of 3 Cargo Pocket Trousers");
+
+  const otherTrending = productsData.filter(
+    p => p.isTrending && p.id !== product1?.id && p.id !== product2?.id
+  );
+
+  const trendingProductsList = [];
+  if (product1) trendingProductsList.push(product1);
+  if (product2) trendingProductsList.push(product2);
+  trendingProductsList.push(...otherTrending);
+
+  const trendingProducts = trendingProductsList.slice(0, 4);
 
   // 2. 🏆 Best Selling Products
   const bestSellers = productsData.filter(p => p.isBestSeller).slice(0, 4);
