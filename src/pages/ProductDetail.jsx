@@ -87,8 +87,8 @@ export default function ProductDetail() {
   }, [product]);
 
   useSEO({
-    title: product ? `${product.brand} ${product.model} Review & Specifications` : (loading ? 'Loading...' : 'Product Not Found'),
-    description: product ? `${product.name} specs, key features, pros, cons, expert recommendation, and buying options in Pakistan.` : 'Product details.',
+    title: product ? `${product.name} Review & Specifications` : (loading ? 'Loading...' : 'Product Not Found'),
+    description: product ? `Full spec reviews of ${product.name} on GadgetPicksPK. Check out pros, cons, expert ratings, and best Daraz Pakistan affiliate buying options.` : 'Product details.',
     canonical: `/products/${id}`,
     noindex: !loading && !product
   });

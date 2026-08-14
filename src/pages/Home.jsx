@@ -45,11 +45,12 @@ export default function Home() {
   const [recentlyViewed, setRecentlyViewed] = useState([]);
   const [openFaq, setOpenFaq] = useState(null);
 
-  // SEO Setup
+  // SEO Setup for 14 August Independence Day Campaign
   useSEO({
-    title: 'GadgetPicksPK - Premium Home & Lifestyle Recommendations in Pakistan',
-    description: 'Find verified, top-rated products for Kitchen, Home & Living, Travel, Bedding, Cleaning, Fashion, and Pet Supplies on Daraz with expert reviews.',
-    canonical: '/'
+    title: 'GadgetPicksPK – 14 August Azadi Deals & Trending Products in Pakistan',
+    description: 'Celebrate Pakistan Independence Day with GadgetPicksPK! Discover premium 14 August Azadi Deals, top trending products, and exclusive Daraz affiliate shopping recommendations.',
+    canonical: '/',
+    ogImage: 'https://gadgetpickspk.vercel.app/pakistan-14-august-azadi-deals-gadgetpickspk.webp'
   });
 
   // Inject Schemas
@@ -75,49 +76,6 @@ export default function Home() {
     const hydrated = list.map(id => productsData.find(p => p.id === id)).filter(Boolean);
     setRecentlyViewed(hydrated);
   }, []);
-
-  // Hero Slider Data
-  const slides = [
-    {
-      title: "Smart Kitchen & Cozy Dining",
-      subtitle: "Simplify your culinary lifestyle with premium, verified blenders, steamers, and gadgets.",
-      badge: "Kitchen & Dining",
-      image: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=1200&auto=format&fit=crop",
-      cta: "Explore Kitchen Deals",
-      link: "/category/kitchen-dining"
-    },
-    {
-      title: "Elevate Your Home Aesthetics",
-      subtitle: "Discover high-quality humidifiers, sunset lamps, and ambient lighting verified by lifestyle experts.",
-      badge: "Home & Living",
-      image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1200&auto=format&fit=crop",
-      cta: "Upgrade Your Space",
-      link: "/category/home-living"
-    },
-    {
-      title: "Travel & Tech Organizers",
-      subtitle: "Secure anti-theft backpacks and shockproof organizer bags ready for your next adventure.",
-      badge: "Bags & Travel",
-      image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=1200&auto=format&fit=crop",
-      cta: "Explore Travel Bags",
-      link: "/category/bags-travel"
-    }
-  ];
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, [slides.length]);
-
-  const handleNextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
-
-  const handlePrevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
@@ -198,13 +156,17 @@ export default function Home() {
     }
   ];
 
+  // Featured 14 August products
+  const featuredProductA = productsData.find(p => p.id === 'fs-12');
+  const featuredProductB = productsData.find(p => p.id === 'fs-11');
+
   // Dynamic Product Queries
   // 1. 🔥 Trending Products
-  const product1 = productsData.find(p => p.name === "Men’s Premium Summer Tracksuit – T-Shirt & Trouser Set");
-  const product2 = productsData.find(p => p.name === "Pack of 3 Cargo Pocket Trousers");
+  const product1 = productsData.find(p => p.id === "fs-12");
+  const product2 = productsData.find(p => p.id === "fs-11");
 
   const otherTrending = productsData.filter(
-    p => p.isTrending && p.id !== product1?.id && p.id !== product2?.id
+    p => p.isTrending && p.id !== "fs-12" && p.id !== "fs-11"
   );
 
   const trendingProductsList = [];
@@ -258,82 +220,58 @@ export default function Home() {
   return (
     <div className="space-y-16 pb-16">
 
-      {/* Hero Banner Section */}
-      <section className="relative overflow-hidden bg-slate-950 h-[420px] sm:h-[480px] md:h-[540px] flex items-center justify-center">
-        <div className="absolute inset-0 w-full h-full">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentSlide}
-              initial={{ opacity: 0, scale: 1.05 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.8 }}
-              className="absolute inset-0 w-full h-full"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/85 to-transparent z-10" />
-              <img
-                src={slides[currentSlide].image}
-                alt={`${slides[currentSlide].title} - Premium Lifestyle Curation by GadgetPicksPK`}
-                className="w-full h-full object-cover object-center opacity-60"
-                width="1200"
-                height="540"
-                loading="eager"
-                fetchPriority="high"
-              />
-            </motion.div>
-          </AnimatePresence>
-        </div>
+      {/* 14 August Independence Day / Azadi Deals Hero Banner Section */}
+      <section className="relative overflow-hidden bg-slate-950 py-12 md:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
 
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="max-w-xl text-left text-white space-y-4">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-orange-500/20 text-orange-400 border border-orange-500/30 backdrop-blur-sm">
-              <Sparkles size={12} className="text-orange-500 animate-pulse" />
-              {slides[currentSlide].badge}
-            </span>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight">
-              {slides[currentSlide].title}
-            </h1>
-            <p className="text-sm sm:text-base md:text-lg text-slate-300 leading-relaxed font-medium">
-              {slides[currentSlide].subtitle}
-            </p>
-            <div className="pt-2 flex flex-wrap gap-3">
-              <Link
-                to={slides[currentSlide].link}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-extrabold text-sm rounded-xl shadow-lg shadow-orange-500/20 transition-all hover:translate-y-[-1px]"
-              >
-                {slides[currentSlide].cta}
-                <ChevronRight size={16} />
-              </Link>
+            {/* Hero Left: Strategic Copywriting */}
+            <div className="lg:col-span-7 text-left text-white space-y-6">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/35 backdrop-blur-xs">
+                <Sparkles size={12} className="text-emerald-400 animate-pulse" />
+                14 August Independence Day Celebration
+              </span>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight">
+                Azadi Deals <br className="hidden sm:inline" />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-400">Specials for Pakistan</span>
+              </h1>
+              <p className="text-sm sm:text-base md:text-lg text-slate-350 leading-relaxed font-semibold">
+                Celebrate Pakistan's Independence Day with premium handpicked products. Discover verified ratings, expert reviews, and exclusive Daraz Azadi discount pricing on top trending lifestyle gear.
+              </p>
+              <div className="pt-2 flex flex-wrap gap-4">
+                <a
+                  href="#trending-deals"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 bg-orange-500 hover:bg-orange-600 text-white font-extrabold text-sm rounded-xl shadow-lg shadow-orange-500/20 transition-all hover:translate-y-[-1px]"
+                >
+                  Explore Azadi Deals
+                  <ChevronRight size={16} />
+                </a>
+                <Link
+                  to="/products"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 bg-slate-800/80 hover:bg-slate-800 text-white font-extrabold text-sm rounded-xl border border-slate-700 hover:border-slate-650 transition-all hover:translate-y-[-1px]"
+                >
+                  View All Products
+                </Link>
+              </div>
             </div>
+
+            {/* Hero Right: Premium Responsive Promotional Image Element */}
+            <div className="lg:col-span-5 flex justify-center">
+              <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-none aspect-[1024/1536] max-h-[500px] lg:max-h-[580px] overflow-hidden rounded-2xl shadow-2xl border border-slate-800 bg-slate-900 group">
+                <img
+                  src="/pakistan-14-august-azadi-deals-gadgetpickspk.webp"
+                  alt="Pakistan 14 August Azadi Deals at GadgetPicksPK"
+                  className="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
+                  width="1024"
+                  height="1536"
+                  loading="eager"
+                  fetchPriority="high"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-40" />
+              </div>
+            </div>
+
           </div>
-        </div>
-
-        <button
-          onClick={handlePrevSlide}
-          className="absolute left-4 z-30 p-2 text-white/75 hover:text-white bg-slate-900/40 hover:bg-slate-900/70 border border-white/10 rounded-full transition-colors hidden md:block"
-          aria-label="Previous Slide"
-        >
-          <ChevronLeft size={20} />
-        </button>
-        <button
-          onClick={handleNextSlide}
-          className="absolute right-4 z-30 p-2 text-white/75 hover:text-white bg-slate-900/40 hover:bg-slate-900/70 border border-white/10 rounded-full transition-colors hidden md:block"
-          aria-label="Next Slide"
-        >
-          <ChevronRight size={20} />
-        </button>
-
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex gap-2">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                index === currentSlide ? 'w-6 bg-orange-500' : 'w-2 bg-white/45 hover:bg-white/80'
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
         </div>
       </section>
 
@@ -377,6 +315,122 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* 🔥 TOP TRENDING PRODUCTS SECTION (Prominent, right below Hero and Search/Disclosure) */}
+      <section id="trending-deals" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-20">
+        <div className="text-center max-w-lg mx-auto mb-10">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black bg-rose-500/10 text-rose-500 border border-rose-500/25 uppercase tracking-widest">
+            <Flame size={12} className="text-rose-500 animate-pulse" />
+            Azadi Top Picks
+          </span>
+          <h2 className="text-3xl font-black text-slate-900 dark:text-white mt-2">
+            🔥 Top Trending Products
+          </h2>
+          <p className="text-slate-500 dark:text-slate-400 text-xs sm:text-sm mt-1">
+            Our most popular handpicked fashion and lifestyle essentials featured first for Pakistan.
+          </p>
+        </div>
+
+        {/* Feature the TWO main products FIRST */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          {featuredProductA && (
+            <div className="bg-white dark:bg-slate-900 rounded-2xl border-2 border-orange-500/30 hover:border-orange-500 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row overflow-hidden group">
+              <div className="w-full md:w-2/5 aspect-square bg-slate-50 dark:bg-slate-950 relative">
+                <img
+                  src={featuredProductA.image}
+                  alt="Men's Premium Summer Tracksuit – T-Shirt & Trouser Set"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  width="300"
+                  height="300"
+                  loading="eager"
+                />
+                <span className="absolute top-3 left-3 bg-rose-500 text-white text-[10px] font-black tracking-wider px-2 py-1 rounded-lg uppercase shadow-sm">
+                  🔥 Top Deal
+                </span>
+              </div>
+              <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+                <div className="space-y-2">
+                  <span className="text-[10px] font-black text-orange-500 tracking-wider uppercase">
+                    {featuredProductA.category}
+                  </span>
+                  <Link to={`/products/${featuredProductA.id}`}>
+                    <h3 className="font-black text-slate-900 dark:text-white text-lg group-hover:text-orange-500 transition-colors line-clamp-2 leading-snug">
+                      Men's Premium Summer Tracksuit – T-Shirt & Trouser Set
+                    </h3>
+                  </Link>
+                  <p className="text-slate-500 dark:text-slate-450 text-xs leading-relaxed font-semibold line-clamp-3">
+                    {featuredProductA.shortDescription}
+                  </p>
+                </div>
+                <div className="flex items-center justify-between gap-4">
+                  <span className="text-xl font-black text-slate-900 dark:text-white">
+                    Rs. 827
+                  </span>
+                  <Link
+                    to={`/products/${featuredProductA.id}`}
+                    className="inline-flex items-center gap-1 text-xs font-black text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 group-hover:underline"
+                  >
+                    View Details
+                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {featuredProductB && (
+            <div className="bg-white dark:bg-slate-900 rounded-2xl border-2 border-orange-500/30 hover:border-orange-500 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row overflow-hidden group">
+              <div className="w-full md:w-2/5 aspect-square bg-slate-50 dark:bg-slate-950 relative">
+                <img
+                  src={featuredProductB.image}
+                  alt="Pack of 3 Cargo Pocket Trousers"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  width="300"
+                  height="300"
+                  loading="eager"
+                />
+                <span className="absolute top-3 left-3 bg-rose-500 text-white text-[10px] font-black tracking-wider px-2 py-1 rounded-lg uppercase shadow-sm">
+                  🔥 Best Seller
+                </span>
+              </div>
+              <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+                <div className="space-y-2">
+                  <span className="text-[10px] font-black text-orange-500 tracking-wider uppercase">
+                    {featuredProductB.category}
+                  </span>
+                  <Link to={`/products/${featuredProductB.id}`}>
+                    <h3 className="font-black text-slate-900 dark:text-white text-lg group-hover:text-orange-500 transition-colors line-clamp-2 leading-snug">
+                      Pack of 3 Cargo Pocket Trousers
+                    </h3>
+                  </Link>
+                  <p className="text-slate-500 dark:text-slate-450 text-xs leading-relaxed font-semibold line-clamp-3">
+                    {featuredProductB.shortDescription}
+                  </p>
+                </div>
+                <div className="flex items-center justify-between gap-4">
+                  <span className="text-xl font-black text-slate-900 dark:text-white">
+                    Rs. 2,799
+                  </span>
+                  <Link
+                    to={`/products/${featuredProductB.id}`}
+                    className="inline-flex items-center gap-1 text-xs font-black text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 group-hover:underline"
+                  >
+                    View Details
+                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Existing Trending products grid below them */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {trendingProducts.filter(p => p.id !== 'fs-12' && p.id !== 'fs-11').map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+      </section>
 
       {/* Seven Main Categories Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -432,34 +486,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
-      {/* Trending Products Section */}
-      {trendingProducts.length > 0 && (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-end justify-between mb-6">
-            <div>
-              <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-orange-600 dark:text-orange-400 uppercase tracking-widest bg-orange-50 dark:bg-orange-950/30 px-2.5 py-1 rounded border border-orange-100 dark:border-orange-900/50">
-                <Flame size={12} className="text-orange-500 animate-pulse" /> Popular Choices
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mt-1">
-                Trending Products
-              </h2>
-            </div>
-            <Link
-              to="/products?tag=Trending"
-              className="group flex items-center gap-1.5 font-bold text-sm text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 transition-colors"
-            >
-              See All Trending
-              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {trendingProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        </section>
-      )}
 
       {/* Best Selling Products Section */}
       {bestSellers.length > 0 && (
