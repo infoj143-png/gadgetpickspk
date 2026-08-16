@@ -672,9 +672,9 @@
     "category": "Fashion",
     "subCategory": "Fashion Accessories",
     "name": "Jafferjees Classic Minimalist Genuine Leather Wallet",
-    "image": "https://images.unsplash.com/photo-1627124118317-4e35998e9406?q=80&w=600&auto=format&fit=crop",
+    "image": "/product-image/assets/jafferjees-classic-minimalist-genuine-leather-wallet.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1627124118317-4e35998e9406?q=80&w=600&auto=format&fit=crop"
+      "/product-image/assets/jafferjees-classic-minimalist-genuine-leather-wallet.jpg"
     ],
     "currentPrice": 5499,
     "oldPrice": 7500,
