@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { Search, Menu, X, ArrowUpRight, HelpCircle, ShieldCheck, Mail, Percent, Flame, Layers, Scale, Sparkles, Star, BookOpen, Sun, Moon } from 'lucide-react';
+import { Search, Menu, X, ArrowUpRight, HelpCircle, ShieldCheck, Mail, Percent, Flame, Layers, Scale, Sparkles, Star, BookOpen, Sun, Moon, Compass, Calendar, Calculator } from 'lucide-react';
 import productsData from '../data/products.json';
 import { useTheme } from '../utils/ThemeContext';
 
@@ -112,7 +112,10 @@ export default function Header() {
     { label: 'Best Kitchen & Dining Gadgets', path: '/guides/best-kitchen-and-dining-gadgets' },
     { label: 'Best Home & Living Accessories', path: '/guides/best-home-and-living-accessories' },
     { label: 'Best Bags & Travel Essentials', path: '/guides/best-bags-and-travel-essentials' },
-    { label: 'Best Bedding & Bath Comforts', path: '/guides/best-bedding-and-bath-comforts' }
+    { label: 'Best Bedding & Bath Comforts', path: '/guides/best-bedding-and-bath-comforts' },
+    { label: 'How Prayer Times Calculated', path: '/how-prayer-times-calculated' },
+    { label: 'Ramadan Timing Guide 2026', path: '/ramadan-timing-guide' },
+    { label: 'How to Find Qibla Direction', path: '/qibla-direction-guide' }
   ];
 
   const [isCompareDropdownOpen, setIsCompareDropdownOpen] = useState(false);
@@ -305,14 +308,14 @@ export default function Header() {
               )}
             </div>
 
-            {/* Buying Guides Dropdown */}
+            {/* Guides Dropdown (Includes Prayer & Lifestyle Guides) */}
             <div className="relative" ref={guidesDropdownRef}>
               <button
                 onClick={() => setIsGuidesDropdownOpen(!isGuidesDropdownOpen)}
                 className="text-slate-600 dark:text-slate-300 hover:text-orange-500 dark:hover:text-orange-400 font-semibold text-sm flex items-center gap-1 transition-colors outline-none cursor-pointer"
               >
                 <BookOpen size={15} className="text-orange-500" />
-                Buying Guides
+                Guides
               </button>
               {isGuidesDropdownOpen && (
                 <div className="absolute right-0 mt-2 w-64 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-100 dark:border-slate-700 py-2 z-50">
@@ -443,6 +446,24 @@ export default function Header() {
       {isMobileMenuOpen && (
         <div className="lg:hidden border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-inner py-4 px-6 space-y-4 animate-fadeIn">
           <div>
+            <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Guides & Articles</h4>
+            <div className="grid grid-cols-1 gap-2">
+              {buyingGuides.map((guide) => (
+                <Link
+                  key={guide.path}
+                  to={guide.path}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-left px-3 py-2 bg-slate-50 dark:bg-slate-800 hover:bg-orange-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 hover:text-orange-600 dark:hover:text-orange-400 font-semibold text-xs rounded-lg transition-colors block"
+                >
+                  {guide.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="h-px bg-slate-100 dark:bg-slate-800"></div>
+
+          <div>
             <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Comparisons</h4>
             <div className="grid grid-cols-2 gap-2">
               {comparisons.map((comp) => (
@@ -453,24 +474,6 @@ export default function Header() {
                   className="text-left px-3 py-2 bg-slate-50 dark:bg-slate-800 hover:bg-orange-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 hover:text-orange-600 dark:hover:text-orange-400 font-semibold text-xs rounded-lg transition-colors block"
                 >
                   {comp.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <div className="h-px bg-slate-100 dark:bg-slate-800"></div>
-
-          <div>
-            <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Buying Guides</h4>
-            <div className="grid grid-cols-2 gap-2">
-              {buyingGuides.map((guide) => (
-                <Link
-                  key={guide.path}
-                  to={guide.path}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-left px-3 py-2 bg-slate-50 dark:bg-slate-800 hover:bg-orange-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 hover:text-orange-600 dark:hover:text-orange-400 font-semibold text-xs rounded-lg transition-colors block"
-                >
-                  {guide.label}
                 </Link>
               ))}
             </div>
