@@ -31,6 +31,12 @@ const Cookies = lazy(() => import('./pages/Cookies'));
 const Disclaimer = lazy(() => import('./pages/Disclaimer'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
+// New Guide & Form Response Pages
+const HowPrayerTimesCalculated = lazy(() => import('./pages/HowPrayerTimesCalculated'));
+const RamadanTimingGuide = lazy(() => import('./pages/RamadanTimingGuide'));
+const QiblaDirectionGuide = lazy(() => import('./pages/QiblaDirectionGuide'));
+const ThankYou = lazy(() => import('./pages/ThankYou'));
+
 // Scroll to top on navigation helper
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -67,6 +73,12 @@ export default function App() {
             <Route path="/terms" element={<Terms />} />
             <Route path="/cookie-policy" element={<Cookies />} />
             <Route path="/disclaimer" element={<Disclaimer />} />
+
+            {/* Guide & Prayer Time Informational Routes */}
+            <Route path="/how-prayer-times-calculated" element={<HowPrayerTimesCalculated />} />
+            <Route path="/ramadan-timing-guide" element={<RamadanTimingGuide />} />
+            <Route path="/qibla-direction-guide" element={<QiblaDirectionGuide />} />
+            <Route path="/thank-you" element={<ThankYou />} />
 
             {/* Wildcard 404 Routing fallback */}
             <Route path="*" element={<NotFound />} />
