@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { supabase } from '@/app/lib/supabase';
+import { supabase } from '../../../lib/supabase';
 
 export async function GET(request) {
   try {
